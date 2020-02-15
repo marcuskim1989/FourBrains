@@ -1,0 +1,6 @@
+framework module Pods_Four_Brains {
+  umbrella header "Pods-Four Brains-umbrella.h"
+
+  export *
+  module * { export * }
+}

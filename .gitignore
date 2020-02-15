@@ -1,0 +1,6 @@
+*.h
+*.hpp
+*.swiftmodule
+*.swiftdoc
+*.framework
+Pods.xcodeproj
