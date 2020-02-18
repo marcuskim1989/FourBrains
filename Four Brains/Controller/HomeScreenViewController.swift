@@ -76,10 +76,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
     }
     
-    // MARK: Delegate function
-    
-    
-    
     //MARK: Calling play functionality
     
    
@@ -108,7 +104,9 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
        } else {
             metronomeOutlet.setImage(#imageLiteral(resourceName: "Metronome Off"), for: .normal)
         }
-       /*
+       
+        
+        /*
         if playBackEngine.isPlaying && !metronome.metronomeToggleState{
             metronome.metronome.stop()
         } else if playBackEngine.isPlaying && metronome.metronomeToggleState {
@@ -136,6 +134,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     func updateBPM(BPM: Int) {
         self.currentBPM = BPM
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
+        metronome.metronome.tempo = Double(BPM)
     }
     
     //MARK: randomization logic
