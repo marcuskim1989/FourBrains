@@ -12,6 +12,14 @@
 		2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B385F23ED28AC00C120E7 /* Metronome.swift */; };
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
+		2CBCEA0B23FE62FB00B7FFC3 /* bass_drum_C1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0323FE62F900B7FFC3 /* bass_drum_C1.wav */; };
+		2CBCEA0C23FE62FB00B7FFC3 /* mid_tom_B1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0423FE62F900B7FFC3 /* mid_tom_B1.wav */; };
+		2CBCEA0D23FE62FB00B7FFC3 /* open_hi_hat_A#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0523FE62FA00B7FFC3 /* open_hi_hat_A#1.wav */; };
+		2CBCEA0E23FE62FB00B7FFC3 /* snare_D1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0623FE62FA00B7FFC3 /* snare_D1.wav */; };
+		2CBCEA0F23FE62FB00B7FFC3 /* lo_tom_F1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0723FE62FA00B7FFC3 /* lo_tom_F1.wav */; };
+		2CBCEA1023FE62FB00B7FFC3 /* closed_hi_hat_F#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0823FE62FA00B7FFC3 /* closed_hi_hat_F#1.wav */; };
+		2CBCEA1123FE62FB00B7FFC3 /* clap_D#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0923FE62FA00B7FFC3 /* clap_D#1.wav */; };
+		2CBCEA1223FE62FB00B7FFC3 /* hi_tom_D2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0A23FE62FA00B7FFC3 /* hi_tom_D2.wav */; };
 		2CD14C1123DA6E0E00157D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1023DA6E0E00157D75 /* AppDelegate.swift */; };
 		2CD14C1323DA6E0E00157D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1223DA6E0E00157D75 /* SceneDelegate.swift */; };
 		2CD14C1523DA6E0E00157D75 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1423DA6E0E00157D75 /* HomeScreenViewController.swift */; };
@@ -59,6 +67,14 @@
 		2C7B386123ED294600C120E7 /* DrumSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumSounds.swift; sourceTree = "<group>"; };
 		2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngine.swift; sourceTree = "<group>"; };
 		2C7B386723ED2BC500C120E7 /* parley bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "parley bold.ttf"; path = "../../../../../../../../../Downloads/parley typeface 2/parley bold.ttf"; sourceTree = "<group>"; };
+		2CBCEA0323FE62F900B7FFC3 /* bass_drum_C1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass_drum_C1.wav; sourceTree = "<group>"; };
+		2CBCEA0423FE62F900B7FFC3 /* mid_tom_B1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mid_tom_B1.wav; sourceTree = "<group>"; };
+		2CBCEA0523FE62FA00B7FFC3 /* open_hi_hat_A#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "open_hi_hat_A#1.wav"; sourceTree = "<group>"; };
+		2CBCEA0623FE62FA00B7FFC3 /* snare_D1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare_D1.wav; sourceTree = "<group>"; };
+		2CBCEA0723FE62FA00B7FFC3 /* lo_tom_F1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lo_tom_F1.wav; sourceTree = "<group>"; };
+		2CBCEA0823FE62FA00B7FFC3 /* closed_hi_hat_F#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "closed_hi_hat_F#1.wav"; sourceTree = "<group>"; };
+		2CBCEA0923FE62FA00B7FFC3 /* clap_D#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "clap_D#1.wav"; sourceTree = "<group>"; };
+		2CBCEA0A23FE62FA00B7FFC3 /* hi_tom_D2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hi_tom_D2.wav; sourceTree = "<group>"; };
 		2CD14C0D23DA6E0E00157D75 /* Four Brains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Four Brains.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD14C1023DA6E0E00157D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD14C1223DA6E0E00157D75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +183,14 @@
 		2CDC809F23FB9E3E00EAA6F3 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				2CBCEA0323FE62F900B7FFC3 /* bass_drum_C1.wav */,
+				2CBCEA0923FE62FA00B7FFC3 /* clap_D#1.wav */,
+				2CBCEA0823FE62FA00B7FFC3 /* closed_hi_hat_F#1.wav */,
+				2CBCEA0A23FE62FA00B7FFC3 /* hi_tom_D2.wav */,
+				2CBCEA0723FE62FA00B7FFC3 /* lo_tom_F1.wav */,
+				2CBCEA0423FE62F900B7FFC3 /* mid_tom_B1.wav */,
+				2CBCEA0523FE62FA00B7FFC3 /* open_hi_hat_A#1.wav */,
+				2CBCEA0623FE62FA00B7FFC3 /* snare_D1.wav */,
 				2CDC80A323FB9EC600EAA6F3 /* bassDrumSound.wav */,
 				2CDC80A223FB9EC600EAA6F3 /* hiHatSound.mp3 */,
 				2CDC80A423FB9EC600EAA6F3 /* rideCymbalSound.wav */,
@@ -256,14 +280,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */,
+				2CBCEA0D23FE62FB00B7FFC3 /* open_hi_hat_A#1.wav in Resources */,
 				2CDC80A923FB9EC600EAA6F3 /* snareDrumSound.wav in Resources */,
 				2CE7136C23F66A670060A750 /* parley bold.ttf in Resources */,
+				2CBCEA0B23FE62FB00B7FFC3 /* bass_drum_C1.wav in Resources */,
 				2CDC80A823FB9EC600EAA6F3 /* rideCymbalSound.wav in Resources */,
 				2CDC80A723FB9EC600EAA6F3 /* bassDrumSound.wav in Resources */,
 				2CD14C1D23DA6E1100157D75 /* LaunchScreen.storyboard in Resources */,
+				2CBCEA1223FE62FB00B7FFC3 /* hi_tom_D2.wav in Resources */,
 				2CD14C1A23DA6E1100157D75 /* Assets.xcassets in Resources */,
+				2CBCEA0C23FE62FB00B7FFC3 /* mid_tom_B1.wav in Resources */,
+				2CBCEA1023FE62FB00B7FFC3 /* closed_hi_hat_F#1.wav in Resources */,
 				2CD14C1823DA6E0E00157D75 /* Main.storyboard in Resources */,
 				2CDC80A623FB9EC600EAA6F3 /* hiHatSound.mp3 in Resources */,
+				2CBCEA0E23FE62FB00B7FFC3 /* snare_D1.wav in Resources */,
+				2CBCEA0F23FE62FB00B7FFC3 /* lo_tom_F1.wav in Resources */,
+				2CBCEA1123FE62FB00B7FFC3 /* clap_D#1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
