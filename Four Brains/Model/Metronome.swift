@@ -12,6 +12,7 @@ import AudioKit
 class Metronome {
     
     var metronome: AKMetronome!
+    var metronomeToggleState = true
     
     init() {
         metronome = AKMetronome()
@@ -24,10 +25,11 @@ class Metronome {
                     //}
                 }
             
-                AudioKit.output = self.metronome
-            
+        
+        //AudioKit.output = self.metronome
+        //output = self.metronome
     }
-    var metronomeToggleState = true
+    
     
     func changeMetronomeToggleState() -> Bool{
         if metronomeToggleState {

@@ -12,6 +12,13 @@ import AudioKit
 class PlayBackEngine {
     
     var isPlaying = false
+    var mixer = AKMixer()
+    
+    init(metronome: Metronome, drumSounds: DrumSounds) {
+        
+        mixer = AKMixer(metronome.metronome, drumSounds.drums)
+        AudioKit.output = mixer
+    }
     
     func changeIsPlaying() -> Bool{
         if isPlaying {
@@ -24,21 +31,26 @@ class PlayBackEngine {
         return isPlaying
     }
     
-    func play(metronome: Metronome) {
+    func play(metronome: Metronome, drumSounds: DrumSounds) {
+        
+        
         
         //print(metronome.metronomeToggleState)
         if isPlaying{
             print("isPlaying inside if inside play(): \(isPlaying)")
             metronome.playMetronome()
+            
         } else {
             print("isPlaying inside else inside play(): \(isPlaying)")
             
             metronome.metronome.stop()
             metronome.metronome.reset()
             
+            
         }
         
-    
+        drumSounds.playDrumSounds()
+        
     }
     
     

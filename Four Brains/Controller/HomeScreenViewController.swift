@@ -16,6 +16,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     var metronome: Metronome!
     var playBackEngine: PlayBackEngine!
+    var drumSounds: DrumSounds!
     var currentBPM: Int = 60
     //var bpmAdjustorVC: BPMAdjustorViewController!
     
@@ -58,16 +59,9 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         metronome = Metronome()
-        playBackEngine = PlayBackEngine()
-        //bpmAdjustorVC = BPMAdjustorViewController()
-        //bpmAdjustorVC.delegate = self
-        /*
-        if bpmAdjustorVC.delegate == nil {
-            print("delegate is nil")
-        } else {
-            print("delegate has a value")
-        }
-        */
+        drumSounds = DrumSounds()
+        playBackEngine = PlayBackEngine(metronome: metronome, drumSounds: drumSounds)
+        
         do {
             try AudioKit.start()
         } catch {
@@ -90,7 +84,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             
         }
         print("playButtonShouldBe: \(playButtonShouldBe)")
-        playBackEngine.play(metronome: metronome)
+        playBackEngine.play(metronome: metronome, drumSounds: drumSounds)
     }
     
     //MARK: calling metronome functionality
@@ -135,6 +129,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         self.currentBPM = BPM
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
         metronome.metronome.tempo = Double(BPM)
+        drumSounds.sequencer.setTempo(Double(BPM))
     }
     
     //MARK: randomization logic
