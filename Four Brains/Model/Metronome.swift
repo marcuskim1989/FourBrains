@@ -46,7 +46,7 @@ class Metronome {
         
         if metronomeToggleState{
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
-            metronome.reset()
+            //metronome.reset()
             metronome.restart()
         } else {
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")

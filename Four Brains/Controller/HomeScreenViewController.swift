@@ -130,6 +130,14 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
         metronome.metronome.tempo = Double(BPM)
         drumSounds.sequencer.setTempo(Double(BPM))
+        if playBackEngine.isPlaying == true {
+            metronome.metronome.stop()
+            metronome.metronome.reset()
+            drumSounds.sequencer.stop()
+            drumSounds.sequencer.rewind()
+            playBackEngine.changeIsPlaying()
+            playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
+        }
     }
     
     //MARK: randomization logic

@@ -12,30 +12,28 @@ import AudioKit
 class DrumSounds {
     
     let drums = AKMIDISampler()
+    
     var currentBPM = 60
-
-    var rideCymbalFile: AKAudioFile?
-    var snareDrumFile: AKAudioFile?
-    var bassDrumFile: AKAudioFile?
-    var hiHatFile: AKAudioFile?
+    var drumSoundsToggleState = true
+    
     //var output = AudioKit.output
     
     
     let sequencer = AKAppleSequencer(filename: "4tracks")
     init() {
         
+        let rideCymbalFile = try! AKAudioFile(readFileName: "rideCymbalSound.wav")
+        let snareDrumFile = try! AKAudioFile(readFileName: "snareDrumSound.wav")
+        let bassDrumFile = try! AKAudioFile(readFileName: "bassDrumSound.wav")
+        let hiHatFile = try! AKAudioFile(readFileName: "hiHatSound.mp3")
         
+        drums.enableMIDI(1000)
         
         do{
-        
-        try rideCymbalFile = AKAudioFile(readFileName: "rideCymbalSound.wav")
-        try snareDrumFile = AKAudioFile(readFileName: "snareDrumSound.wav")
-        try bassDrumFile = AKAudioFile(readFileName: "bassDrumSound.wav")
-        try hiHatFile = AKAudioFile(readFileName: "hiHatSound.mp3")
-        try drums.loadAudioFiles([rideCymbalFile!,
-                                   snareDrumFile!,
-                                   bassDrumFile!,
-                                   hiHatFile!])
+        try drums.loadAudioFiles([rideCymbalFile,
+                                   snareDrumFile,
+                                   bassDrumFile,
+                                   hiHatFile])
         
         } catch {
             print("error loading samples to drum object")
@@ -52,11 +50,17 @@ class DrumSounds {
         //output = drums
         
     }
-    
-    
-    
-    func playDrumSounds () {
-        
+    /*
+    func changeDrumsSoundsToggleState(){
+        if drumSoundsToggleState {
+            drumSoundsToggleState = false
+        } else {
+            drumSoundsToggleState = true
+        }
+    }
+    */
+    func playDrumSounds() {
+        /*
         do {
             try AKSettings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)
                 
@@ -69,7 +73,7 @@ class DrumSounds {
         }catch {
             print("error in settings.setSession")
         }
-    
+         */
         sequencer.tracks[0].add(noteNumber: 60, velocity: 127, position: AKDuration(beats: 0), duration: AKDuration(beats: 1.0))
         sequencer.tracks[0].add(noteNumber: 60, velocity: 127, position: AKDuration(beats: 1), duration: AKDuration(beats: 1.0))
         sequencer.tracks[0].add(noteNumber: 60, velocity: 127, position: AKDuration(beats: 2), duration: AKDuration(beats: 1.0))
@@ -85,4 +89,6 @@ class DrumSounds {
     }
     
     
-}
+    }
+
+
