@@ -26,5 +26,14 @@ class BeatCardInstances {
     let beatCard3D = BeatCard(l: "3D", ns: [0,1,1,1])
     let beatCard4 = BeatCard(l: "4", ns: [1,1,1,1])
     
+    var beatCardArray: [BeatCard]
+    
+    init() {
+        beatCardArray = [beatCard0,
+                         beatCard1A, beatCard1B, beatCard1C, beatCard1D,
+                         beatCard2A, beatCard2B, beatCard2C, beatCard2D, beatCard2E, beatCard2F,
+                         beatCard3A, beatCard3B, beatCard3C, beatCard3D,
+                         beatCard4]
+    }
     
 }

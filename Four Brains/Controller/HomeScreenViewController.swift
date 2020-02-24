@@ -18,8 +18,9 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var playBackEngine: PlayBackEngine!
     var drumSounds: DrumSounds!
     var randomization: Randomization!
+    var beatCardInstances: BeatCardInstances!
     var currentBPM: Int = 60
-    //var bpmAdjustorVC: BPMAdjustorViewController!
+    
     
     //beat card image array holds beat card image literals
     let beatCardImageArray: [UIImage] = [#imageLiteral(resourceName: "0"), #imageLiteral(resourceName: "1A"), #imageLiteral(resourceName: "1B"), #imageLiteral(resourceName: "1C"), #imageLiteral(resourceName: "1D.png"), #imageLiteral(resourceName: "2A"), #imageLiteral(resourceName: "2B"), #imageLiteral(resourceName: "2C"), #imageLiteral(resourceName: "2D.png"), #imageLiteral(resourceName: "2E"), #imageLiteral(resourceName: "2F"), #imageLiteral(resourceName: "3A"), #imageLiteral(resourceName: "3B.png"), #imageLiteral(resourceName: "3C"), #imageLiteral(resourceName: "3D"), #imageLiteral(resourceName: "4")]
@@ -33,25 +34,25 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     @IBOutlet weak var ride3: UIImageView!
     
     //snare beat card image views
-    @IBOutlet weak var snare4: UIImageView!
-    @IBOutlet weak var snare5: UIImageView!
-    @IBOutlet weak var snare6: UIImageView!
-    @IBOutlet weak var snare7: UIImageView!
+    @IBOutlet weak var snare0: UIImageView!
+    @IBOutlet weak var snare1: UIImageView!
+    @IBOutlet weak var snare2: UIImageView!
+    @IBOutlet weak var snare3: UIImageView!
     
     // bass drum beat card image view
-    @IBOutlet weak var bass8: UIImageView!
-    @IBOutlet weak var bass9: UIImageView!
-    @IBOutlet weak var bass10: UIImageView!
-    @IBOutlet weak var bass11: UIImageView!
+    @IBOutlet weak var bass0: UIImageView!
+    @IBOutlet weak var bass1: UIImageView!
+    @IBOutlet weak var bass2: UIImageView!
+    @IBOutlet weak var bass3: UIImageView!
     
     // hi hat beat card image views
-    @IBOutlet weak var hiHat12: UIImageView!
-    @IBOutlet weak var hiHat13: UIImageView!
-    @IBOutlet weak var hiHat14: UIImageView!
-    @IBOutlet weak var hiHat15: UIImageView!
+    @IBOutlet weak var hiHat0: UIImageView!
+    @IBOutlet weak var hiHat1: UIImageView!
+    @IBOutlet weak var hiHat2: UIImageView!
+    @IBOutlet weak var hiHat3: UIImageView!
     
     //Beat Card Image Outlet Array
-    lazy var beatCardImageOutletArray = [ride0, ride1, ride2, ride3, snare4, snare5, snare6, snare7, bass8, bass9, bass10, bass11, hiHat12, hiHat13, hiHat14, hiHat15]
+    lazy var beatCardImageOutletArray = [ride0, ride1, ride2, ride3, snare0, snare1, snare2, snare3, bass0, bass1, bass2, bass3, hiHat0, hiHat1, hiHat2, hiHat3]
     
     @IBOutlet weak var playButtonOutlet: UIButton!
     
@@ -64,6 +65,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         metronome = Metronome()
         drumSounds = DrumSounds()
         playBackEngine = PlayBackEngine(metronome: metronome, drumSounds: drumSounds)
+        randomization = Randomization()
+        beatCardInstances = BeatCardInstances()
         
         do {
             try AudioKit.start()
@@ -147,11 +150,30 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     @IBAction func randomizationButtonPressed(_ sender: Any) {
         
+        let wholeBeat: WholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances)
+        
+        for rideBeatCard in Range(0...3) {
+            print("Ride: \(wholeBeat.ridePattern[rideBeatCard].beatCardLabel): \(wholeBeat.ridePattern[rideBeatCard].beatCardNoteSequence)")
+        }
+        
+        for snareBeatCard in Range(0...3) {
+            print("Snare: \(wholeBeat.snarePattern[snareBeatCard].beatCardLabel): \(wholeBeat.snarePattern[snareBeatCard].beatCardNoteSequence)")
+        }
+        
+        for bassBeatCard in Range(0...3) {
+            print("Bass: \(wholeBeat.bassPattern[bassBeatCard].beatCardLabel): \(wholeBeat.bassPattern[bassBeatCard].beatCardNoteSequence)")
+        }
+        
+        for hiHatBeatCard in Range(0...3) {
+            print("Hi-Hat: \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel): \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardNoteSequence)")
+        }
+        
+        /*
         for beatCardView in beatCardImageOutletArray {
             beatCardView?.image = beatCardImageArray[Int.random(in: 0...15)]
             
         }
-        
+        */
         
     }
  

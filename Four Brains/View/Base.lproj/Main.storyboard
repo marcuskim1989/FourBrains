@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,22 +16,22 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeScreenViewController" customModule="Four_Brains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Home Screen">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-oH-9tH">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F o u r  B r a i n s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-nt-K6j">
-                                <rect key="frame" x="184" y="14.5" width="528.5" height="60"/>
+                                <rect key="frame" x="70.5" y="97.5" width="459.5" height="70"/>
                                 <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mak-l2-MUb" userLabel="Beat Board Stack">
-                                <rect key="frame" x="105.5" y="84.5" width="685" height="245"/>
+                                <rect key="frame" x="-42.5" y="177.5" width="685" height="245"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-ER-MVn" userLabel="Instrument Mute Button Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="245"/>
@@ -245,7 +244,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="y5Y-p6-97k" userLabel="Play Panel  Stack">
-                                <rect key="frame" x="168" y="339.5" width="560" height="50"/>
+                                <rect key="frame" x="20" y="432.5" width="560" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-I7-kXg" userLabel="Play">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -329,25 +328,25 @@
                     </view>
                     <navigationItem key="navigationItem" id="A3j-Zy-C1N"/>
                     <connections>
-                        <outlet property="bass10" destination="Yoj-1V-7ot" id="Yj6-YQ-WGn"/>
-                        <outlet property="bass11" destination="4wL-DK-DUI" id="BVM-DN-JsG"/>
-                        <outlet property="bass8" destination="FTC-b6-GD5" id="xee-de-Zfh"/>
-                        <outlet property="bass9" destination="feI-6u-iqi" id="9D7-Fb-l7w"/>
+                        <outlet property="bass0" destination="FTC-b6-GD5" id="xee-de-Zfh"/>
+                        <outlet property="bass1" destination="feI-6u-iqi" id="9D7-Fb-l7w"/>
+                        <outlet property="bass2" destination="Yoj-1V-7ot" id="Yj6-YQ-WGn"/>
+                        <outlet property="bass3" destination="4wL-DK-DUI" id="BVM-DN-JsG"/>
                         <outlet property="bpmAdjustAccessButton" destination="Eh5-Oe-ymh" id="Bci-5d-4Za"/>
-                        <outlet property="hiHat12" destination="ECc-vN-vln" id="KrL-NS-WA0"/>
-                        <outlet property="hiHat13" destination="J2d-W0-vLG" id="f4k-Tj-ZSa"/>
-                        <outlet property="hiHat14" destination="gK8-Yc-XSI" id="g1k-ky-Wdd"/>
-                        <outlet property="hiHat15" destination="vYF-0R-tGK" id="VbZ-C5-A0v"/>
+                        <outlet property="hiHat0" destination="ECc-vN-vln" id="KrL-NS-WA0"/>
+                        <outlet property="hiHat1" destination="J2d-W0-vLG" id="f4k-Tj-ZSa"/>
+                        <outlet property="hiHat2" destination="gK8-Yc-XSI" id="g1k-ky-Wdd"/>
+                        <outlet property="hiHat3" destination="vYF-0R-tGK" id="VbZ-C5-A0v"/>
                         <outlet property="metronomeOutlet" destination="53s-FQ-TV5" id="KnO-n2-ig9"/>
                         <outlet property="playButtonOutlet" destination="peW-I7-kXg" id="wsr-75-xse"/>
                         <outlet property="ride0" destination="u2d-Kf-RqD" id="eyV-O5-cvz"/>
                         <outlet property="ride1" destination="09B-fe-BzD" id="jr1-km-Csw"/>
                         <outlet property="ride2" destination="8Og-u3-FkM" id="7Jx-11-RI4"/>
                         <outlet property="ride3" destination="DbE-b1-6Hu" id="1VB-Zd-jWS"/>
-                        <outlet property="snare4" destination="mWt-as-TrZ" id="PHR-mv-Hcj"/>
-                        <outlet property="snare5" destination="0hH-ys-a0L" id="gcG-ry-dd7"/>
-                        <outlet property="snare6" destination="NNu-2p-fNq" id="cx0-G5-4IN"/>
-                        <outlet property="snare7" destination="kqe-Ly-lnw" id="zcl-1q-1lh"/>
+                        <outlet property="snare0" destination="mWt-as-TrZ" id="PHR-mv-Hcj"/>
+                        <outlet property="snare1" destination="0hH-ys-a0L" id="gcG-ry-dd7"/>
+                        <outlet property="snare2" destination="NNu-2p-fNq" id="cx0-G5-4IN"/>
+                        <outlet property="snare3" destination="kqe-Ly-lnw" id="zcl-1q-1lh"/>
                         <segue destination="HOR-w6-HEJ" kind="presentation" identifier="presentBPMAdjustor" id="agy-DN-7Z4"/>
                     </connections>
                 </viewController>
@@ -360,11 +359,11 @@
             <objects>
                 <viewController id="HOR-w6-HEJ" customClass="BPMAdjustorViewController" customModule="Four_Brains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIH-ty-Sq8">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="2j5-Ih-sGg" userLabel="BPM Background">
-                                <rect key="frame" x="-52" y="0.0" width="1000" height="443"/>
+                                <rect key="frame" x="-8" y="0.0" width="616" height="588"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -414,13 +413,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm8-8K-em6">
-                                <rect key="frame" x="407" y="130" width="82" height="96"/>
+                                <rect key="frame" x="259" y="308" width="82" height="96"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcv-ze-wl0">
-                                <rect key="frame" x="390" y="331" width="116" height="62"/>
+                                <rect key="frame" x="212" y="509" width="176" height="71"/>
                                 <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="50"/>
                                 <state key="normal" title="Dismiss">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
