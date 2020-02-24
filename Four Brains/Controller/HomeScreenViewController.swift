@@ -17,11 +17,14 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var metronome: Metronome!
     var playBackEngine: PlayBackEngine!
     var drumSounds: DrumSounds!
+    var randomization: Randomization!
     var currentBPM: Int = 60
     //var bpmAdjustorVC: BPMAdjustorViewController!
     
     //beat card image array holds beat card image literals
     let beatCardImageArray: [UIImage] = [#imageLiteral(resourceName: "0"), #imageLiteral(resourceName: "1A"), #imageLiteral(resourceName: "1B"), #imageLiteral(resourceName: "1C"), #imageLiteral(resourceName: "1D.png"), #imageLiteral(resourceName: "2A"), #imageLiteral(resourceName: "2B"), #imageLiteral(resourceName: "2C"), #imageLiteral(resourceName: "2D.png"), #imageLiteral(resourceName: "2E"), #imageLiteral(resourceName: "2F"), #imageLiteral(resourceName: "3A"), #imageLiteral(resourceName: "3B.png"), #imageLiteral(resourceName: "3C"), #imageLiteral(resourceName: "3D"), #imageLiteral(resourceName: "4")]
+    
+    
     
     //Ride cymbal beat card image views. beat cards have tags 0 through 15 starting from the top left, moving across then down like a book
     @IBOutlet weak var ride0: UIImageView!
@@ -146,7 +149,11 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
         for beatCardView in beatCardImageOutletArray {
             beatCardView?.image = beatCardImageArray[Int.random(in: 0...15)]
+            
         }
+        
+        
     }
+ 
 }
 

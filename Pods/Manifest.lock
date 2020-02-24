@@ -6,24 +6,20 @@ PODS:
   - AudioKit/UI (4.9.3):
     - AudioKit/Core
   - HGCircularSlider (2.2.0)
-  - MIBlurPopup (0.2.0)
 
 DEPENDENCIES:
   - AudioKit (~> 4.9.3)
   - HGCircularSlider (~> 2.2.0)
-  - MIBlurPopup
 
 SPEC REPOS:
   trunk:
     - AudioKit
     - HGCircularSlider
-    - MIBlurPopup
 
 SPEC CHECKSUMS:
   AudioKit: d025ecbb68f567bba15dab7ea80b8991155729f9
   HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
-  MIBlurPopup: 89c93626177602b3164673c9bf7d6b2ef388cd95
 
-PODFILE CHECKSUM: 6f52f04383e411c9774e0e92f20e2810d2e84d45
+PODFILE CHECKSUM: 7506aded7359c0911c6755f27cbe9f7c95cf538b
 
 COCOAPODS: 1.8.4

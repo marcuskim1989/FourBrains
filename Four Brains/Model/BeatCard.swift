@@ -11,11 +11,11 @@ import AudioKit
 
 class BeatCard {
     var beatCardLabel: String
-    var noteRestSequence: String
+    var beatCardNoteSequence: [Int]
     
-    init(label: String, sequence: String){
-        beatCardLabel = label
-        noteRestSequence = sequence
+    init(l: String, ns: [Int]){
+        beatCardLabel = l
+        beatCardNoteSequence = ns
     }
     
 }
