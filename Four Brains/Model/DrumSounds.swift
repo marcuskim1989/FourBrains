@@ -13,11 +13,12 @@ class DrumSounds {
     
     let drums = AKMIDISampler()
    
-    var rideCymbalPattern: [Int]?
-    var snareDrumPattern: [Int]?
-    var bassDrumPattern: [Int]?
-    var hiHatPattern: [Int]?
+    var rideNoteSequence: [Int] = [0]
+    var snareNoteSequence: [Int] = [0]
+    var bassNoteSequence: [Int] = [0]
+    var hiHatNoteSequence: [Int] = [0]
     
+    var rideNoteArray: [()] = [()]
     
     var currentBPM = 60
     //var drumSoundsToggleState = true
@@ -29,6 +30,8 @@ class DrumSounds {
         let snareDrumFile = try! AKAudioFile(readFileName: "snare_D1.wav")
         let bassDrumFile = try! AKAudioFile(readFileName: "bass_drum_C1.wav")
         let hiHatFile = try! AKAudioFile(readFileName: "closed_hi_hat_F#1.wav")
+        
+        rideNoteArray[0] = sequencer.tracks[0].add(noteNumber: 1, velocity: 0, position: AKDuration(beats: 0), duration: AKDuration(beats: 0.0))
         
         do{
         try drums.loadAudioFiles([rideCymbalFile,
@@ -50,7 +53,147 @@ class DrumSounds {
        
         
     }
-   
+    
+    //MARK: Parse  from wholeBeat
+    func parseNoteSequence(wholeBeat: WholeBeat) {
+        
+        rideNoteSequence = [0]
+        snareNoteSequence = [0]
+        bassNoteSequence = [0]
+        hiHatNoteSequence = [0]
+        
+        // Parse ride sequence
+        for beatCardCounter in Range(0...3) {
+            
+            for note in Range(0...3) {
+            
+                if beatCardCounter == 0 && note == 0{
+                    rideNoteSequence[0] = wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note]
+                } else {
+                    rideNoteSequence.append(wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note])
+                }
+            
+            }
+            
+        }
+        print("Ride note sequence: \(rideNoteSequence)")
+        
+        // Parse snare sequence
+        for beatCardCounter in Range(0...3) {
+            
+            for note in Range(0...3) {
+            
+                if beatCardCounter == 0 && note == 0{
+                    snareNoteSequence[0] = wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note]
+                } else {
+                    snareNoteSequence.append(wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note])
+                }
+            
+            }
+            
+        }
+        print("Snare note sequence: \(snareNoteSequence)")
+        
+        // Parse bass sequence
+        for beatCardCounter in Range(0...3) {
+            
+            for note in Range(0...3) {
+            
+                if beatCardCounter == 0 && note == 0{
+                    bassNoteSequence[0] = wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note]
+                } else {
+                    bassNoteSequence.append(wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note])
+                }
+            
+            }
+            
+        }
+        print("Bass note sequence: \(bassNoteSequence)")
+        
+        // Parse hi hat sequence
+        for beatCardCounter in Range(0...3) {
+            
+            for note in Range(0...3) {
+            
+                if beatCardCounter == 0 && note == 0{
+                    hiHatNoteSequence[0] = wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note]
+                } else {
+                    hiHatNoteSequence.append(wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note])
+                }
+            
+            }
+            
+        }
+        print("Hi-Hat: \(hiHatNoteSequence)")
+        
+        
+    }
+    
+    func assignDrumSounds () {
+        
+        //MARK: Ride cymbal note assignment
+        for note in Range(0 ... 15) {
+            
+            let position = ((Double(note) + 1.0)/4.0) - 0.25
+            
+                let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                if note == 0 {
+                    rideNoteArray[0] = newNote
+                } else {
+                    rideNoteArray.append(newNote)
+                }
+            
+            print(position)
+        }
+        
+        /*
+        //MARK: Snare drum note assignment
+        for note in Range(0 ... 15) {
+            
+            let position = ((Double(note) + 1.0)/4.0) - 0.25
+            
+                let newNote = sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                if note == 0 {
+                    rideNoteArray[0] = newNote
+                } else {
+                    rideNoteArray.append(newNote)
+                }
+            
+            print(position)
+        }
+        
+        //MARK: Bass drum note assignment
+        for note in Range(0 ... 15) {
+            
+            let position = ((Double(note) + 1.0)/4.0) - 0.25
+            
+                let newNote = sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                if note == 0 {
+                    rideNoteArray[0] = newNote
+                } else {
+                    rideNoteArray.append(newNote)
+                }
+            
+            print(position)
+        }
+        
+        //MARK: Hi-Hat note assignment
+        for note in Range(0 ... 15) {
+            
+            let position = ((Double(note) + 1.0)/4.0) - 0.25
+            
+                let newNote = sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                if note == 0 {
+                    rideNoteArray[0] = newNote
+                } else {
+                    rideNoteArray.append(newNote)
+                }
+            
+            print(position)
+        }
+    */
+    }
+    
     func playDrumSounds() {
         
         do {
@@ -66,95 +209,6 @@ class DrumSounds {
             print("error in settings.setSession")
         }
         
-        var noteArray: [()] = [sequencer.tracks[0].add(noteNumber: 1, velocity: 0, position: AKDuration(beats: 0), duration: AKDuration(beats: 0.0))]
-        
-        for note in Range(0 ... 15) {
-            let position = ((Double(note) + 1.0)/4.0) - 0.25
-            
-                let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
-                if note == 0 {
-                    noteArray[0] = newNote
-                } else {
-                    noteArray.append(newNote)
-                }
-            
-            print(position)
-        }
-        
-        /*
-        //ride cymbal
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 0), duration: AKDuration(beats: 1.0)) //1
-        //sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 0.25), duration: AKDuration(beats: 1.0)) //e
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 0.5), duration: AKDuration(beats: 1.0)) //&
-        //sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 0.75), duration: AKDuration(beats: 1.0))//a
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 1), duration: AKDuration(beats: 1.0))//2
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 1.25), duration: AKDuration(beats: 1.0))//e
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 1.5), duration: AKDuration(beats: 1.0))//&
-        //sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 1.75), duration: AKDuration(beats: 1.0))//a
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 2), duration: AKDuration(beats: 1.0))//3
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 2.25), duration: AKDuration(beats: 1.0))//e
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 2.5), duration: AKDuration(beats: 1.0))//&
-        //sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 2.75), duration: AKDuration(beats: 1.0))//a
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 3), duration: AKDuration(beats: 1.0))//4
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 3.25), duration: AKDuration(beats: 1.0))//e
-        sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 3.5), duration: AKDuration(beats: 1.0))//&
-        //sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: 3.75), duration: AKDuration(beats: 1.0))//a
-        
-        //snare drum
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 0), duration: AKDuration(beats: 1.0)) //1
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 0.25), duration: AKDuration(beats: 1.0)) //e
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 0.5), duration: AKDuration(beats: 1.0)) //&
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 0.75), duration: AKDuration(beats: 1.0))//a
-        sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 1), duration: AKDuration(beats: 1.0))//2
-        sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 1.25), duration: AKDuration(beats: 1.0))//e
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 1.5), duration: AKDuration(beats: 1.0))//&
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 1.75), duration: AKDuration(beats: 1.0))//a
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 2), duration: AKDuration(beats: 1.0))//3
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 2.25), duration: AKDuration(beats: 1.0))//e
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 2.5), duration: AKDuration(beats: 1.0))//&
-        sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 2.75), duration: AKDuration(beats: 1.0))//a
-        sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 3), duration: AKDuration(beats: 1.0))//4
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 3.25), duration: AKDuration(beats: 1.0))//e
-        //sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 3.5), duration: AKDuration(beats: 1.0))//&
-        sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: 3.75), duration: AKDuration(beats: 1.0))//a
-        
-        //bass drum
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 0), duration: AKDuration(beats: 1.0)) //1
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 0.25), duration: AKDuration(beats: 1.0)) //e
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 0.5), duration: AKDuration(beats: 1.0)) //&
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 0.75), duration: AKDuration(beats: 1.0))//a
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 1), duration: AKDuration(beats: 1.0))//2
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 1.25), duration: AKDuration(beats: 1.0))//e
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 1.5), duration: AKDuration(beats: 1.0))//&
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 1.75), duration: AKDuration(beats: 1.0))//a
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 2), duration: AKDuration(beats: 1.0))//3
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 2.25), duration: AKDuration(beats: 1.0))//e
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 2.5), duration: AKDuration(beats: 1.0))//&
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 2.75), duration: AKDuration(beats: 1.0))//a
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 3), duration: AKDuration(beats: 1.0))//4
-        //sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 3.25), duration: AKDuration(beats: 1.0))//e
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 3.5), duration: AKDuration(beats: 1.0))//&
-        sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: 3.75), duration: AKDuration(beats: 1.0))//a
-        
-        //hi hat splash
-        //sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 0), duration: AKDuration(beats: 1.0)) //1
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 0.25), duration: AKDuration(beats: 1.0)) //e
-        //sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 0.5), duration: AKDuration(beats: 1.0)) //&
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 0.75), duration: AKDuration(beats: 1.0))//a
-        //sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 1), duration: AKDuration(beats: 1.0))//2
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 1.25), duration: AKDuration(beats: 1.0))//e
-        //sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 1.5), duration: AKDuration(beats: 1.0))//&
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 1.75), duration: AKDuration(beats: 1.0))//a
-        //sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 2), duration: AKDuration(beats: 1.0))//3
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 2.25), duration: AKDuration(beats: 1.0))//e
-        //sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 2.5), duration: AKDuration(beats: 1.0))//&
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 2.75), duration: AKDuration(beats: 1.0))//a
-        //sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 3), duration: AKDuration(beats: 1.0))//4
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 3.25), duration: AKDuration(beats: 1.0))//e
-        //`sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 3.5), duration: AKDuration(beats: 1.0))//&
-        sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: 3.75), duration: AKDuration(beats: 1.0))//a
-        */
-      
         if sequencer.isPlaying {
             sequencer.stop()
             //sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
@@ -164,7 +218,6 @@ class DrumSounds {
         }
         
     }
-    
     
     }
 

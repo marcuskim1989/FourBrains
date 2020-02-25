@@ -146,11 +146,11 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
     }
     
-    //MARK: randomization logic
+    //MARK: randomize beat card images
     
     @IBAction func randomizationButtonPressed(_ sender: Any) {
         
-        let wholeBeat: WholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances)
+        let wholeBeat: WholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
         
         for rideBeatCard in Range(0...3) {
             print("Ride: \(wholeBeat.ridePattern[rideBeatCard].beatCardLabel): \(wholeBeat.ridePattern[rideBeatCard].beatCardNoteSequence)")
