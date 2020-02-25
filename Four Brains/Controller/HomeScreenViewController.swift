@@ -154,6 +154,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
         for rideBeatCard in Range(0...3) {
             print("Ride: \(wholeBeat.ridePattern[rideBeatCard].beatCardLabel): \(wholeBeat.ridePattern[rideBeatCard].beatCardNoteSequence)")
+            
+            
         }
         
         for snareBeatCard in Range(0...3) {

@@ -19,6 +19,9 @@ class DrumSounds {
     var hiHatNoteSequence: [Int] = [0]
     
     var rideNoteArray: [()] = [()]
+    var snareNoteArray: [()] = [()]
+    var bassNoteArray: [()] = [()]
+    var hiHatNoteArray: [()] = [()]
     
     var currentBPM = 60
     //var drumSoundsToggleState = true
@@ -54,7 +57,7 @@ class DrumSounds {
         
     }
     
-    //MARK: Parse  from wholeBeat
+    //MARK: Parse from wholeBeat
     func parseNoteSequence(wholeBeat: WholeBeat) {
         
         rideNoteSequence = [0]
@@ -62,138 +65,121 @@ class DrumSounds {
         bassNoteSequence = [0]
         hiHatNoteSequence = [0]
         
-        // Parse ride sequence
+        // MARK: Parse ride sequence
         for beatCardCounter in Range(0...3) {
-            
             for note in Range(0...3) {
-            
                 if beatCardCounter == 0 && note == 0{
                     rideNoteSequence[0] = wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note]
                 } else {
                     rideNoteSequence.append(wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note])
                 }
-            
             }
-            
         }
         print("Ride note sequence: \(rideNoteSequence)")
         
-        // Parse snare sequence
+        // MARK: Parse snare sequence
         for beatCardCounter in Range(0...3) {
-            
             for note in Range(0...3) {
-            
                 if beatCardCounter == 0 && note == 0{
                     snareNoteSequence[0] = wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note]
                 } else {
                     snareNoteSequence.append(wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note])
                 }
-            
             }
-            
         }
         print("Snare note sequence: \(snareNoteSequence)")
         
-        // Parse bass sequence
+        // MARK: Parse bass sequence
         for beatCardCounter in Range(0...3) {
-            
             for note in Range(0...3) {
-            
                 if beatCardCounter == 0 && note == 0{
                     bassNoteSequence[0] = wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note]
                 } else {
                     bassNoteSequence.append(wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note])
                 }
-            
             }
-            
         }
         print("Bass note sequence: \(bassNoteSequence)")
         
-        // Parse hi hat sequence
+        //MARK: Parse hi hat sequence
         for beatCardCounter in Range(0...3) {
-            
             for note in Range(0...3) {
-            
                 if beatCardCounter == 0 && note == 0{
                     hiHatNoteSequence[0] = wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note]
                 } else {
                     hiHatNoteSequence.append(wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note])
                 }
-            
             }
-            
         }
-        print("Hi-Hat: \(hiHatNoteSequence)")
+        print("Hi-Hat note sequence: \(hiHatNoteSequence)")
         
+        assignDrumSounds()
         
     }
     
     func assignDrumSounds () {
+        sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
         
         //MARK: Ride cymbal note assignment
-        for note in Range(0 ... 15) {
-            
-            let position = ((Double(note) + 1.0)/4.0) - 0.25
-            
-                let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
-                if note == 0 {
-                    rideNoteArray[0] = newNote
-                } else {
-                    rideNoteArray.append(newNote)
-                }
-            
-            print(position)
-        }
+        var ridePositionArray: [Double] = [0.0]
         
-        /*
-        //MARK: Snare drum note assignment
-        for note in Range(0 ... 15) {
-            
+        for note in Range(0...15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
+            if rideNoteSequence[note] == 1 {
+                let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+              
+                print("Ride: \(position)")
+                
+            }
             
-                let newNote = sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
-                if note == 0 {
-                    rideNoteArray[0] = newNote
-                } else {
-                    rideNoteArray.append(newNote)
-                }
             
-            print(position)
         }
+        //print(ridePositionArray)
+ 
+        
+        //MARK: Snare drum note assignment
+        var snarePositionArray: [Double] = [0.0]
+        
+        for note in Range(0...15) {
+            let position = ((Double(note) + 1.0)/4.0) - 0.25
+            if snareNoteSequence[note] == 1 {
+                let newNote = sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+               
+            print("Snare: \(position)")
+            }
+        }
+        //print(snarePositionArray)
+        
         
         //MARK: Bass drum note assignment
+        var bassPositionArray: [Double] = [0.0]
+        
         for note in Range(0 ... 15) {
-            
             let position = ((Double(note) + 1.0)/4.0) - 0.25
-            
+            if bassNoteSequence[note] == 1 {
                 let newNote = sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
-                if note == 0 {
-                    rideNoteArray[0] = newNote
-                } else {
-                    rideNoteArray.append(newNote)
-                }
-            
-            print(position)
+              
+            print("Bass: \(position)")
+            }
         }
+        //print(bassPositionArray)
+    
         
         //MARK: Hi-Hat note assignment
+        var hiHatPositionArray: [Double] = [0.0]
+        
         for note in Range(0 ... 15) {
-            
             let position = ((Double(note) + 1.0)/4.0) - 0.25
-            
-                let newNote = sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
-                if note == 0 {
-                    rideNoteArray[0] = newNote
-                } else {
-                    rideNoteArray.append(newNote)
-                }
-            
-            print(position)
+            if hiHatNoteSequence[note] == 1 {
+                let newNote = sequencer.tracks[2].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                
+                print("Hi Hat: \(position)")
         }
-    */
-    }
+                 
+         //print(hiHatPositionArray)
     
+    }
+    }
     func playDrumSounds() {
         
         do {
@@ -209,15 +195,15 @@ class DrumSounds {
             print("error in settings.setSession")
         }
         
-        if sequencer.isPlaying {
-            sequencer.stop()
-            //sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
-            sequencer.rewind()
-        } else {
-            sequencer.play()
-        }
+            if sequencer.isPlaying {
+                sequencer.stop()
+                //sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
+                sequencer.rewind()
+            } else {
+                sequencer.play()
+            }
         
-    }
+        }
     
     }
 

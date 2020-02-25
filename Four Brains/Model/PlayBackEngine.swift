@@ -12,12 +12,15 @@ import AudioKit
 class PlayBackEngine {
     
     var isPlaying = false
-    var mixer = AKMixer()
+    
     
     init(metronome: Metronome, drumSounds: DrumSounds) {
         
-        mixer = AKMixer(metronome.metronome, drumSounds.drums)
+        let mixer = AKMixer(drumSounds.drums, metronome.metronome)
+        //mixer.detach()
         AudioKit.output = mixer
+        
+        
     }
     
     func changeIsPlaying() -> Bool{
@@ -54,7 +57,7 @@ class PlayBackEngine {
     }
     
     
-        
 }
+
     
 
