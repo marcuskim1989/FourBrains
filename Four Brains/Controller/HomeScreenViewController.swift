@@ -25,8 +25,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     //beat card image array holds beat card image literals
     let beatCardImageArray: [UIImage] = [#imageLiteral(resourceName: "0"), #imageLiteral(resourceName: "1A"), #imageLiteral(resourceName: "1B"), #imageLiteral(resourceName: "1C"), #imageLiteral(resourceName: "1D.png"), #imageLiteral(resourceName: "2A"), #imageLiteral(resourceName: "2B"), #imageLiteral(resourceName: "2C"), #imageLiteral(resourceName: "2D.png"), #imageLiteral(resourceName: "2E"), #imageLiteral(resourceName: "2F"), #imageLiteral(resourceName: "3A"), #imageLiteral(resourceName: "3B.png"), #imageLiteral(resourceName: "3C"), #imageLiteral(resourceName: "3D"), #imageLiteral(resourceName: "4")]
     
-    
-    
     //Ride cymbal beat card image views. beat cards have tags 0 through 15 starting from the top left, moving across then down like a book
     @IBOutlet weak var ride0: UIImageView!
     @IBOutlet weak var ride1: UIImageView!
@@ -52,12 +50,13 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     @IBOutlet weak var hiHat3: UIImageView!
     
     //Beat Card Image Outlet Array
-    lazy var beatCardImageOutletArray = [ride0, ride1, ride2, ride3, snare0, snare1, snare2, snare3, bass0, bass1, bass2, bass3, hiHat0, hiHat1, hiHat2, hiHat3]
+    lazy var rideImageOutletArray = [ride0, ride1, ride2, ride3]
+    lazy var snareImageOutletArray = [snare0, snare1, snare2, snare3]
+    lazy var bassImageOutletArray = [bass0, bass1, bass2, bass3]
+    lazy var hiHatImageOutletArray = [hiHat0, hiHat1, hiHat2, hiHat3]
     
     @IBOutlet weak var playButtonOutlet: UIButton!
-    
     @IBOutlet weak var metronomeOutlet: UIButton!
-    
     @IBOutlet weak var bpmAdjustAccessButton: UIButton!
     
     override func viewDidLoad() {
@@ -155,19 +154,25 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         for rideBeatCard in Range(0...3) {
             print("Ride: \(wholeBeat.ridePattern[rideBeatCard].beatCardLabel): \(wholeBeat.ridePattern[rideBeatCard].beatCardNoteSequence)")
             
-            
+            rideImageOutletArray[rideBeatCard]?.image = UIImage(named: wholeBeat.ridePattern[rideBeatCard].beatCardLabel)
         }
         
         for snareBeatCard in Range(0...3) {
             print("Snare: \(wholeBeat.snarePattern[snareBeatCard].beatCardLabel): \(wholeBeat.snarePattern[snareBeatCard].beatCardNoteSequence)")
+            
+            snareImageOutletArray[snareBeatCard]?.image = UIImage(named: wholeBeat.snarePattern[snareBeatCard].beatCardLabel)
         }
         
         for bassBeatCard in Range(0...3) {
             print("Bass: \(wholeBeat.bassPattern[bassBeatCard].beatCardLabel): \(wholeBeat.bassPattern[bassBeatCard].beatCardNoteSequence)")
+            
+            bassImageOutletArray[bassBeatCard]?.image = UIImage(named: wholeBeat.bassPattern[bassBeatCard].beatCardLabel)
         }
         
         for hiHatBeatCard in Range(0...3) {
             print("Hi-Hat: \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel): \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardNoteSequence)")
+            
+            hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
         }
         
         /*

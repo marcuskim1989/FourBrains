@@ -121,7 +121,6 @@ class DrumSounds {
         sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
         
         //MARK: Ride cymbal note assignment
-        var ridePositionArray: [Double] = [0.0]
         
         for note in Range(0...15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
@@ -134,11 +133,8 @@ class DrumSounds {
             
             
         }
-        //print(ridePositionArray)
- 
         
         //MARK: Snare drum note assignment
-        var snarePositionArray: [Double] = [0.0]
         
         for note in Range(0...15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
@@ -148,11 +144,8 @@ class DrumSounds {
             print("Snare: \(position)")
             }
         }
-        //print(snarePositionArray)
-        
         
         //MARK: Bass drum note assignment
-        var bassPositionArray: [Double] = [0.0]
         
         for note in Range(0 ... 15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
@@ -162,11 +155,8 @@ class DrumSounds {
             print("Bass: \(position)")
             }
         }
-        //print(bassPositionArray)
     
-        
         //MARK: Hi-Hat note assignment
-        var hiHatPositionArray: [Double] = [0.0]
         
         for note in Range(0 ... 15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
@@ -175,9 +165,6 @@ class DrumSounds {
                 
                 print("Hi Hat: \(position)")
         }
-                 
-         //print(hiHatPositionArray)
-    
     }
     }
     func playDrumSounds() {
@@ -202,9 +189,7 @@ class DrumSounds {
             } else {
                 sequencer.play()
             }
-        
         }
-    
     }
 
 
