@@ -11,21 +11,35 @@ import AudioKit
 
 class Metronome {
     
-    var metronome = AKMetronome()
+    var metronome: AKMetronome!
     var metronomeToggleState = true
     var restartCounter = 0
     
-    init() {
+    init(drumSounds: DrumSounds) {
+        metronome = AKMetronome()
         
         metronome.callback = {
-        
-                    //let deadlineTime = DispatchTime.now() + (60/self.metronome.tempo) / 10.0
+        /*
+            if self.restartCounter == 5
+            {
+                drumSounds.sequencer.rewind()
+                drumSounds.sequencer.play()
+                self.restartCounter = 0
+            }
+            
+            self.restartCounter += 1
+          */
                 /*
+                    let deadlineTime = DispatchTime.now() + (60/self.metronome.tempo) / 10.0
+                
                     DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
             
                     }
                 */
-                }
+            
+            
+                
+            }
             
         
         metronome.frequency1 = 1200

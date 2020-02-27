@@ -46,15 +46,12 @@ class DrumSounds {
             print("error loading samples to drum object")
         }
         
-        //drums.enableMIDI(AudioKit.midi.client, name: "4tracks")
-        
         sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
         sequencer.debug()
         sequencer.setGlobalMIDIOutput(drums.midiIn)
         sequencer.enableLooping(AKDuration(beats: 4))
         sequencer.setTempo(Double(currentBPM))
        
-        
     }
     
     //MARK: Parse from wholeBeat
@@ -161,7 +158,7 @@ class DrumSounds {
         for note in Range(0 ... 15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
             if hiHatNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[2].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                let newNote = sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
                 
                 print("Hi Hat: \(position)")
         }

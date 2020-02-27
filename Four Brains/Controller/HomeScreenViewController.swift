@@ -61,8 +61,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        metronome = Metronome()
         drumSounds = DrumSounds()
+        metronome = Metronome(drumSounds: self.drumSounds)
         playBackEngine = PlayBackEngine(metronome: metronome, drumSounds: drumSounds)
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
@@ -104,14 +104,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             metronomeOutlet.setImage(#imageLiteral(resourceName: "Metronome Off"), for: .normal)
         }
        
-        
-        /*
-        if playBackEngine.isPlaying && !metronome.metronomeToggleState{
-            metronome.metronome.stop()
-        } else if playBackEngine.isPlaying && metronome.metronomeToggleState {
-            metronome.metronome.start()
-        }
-        */
+        reset()
     }
     
     // MARK: bpmAdjustor
@@ -135,14 +128,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
         metronome.metronome.tempo = Double(BPM)
         drumSounds.sequencer.setTempo(Double(BPM))
-        if playBackEngine.isPlaying == true {
-            metronome.metronome.stop()
-            metronome.metronome.reset()
-            drumSounds.sequencer.stop()
-            drumSounds.sequencer.rewind()
-            playBackEngine.changeIsPlaying()
-            playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
-        }
+        reset()
     }
     
     //MARK: randomize beat card images
@@ -175,13 +161,19 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
         }
         
-        /*
-        for beatCardView in beatCardImageOutletArray {
-            beatCardView?.image = beatCardImageArray[Int.random(in: 0...15)]
-            
-        }
-        */
         
+        reset()
+    }
+    
+    func reset() {
+        if playBackEngine.isPlaying == true {
+            metronome.metronome.stop()
+            metronome.metronome.reset()
+            drumSounds.sequencer.stop()
+            drumSounds.sequencer.rewind()
+            playBackEngine.changeIsPlaying()
+            playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
+        }
     }
  
 }

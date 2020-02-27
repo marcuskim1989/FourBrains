@@ -15,9 +15,21 @@ class PlayBackEngine {
     
     
     init(metronome: Metronome, drumSounds: DrumSounds) {
+        /*
+        let metronomeBooster = AKBooster(metronome.metronome)
+        metronomeBooster.rightGain = 0
+        let metronomeBoosterLeftPan = AKPanner(metronomeBooster, pan: -1)
         
-        let mixer = AKMixer(drumSounds.drums, metronome.metronome)
-        //mixer.detach()
+        let drumBooster = AKBooster(drumSounds.drums)
+        drumBooster.leftGain = 0
+        let drumBoosterRightPan = AKPanner(drumBooster, pan: 1)
+        drumBoosterRightPan.bypass()
+        
+        
+        let mixer = AKMixer(metronomeBoosterLeftPan, drumBoosterRightPan)
+        */
+        
+        let mixer = AKMixer(metronome.metronome, drumSounds.drums)
         AudioKit.output = mixer
         
         
