@@ -122,7 +122,7 @@ class DrumSounds {
         for note in Range(0...15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
             if rideNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
               
                 print("Ride: \(position)")
                 
@@ -136,7 +136,7 @@ class DrumSounds {
         for note in Range(0...15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
             if snareNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[1].add(noteNumber: 26, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                let newNote = sequencer.tracks[1].add(noteNumber: 26, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
                
             print("Snare: \(position)")
             }
@@ -147,7 +147,7 @@ class DrumSounds {
         for note in Range(0 ... 15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
             if bassNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[2].add(noteNumber: 24, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                let newNote = sequencer.tracks[2].add(noteNumber: 24, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
               
             print("Bass: \(position)")
             }
@@ -158,7 +158,7 @@ class DrumSounds {
         for note in Range(0 ... 15) {
             let position = ((Double(note) + 1.0)/4.0) - 0.25
             if hiHatNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[3].add(noteNumber: 30, velocity: 127, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                let newNote = sequencer.tracks[3].add(noteNumber: 30, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
                 
                 print("Hi Hat: \(position)")
         }

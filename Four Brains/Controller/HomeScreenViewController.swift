@@ -19,6 +19,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var drumSounds: DrumSounds!
     var randomization: Randomization!
     var beatCardInstances: BeatCardInstances!
+    var mute: Mute!
     var currentBPM: Int = 60
     
     
@@ -55,9 +56,19 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     lazy var bassImageOutletArray = [bass0, bass1, bass2, bass3]
     lazy var hiHatImageOutletArray = [hiHat0, hiHat1, hiHat2, hiHat3]
     
+    //play panel outlets
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var metronomeOutlet: UIButton!
     @IBOutlet weak var bpmAdjustAccessButton: UIButton!
+    
+    //mute button outlets
+    @IBOutlet weak var rideMuteOutlet: UIButton!
+    @IBOutlet weak var snareMuteOutlet: UIButton!
+    @IBOutlet weak var bassMuteOutlet: UIButton!
+    @IBOutlet weak var hiHatMuteOutlet: UIButton!
+    
+    
+    //MARK: initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +77,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         playBackEngine = PlayBackEngine(metronome: metronome, drumSounds: drumSounds)
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
+        mute = Mute()
         
         do {
             try AudioKit.start()
@@ -77,8 +89,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     //MARK: Calling play functionality
     
-   
-
     @IBAction func playButtonPressed(_ sender: UIButton) {
         
         let playButtonShouldBe = playBackEngine.changeIsPlaying()
@@ -165,6 +175,60 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         reset()
     }
     
+    //MARK: mute buttons
+    @IBAction func mutePressed(_ sender: UIButton) {
+        var buttonShouldBe: Bool = true
+        
+        print(sender.currentTitle)
+        if sender.currentTitle != nil {
+            buttonShouldBe = !mute.changeMuteState(instrument: sender.currentTitle!)
+            
+            switch sender.currentTitle{
+                       
+                case "rideMuteButton":
+                    if buttonShouldBe{
+                        rideMuteOutlet.setImage(#imageLiteral(resourceName: "Ride Cymbal.png"), for: .normal)
+                    } else {
+                        rideMuteOutlet.setImage(#imageLiteral(resourceName: "Ride Mute"), for: .normal)
+                    }
+                
+                case "snareMuteButton":
+                    if buttonShouldBe{
+                        snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Drum Clear"), for: .normal)
+                    } else {
+                        snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Mute"), for: .normal)
+                    }
+                
+                case "bassMuteButton":
+                    if buttonShouldBe{
+                        bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Drum.png"), for: .normal)
+                    } else {
+                        bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Mute"), for: .normal)
+                    }
+                
+                case "hiHatMuteButton":
+                    if buttonShouldBe{
+                        hiHatMuteOutlet.setImage(#imageLiteral(resourceName: "Hi Hat .png"), for: .normal)
+                    } else {
+                        hiHatMuteOutlet.setImage(#imageLiteral(resourceName: "Hi Hat Mute.png"), for: .normal)
+                    }
+                       
+                default:
+                    print("error, sender.currentTitle case not found")
+            }
+        } else {
+            print("Error: no sender title exists")
+        }
+        
+    
+           
+        
+    }
+    
+ 
+    
+    
+    //MARK: reset UI
     func reset() {
         if playBackEngine.isPlaying == true {
             metronome.metronome.stop()

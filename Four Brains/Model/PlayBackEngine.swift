@@ -29,7 +29,7 @@ class PlayBackEngine {
         let mixer = AKMixer(metronomeBoosterLeftPan, drumBoosterRightPan)
         */
         
-        let mixer = AKMixer(metronome.metronome, drumSounds.drums)
+        let mixer = AKDryWetMixer(metronome.metronome, drumSounds.drums, balance: 0.5)
         AudioKit.output = mixer
         
         
@@ -48,8 +48,6 @@ class PlayBackEngine {
     
     func play(metronome: Metronome, drumSounds: DrumSounds) {
         
-        
-        
         //print(metronome.metronomeToggleState)
         if isPlaying{
             print("isPlaying inside if inside play(): \(isPlaying)")
@@ -60,7 +58,6 @@ class PlayBackEngine {
             
             metronome.metronome.stop()
             metronome.metronome.reset()
-            
             
         }
         

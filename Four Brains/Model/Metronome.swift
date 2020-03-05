@@ -13,7 +13,7 @@ class Metronome {
     
     var metronome: AKMetronome!
     var metronomeToggleState = true
-    var restartCounter = 0
+    //var restartCounter = 0
     
     init(drumSounds: DrumSounds) {
         metronome = AKMetronome()
@@ -22,8 +22,7 @@ class Metronome {
         /*
             if self.restartCounter == 5
             {
-                drumSounds.sequencer.rewind()
-                drumSounds.sequencer.play()
+                self.metronome.reset()
                 self.restartCounter = 0
             }
             
@@ -37,14 +36,7 @@ class Metronome {
                     }
                 */
             
-            
-                
             }
-            
-        
-        metronome.frequency1 = 1200
-        metronome.frequency2 = 600
-        
     }
     
     
@@ -64,7 +56,7 @@ class Metronome {
         if metronomeToggleState{
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             
-            metronome.restart()
+            metronome.start()
         } else {
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             metronome.stop()
