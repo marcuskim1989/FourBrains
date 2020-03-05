@@ -72,12 +72,13 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drumSounds = DrumSounds()
+        mute = Mute()
+        drumSounds = DrumSounds(mute: self.mute)
         metronome = Metronome(drumSounds: self.drumSounds)
-        playBackEngine = PlayBackEngine(metronome: metronome, drumSounds: drumSounds)
+        playBackEngine = PlayBackEngine(metronome: self.metronome, drumSounds: self.drumSounds)
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
-        mute = Mute()
+        
         
         do {
             try AudioKit.start()
@@ -99,7 +100,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             
         }
         print("playButtonShouldBe: \(playButtonShouldBe)")
-        playBackEngine.play(metronome: metronome, drumSounds: drumSounds)
+        playBackEngine.play()
     }
     
     //MARK: calling metronome functionality
@@ -182,7 +183,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         print(sender.currentTitle)
         if sender.currentTitle != nil {
             buttonShouldBe = !mute.changeMuteState(instrument: sender.currentTitle!)
-            
+            drumSounds.assignDrumSounds()
+            print(buttonShouldBe)
             switch sender.currentTitle{
                        
                 case "rideMuteButton":

@@ -12,6 +12,7 @@ import AudioKit
 class DrumSounds {
     
     let drums = AKMIDISampler()
+    var mute: Mute!
    
     var rideNoteSequence: [Int] = [0]
     var snareNoteSequence: [Int] = [0]
@@ -27,8 +28,8 @@ class DrumSounds {
     //var drumSoundsToggleState = true
     
     let sequencer = AKAppleSequencer(filename: "4tracks")
-    init() {
-        
+    init(mute: Mute) {
+        self.mute = mute
         let rideCymbalFile = try! AKAudioFile(readFileName: "open_hi_hat_A#1.wav")
         let snareDrumFile = try! AKAudioFile(readFileName: "snare_D1.wav")
         let bassDrumFile = try! AKAudioFile(readFileName: "bass_drum_C1.wav")
@@ -118,51 +119,56 @@ class DrumSounds {
         sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
         
         //MARK: Ride cymbal note assignment
-        
-        for note in Range(0...15) {
-            let position = ((Double(note) + 1.0)/4.0) - 0.25
-            if rideNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+        if !mute.rideMuteState{
+            for note in Range(0...15) {
+                let position = ((Double(note) + 1.0)/4.0) - 0.25
+                if rideNoteSequence[note] == 1 {
+                    let newNote = sequencer.tracks[0].add(noteNumber: 34, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
               
-                print("Ride: \(position)")
+                    print("Ride: \(position)")
                 
             }
-            
+        }
             
         }
         
         //MARK: Snare drum note assignment
         
-        for note in Range(0...15) {
-            let position = ((Double(note) + 1.0)/4.0) - 0.25
-            if snareNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[1].add(noteNumber: 26, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+        if !mute.snareMuteState {
+            for note in Range(0...15) {
+                let position = ((Double(note) + 1.0)/4.0) - 0.25
+                if snareNoteSequence[note] == 1 {
+                    let newNote = sequencer.tracks[1].add(noteNumber: 26, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
                
-            print("Snare: \(position)")
+                print("Snare: \(position)")
+                }
             }
         }
         
         //MARK: Bass drum note assignment
         
-        for note in Range(0 ... 15) {
-            let position = ((Double(note) + 1.0)/4.0) - 0.25
-            if bassNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[2].add(noteNumber: 24, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+        if !mute.bassMuteState {
+            for note in Range(0 ... 15) {
+                let position = ((Double(note) + 1.0)/4.0) - 0.25
+                if bassNoteSequence[note] == 1 {
+                    let newNote = sequencer.tracks[2].add(noteNumber: 24, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
               
-            print("Bass: \(position)")
+                print("Bass: \(position)")
+                }
             }
         }
     
         //MARK: Hi-Hat note assignment
-        
-        for note in Range(0 ... 15) {
-            let position = ((Double(note) + 1.0)/4.0) - 0.25
-            if hiHatNoteSequence[note] == 1 {
-                let newNote = sequencer.tracks[3].add(noteNumber: 30, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+        if !mute.hiHatMuteState{
+            for note in Range(0 ... 15) {
+                let position = ((Double(note) + 1.0)/4.0) - 0.25
+                if hiHatNoteSequence[note] == 1 {
+                    let newNote = sequencer.tracks[3].add(noteNumber: 30, velocity: 100, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
                 
                 print("Hi Hat: \(position)")
+                }
+            }
         }
-    }
     }
     func playDrumSounds() {
         
