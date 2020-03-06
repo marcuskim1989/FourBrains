@@ -94,7 +94,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         } catch {
             print("AudioKit did not start.")
         }
-        
+        startRandomization()
     }
     
     //MARK: Calling play functionality
@@ -155,6 +155,11 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     @IBAction func randomizationButtonPressed(_ sender: Any) {
         
+        startRandomization()
+        
+    }
+    
+    func startRandomization() {
         wholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
         
         for rideBeatCard in Range(0...3) {
