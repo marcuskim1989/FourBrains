@@ -14,6 +14,8 @@ class Mute {
     var snareMuteState: Bool = false
     var bassMuteState: Bool = false
     var hiHatMuteState: Bool = false
+    var persist: Bool = false
+    
     
     init() {
         
@@ -24,10 +26,10 @@ class Mute {
         switch instrument {
             case "rideMuteButton":
                 if rideMuteState{
-                    rideMuteState = false
-                } else {
-                    rideMuteState = true
-            }
+                        rideMuteState = false
+                    } else {
+                        rideMuteState = true
+                }
             return rideMuteState
             
             case "snareMuteButton":

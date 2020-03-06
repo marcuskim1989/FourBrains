@@ -229,28 +229,40 @@
                                                     <constraint firstAttribute="width" constant="50" id="cqO-eT-kAp"/>
                                                     <constraint firstAttribute="height" constant="50" id="f5d-6H-bZV"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Snooze Button"/>
+                                                <state key="normal" title="rideSnooze" image="Snooze Button"/>
+                                                <connections>
+                                                    <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLa-D6-Yg9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-gV-YXv" userLabel="Snare Snooze">
                                                 <rect key="frame" x="0.0" y="65" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Hce-5y-NbX"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Snooze Button"/>
+                                                <state key="normal" title="snareSnooze" image="Snooze Button"/>
+                                                <connections>
+                                                    <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nYj-PQ-l4E"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUC-CC-b4j" userLabel="Bass Snooze">
                                                 <rect key="frame" x="0.0" y="130" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MkM-7p-OBR"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Snooze Button"/>
+                                                <state key="normal" title="bassSnooze" image="Snooze Button"/>
+                                                <connections>
+                                                    <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xba-B7-z7P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQn-gg-Eoz" userLabel="Hi-Hat Snooze">
                                                 <rect key="frame" x="0.0" y="195" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7Rv-tb-d6K"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Snooze Button"/>
+                                                <state key="normal" title="hiHatSnooze" image="Snooze Button"/>
+                                                <connections>
+                                                    <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCu-O6-rlU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -346,12 +358,14 @@
                         <outlet property="bass2" destination="Yoj-1V-7ot" id="Yj6-YQ-WGn"/>
                         <outlet property="bass3" destination="4wL-DK-DUI" id="BVM-DN-JsG"/>
                         <outlet property="bassMuteOutlet" destination="JEQ-Iu-wLl" id="k4d-d0-e6M"/>
+                        <outlet property="bassSnoozeOutlet" destination="cUC-CC-b4j" id="3Ng-oy-saA"/>
                         <outlet property="bpmAdjustAccessButton" destination="Eh5-Oe-ymh" id="Bci-5d-4Za"/>
                         <outlet property="hiHat0" destination="ECc-vN-vln" id="KrL-NS-WA0"/>
                         <outlet property="hiHat1" destination="J2d-W0-vLG" id="f4k-Tj-ZSa"/>
                         <outlet property="hiHat2" destination="gK8-Yc-XSI" id="g1k-ky-Wdd"/>
                         <outlet property="hiHat3" destination="vYF-0R-tGK" id="VbZ-C5-A0v"/>
                         <outlet property="hiHatMuteOutlet" destination="FJV-dC-uwF" id="LTm-NO-Dic"/>
+                        <outlet property="hiHatSnoozeOutlet" destination="oQn-gg-Eoz" id="PcD-pa-3r6"/>
                         <outlet property="metronomeOutlet" destination="53s-FQ-TV5" id="KnO-n2-ig9"/>
                         <outlet property="playButtonOutlet" destination="peW-I7-kXg" id="wsr-75-xse"/>
                         <outlet property="ride0" destination="u2d-Kf-RqD" id="eyV-O5-cvz"/>
@@ -359,11 +373,13 @@
                         <outlet property="ride2" destination="8Og-u3-FkM" id="7Jx-11-RI4"/>
                         <outlet property="ride3" destination="DbE-b1-6Hu" id="1VB-Zd-jWS"/>
                         <outlet property="rideMuteOutlet" destination="Ceu-rx-I4c" id="2Xe-yQ-O3P"/>
+                        <outlet property="rideSnoozeOutlet" destination="h12-va-SNg" id="ox7-5R-bis"/>
                         <outlet property="snare0" destination="mWt-as-TrZ" id="PHR-mv-Hcj"/>
                         <outlet property="snare1" destination="0hH-ys-a0L" id="gcG-ry-dd7"/>
                         <outlet property="snare2" destination="NNu-2p-fNq" id="cx0-G5-4IN"/>
                         <outlet property="snare3" destination="kqe-Ly-lnw" id="zcl-1q-1lh"/>
                         <outlet property="snareMuteOutlet" destination="Ahz-62-PPE" id="Jcq-gs-5ng"/>
+                        <outlet property="snareSnoozeOutlet" destination="WTx-gV-YXv" id="MNt-W3-AN8"/>
                         <segue destination="HOR-w6-HEJ" kind="presentation" identifier="presentBPMAdjustor" id="agy-DN-7Z4"/>
                     </connections>
                 </viewController>

@@ -157,7 +157,7 @@ class DrumSounds {
                 }
             }
         }
-    
+         
         //MARK: Hi-Hat note assignment
         if !mute.hiHatMuteState{
             for note in Range(0 ... 15) {
@@ -169,6 +169,7 @@ class DrumSounds {
                 }
             }
         }
+         
     }
     func playDrumSounds() {
         
