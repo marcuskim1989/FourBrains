@@ -89,28 +89,28 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-oa-sFH" userLabel="Ride Cymbal Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="565" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="u2d-Kf-RqD">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="u2d-Kf-RqD">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="qf1-kt-Vf9"/>
                                                             <constraint firstAttribute="width" constant="130" id="ycH-nh-LSg"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="09B-fe-BzD">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="09B-fe-BzD">
                                                         <rect key="frame" x="145" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="QTw-sQ-o2l"/>
                                                             <constraint firstAttribute="height" constant="50" id="srB-EI-lcq"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-u3-FkM">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-u3-FkM">
                                                         <rect key="frame" x="290" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="Ivo-20-3mq"/>
                                                             <constraint firstAttribute="height" constant="50" id="KFy-dJ-NCA"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="DbE-b1-6Hu">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="DbE-b1-6Hu">
                                                         <rect key="frame" x="435" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="eDc-ib-1kh"/>
@@ -122,28 +122,28 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WyL-ji-cYA" userLabel="Snare Drum Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="65" width="565" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="mWt-as-TrZ">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="mWt-as-TrZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="Yom-vb-c6s"/>
                                                             <constraint firstAttribute="height" constant="50" id="c6w-ey-oLb"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="0hH-ys-a0L">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="0hH-ys-a0L">
                                                         <rect key="frame" x="145" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="Df1-9W-lpV"/>
                                                             <constraint firstAttribute="height" constant="50" id="QkH-Fr-OGI"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-2p-fNq">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-2p-fNq">
                                                         <rect key="frame" x="290" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="0Xo-TW-PoX"/>
                                                             <constraint firstAttribute="height" constant="50" id="L4t-2t-QTg"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="kqe-Ly-lnw">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="kqe-Ly-lnw">
                                                         <rect key="frame" x="435" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="FOA-By-TYf"/>
@@ -155,28 +155,28 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UWq-YA-gEi" userLabel="Bass Drum Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="130" width="565" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="FTC-b6-GD5">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="FTC-b6-GD5">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="3xh-YV-VXW"/>
                                                             <constraint firstAttribute="width" constant="130" id="msL-CE-KCv"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="feI-6u-iqi">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="feI-6u-iqi">
                                                         <rect key="frame" x="145" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2ec-eb-iWC"/>
                                                             <constraint firstAttribute="width" constant="130" id="N1u-iV-L21"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-1V-7ot">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-1V-7ot">
                                                         <rect key="frame" x="290" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Iep-RI-zxy"/>
                                                             <constraint firstAttribute="width" constant="130" id="aZs-Jj-5MN"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="4wL-DK-DUI">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="4wL-DK-DUI">
                                                         <rect key="frame" x="435" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="eNz-JE-eFy"/>
@@ -188,28 +188,28 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="thw-8y-3Vi" userLabel="Hi-Hat Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="195" width="565" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="ECc-vN-vln">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="ECc-vN-vln">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Bcd-om-Jtb"/>
                                                             <constraint firstAttribute="width" constant="130" id="DO9-g0-ay1"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="J2d-W0-vLG">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="J2d-W0-vLG">
                                                         <rect key="frame" x="145" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="MYd-78-WGz"/>
                                                             <constraint firstAttribute="height" constant="50" id="ZzI-Hl-nQK"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-Yc-XSI">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-Yc-XSI">
                                                         <rect key="frame" x="290" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="J7u-XN-SKL"/>
                                                             <constraint firstAttribute="width" constant="130" id="Qgq-ig-z4m"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="vYF-0R-tGK">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="16" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="vYF-0R-tGK">
                                                         <rect key="frame" x="435" y="0.0" width="130" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2cx-fd-dPJ"/>

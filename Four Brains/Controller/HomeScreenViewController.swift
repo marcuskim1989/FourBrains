@@ -83,11 +83,10 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute)
         snooze = Snooze(mute: self.mute, drumSounds: self.drumSounds)
-        metronome = Metronome(drumSounds: self.drumSounds)
+        metronome = Metronome()
         playBackEngine = PlayBackEngine(metronome: self.metronome, drumSounds: self.drumSounds)
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
-        
         
         do {
             try AudioKit.start()
@@ -110,6 +109,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
         print("playButtonShouldBe: \(playButtonShouldBe)")
         playBackEngine.play()
+        showHighlightBar()
     }
     
     //MARK: calling metronome functionality
@@ -125,6 +125,50 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
        
         reset()
+    }
+    
+    // MARK: highlight bar
+    
+    func showHighlightBar() {
+        var measureCounter = 1
+        metronome.metronome.callback = { // only called when showHighlightBar() is called
+            var cardCounterWhiteOut = measureCounter
+            var cardCounterFadeClear = measureCounter
+            let deadlineTime = DispatchTime.now() + (60/self.metronome.metronome.tempo) / 10.0
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                for card in 0...3 {
+                    let beatCardToBeHighlighted = self.view.viewWithTag(cardCounterWhiteOut)
+                
+                    beatCardToBeHighlighted?.backgroundColor = .white
+                
+                    cardCounterWhiteOut += 4
+                    if cardCounterWhiteOut >= measureCounter + 13{
+                    cardCounterWhiteOut = 1
+                    }
+                }
+                UIView.animate(withDuration: (60/self.metronome.metronome.tempo)){
+                    for card in 0...3 {
+                        let beatCardToBeHighlighted = self.view.viewWithTag(cardCounterFadeClear)
+                        
+                        beatCardToBeHighlighted?.backgroundColor = .clear
+                        
+                        cardCounterFadeClear += 4
+                        if cardCounterFadeClear >= measureCounter + 13{
+                            cardCounterFadeClear = 1
+                        }
+                        
+                    }
+                    
+                    print("showHighlightBar executed")
+                }
+                measureCounter += 1
+                if measureCounter >= 5 {
+                    measureCounter = 1
+                }
+            }
+            print("call back executed")
+        }
+        
     }
     
     // MARK: bpmAdjustor

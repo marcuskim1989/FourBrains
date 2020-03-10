@@ -12,31 +12,15 @@ import AudioKit
 class Metronome {
     
     var metronome: AKMetronome!
-    var metronomeToggleState = true
-    //var restartCounter = 0
     
-    init(drumSounds: DrumSounds) {
+    var metronomeToggleState = true
+    var noteCounter: Int = 1
+    
+    init() {
+        
         metronome = AKMetronome()
         
-        metronome.callback = {
-        /*
-            if self.restartCounter == 5
-            {
-                self.metronome.reset()
-                self.restartCounter = 0
-            }
-            
-            self.restartCounter += 1
-          */
-                /*
-                    let deadlineTime = DispatchTime.now() + (60/self.metronome.tempo) / 10.0
-                
-                    DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-            
-                    }
-                */
-            
-            }
+        print("initial tempo: \(metronome.tempo)")
     }
     
     
@@ -57,6 +41,7 @@ class Metronome {
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             
             metronome.restart()
+
         } else {
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             metronome.stop()
@@ -67,4 +52,5 @@ class Metronome {
     }
     
     
-}
+    }
+
