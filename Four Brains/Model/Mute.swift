@@ -14,7 +14,7 @@ class Mute {
     var snareMuteState: Bool = false
     var bassMuteState: Bool = false
     var hiHatMuteState: Bool = false
-    var persist: Bool = false
+    
     
     
     init() {
@@ -60,6 +60,14 @@ class Mute {
                 print("Error: button title not matched in switch statement, returning `false`")
             return false
         }
+    }
+    
+    func unmuteAllStates() {
+        rideMuteState = false
+        snareMuteState = false
+        bassMuteState = false
+        hiHatMuteState = false
+        
     }
     
 }

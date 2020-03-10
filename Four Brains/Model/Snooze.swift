@@ -66,4 +66,11 @@ class Snooze {
         
     }
     
+    func unsnoozeAllStates() {
+        rideSnoozeState = false
+        snareSnoozeState = false
+        bassSnoozeState = false
+        hiHatSnoozeState = false
+    }
+    
 }

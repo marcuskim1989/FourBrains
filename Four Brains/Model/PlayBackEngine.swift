@@ -62,6 +62,7 @@ class PlayBackEngine {
             
             metronome.metronome.stop()
             metronome.metronome.reset()
+            metronome.resetHighlightBar()
             
         }
         

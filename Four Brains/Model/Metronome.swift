@@ -12,15 +12,53 @@ import AudioKit
 class Metronome {
     
     var metronome: AKMetronome!
-    
+    var homeScreenViewController: HomeScreenViewController!
     var metronomeToggleState = true
-    var noteCounter: Int = 1
+    var measureCounter = 1
     
-    init() {
+    init(homeScreenViewController: HomeScreenViewController) {
         
         metronome = AKMetronome()
-        
+        self.homeScreenViewController = homeScreenViewController
         print("initial tempo: \(metronome.tempo)")
+        metronome.callback = { // only called when showHighlightBar() is called
+            var cardCounterWhiteOut = self.measureCounter
+            var cardCounterFadeClear = self.measureCounter
+            let deadlineTime = DispatchTime.now() + (60/self.metronome.tempo) / 10.0
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                for card in 0...3 {
+                    let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterWhiteOut)
+                
+                    beatCardToBeHighlighted?.backgroundColor = .white
+                
+                    cardCounterWhiteOut += 4
+                    if cardCounterWhiteOut >= self.measureCounter + 13{
+                    cardCounterWhiteOut = 1
+                    }
+                }
+                UIView.animate(withDuration: (60/self.metronome.tempo)){
+                    for card in 0...3 {
+                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear)
+                        
+                        beatCardToBeHighlighted?.backgroundColor = .clear
+                        
+                        cardCounterFadeClear += 4
+                        if cardCounterFadeClear >= self.measureCounter + 13{
+                            cardCounterFadeClear = 1
+                        }
+                        
+                    }
+                    
+                    print("showHighlightBar executed")
+                }
+                self.measureCounter += 1
+                if self.measureCounter >= 5 {
+                    self.measureCounter = 1
+                }
+            }
+            print("call back executed")
+        }
+
     }
     
     
@@ -51,6 +89,9 @@ class Metronome {
         
     }
     
+    func resetHighlightBar() {
+        measureCounter = 1
+    }
     
     }
 

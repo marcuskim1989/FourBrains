@@ -83,7 +83,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute)
         snooze = Snooze(mute: self.mute, drumSounds: self.drumSounds)
-        metronome = Metronome()
+        metronome = Metronome(homeScreenViewController: self)
         playBackEngine = PlayBackEngine(metronome: self.metronome, drumSounds: self.drumSounds)
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
@@ -130,44 +130,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     // MARK: highlight bar
     
     func showHighlightBar() {
-        var measureCounter = 1
-        metronome.metronome.callback = { // only called when showHighlightBar() is called
-            var cardCounterWhiteOut = measureCounter
-            var cardCounterFadeClear = measureCounter
-            let deadlineTime = DispatchTime.now() + (60/self.metronome.metronome.tempo) / 10.0
-            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-                for card in 0...3 {
-                    let beatCardToBeHighlighted = self.view.viewWithTag(cardCounterWhiteOut)
-                
-                    beatCardToBeHighlighted?.backgroundColor = .white
-                
-                    cardCounterWhiteOut += 4
-                    if cardCounterWhiteOut >= measureCounter + 13{
-                    cardCounterWhiteOut = 1
-                    }
-                }
-                UIView.animate(withDuration: (60/self.metronome.metronome.tempo)){
-                    for card in 0...3 {
-                        let beatCardToBeHighlighted = self.view.viewWithTag(cardCounterFadeClear)
-                        
-                        beatCardToBeHighlighted?.backgroundColor = .clear
-                        
-                        cardCounterFadeClear += 4
-                        if cardCounterFadeClear >= measureCounter + 13{
-                            cardCounterFadeClear = 1
-                        }
-                        
-                    }
-                    
-                    print("showHighlightBar executed")
-                }
-                measureCounter += 1
-                if measureCounter >= 5 {
-                    measureCounter = 1
-                }
-            }
-            print("call back executed")
-        }
+        
+        
         
     }
     
@@ -201,6 +165,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
         startRandomization()
         
+        drumSounds.assignDrumSounds()
+        
     }
     
     func startRandomization() {
@@ -232,6 +198,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
         
         reset()
+        
     }
     
     //MARK: mute buttons
@@ -323,6 +290,14 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
            
         
+    }
+    
+    //unmute UI
+    func unmuteUI() {
+        rideMuteOutlet.setImage(#imageLiteral(resourceName: "Ride Cymbal.png"), for: .normal)
+        snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Drum Clear"), for: .normal)
+        bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Drum"), for: .normal)
+        hiHatMuteOutlet.setImage(#imageLiteral(resourceName: "Hi Hat "), for: .normal)
     }
     
     // MARK: snoozing
@@ -459,7 +434,24 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
         
     }
-    
+    func unsnoozeUI () {
+        
+        for rideBeatCard in Range(0...3) {
+        rideImageOutletArray[rideBeatCard]?.image = UIImage(named: wholeBeat.ridePattern[rideBeatCard].beatCardLabel)
+        }
+        
+        for snareBeatCard in Range(0...3) {
+        snareImageOutletArray[snareBeatCard]?.image = UIImage(named: wholeBeat.snarePattern[snareBeatCard].beatCardLabel)
+        }
+        
+        for bassBeatCard in Range(0...3) {
+        bassImageOutletArray[bassBeatCard]?.image = UIImage(named: wholeBeat.bassPattern[bassBeatCard].beatCardLabel)
+        }
+        
+        for hiHatBeatCard in Range(0...3) {
+        hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
+        }
+    }
     
     //MARK: reset UI
     func reset() {
@@ -470,6 +462,11 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             drumSounds.sequencer.rewind()
             playBackEngine.changeIsPlaying()
             playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
+            mute.unmuteAllStates()
+            unmuteUI()
+            snooze.unsnoozeAllStates()
+            unsnoozeUI()
+            metronome.resetHighlightBar()
         }
     }
  
