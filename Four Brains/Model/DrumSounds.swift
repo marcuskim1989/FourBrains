@@ -115,7 +115,7 @@ class DrumSounds {
         
     }
     
-    func assignDrumSounds () {
+    func assignDrumSounds() {
         sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
         
         //MARK: Ride cymbal note assignment

@@ -32,10 +32,6 @@
 		2CD14C1A23DA6E1100157D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1923DA6E1100157D75 /* Assets.xcassets */; };
 		2CD14C1D23DA6E1100157D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1B23DA6E1100157D75 /* LaunchScreen.storyboard */; };
 		2CDA10E623EAB76900014D55 /* BeatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA10E523EAB76900014D55 /* BeatCard.swift */; };
-		2CDC80A623FB9EC600EAA6F3 /* hiHatSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CDC80A223FB9EC600EAA6F3 /* hiHatSound.mp3 */; };
-		2CDC80A723FB9EC600EAA6F3 /* bassDrumSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDC80A323FB9EC600EAA6F3 /* bassDrumSound.wav */; };
-		2CDC80A823FB9EC600EAA6F3 /* rideCymbalSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDC80A423FB9EC600EAA6F3 /* rideCymbalSound.wav */; };
-		2CDC80A923FB9EC600EAA6F3 /* snareDrumSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CDC80A523FB9EC600EAA6F3 /* snareDrumSound.wav */; };
 		2CE7136C23F66A670060A750 /* parley bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B386723ED2BC500C120E7 /* parley bold.ttf */; };
 		2CE7138B23F67CEC0060A750 /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
 		2CE7138C23F67CEC0060A750 /* Pods_Four_Brains.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -93,10 +89,6 @@
 		2CD14C1C23DA6E1100157D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD14C1E23DA6E1100157D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CDA10E523EAB76900014D55 /* BeatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatCard.swift; sourceTree = "<group>"; };
-		2CDC80A223FB9EC600EAA6F3 /* hiHatSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = hiHatSound.mp3; path = "Four Brains/Assets.xcassets/Sounds/hiHatSound.mp3"; sourceTree = SOURCE_ROOT; };
-		2CDC80A323FB9EC600EAA6F3 /* bassDrumSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bassDrumSound.wav; path = "Four Brains/Assets.xcassets/Sounds/bassDrumSound.wav"; sourceTree = SOURCE_ROOT; };
-		2CDC80A423FB9EC600EAA6F3 /* rideCymbalSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = rideCymbalSound.wav; path = "Four Brains/Assets.xcassets/Sounds/rideCymbalSound.wav"; sourceTree = SOURCE_ROOT; };
-		2CDC80A523FB9EC600EAA6F3 /* snareDrumSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = snareDrumSound.wav; path = "Four Brains/Assets.xcassets/Sounds/snareDrumSound.wav"; sourceTree = SOURCE_ROOT; };
 		2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HGCircularSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Four_Brains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C84D486AF7D670341AE9C6 /* Pods-Four Brains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Four Brains.release.xcconfig"; path = "Target Support Files/Pods-Four Brains/Pods-Four Brains.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,10 +195,6 @@
 				2CBCEA0423FE62F900B7FFC3 /* mid_tom_B1.wav */,
 				2CBCEA0523FE62FA00B7FFC3 /* open_hi_hat_A#1.wav */,
 				2CBCEA0623FE62FA00B7FFC3 /* snare_D1.wav */,
-				2CDC80A323FB9EC600EAA6F3 /* bassDrumSound.wav */,
-				2CDC80A223FB9EC600EAA6F3 /* hiHatSound.mp3 */,
-				2CDC80A423FB9EC600EAA6F3 /* rideCymbalSound.wav */,
-				2CDC80A523FB9EC600EAA6F3 /* snareDrumSound.wav */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -293,18 +281,14 @@
 			files = (
 				2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */,
 				2CBCEA0D23FE62FB00B7FFC3 /* open_hi_hat_A#1.wav in Resources */,
-				2CDC80A923FB9EC600EAA6F3 /* snareDrumSound.wav in Resources */,
 				2CE7136C23F66A670060A750 /* parley bold.ttf in Resources */,
 				2CBCEA0B23FE62FB00B7FFC3 /* bass_drum_C1.wav in Resources */,
-				2CDC80A823FB9EC600EAA6F3 /* rideCymbalSound.wav in Resources */,
-				2CDC80A723FB9EC600EAA6F3 /* bassDrumSound.wav in Resources */,
 				2CD14C1D23DA6E1100157D75 /* LaunchScreen.storyboard in Resources */,
 				2CBCEA1223FE62FB00B7FFC3 /* hi_tom_D2.wav in Resources */,
 				2CD14C1A23DA6E1100157D75 /* Assets.xcassets in Resources */,
 				2CBCEA0C23FE62FB00B7FFC3 /* mid_tom_B1.wav in Resources */,
 				2CBCEA1023FE62FB00B7FFC3 /* closed_hi_hat_F#1.wav in Resources */,
 				2CD14C1823DA6E0E00157D75 /* Main.storyboard in Resources */,
-				2CDC80A623FB9EC600EAA6F3 /* hiHatSound.mp3 in Resources */,
 				2CBCEA0E23FE62FB00B7FFC3 /* snare_D1.wav in Resources */,
 				2CBCEA0F23FE62FB00B7FFC3 /* lo_tom_F1.wav in Resources */,
 				2CBCEA1123FE62FB00B7FFC3 /* clap_D#1.wav in Resources */,

@@ -109,7 +109,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
         print("playButtonShouldBe: \(playButtonShouldBe)")
         playBackEngine.play()
-        showHighlightBar()
     }
     
     //MARK: calling metronome functionality
@@ -125,14 +124,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
        
         reset()
-    }
-    
-    // MARK: highlight bar
-    
-    func showHighlightBar() {
-        
-        
-        
     }
     
     // MARK: bpmAdjustor
