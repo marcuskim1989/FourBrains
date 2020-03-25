@@ -122,8 +122,9 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
        } else {
             metronomeOutlet.setImage(#imageLiteral(resourceName: "Metronome Off"), for: .normal)
         }
-       
-        reset()
+        
+        resetPlaySettings()
+        
     }
     
     // MARK: bpmAdjustor
@@ -147,7 +148,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
         metronome.metronome.tempo = Double(BPM)
         drumSounds.sequencer.setTempo(Double(BPM))
-        reset()
+        resetPlaySettings()
+        resetMuteAndSnooze()
     }
     
     //MARK: randomize beat card images
@@ -188,7 +190,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
         
         
-        reset()
+        resetPlaySettings()
+        resetMuteAndSnooze()
         
     }
     
@@ -289,6 +292,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Drum Clear"), for: .normal)
         bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Drum"), for: .normal)
         hiHatMuteOutlet.setImage(#imageLiteral(resourceName: "Hi Hat "), for: .normal)
+        
+        print("unmuteUI() called")
     }
     
     // MARK: snoozing
@@ -444,8 +449,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
     }
     
-    //MARK: reset UI
-    func reset() {
+    //MARK: reset
+    func resetPlaySettings() {
         if playBackEngine.isPlaying == true {
             metronome.metronome.stop()
             metronome.metronome.reset()
@@ -453,12 +458,17 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             drumSounds.sequencer.rewind()
             playBackEngine.changeIsPlaying()
             playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
-            mute.unmuteAllStates()
-            unmuteUI()
-            snooze.unsnoozeAllStates()
-            unsnoozeUI()
+            
             metronome.resetHighlightBar()
         }
+        
+    }
+    
+    func resetMuteAndSnooze() {
+        mute.unmuteAllStates()
+        unmuteUI()
+        snooze.unsnoozeAllStates()
+        unsnoozeUI()
     }
  
 }

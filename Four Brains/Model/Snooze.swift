@@ -71,6 +71,8 @@ class Snooze {
         snareSnoozeState = false
         bassSnoozeState = false
         hiHatSnoozeState = false
+        
+        print("unsnoozeAllStates() called")
     }
     
 }

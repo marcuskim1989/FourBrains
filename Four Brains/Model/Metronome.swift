@@ -93,5 +93,10 @@ class Metronome {
         measureCounter = 1
     }
     
+    func resetMetronome() {
+        metronome.stop()
+        metronome.reset()
+    }
+    
     }
 

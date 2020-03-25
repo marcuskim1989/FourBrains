@@ -67,7 +67,7 @@ class Mute {
         snareMuteState = false
         bassMuteState = false
         hiHatMuteState = false
-        
+        print("unmuteAllStates() called")
     }
     
 }
