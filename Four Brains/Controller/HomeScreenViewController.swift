@@ -22,7 +22,10 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var mute: Mute!
     var snooze: Snooze!
     var wholeBeat: WholeBeat!
+    var beatOfTheDay: WholeBeat!
     var currentBPM: Int = 60
+    var firstTime = true
+    var subdivision: Int = 4
     
     
     //beat card image array holds beat card image literals
@@ -62,6 +65,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var metronomeOutlet: UIButton!
     @IBOutlet weak var bpmAdjustAccessButton: UIButton!
+    @IBOutlet weak var subdivisionOutlet: UIButton!
     
     //mute button outlets
     @IBOutlet weak var rideMuteOutlet: UIButton!
@@ -127,6 +131,28 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
     }
     
+    //MARK: Subdivisions
+    
+    @IBAction func subdivisionButtonPressed(_ sender: UIButton) {
+        
+        subdivision *= 2
+        if subdivision > 16{
+            subdivision = 4
+        }
+        
+        if subdivision == 4 {
+            subdivisionOutlet.setImage(#imageLiteral(resourceName: "4 Beeps Image"), for: .normal)
+        } else if subdivision == 8 {
+            subdivisionOutlet.setImage(#imageLiteral(resourceName: "8 Beeps Image.png"), for: .normal)
+        } else {
+            subdivisionOutlet.setImage(#imageLiteral(resourceName: "16 Beeps Image"), for: .normal)
+        }
+        
+        metronome.changeSubdivision(subdivision: self.subdivision)
+        resetPlaySettings()
+        
+    }
+    
     // MARK: bpmAdjustor
     
     @IBAction func bpmAdjustorAccessButtonPressed(_ sender: UIButton) {
@@ -152,7 +178,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         resetMuteAndSnooze()
     }
     
-    //MARK: randomize beat card images
+    //MARK: randomization
     
     @IBAction func randomizationButtonPressed(_ sender: Any) {
         
@@ -164,6 +190,15 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     func startRandomization() {
         wholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
+        
+        if firstTime {
+            beatOfTheDay = wholeBeat
+            firstTime = false
+        }
+        
+        assignBeatCardImages(wholeBeat: wholeBeat)
+    }
+    func assignBeatCardImages(wholeBeat: WholeBeat) {
         
         for rideBeatCard in Range(0...3) {
             print("Ride: \(wholeBeat.ridePattern[rideBeatCard].beatCardLabel): \(wholeBeat.ridePattern[rideBeatCard].beatCardNoteSequence)")
@@ -186,7 +221,20 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         for hiHatBeatCard in Range(0...3) {
             print("Hi-Hat: \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel): \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardNoteSequence)")
             
-            hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
+            if hiHatImageOutletArray[hiHatBeatCard] != nil {
+            
+                print("hiHatImageOutletArray[hiHatBeatCard] is not nil")
+                
+            }
+            
+            print("Label is " + wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
+        
+            if ((hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)) != nil) {
+                print("hi hat beat card assigned successfully")
+            } else {
+                print("hi har beat card assignment unsuccessful")
+            }
+            
         }
         
         
@@ -448,6 +496,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
         }
     }
+    
+    
     
     //MARK: reset
     func resetPlaySettings() {

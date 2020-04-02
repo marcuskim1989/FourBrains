@@ -20,24 +20,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-oH-9tH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-oH-9tH">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F o u r  B r a i n s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-nt-K6j">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="71" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F o u r  B r a i n s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-nt-K6j">
                                 <rect key="frame" x="184" y="14.5" width="528.5" height="60"/>
                                 <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mak-l2-MUb" userLabel="Beat Board Stack">
+                            <stackView opaque="NO" tag="30" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mak-l2-MUb" userLabel="Beat Board Stack">
                                 <rect key="frame" x="105.5" y="84.5" width="685" height="245"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-ER-MVn" userLabel="Instrument Mute Button Stack">
+                                    <stackView opaque="NO" tag="40" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-ER-MVn" userLabel="Instrument Mute Button Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="245"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-rx-I4c" userLabel="Ride">
+                                            <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-rx-I4c" userLabel="Ride">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="IhX-zf-NgW"/>
@@ -48,7 +48,7 @@
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5TG-b5-8Q6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-62-PPE" userLabel="Snare">
+                                            <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-62-PPE" userLabel="Snare">
                                                 <rect key="frame" x="0.0" y="65" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="40q-qc-tC8"/>
@@ -59,7 +59,7 @@
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jv-78-wIh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEQ-Iu-wLl" userLabel="Bass">
+                                            <button opaque="NO" tag="43" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEQ-Iu-wLl" userLabel="Bass">
                                                 <rect key="frame" x="0.0" y="130" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="OXV-G4-dCS"/>
@@ -70,7 +70,7 @@
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyc-n0-VWM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJV-dC-uwF" userLabel="Hi Hat">
+                                            <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJV-dC-uwF" userLabel="Hi Hat">
                                                 <rect key="frame" x="0.0" y="195" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="GpJ-1H-9kv"/>
@@ -86,7 +86,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-g2-Dtp" userLabel="Beat Card Matrix">
                                         <rect key="frame" x="60" y="0.0" width="565" height="245"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-oa-sFH" userLabel="Ride Cymbal Beat Card Stack">
+                                            <stackView opaque="NO" tag="35" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-oa-sFH" userLabel="Ride Cymbal Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="565" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="u2d-Kf-RqD">
@@ -119,7 +119,7 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WyL-ji-cYA" userLabel="Snare Drum Beat Card Stack">
+                                            <stackView opaque="NO" tag="35" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WyL-ji-cYA" userLabel="Snare Drum Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="65" width="565" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="mWt-as-TrZ">
@@ -152,7 +152,7 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UWq-YA-gEi" userLabel="Bass Drum Beat Card Stack">
+                                            <stackView opaque="NO" tag="36" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UWq-YA-gEi" userLabel="Bass Drum Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="130" width="565" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="FTC-b6-GD5">
@@ -185,7 +185,7 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="thw-8y-3Vi" userLabel="Hi-Hat Beat Card Stack">
+                                            <stackView opaque="NO" tag="37" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="thw-8y-3Vi" userLabel="Hi-Hat Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="195" width="565" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="ECc-vN-vln">
@@ -220,10 +220,10 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A3S-UP-V8e" userLabel="Snooze Button Stack">
+                                    <stackView opaque="NO" tag="60" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A3S-UP-V8e" userLabel="Snooze Button Stack">
                                         <rect key="frame" x="635" y="0.0" width="50" height="245"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h12-va-SNg" userLabel="Ride Snooze">
+                                            <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h12-va-SNg" userLabel="Ride Snooze">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="cqO-eT-kAp"/>
@@ -234,7 +234,7 @@
                                                     <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLa-D6-Yg9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-gV-YXv" userLabel="Snare Snooze">
+                                            <button opaque="NO" tag="62" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-gV-YXv" userLabel="Snare Snooze">
                                                 <rect key="frame" x="0.0" y="65" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Hce-5y-NbX"/>
@@ -244,7 +244,7 @@
                                                     <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nYj-PQ-l4E"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUC-CC-b4j" userLabel="Bass Snooze">
+                                            <button opaque="NO" tag="63" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUC-CC-b4j" userLabel="Bass Snooze">
                                                 <rect key="frame" x="0.0" y="130" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MkM-7p-OBR"/>
@@ -254,7 +254,7 @@
                                                     <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xba-B7-z7P"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQn-gg-Eoz" userLabel="Hi-Hat Snooze">
+                                            <button opaque="NO" tag="64" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQn-gg-Eoz" userLabel="Hi-Hat Snooze">
                                                 <rect key="frame" x="0.0" y="195" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7Rv-tb-d6K"/>
@@ -268,10 +268,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="y5Y-p6-97k" userLabel="Play Panel  Stack">
+                            <stackView opaque="NO" tag="70" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="y5Y-p6-97k" userLabel="Play Panel  Stack">
                                 <rect key="frame" x="168" y="339.5" width="560" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-I7-kXg" userLabel="Play">
+                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-I7-kXg" userLabel="Play">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0dc-Sn-UH7"/>
@@ -282,7 +282,7 @@
                                             <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2q-Nb-oTj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
+                                    <button opaque="NO" tag="72" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
                                         <rect key="frame" x="125" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1P4-bU-zlG"/>
@@ -296,7 +296,7 @@
                                             <action selector="metronomeTogglePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYC-Aa-fDc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
+                                    <button opaque="NO" tag="73" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
                                         <rect key="frame" x="250" y="0.0" width="60" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9tJ-0a-coh"/>
@@ -310,15 +310,18 @@
                                             <action selector="bpmAdjustorAccessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPN-tY-yeq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Beat of Day">
+                                    <button opaque="NO" tag="74" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Subdivision">
                                         <rect key="frame" x="385" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="OVL-bE-JUd"/>
                                             <constraint firstAttribute="height" constant="50" id="YXN-VZ-kSp"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="BOD"/>
+                                        <state key="normal" title="Button" image="4 Beeps Image"/>
+                                        <connections>
+                                            <action selector="subdivisionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSw-yN-LHJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
+                                    <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
                                         <rect key="frame" x="510" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="If7-yh-s4N"/>
@@ -380,12 +383,13 @@
                         <outlet property="snare3" destination="kqe-Ly-lnw" id="zcl-1q-1lh"/>
                         <outlet property="snareMuteOutlet" destination="Ahz-62-PPE" id="Jcq-gs-5ng"/>
                         <outlet property="snareSnoozeOutlet" destination="WTx-gV-YXv" id="MNt-W3-AN8"/>
+                        <outlet property="subdivisionOutlet" destination="YNP-yZ-Ukb" id="gCN-d9-BwZ"/>
                         <segue destination="HOR-w6-HEJ" kind="presentation" identifier="presentBPMAdjustor" id="agy-DN-7Z4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-182.14285714285714" y="-2462.3188405797105"/>
+            <point key="canvasLocation" x="-310" y="-2487"/>
         </scene>
         <!--Adjustor View Controller-->
         <scene sceneID="s4I-cV-P8t">
@@ -487,7 +491,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BOD" width="240" height="240"/>
+        <image name="4 Beeps Image" width="360" height="360"/>
         <image name="Bass Drum" width="240" height="240"/>
         <image name="Beat Card Box" width="341" height="180"/>
         <image name="Hi Hat " width="240" height="240"/>

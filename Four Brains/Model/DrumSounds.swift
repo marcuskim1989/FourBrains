@@ -111,6 +111,8 @@ class DrumSounds {
         }
         print("Hi-Hat note sequence: \(hiHatNoteSequence)")
         
+        print("parsenNoteSequence() called")
+        
         assignDrumSounds()
         
     }
@@ -169,6 +171,8 @@ class DrumSounds {
                 }
             }
         }
+        
+        print("assignDrumSounds() called")
          
     }
     func playDrumSounds() {

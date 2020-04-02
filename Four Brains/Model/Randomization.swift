@@ -17,6 +17,8 @@ class Randomization {
     
     var wholeBeat = WholeBeat(ridePattern: [BeatCard(l: "0", ns: [0,0,0,0])], snarePattern: [BeatCard(l: "0", ns: [0,0,0,0])], bassPattern: [BeatCard(l: "0", ns: [0,0,0,0])], hiHatPattern: [BeatCard(l: "0", ns: [0,0,0,0])])
     
+    var wholeBeatOfTheDay = WholeBeat(ridePattern: [BeatCard(l: "0", ns: [0,0,0,0])], snarePattern: [BeatCard(l: "0", ns: [0,0,0,0])], bassPattern: [BeatCard(l: "0", ns: [0,0,0,0])], hiHatPattern: [BeatCard(l: "0", ns: [0,0,0,0])])
+    
     func randomize(beatCardInstances: BeatCardInstances, drumSounds: DrumSounds) -> WholeBeat{
         
         
@@ -45,9 +47,9 @@ class Randomization {
                 
             }
             
- 
-    
+        var firstTime = true
         wholeBeat = WholeBeat(ridePattern: self.ridePattern, snarePattern: self.snarePattern, bassPattern: self.bassPattern, hiHatPattern: self.hiHatPattern)
+        
         
         drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
         
