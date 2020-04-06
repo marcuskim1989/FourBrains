@@ -25,9 +25,9 @@ class BPMAdjustorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if currentBPM != nil {
-            print("currentBPM is \(currentBPM!)")
-           bpmAdjustor.endPointValue = CGFloat(currentBPM!)
+        if self.currentBPM != nil {
+            print("currentBPM is \(self.currentBPM!)")
+            bpmAdjustor.endPointValue = CGFloat(self.currentBPM!)
             
         } else {
             print("currentBPM == nil")
@@ -44,9 +44,12 @@ class BPMAdjustorViewController: UIViewController {
         bpmAdjustor.addTarget(self, action: #selector(updateAdjustorBPM), for: .valueChanged)
     }
     @objc func updateAdjustorBPM() {
-       bpmLabel.text = String(format: "%.0f", bpmAdjustor.endPointValue)
+        bpmLabel.text = String(Int(bpmAdjustor.endPointValue))
+        
         
        currentBPM = Int(bpmAdjustor.endPointValue)
+       
+        
     }
     
     
@@ -55,7 +58,10 @@ class BPMAdjustorViewController: UIViewController {
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         
         if delegate != nil && currentBPM != nil {
-            delegate?.updateBPM(BPM: currentBPM!)
+            delegate?.updateBPM(BPM: self.currentBPM!)
+            if self.currentBPM != nil {
+                print("chosen bpm is: \(self.currentBPM!)")
+            }
         } else if delegate == nil{
             print("delegate is nil")
         } else if currentBPM == nil {

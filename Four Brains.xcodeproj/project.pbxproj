@@ -34,7 +34,6 @@
 		2CDA10E623EAB76900014D55 /* BeatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA10E523EAB76900014D55 /* BeatCard.swift */; };
 		2CE7136C23F66A670060A750 /* parley bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B386723ED2BC500C120E7 /* parley bold.ttf */; };
 		2CE7138B23F67CEC0060A750 /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
-		2CE7138C23F67CEC0060A750 /* Pods_Four_Brains.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,16 +46,6 @@
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2CE7138623F67BD50060A750 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2CE7138C23F67CEC0060A750 /* Pods_Four_Brains.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -225,7 +214,6 @@
 			buildConfigurationList = 2CD14C2123DA6E1100157D75 /* Build configuration list for PBXNativeTarget "Four Brains" */;
 			buildPhases = (
 				680D76F5DEB02EFD727DD69A /* [CP] Check Pods Manifest.lock */,
-				2CE7138623F67BD50060A750 /* CopyFiles */,
 				2CD14C0923DA6E0E00157D75 /* Sources */,
 				2CD14C0A23DA6E0E00157D75 /* Frameworks */,
 				2CD14C0B23DA6E0E00157D75 /* Resources */,

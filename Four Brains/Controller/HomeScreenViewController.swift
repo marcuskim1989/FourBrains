@@ -22,9 +22,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var mute: Mute!
     var snooze: Snooze!
     var wholeBeat: WholeBeat!
-    var beatOfTheDay: WholeBeat!
     var currentBPM: Int = 60
-    var firstTime = true
     var subdivision: Int = 4
     
     
@@ -149,6 +147,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
         
         metronome.changeSubdivision(subdivision: self.subdivision)
+        metronome.resetHighlightBar()
         resetPlaySettings()
         
     }
@@ -190,11 +189,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     func startRandomization() {
         wholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
-        
-        if firstTime {
-            beatOfTheDay = wholeBeat
-            firstTime = false
-        }
         
         assignBeatCardImages(wholeBeat: wholeBeat)
     }
