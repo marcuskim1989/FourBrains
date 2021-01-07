@@ -11,7 +11,7 @@ import AudioKit
 
 class DrumSounds {
     
-    let drums = AKMIDISampler()
+    let drums = AKMIDISampler(midiOutputName: "drums")
     var mute: Mute!
    
     var rideNoteSequence: [Int] = [0]

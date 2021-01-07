@@ -6,7 +6,7 @@ target 'Four Brains' do
   use_frameworks!
 
   # Pods for Four Brains
-  pod 'AudioKit', '~> 4.9.3'
+  pod 'AudioKit', '~> 4.11.2'
   pod 'HGCircularSlider', '~> 2.2.0'
   
 end

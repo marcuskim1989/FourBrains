@@ -91,7 +91,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         beatCardInstances = BeatCardInstances()
         
         do {
-            try AudioKit.start()
+            try AKManager.start()
         } catch {
             print("AudioKit did not start.")
         }
