@@ -42,7 +42,7 @@ class Metronome {
             let deadlineTime = DispatchTime.now() + (60/self.metronome.tempo) / 10.0
             DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
                 
-                for card in 0...3 {
+                for _ in 0...3 {
                     if self.divisor == 1{
                         let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterWhiteOut)
                         beatCardToBeHighlighted?.backgroundColor = .white
@@ -69,7 +69,7 @@ class Metronome {
                 }
                 
                 UIView.animate(withDuration: (60/self.metronome.tempo)){
-                    for card in 0...3 {
+                    for _ in 0...3 {
                         if self.divisor == 1{
                             let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterFadeClear)
                             beatCardToBeHighlighted?.backgroundColor = .clear

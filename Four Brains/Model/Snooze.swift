@@ -25,7 +25,7 @@ class Snooze {
     func changeSnoozeState(instrument: String){
         
         switch instrument {
-            case "rideSnooze":
+        case K.SNOOZECONSTANTS.RIDE_SNOOZE_BUTTON:
                 if rideSnoozeState{
                     rideSnoozeState = false
                     
@@ -35,7 +35,7 @@ class Snooze {
             }
             
             
-            case "snareSnooze":
+        case K.SNOOZECONSTANTS.SNARE_SNOOZE_BUTTON:
                 if snareSnoozeState{
                     snareSnoozeState = false
                 } else {
@@ -43,7 +43,7 @@ class Snooze {
             }
             
             
-            case "bassSnooze":
+        case K.SNOOZECONSTANTS.BASS_SNOOZE_BUTTON:
                 if bassSnoozeState{
                     bassSnoozeState = false
                 } else {
@@ -51,7 +51,7 @@ class Snooze {
             }
             
             
-            case "hiHatSnooze":
+        case K.SNOOZECONSTANTS.HI_HAT_SNOOZE_BUTTON:
                 if hiHatSnoozeState{
                     hiHatSnoozeState = false
                 } else {

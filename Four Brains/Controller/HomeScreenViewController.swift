@@ -82,6 +82,18 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rideMuteOutlet.setTitle(K.MUTECONSTANTS.RIDE_MUTE_BUTTON, for: .normal)
+        snareMuteOutlet.setTitle(K.MUTECONSTANTS.SNARE_MUTE_BUTTON, for: .normal)
+        bassMuteOutlet.setTitle(K.MUTECONSTANTS.BASS_MUTE_BUTTON, for: .normal)
+        hiHatMuteOutlet.setTitle(K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON, for: .normal)
+        
+        rideSnoozeOutlet.setTitle(K.SNOOZECONSTANTS.RIDE_SNOOZE_BUTTON, for: .normal)
+        snareSnoozeOutlet.setTitle(K.SNOOZECONSTANTS.SNARE_SNOOZE_BUTTON, for: .normal)
+        bassSnoozeOutlet.setTitle(K.SNOOZECONSTANTS.BASS_SNOOZE_BUTTON, for: .normal)
+        hiHatSnoozeOutlet.setTitle(K.SNOOZECONSTANTS.HI_HAT_SNOOZE_BUTTON, for: .normal)
+        
+        
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute)
         snooze = Snooze(mute: self.mute, drumSounds: self.drumSounds)
@@ -239,16 +251,16 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     //MARK: mute buttons
     @IBAction func mutePressed(_ sender: UIButton) {
-        var buttonShouldBe: Bool = true
+        let buttonShouldBe: Bool = true
         
-        print("Mute button sender: \(sender.currentTitle)")
+        //print("Mute button sender: \(sender.currentTitle)")
         if sender.currentTitle != nil {
-            !mute.changeMuteState(instrument: sender.currentTitle!)
+            mute.changeMuteState(instrument: sender.currentTitle!)
             drumSounds.assignDrumSounds()
             print(buttonShouldBe)
             switch sender.currentTitle{
                        
-                case "rideMuteButton":
+            case K.MUTECONSTANTS.RIDE_MUTE_BUTTON:
                     if !mute.rideMuteState && snooze.rideSnoozeState { // if it is snoozed already, and you want to unmute. unsnooze and unmute.
                         
                         rideMuteOutlet.setImage(#imageLiteral(resourceName: "Ride Cymbal.png"), for: .normal)
@@ -256,7 +268,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                             rideImageOutletArray[rideBeatCard]?.image = UIImage(named: wholeBeat.ridePattern[rideBeatCard].beatCardLabel)
                             
                         }
-                        snooze.changeSnoozeState(instrument: "rideSnooze")
+                        snooze.changeSnoozeState(instrument: K.SNOOZECONSTANTS.RIDE_SNOOZE_BUTTON)
                        
                         
                     } else if mute.rideMuteState && !snooze.rideSnoozeState{ // if it is not snoozed, and you want to mute, only mute. do not snooze.
@@ -265,7 +277,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                         rideMuteOutlet.setImage(#imageLiteral(resourceName: "Ride Cymbal.png"), for: .normal)
                 }
                 
-                case "snareMuteButton":
+            case K.MUTECONSTANTS.SNARE_MUTE_BUTTON:
                     if !mute.snareMuteState && snooze.snareSnoozeState { // if it is snoozed already, and you want to unmute. unsnooze and unmute.
                         
                         snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Drum Clear"), for: .normal)
@@ -273,7 +285,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                             snareImageOutletArray[snareBeatCard]?.image = UIImage(named: wholeBeat.snarePattern[snareBeatCard].beatCardLabel)
                             
                         }
-                        snooze.changeSnoozeState(instrument: "snareSnooze")
+                        snooze.changeSnoozeState(instrument: K.SNOOZECONSTANTS.SNARE_SNOOZE_BUTTON)
                        
                         
                     } else if mute.snareMuteState && !snooze.snareSnoozeState{ // if it is not snoozed, and you want to mute, only mute. do not snooze.
@@ -282,7 +294,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                         snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Drum Clear"), for: .normal)
                 }
                 
-                case "bassMuteButton":
+            case K.MUTECONSTANTS.BASS_MUTE_BUTTON:
                     if !mute.bassMuteState && snooze.bassSnoozeState { // if it is snoozed already, and you want to unmute. unsnooze and unmute.
                         
                         bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Drum"), for: .normal)
@@ -290,7 +302,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                             bassImageOutletArray[bassBeatCard]?.image = UIImage(named: wholeBeat.bassPattern[bassBeatCard].beatCardLabel)
                             
                         }
-                        snooze.changeSnoozeState(instrument: "bassSnooze")
+                        snooze.changeSnoozeState(instrument: K.SNOOZECONSTANTS.BASS_SNOOZE_BUTTON)
                        
                         
                     } else if mute.bassMuteState && !snooze.bassSnoozeState{ // if it is not snoozed, and you want to mute, only mute. do not snooze.
@@ -299,7 +311,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                         bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Drum"), for: .normal)
                 }
                 
-                case "hiHatMuteButton":
+            case K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON:
                     if !mute.hiHatMuteState && snooze.hiHatSnoozeState { // if it is snoozed already, and you want to unmute. unsnooze and unmute.
                         
                         hiHatMuteOutlet.setImage(#imageLiteral(resourceName: "Hi Hat "), for: .normal)
@@ -307,7 +319,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                             hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
                             
                         }
-                        snooze.changeSnoozeState(instrument: "hiHatSnooze")
+                        snooze.changeSnoozeState(instrument: K.SNOOZECONSTANTS.HI_HAT_SNOOZE_BUTTON)
                        
                         
                     } else if mute.hiHatMuteState && !snooze.hiHatSnoozeState{ // if it is not snoozed, and you want to mute, only mute. do not snooze.
@@ -347,7 +359,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             print("Snooze Button Sender: \(sender.currentTitle!)")
             
             switch sender.currentTitle {
-                case "rideSnooze":
+            case K.SNOOZECONSTANTS.RIDE_SNOOZE_BUTTON:
                     if mute.rideMuteState && snooze.rideSnoozeState {// if it is already muted, and you want to snooze, simply snooze.
                         
                         ride0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -356,7 +368,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                         ride3.image = #imageLiteral(resourceName: "Snoozed Beat Card")
                         
                     } else if !mute.rideMuteState && snooze.rideSnoozeState{ // if it is not muted, and you want to snooze, mute and snooze. //change persist variable to false
-                        mute.changeMuteState(instrument: "rideMuteButton")
+                        mute.changeMuteState(instrument: K.MUTECONSTANTS.RIDE_MUTE_BUTTON)
                         drumSounds.assignDrumSounds()
                         rideMuteOutlet.setImage(#imageLiteral(resourceName: "Ride Mute"), for: .normal)
                         ride0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -370,13 +382,13 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                         rideImageOutletArray[rideBeatCard]?.image = UIImage(named: wholeBeat.ridePattern[rideBeatCard].beatCardLabel)
                         }
                         
-                        mute.changeMuteState(instrument: "rideMuteButton")
+                        mute.changeMuteState(instrument: K.MUTECONSTANTS.RIDE_MUTE_BUTTON)
                         drumSounds.assignDrumSounds()
                         rideMuteOutlet.setImage(#imageLiteral(resourceName: "Ride Cymbal.png"), for: .normal)
     
                 }
                 
-                case "snareSnooze":
+            case K.SNOOZECONSTANTS.SNARE_SNOOZE_BUTTON:
                                 if mute.snareMuteState && snooze.snareSnoozeState {// if it is already muted, and you want to snooze, simply snooze.
                                     
                                     snare0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -385,7 +397,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                                     snare3.image = #imageLiteral(resourceName: "Snoozed Beat Card")
                                     
                                 } else if !mute.snareMuteState && snooze.snareSnoozeState{ // if it is not muted, and you want to snooze, mute and snooze.
-                                    mute.changeMuteState(instrument: "snareMuteButton")
+                                    mute.changeMuteState(instrument: K.MUTECONSTANTS.SNARE_MUTE_BUTTON)
                                     drumSounds.assignDrumSounds()
                                     snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Mute"), for: .normal)
                                     snare0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -399,13 +411,13 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                                     snareImageOutletArray[snareBeatCard]?.image = UIImage(named: wholeBeat.snarePattern[snareBeatCard].beatCardLabel)
                                     }
                                     
-                                    mute.changeMuteState(instrument: "snareMuteButton")
+                                    mute.changeMuteState(instrument: K.MUTECONSTANTS.SNARE_MUTE_BUTTON)
                                     drumSounds.assignDrumSounds()
                                     snareMuteOutlet.setImage(#imageLiteral(resourceName: "Snare Drum Clear"), for: .normal)
                 
                             }
                 
-                case "bassSnooze":
+            case K.SNOOZECONSTANTS.BASS_SNOOZE_BUTTON:
                                 if mute.bassMuteState && snooze.bassSnoozeState {// if it is already muted, and you want to snooze, simply snooze.
                                     
                                     bass0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -414,7 +426,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                                     bass3.image = #imageLiteral(resourceName: "Snoozed Beat Card")
                                     
                                 } else if !mute.bassMuteState && snooze.bassSnoozeState{ // if it is not muted, and you want to snooze, mute and snooze.
-                                    mute.changeMuteState(instrument: "bassMuteButton")
+                                    mute.changeMuteState(instrument: K.MUTECONSTANTS.BASS_MUTE_BUTTON)
                                     drumSounds.assignDrumSounds()
                                     bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Mute"), for: .normal)
                                     bass0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -428,13 +440,13 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                                     bassImageOutletArray[bassBeatCard]?.image = UIImage(named: wholeBeat.bassPattern[bassBeatCard].beatCardLabel)
                                     }
                                     
-                                    mute.changeMuteState(instrument: "bassMuteButton")
+                                    mute.changeMuteState(instrument: K.MUTECONSTANTS.BASS_MUTE_BUTTON)
                                     drumSounds.assignDrumSounds()
                                     bassMuteOutlet.setImage(#imageLiteral(resourceName: "Bass Drum"), for: .normal)
                 
                             }
                 
-                case "hiHatSnooze":
+            case K.SNOOZECONSTANTS.HI_HAT_SNOOZE_BUTTON:
                                 if mute.hiHatMuteState && snooze.hiHatSnoozeState {// if it is already muted, and you want to snooze, simply snooze.
                                     
                                     hiHat0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -443,7 +455,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                                     hiHat3.image = #imageLiteral(resourceName: "Snoozed Beat Card")
                                     
                                 } else if !mute.hiHatMuteState && snooze.hiHatSnoozeState{ // if it is not muted, and you want to snooze, mute and snooze. \
-                                    mute.changeMuteState(instrument: "hiHatMuteButton")
+                                    mute.changeMuteState(instrument: K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON)
                                     drumSounds.assignDrumSounds()
                                     hiHatMuteOutlet.setImage(#imageLiteral(resourceName: "Hi Hat Mute"), for: .normal)
                                     hiHat0.image = #imageLiteral(resourceName: "Snoozed Beat Card")
@@ -457,7 +469,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                                     hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
                                     }
                                     
-                                    mute.changeMuteState(instrument: "hiHatMuteButton")
+                                    mute.changeMuteState(instrument: K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON)
                                     drumSounds.assignDrumSounds()
                                     hiHatMuteOutlet.setImage(#imageLiteral(resourceName: "Hi Hat "), for: .normal)
                 

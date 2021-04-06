@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +44,8 @@
                                                     <constraint firstAttribute="width" constant="50" id="IhX-zf-NgW"/>
                                                     <constraint firstAttribute="height" constant="50" id="xuw-1f-jTe"/>
                                                 </constraints>
-                                                <state key="normal" title="rideMuteButton" image="Ride Cymbal"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                <state key="normal" image="Ride Cymbal"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5TG-b5-8Q6"/>
                                                 </connections>
@@ -55,7 +56,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="40q-qc-tC8"/>
                                                     <constraint firstAttribute="height" constant="50" id="Of1-HL-h5A"/>
                                                 </constraints>
-                                                <state key="normal" title="snareMuteButton" image="Snare Drum Clear"/>
+                                                <state key="normal" image="Snare Drum Clear"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jv-78-wIh"/>
                                                 </connections>
@@ -66,7 +67,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="OXV-G4-dCS"/>
                                                     <constraint firstAttribute="width" constant="50" id="gl4-TL-EJ8"/>
                                                 </constraints>
-                                                <state key="normal" title="bassMuteButton" image="Bass Drum"/>
+                                                <state key="normal" image="Bass Drum"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyc-n0-VWM"/>
                                                 </connections>
@@ -77,7 +78,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="GpJ-1H-9kv"/>
                                                     <constraint firstAttribute="height" constant="50" id="bpG-lL-Djh"/>
                                                 </constraints>
-                                                <state key="normal" title="hiHatMuteButton" image="Hi Hat "/>
+                                                <state key="normal" image="Hi Hat "/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KX-ss-O9K"/>
                                                 </connections>
@@ -230,7 +231,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="cqO-eT-kAp"/>
                                                     <constraint firstAttribute="height" constant="50" id="f5d-6H-bZV"/>
                                                 </constraints>
-                                                <state key="normal" title="rideSnooze" image="Snooze Button"/>
+                                                <state key="normal" image="Snooze Button"/>
                                                 <connections>
                                                     <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLa-D6-Yg9"/>
                                                 </connections>
@@ -240,7 +241,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Hce-5y-NbX"/>
                                                 </constraints>
-                                                <state key="normal" title="snareSnooze" image="Snooze Button"/>
+                                                <state key="normal" image="Snooze Button"/>
                                                 <connections>
                                                     <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nYj-PQ-l4E"/>
                                                 </connections>
@@ -250,7 +251,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MkM-7p-OBR"/>
                                                 </constraints>
-                                                <state key="normal" title="bassSnooze" image="Snooze Button"/>
+                                                <state key="normal" image="Snooze Button"/>
                                                 <connections>
                                                     <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xba-B7-z7P"/>
                                                 </connections>
@@ -260,7 +261,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7Rv-tb-d6K"/>
                                                 </constraints>
-                                                <state key="normal" title="hiHatSnooze" image="Snooze Button"/>
+                                                <state key="normal" image="Snooze Button"/>
                                                 <connections>
                                                     <action selector="snoozeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCu-O6-rlU"/>
                                                 </connections>

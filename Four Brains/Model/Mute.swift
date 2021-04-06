@@ -21,44 +21,44 @@ class Mute {
         
     }
     
-    func changeMuteState(instrument: String) -> Bool {
+    func changeMuteState(instrument: String) {
         
         switch instrument {
-            case "rideMuteButton":
+        case K.MUTECONSTANTS.RIDE_MUTE_BUTTON:
                 if rideMuteState{
                         rideMuteState = false
                     } else {
                         rideMuteState = true
                 }
-            return rideMuteState
+           // return rideMuteState
             
-            case "snareMuteButton":
+        case K.MUTECONSTANTS.SNARE_MUTE_BUTTON:
                 if snareMuteState{
                     snareMuteState = false
                 } else {
                     snareMuteState = true
             }
-            return snareMuteState
+            //return snareMuteState
             
-            case "bassMuteButton":
+        case K.MUTECONSTANTS.BASS_MUTE_BUTTON:
                 if bassMuteState{
                     bassMuteState = false
                 } else {
                     bassMuteState = true
             }
-            return bassMuteState
+            //return bassMuteState
             
-            case "hiHatMuteButton":
+        case K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON:
                 if hiHatMuteState{
                     hiHatMuteState = false
                 } else {
                     hiHatMuteState = true
             }
-            return hiHatMuteState
+           // return hiHatMuteState
             
             default:
                 print("Error: button title not matched in switch statement, returning `false`")
-            return false
+           // return false
         }
     }
     

@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 2C14C1A123FBCEAE005D764A /* 4tracks.mid */; };
+		2C3A29A826190AED00433950 /* HGCircularSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */; };
 		2C40F42125A7C24D000CB925 /* parley bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C40F42025A7C172000CB925 /* parley bold.ttf */; };
 		2C4BC4A423F4B05C00D75F3E /* BPMAdjustorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BC4A323F4B05C00D75F3E /* BPMAdjustorViewController.swift */; };
 		2C58E1D3241087AF0045929E /* Mute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D2241087AF0045929E /* Mute.swift */; };
 		2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D42410DDDF0045929E /* Snooze.swift */; };
+		2C6F6F15261BF2B1000CE29F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F6F14261BF2B1000CE29F /* K.swift */; };
 		2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B385F23ED28AC00C120E7 /* Metronome.swift */; };
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
@@ -55,6 +57,7 @@
 		2C4BC4A323F4B05C00D75F3E /* BPMAdjustorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMAdjustorViewController.swift; sourceTree = "<group>"; };
 		2C58E1D2241087AF0045929E /* Mute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mute.swift; sourceTree = "<group>"; };
 		2C58E1D42410DDDF0045929E /* Snooze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snooze.swift; sourceTree = "<group>"; };
+		2C6F6F14261BF2B1000CE29F /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		2C7B385F23ED28AC00C120E7 /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
 		2C7B386123ED294600C120E7 /* DrumSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumSounds.swift; sourceTree = "<group>"; };
 		2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngine.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE7138B23F67CEC0060A750 /* Pods_Four_Brains.framework in Frameworks */,
+				2C3A29A826190AED00433950 /* HGCircularSlider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +155,7 @@
 				2C7C0D572403B5BC006ACD98 /* WholeBeat.swift */,
 				2C58E1D2241087AF0045929E /* Mute.swift */,
 				2C58E1D42410DDDF0045929E /* Snooze.swift */,
+				2C6F6F14261BF2B1000CE29F /* K.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,7 +241,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Marcus Kim";
 				TargetAttributes = {
 					2CD14C0C23DA6E0E00157D75 = {
@@ -333,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */,
+				2C6F6F15261BF2B1000CE29F /* K.swift in Sources */,
 				2C4BC4A423F4B05C00D75F3E /* BPMAdjustorViewController.swift in Sources */,
 				2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */,
 				2CD14C1523DA6E0E00157D75 /* HomeScreenViewController.swift in Sources */,
@@ -396,6 +402,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -456,6 +463,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -489,8 +497,8 @@
 			baseConfigurationReference = DA235EE71FAA0FEAE432373D /* Pods-Four Brains.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79X64CRQXT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,7 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MarcusKim.Four-Brains";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Marcus Kim Development Provision Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				_ = "";
@@ -516,8 +524,8 @@
 			baseConfigurationReference = C0C84D486AF7D670341AE9C6 /* Pods-Four Brains.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79X64CRQXT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,7 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MarcusKim.Four-Brains";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Marcus Kim Development Provision Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				_ = "";
