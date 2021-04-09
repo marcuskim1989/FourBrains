@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 2C14C1A123FBCEAE005D764A /* 4tracks.mid */; };
-		2C3A29A826190AED00433950 /* HGCircularSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */; };
 		2C40F42125A7C24D000CB925 /* parley bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C40F42025A7C172000CB925 /* parley bold.ttf */; };
 		2C4BC4A423F4B05C00D75F3E /* BPMAdjustorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BC4A323F4B05C00D75F3E /* BPMAdjustorViewController.swift */; };
 		2C58E1D3241087AF0045929E /* Mute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D2241087AF0045929E /* Mute.swift */; };
 		2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D42410DDDF0045929E /* Snooze.swift */; };
 		2C6F6F15261BF2B1000CE29F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F6F14261BF2B1000CE29F /* K.swift */; };
+		2C6F6F1F261D5A58000CE29F /* HGCircularSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */; };
+		2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
+		2C6F6F22261D5A5A000CE29F /* Pods_Four_Brains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B385F23ED28AC00C120E7 /* Metronome.swift */; };
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
@@ -35,7 +37,6 @@
 		2CD14C1A23DA6E1100157D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1923DA6E1100157D75 /* Assets.xcassets */; };
 		2CD14C1D23DA6E1100157D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1B23DA6E1100157D75 /* LaunchScreen.storyboard */; };
 		2CDA10E623EAB76900014D55 /* BeatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA10E523EAB76900014D55 /* BeatCard.swift */; };
-		2CE7138B23F67CEC0060A750 /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2C6F6F22261D5A5A000CE29F /* Pods_Four_Brains.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,8 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE7138B23F67CEC0060A750 /* Pods_Four_Brains.framework in Frameworks */,
-				2C3A29A826190AED00433950 /* HGCircularSlider.framework in Frameworks */,
+				2C6F6F1F261D5A58000CE29F /* HGCircularSlider.framework in Frameworks */,
+				2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,10 +502,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79X64CRQXT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/AudioKit/AudioKit-iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Four Brains/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -527,10 +526,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79X64CRQXT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/AudioKit/AudioKit-iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Four Brains/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

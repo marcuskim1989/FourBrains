@@ -227,19 +227,19 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         for hiHatBeatCard in Range(0...3) {
             print("Hi-Hat: \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel): \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardNoteSequence)")
             
-            if hiHatImageOutletArray[hiHatBeatCard] != nil {
+//            if hiHatImageOutletArray[hiHatBeatCard] != nil {
+//
+//                print("hiHatImageOutletArray[hiHatBeatCard] is not nil")
+//
+//            }
             
-                print("hiHatImageOutletArray[hiHatBeatCard] is not nil")
-                
-            }
-            
-            print("Label is " + wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
+           // print("Label is " + wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
         
-            if ((hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)) != nil) {
-                print("hi hat beat card assigned successfully")
-            } else {
-                print("hi har beat card assignment unsuccessful")
-            }
+//            if ((hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)) != nil) {
+//                print("hi hat beat card assigned successfully")
+//            } else {
+//                print("hi har beat card assignment unsuccessful")
+//            }
             
         }
         
@@ -512,7 +512,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             metronome.metronome.reset()
             drumSounds.sequencer.stop()
             drumSounds.sequencer.rewind()
-            playBackEngine.changeIsPlaying()
+            _ = playBackEngine.changeIsPlaying()
             playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
             
             metronome.resetHighlightBar()

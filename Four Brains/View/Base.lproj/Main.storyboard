@@ -340,20 +340,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" constant="20" symbolic="YES" id="2Qb-S3-sgN"/>
-                            <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="5Kv-Tq-GbS"/>
-                            <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="AoF-au-Ltq"/>
+                            <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Q8-CT-jze"/>
+                            <constraint firstAttribute="trailing" secondItem="G9q-oH-9tH" secondAttribute="trailing" id="3bu-HC-Hj6"/>
                             <constraint firstItem="jAp-nt-K6j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GPj-Mm-BRv"/>
-                            <constraint firstAttribute="trailing" secondItem="G9q-oH-9tH" secondAttribute="trailing" id="Iq5-i1-hJq"/>
-                            <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MyG-9h-3BE"/>
-                            <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NFr-g9-hXb"/>
+                            <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="Oic-bM-92m"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tba-fb-BND"/>
-                            <constraint firstItem="y5Y-p6-97k" firstAttribute="top" secondItem="mak-l2-MUb" secondAttribute="bottom" constant="10" id="WmF-CR-R9n"/>
+                            <constraint firstItem="mak-l2-MUb" firstAttribute="top" secondItem="jAp-nt-K6j" secondAttribute="bottom" constant="10" id="Vxa-qH-cLJ"/>
                             <constraint firstItem="y5Y-p6-97k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eM8-in-RlN"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfp-rE-C3W"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="top" secondItem="jAp-nt-K6j" secondAttribute="bottom" constant="15" id="lDf-xE-uK2"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="top" secondItem="jAp-nt-K6j" secondAttribute="bottom" constant="10" id="ss2-FO-zXz"/>
-                            <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xzE-3b-xV7"/>
+                            <constraint firstItem="y5Y-p6-97k" firstAttribute="top" secondItem="mak-l2-MUb" secondAttribute="bottom" constant="10" id="nwT-2c-DPJ"/>
+                            <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ujf-tf-dwg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A3j-Zy-C1N"/>
@@ -391,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310" y="-2487"/>
+            <point key="canvasLocation" x="-176.78571428571428" y="-2504.3478260869565"/>
         </scene>
         <!--Adjustor View Controller-->
         <scene sceneID="s4I-cV-P8t">

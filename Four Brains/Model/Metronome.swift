@@ -22,99 +22,108 @@ class Metronome {
     
     init(homeScreenViewController: HomeScreenViewController) {
         
-        
-        
         metronome = AKMetronome()
-        self.homeScreenViewController = homeScreenViewController
+        self.self.homeScreenViewController = homeScreenViewController
         print("initial tempo: \(metronome.tempo)")
+        
         metronome.callback = {
             
             if self.beepCounter >= self.subdivision {
                 self.beepCounter = 0
             }
             
-            //when the divisor is 1, highlight bar will shine every 1 beat. when the divisor is 2, the highlight bar will shine every 2 beats. When the divisor is 4, the highlight bar will shine every 4 beats. maybe make a counter variable that calls the closure every multiple of the divisor. can I use the measure counter as the counter variable?
-            var cardCounterWhiteOut = self.beepCounter + 1
-            var cardCounterFadeClear = self.beepCounter + 1
+            //when the divisor is 1, highlight bar will shine every 1 beat. when the divisor is 2, the highlight bar will shine every 2 beats. When the divisor is 4, the highlight bar will shine every 4 beats. 
+            
+            print("beepCounter is \(self.beepCounter), divisor is \(self.divisor), before main if inside metronome.callback")
             
             if self.beepCounter % self.divisor == 0 {
             
-            let deadlineTime = DispatchTime.now() + (60/self.metronome.tempo) / 10.0
-            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                self.highlightBeatCards()
                 
-                for _ in 0...3 {
-                    if self.divisor == 1{
-                        let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterWhiteOut)
-                        beatCardToBeHighlighted?.backgroundColor = .white
-                        print("beepCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut)")
-                    }else if self.divisor == 2 {
-                        let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterWhiteOut - self.eighthNoteSubtractionCounter)
-                        
-                        beatCardToBeHighlighted?.backgroundColor = .white
-                        print("beepCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut), eightNoteSubtractionCounter is \(self.eighthNoteSubtractionCounter), cardCounterWhiteOut - eightNoteSubtractionCounter is \(cardCounterWhiteOut - self.eighthNoteSubtractionCounter)")
-                    } else if self.divisor ==  4 {
-                        let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterWhiteOut - self.sixteenthNoteSubtractionCounter)
-                        
-                        beatCardToBeHighlighted?.backgroundColor = .white
-                        print("noteCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut), eightNoteSubtractionCounter is \(self.eighthNoteSubtractionCounter), cardCounterWhiteOut - eightNoteSubtractionCounter is \(cardCounterWhiteOut - self.eighthNoteSubtractionCounter)")
-                    }
-                    
-                    
-                    cardCounterWhiteOut += 4
-                    
-                    
-                    if cardCounterWhiteOut >= (self.beepCounter + 1)/self.divisor + 24{
-                    cardCounterWhiteOut = 1
-                    }
-                }
-                
-                UIView.animate(withDuration: (60/self.metronome.tempo)){
-                    for _ in 0...3 {
-                        if self.divisor == 1{
-                            let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterFadeClear)
-                            beatCardToBeHighlighted?.backgroundColor = .clear
-                        }else if self.divisor == 2 {
-                            let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterFadeClear - self.eighthNoteSubtractionCounter)
-                            
-                            beatCardToBeHighlighted?.backgroundColor = .clear
-                            
-                        } else if self.divisor ==  4 {
-                            let beatCardToBeHighlighted = homeScreenViewController.view.viewWithTag(cardCounterFadeClear - self.sixteenthNoteSubtractionCounter)
-                            
-                            beatCardToBeHighlighted?.backgroundColor = .clear
-                            
-                        }
-                        
-                        cardCounterFadeClear += 4
-                        
-                        if cardCounterFadeClear >= (self.beepCounter + 1)/self.divisor + 24{
-                        cardCounterFadeClear = 1
-                        }
-                        
-                    }
-                    
-                    self.eighthNoteSubtractionCounter += 1
-                    if self.eighthNoteSubtractionCounter >= 4 {
-                        self.eighthNoteSubtractionCounter = 0
-                    }
-                    
-                    self.sixteenthNoteSubtractionCounter += 3
-                    if self.sixteenthNoteSubtractionCounter >= 12 {
-                        self.sixteenthNoteSubtractionCounter = 0
-                    }
-                    print("showHighlightBar executed")
                 }
             
-                    
-                }
-            }
             self.beepCounter += 1
+            
+            }
             
             print("call back executed")
         }
 
-    }
     
+    
+    
+    func highlightBeatCards() {
+        
+        var cardCounterWhiteOut = self.beepCounter + 1
+        var cardCounterFadeClear = self.beepCounter + 1
+        
+        let deadlineTime = DispatchTime.now() + (60/metronome.tempo) / 10.0
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            
+            for _ in 0...3 {
+                if self.divisor == 1{
+                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut)
+                    beatCardToBeHighlighted?.backgroundColor = .white
+                    print("beepCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut)")
+                }else if self.divisor == 2 {
+                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut - self.eighthNoteSubtractionCounter)
+                    
+                    beatCardToBeHighlighted?.backgroundColor = .white
+                    print("beepCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut), eightNoteSubtractionCounter is \(self.eighthNoteSubtractionCounter), cardCounterWhiteOut - eightNoteSubtractionCounter is \(cardCounterWhiteOut - self.eighthNoteSubtractionCounter)")
+                } else if self.divisor ==  4 {
+                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut - self.sixteenthNoteSubtractionCounter)
+                    
+                    beatCardToBeHighlighted?.backgroundColor = .white
+                    print("noteCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut), sixteenthNoteSubtractionCounter is \(self.sixteenthNoteSubtractionCounter), cardCounterWhiteOut - sixteenthNoteSubtractionCounter is \(cardCounterWhiteOut - self.sixteenthNoteSubtractionCounter)")
+                }
+                
+                
+                cardCounterWhiteOut += 4
+                
+                
+                if cardCounterWhiteOut >= (self.beepCounter + 1)/self.divisor + 24{
+                cardCounterWhiteOut = 1
+                }
+            }
+            
+            UIView.animate(withDuration: (60/self.metronome.tempo)){
+                for _ in 0...3 {
+                    if self.divisor == 1{
+                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear)
+                        beatCardToBeHighlighted?.backgroundColor = .clear
+                    }else if self.divisor == 2 {
+                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear - self.eighthNoteSubtractionCounter)
+                        
+                        beatCardToBeHighlighted?.backgroundColor = .clear
+                        
+                    } else if self.divisor ==  4 {
+                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear - self.sixteenthNoteSubtractionCounter)
+                        
+                        beatCardToBeHighlighted?.backgroundColor = .clear
+                        
+                    }
+                    
+                    cardCounterFadeClear += 4
+                    
+                    if cardCounterFadeClear >= (self.beepCounter + 1)/self.divisor + 24{
+                    cardCounterFadeClear = 1
+                    }
+                    
+                }
+                
+                self.eighthNoteSubtractionCounter += 1
+                if self.eighthNoteSubtractionCounter >= 4 {
+                    self.eighthNoteSubtractionCounter = 0
+                }
+                
+                self.sixteenthNoteSubtractionCounter += 3
+                if self.sixteenthNoteSubtractionCounter >= 12 {
+                    self.sixteenthNoteSubtractionCounter = 0
+                }
+                print("showHighlightBar executed")
+            }
+    }
+    }
     
     func changeMetronomeToggleState() -> Bool{
         if metronomeToggleState {
@@ -134,15 +143,19 @@ class Metronome {
             
             metronome.restart()
 
-        } else {
-            print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
+       }
+        
+        
+    }
+        func stopMetronome() {
+            print("metronomeToggleState inside if inside stopMetronome(): \(metronomeToggleState)")
             metronome.stop()
-            metronome.reset()
+            //metronome.reset()
             resetHighlightBar()
         }
         
         
-    }
+    
     
     func changeSubdivision(subdivision: Int) {
         self.subdivision = subdivision
@@ -170,5 +183,8 @@ class Metronome {
         metronome.reset()
     }
     
+    
+
     }
+
 

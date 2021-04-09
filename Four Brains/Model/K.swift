@@ -22,4 +22,11 @@ class K {
         static let BASS_SNOOZE_BUTTON = "bass_snooze_button"
         static let HI_HAT_SNOOZE_BUTTON = "hi_hat_snooze_button"
     }
+    
+    class DRUMSOUNDFILENAMES {
+        static let RIDE_FILE_NAME = "open_hi_hat_A#1.wav"
+        static let SNARE_FILE_NAME = "snare_D1.wav"
+        static let BASS_FILE_NAME = "bass_drum_C1.wav"
+        static let HI_HAT_FILE_NAME = "closed_hi_hat_F#1.wav"
+    }
 }

@@ -30,10 +30,10 @@ class DrumSounds {
     let sequencer = AKAppleSequencer(filename: "4tracks")
     init(mute: Mute) {
         self.mute = mute
-        let rideCymbalFile = try! AKAudioFile(readFileName: "open_hi_hat_A#1.wav")
-        let snareDrumFile = try! AKAudioFile(readFileName: "snare_D1.wav")
-        let bassDrumFile = try! AKAudioFile(readFileName: "bass_drum_C1.wav")
-        let hiHatFile = try! AKAudioFile(readFileName: "closed_hi_hat_F#1.wav")
+        let rideCymbalFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME)
+        let snareDrumFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME)
+        let bassDrumFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.BASS_FILE_NAME)
+        let hiHatFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME)
         
         //rideNoteArray[0] = sequencer.tracks[0].add(noteNumber: 1, velocity: 0, position: AKDuration(beats: 0), duration: AKDuration(beats: 0.0))
         
@@ -47,7 +47,7 @@ class DrumSounds {
             print("error loading samples to drum object")
         }
         
-        sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
+        sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 1000))
         sequencer.debug()
         sequencer.setGlobalMIDIOutput(drums.midiIn)
         sequencer.enableLooping(AKDuration(beats: 4))
@@ -195,7 +195,7 @@ class DrumSounds {
                 //sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
                 sequencer.rewind()
             } else {
-                assignDrumSounds()
+                //assignDrumSounds()
                 sequencer.play()
                 
             }

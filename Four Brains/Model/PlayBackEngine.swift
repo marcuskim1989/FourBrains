@@ -39,6 +39,7 @@ class PlayBackEngine {
         
     }
     
+    @discardableResult
     func changeIsPlaying() -> Bool{
         if isPlaying {
             isPlaying = false
@@ -60,9 +61,7 @@ class PlayBackEngine {
         } else {
             print("isPlaying inside else inside play(): \(isPlaying)")
             
-            metronome.metronome.stop()
-            metronome.metronome.reset()
-            metronome.resetHighlightBar()
+            metronome.stopMetronome();
             
         }
         

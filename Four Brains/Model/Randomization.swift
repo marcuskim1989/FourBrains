@@ -46,7 +46,7 @@ class Randomization {
                 
             }
             
-        var firstTime = true
+    
         wholeBeat = WholeBeat(ridePattern: self.ridePattern, snarePattern: self.snarePattern, bassPattern: self.bassPattern, hiHatPattern: self.hiHatPattern)
         
         
