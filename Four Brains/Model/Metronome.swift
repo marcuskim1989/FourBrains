@@ -28,9 +28,14 @@ class Metronome {
         
         metronome.callback = {
             
+            
+            
             if self.beepCounter >= self.subdivision {
                 self.beepCounter = 0
             }
+            
+            
+            print("currentBeat is \(self.metronome.currentBeat)")
             
             //when the divisor is 1, highlight bar will shine every 1 beat. when the divisor is 2, the highlight bar will shine every 2 beats. When the divisor is 4, the highlight bar will shine every 4 beats. 
             
@@ -44,9 +49,10 @@ class Metronome {
             
             self.beepCounter += 1
             
+            print("call back executed")
             }
             
-            print("call back executed")
+            
         }
 
     
@@ -57,9 +63,8 @@ class Metronome {
         var cardCounterWhiteOut = self.beepCounter + 1
         var cardCounterFadeClear = self.beepCounter + 1
         
-        let deadlineTime = DispatchTime.now() + (60/metronome.tempo) / 10.0
-        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-            
+        // let deadlineTime = DispatchTime.now() + (60/metronome.tempo) / 10.0
+        DispatchQueue.main.sync {
             for _ in 0...3 {
                 if self.divisor == 1{
                     let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut)
@@ -122,7 +127,10 @@ class Metronome {
                 }
                 print("showHighlightBar executed")
             }
-    }
+        }
+            
+            
+    
     }
     
     func changeMetronomeToggleState() -> Bool{
@@ -141,7 +149,7 @@ class Metronome {
         if metronomeToggleState{
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             
-            metronome.restart()
+            metronome.start()
 
        }
         
@@ -149,8 +157,7 @@ class Metronome {
     }
         func stopMetronome() {
             print("metronomeToggleState inside if inside stopMetronome(): \(metronomeToggleState)")
-            metronome.stop()
-            //metronome.reset()
+            resetMetronome()
             resetHighlightBar()
         }
         
@@ -179,8 +186,11 @@ class Metronome {
     }
     
     func resetMetronome() {
-        metronome.stop()
         metronome.reset()
+        metronome.stop()
+        metronome.currentBeat = -1
+        beepCounter = 0
+        
     }
     
     
