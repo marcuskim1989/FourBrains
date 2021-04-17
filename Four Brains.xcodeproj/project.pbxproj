@@ -36,6 +36,8 @@
 		2CD14C1823DA6E0E00157D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1623DA6E0E00157D75 /* Main.storyboard */; };
 		2CD14C1A23DA6E1100157D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1923DA6E1100157D75 /* Assets.xcassets */; };
 		2CD14C1D23DA6E1100157D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1B23DA6E1100157D75 /* LaunchScreen.storyboard */; };
+		2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD8FD882627EA47006D7FF8 /* AudioKit */; };
+		2CD8FD8D26293819006D7FF8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */; };
 		2CDA10E623EAB76900014D55 /* BeatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA10E523EAB76900014D55 /* BeatCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,7 @@
 		2CD14C1923DA6E1100157D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD14C1C23DA6E1100157D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD14C1E23DA6E1100157D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2CDA10E523EAB76900014D55 /* BeatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatCard.swift; sourceTree = "<group>"; };
 		2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HGCircularSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Four_Brains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD8FD8D26293819006D7FF8 /* AVFoundation.framework in Frameworks */,
+				2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */,
 				2C6F6F1F261D5A58000CE29F /* HGCircularSlider.framework in Frameworks */,
 				2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */,
 			);
@@ -207,6 +212,7 @@
 		A2BBFC49ABB4D322D042DCCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */,
 				2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */,
 				8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */,
 			);
@@ -232,6 +238,9 @@
 			dependencies = (
 			);
 			name = "Four Brains";
+			packageProductDependencies = (
+				2CD8FD882627EA47006D7FF8 /* AudioKit */,
+			);
 			productName = "Four Brains";
 			productReference = 2CD14C0D23DA6E0E00157D75 /* Four Brains.app */;
 			productType = "com.apple.product-type.application";
@@ -260,6 +269,9 @@
 				Base,
 			);
 			mainGroup = 2CD14C0423DA6E0E00157D75;
+			packageReferences = (
+				2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = 2CD14C0E23DA6E0E00157D75 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -564,6 +576,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				branch = "v5-main";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CD8FD882627EA47006D7FF8 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CD14C0523DA6E0E00157D75 /* Project object */;
 }

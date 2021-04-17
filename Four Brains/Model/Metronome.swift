@@ -7,11 +7,22 @@
 //
 
 import Foundation
+import UIKit
 import AudioKit
 
 class Metronome {
     
-    var metronome: AKMetronome!
+    var isPlaying = false
+    var tempo: BPM = 60
+    var downbeatNoteNumber = MIDINoteNumber(6)
+    var beatNoteNumber = MIDINoteNumber(10)
+    var beatNoteVelocity = 100.0
+    var timeSignatureTop: Int = 4
+    var currentBeat = 0
+    var callbackInst = CallbackInstrument()
+    
+    let mixer = Mixer()
+    var sequencer = Sequencer()
     var homeScreenViewController: HomeScreenViewController!
     var metronomeToggleState = true
     var subdivision = 4
@@ -22,20 +33,17 @@ class Metronome {
     
     init(homeScreenViewController: HomeScreenViewController) {
         
-        metronome = AKMetronome()
-        self.self.homeScreenViewController = homeScreenViewController
-        print("initial tempo: \(metronome.tempo)")
+        self.homeScreenViewController = homeScreenViewController
+        print("initial tempo: \(sequencer.tempo)")
         
-        metronome.callback = {
-            
-            
+        
             
             if self.beepCounter >= self.subdivision {
                 self.beepCounter = 0
             }
             
             
-            print("currentBeat is \(self.metronome.currentBeat)")
+//            print("currentBeat is \(self.sequencer.currentBeat)")
             
             //when the divisor is 1, highlight bar will shine every 1 beat. when the divisor is 2, the highlight bar will shine every 2 beats. When the divisor is 4, the highlight bar will shine every 4 beats. 
             
@@ -43,7 +51,7 @@ class Metronome {
             
             if self.beepCounter % self.divisor == 0 {
             
-                self.highlightBeatCards()
+                //self.highlightBeatCards()
                 
                 }
             
@@ -53,9 +61,34 @@ class Metronome {
             }
             
             
+
+    func updateSequences() {
+        var track = sequencer.tracks.first! // what is this sequencer and what is its tracks property and what is tracks' first property
+
+        track.length = Double(timeSignatureTop)
+
+        track.clear()
+        
+        // add the downbeat at position 0 (the very first position)
+        track.sequence.add(noteNumber: downbeatNoteNumber, position: 0.0, duration: 0.4)
+        
+        let vel = MIDIVelocity(Int(beatNoteVelocity))
+        
+        // for every subsequent beat, starting from position 1 (2nd beat), add a beat
+        for beat in 1 ..< timeSignatureTop {
+            track.sequence.add(noteNumber: beatNoteNumber, velocity: vel, position: Double(beat), duration: 0.1)
         }
 
-    
+        track = sequencer.tracks[1]
+        
+        track.length = Double(timeSignatureTop)
+        
+        track.clear()
+        for beat in 0 ..< timeSignatureTop {
+            track.sequence.add(noteNumber: MIDINoteNumber(beat), position: Double(beat), duration: 0.1)
+        }
+
+    }
     
     
     func highlightBeatCards() {
@@ -91,7 +124,7 @@ class Metronome {
                 }
             }
             
-            UIView.animate(withDuration: (60/self.metronome.tempo)){
+            UIView.animate(withDuration: (60/self.sequencer.tempo)){
                 for _ in 0...3 {
                     if self.divisor == 1{
                         let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear)
@@ -149,7 +182,7 @@ class Metronome {
         if metronomeToggleState{
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             
-            metronome.start()
+            sequencer.play()
 
        }
         
@@ -157,7 +190,7 @@ class Metronome {
     }
         func stopMetronome() {
             print("metronomeToggleState inside if inside stopMetronome(): \(metronomeToggleState)")
-            resetMetronome()
+            sequencer.stop()
             resetHighlightBar()
         }
         
@@ -165,17 +198,17 @@ class Metronome {
     
     
     func changeSubdivision(subdivision: Int) {
-        self.subdivision = subdivision
-        metronome.subdivision = subdivision
+//        self.subdivision = subdivision
+//        sequencer.subdivision = subdivision
         
         divisor = subdivision/4
         
         if divisor == 1 {
-            metronome.tempo = Double(homeScreenViewController.currentBPM)
+            sequencer.tempo = Double(homeScreenViewController.currentBPM)
         } else if divisor == 2 {
-            metronome.tempo = Double(homeScreenViewController.currentBPM * 2)
+            sequencer.tempo = Double(homeScreenViewController.currentBPM * 2)
         } else if divisor == 4 {
-            metronome.tempo = Double(homeScreenViewController.currentBPM * 4)
+            sequencer.tempo = Double(homeScreenViewController.currentBPM * 4)
         }
     }
     
@@ -185,13 +218,13 @@ class Metronome {
         sixteenthNoteSubtractionCounter = 0
     }
     
-    func resetMetronome() {
-        metronome.reset()
-        metronome.stop()
-        metronome.currentBeat = -1
-        beepCounter = 0
-        
-    }
+//    func resetMetronome() {
+//        metronome.reset()
+//        metronome.stop()
+//        metronome.currentBeat = -1
+//        beepCounter = 0
+//        
+//    }
     
     
 

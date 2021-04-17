@@ -8,10 +8,11 @@
 
 import Foundation
 import AudioKit
+import AVFoundation
 
 class DrumSounds {
     
-    let drums = AKMIDISampler(midiOutputName: "drums")
+    let drums = MIDISampler(name: "drums")
     var mute: Mute!
    
     var rideNoteSequence: [Int] = [0]
@@ -27,13 +28,13 @@ class DrumSounds {
     var currentBPM = 60
     //var drumSoundsToggleState = true
     
-    let sequencer = AKAppleSequencer(filename: "4tracks")
+    let sequencer = AppleSequencer(filename: "4tracks")
     init(mute: Mute) {
         self.mute = mute
-        let rideCymbalFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME)
-        let snareDrumFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME)
-        let bassDrumFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.BASS_FILE_NAME)
-        let hiHatFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME)
+        let rideCymbalFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME)"))
+        let snareDrumFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME)"))
+        let bassDrumFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.BASS_FILE_NAME)"))
+        let hiHatFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME)"))
         
         //rideNoteArray[0] = sequencer.tracks[0].add(noteNumber: 1, velocity: 0, position: AKDuration(beats: 0), duration: AKDuration(beats: 0.0))
         
@@ -47,10 +48,10 @@ class DrumSounds {
             print("error loading samples to drum object")
         }
         
-        sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 1000))
+        sequencer.clearRange(start: Duration(beats: 0), duration: Duration(beats: 1000))
         sequencer.debug()
         sequencer.setGlobalMIDIOutput(drums.midiIn)
-        sequencer.enableLooping(AKDuration(beats: 4))
+        sequencer.enableLooping(Duration(beats: 4))
         sequencer.setTempo(Double(currentBPM))
        
     }
@@ -118,14 +119,14 @@ class DrumSounds {
     }
     
     func assignDrumSounds() {
-        sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
+        sequencer.clearRange(start: Duration(beats: 0), duration: Duration(beats: 100))
         
         //MARK: Ride cymbal note assignment
         if !mute.rideMuteState{
             for note in Range(0...15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if rideNoteSequence[note] == 1 {
-                    sequencer.tracks[0].add(noteNumber: 34, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                    sequencer.tracks[0].add(noteNumber: 34, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
               
                     print("Ride: \(position)")
                 
@@ -140,7 +141,7 @@ class DrumSounds {
             for note in Range(0...15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if snareNoteSequence[note] == 1 {
-                    sequencer.tracks[1].add(noteNumber: 26, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                    sequencer.tracks[1].add(noteNumber: 26, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
                
                 print("Snare: \(position)")
                 }
@@ -153,7 +154,7 @@ class DrumSounds {
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if bassNoteSequence[note] == 1 {
-                    sequencer.tracks[2].add(noteNumber: 24, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                    sequencer.tracks[2].add(noteNumber: 24, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
               
                 print("Bass: \(position)")
                 }
@@ -165,7 +166,7 @@ class DrumSounds {
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if hiHatNoteSequence[note] == 1 {
-                    sequencer.tracks[3].add(noteNumber: 30, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                    sequencer.tracks[3].add(noteNumber: 30, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
                 
                 print("Hi Hat: \(position)")
                 }
@@ -178,12 +179,12 @@ class DrumSounds {
     func playDrumSounds() {
         
         do {
-            try AKSettings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)
+            try Settings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)
                 
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(AVAudioSession.Category.playAndRecord)
 
-            if !AKSettings.headPhonesPlugged {
+            if !Settings.headPhonesPlugged {
                 try session.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
          }
         }catch {

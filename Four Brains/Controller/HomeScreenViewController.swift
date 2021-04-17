@@ -24,6 +24,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var wholeBeat: WholeBeat!
     var currentBPM: Int = 60
     var subdivision: Int = 4
+    let engine = AudioEngine() 
     
     
     //beat card image array holds beat card image literals
@@ -103,7 +104,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         beatCardInstances = BeatCardInstances()
         
         do {
-            try AKManager.start()
+            try engine.start()
         } catch {
             print("AudioKit did not start.")
         }
@@ -183,7 +184,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     func updateBPM(BPM: Int) {
         self.currentBPM = BPM
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
-        metronome.metronome.tempo = Double(BPM)
+        metronome.sequencer.tempo = Double(BPM)
         drumSounds.sequencer.setTempo(Double(BPM))
         resetPlaySettings()
         resetMuteAndSnooze()
@@ -508,8 +509,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     //MARK: reset
     func resetPlaySettings() {
         if playBackEngine.isPlaying == true {
-            metronome.metronome.stop()
-            metronome.metronome.reset()
+            metronome.sequencer.stop()
+            //metronome.metronome.reset()
             drumSounds.sequencer.stop()
             drumSounds.sequencer.rewind()
             _ = playBackEngine.changeIsPlaying()
