@@ -31,10 +31,11 @@ class DrumSounds {
     let sequencer = AppleSequencer(filename: "4tracks")
     init(mute: Mute) {
         self.mute = mute
-        let rideCymbalFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME)"))
-        let snareDrumFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME)"))
-        let bassDrumFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.BASS_FILE_NAME)"))
-        let hiHatFile = try! AVAudioFile(forReading: URL(fileURLWithPath: "Samples/\(K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME)"))
+        let rideCymbalFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME, withExtension: "wav")!))
+        print("\(rideCymbalFile) is not empty")
+        let snareDrumFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME, withExtension: "wav")!))
+        let bassDrumFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.BASS_FILE_NAME, withExtension: "wav")!))
+        let hiHatFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME, withExtension: "wav")!))
         
         //rideNoteArray[0] = sequencer.tracks[0].add(noteNumber: 1, velocity: 0, position: AKDuration(beats: 0), duration: AKDuration(beats: 0.0))
         

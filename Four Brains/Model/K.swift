@@ -24,9 +24,9 @@ class K {
     }
     
     class DRUMSOUNDFILENAMES {
-        static let RIDE_FILE_NAME = "open_hi_hat_A#1.wav"
-        static let SNARE_FILE_NAME = "snare_D1.wav"
-        static let BASS_FILE_NAME = "bass_drum_C1.wav"
-        static let HI_HAT_FILE_NAME = "closed_hi_hat_F#1.wav"
+        static let RIDE_FILE_NAME = "open_hi_hat_A#1"
+        static let SNARE_FILE_NAME = "snare_D1"
+        static let BASS_FILE_NAME = "bass_drum_C1"
+        static let HI_HAT_FILE_NAME = "closed_hi_hat_F#1"
     }
 }
