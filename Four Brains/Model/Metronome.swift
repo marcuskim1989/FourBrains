@@ -21,7 +21,6 @@ class Metronome {
     var currentBeat = 0
     var callbackInst = CallbackInstrument()
     
-    let mixer = Mixer()
     var sequencer = Sequencer()
     var homeScreenViewController: HomeScreenViewController!
     var metronomeToggleState = true

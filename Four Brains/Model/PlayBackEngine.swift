@@ -15,26 +15,25 @@ class PlayBackEngine {
     var metronome: Metronome!
     var drumSounds: DrumSounds!
     var mute: Mute!
+    let engine = AudioEngine()
+    let mixer = Mixer()
     
     init(metronome: Metronome, drumSounds: DrumSounds) {
         
-//        let metronomeBooster = Fader(metronome.sequencer)
-//        metronomeBooster.rightGain = 0
-//        let metronomeBoosterLeftPan = Panner(metronomeBooster, pan: -1)
+        //let metronomeBooster = Fader(metronome.sequencer)
+        //metronomeBooster.rightGain = 0
+        //let metronomeBoosterLeftPan = Panner(metronomeBooster, pan: -1)
         
-        let drumBooster = Fader(drumSounds.drums)
-        drumBooster.leftGain = 0
-        let drumBoosterRightPan = Panner(drumBooster, pan: 1)
-        drumBoosterRightPan.bypass()
-        
-        
-//        let mixer = Mixer(metronomeBoosterLeftPan, drumBoosterRightPan)
-        
+        //let drumBooster = Fader(drumSounds.drums)
+        //drumBooster.gain = 20
+        //let drumBoosterRightPan = Panner(drumBooster, pan: 1)
+        //drumBoosterRightPan.bypass()
         
         self.metronome = metronome
         self.drumSounds = drumSounds
         
-//        AudioEngine.output 
+        engine.output = drumSounds.drums
+        
         
         
     }
@@ -56,16 +55,24 @@ class PlayBackEngine {
         //print(metronome.metronomeToggleState)
         if isPlaying{
             print("isPlaying inside if inside play(): \(isPlaying)")
-            metronome.playMetronome()
+            do {
+                try engine.start()
+            } catch {
+                print("AudioKit did not start.")
+            }
+            //metronome.playMetronome()
+            drumSounds.playDrumSounds()
+            
             
         } else {
             print("isPlaying inside else inside play(): \(isPlaying)")
             
-            metronome.stopMetronome();
+            //metronome.stopMetronome()
+            drumSounds.stopDrumsSounds()
+            engine.stop()
             
         }
         
-        drumSounds.playDrumSounds()
         
     }
     

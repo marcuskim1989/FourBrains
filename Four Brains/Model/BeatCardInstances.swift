@@ -9,22 +9,22 @@
 import Foundation
 
 class BeatCardInstances {
-    let beatCard0 = BeatCard(l: "0", ns: [0,0,0,0])
-    let beatCard1A = BeatCard(l: "1A", ns: [1,0,0,0])
-    let beatCard1B = BeatCard(l: "1B", ns: [0,1,0,0])
-    let beatCard1C = BeatCard(l: "1C", ns: [0,0,1,0])
-    let beatCard1D = BeatCard(l: "1D", ns: [0,0,0,1])
-    let beatCard2A = BeatCard(l: "2A", ns: [1,1,0,0])
-    let beatCard2B = BeatCard(l: "2B", ns: [0,1,1,0])
-    let beatCard2C = BeatCard(l: "2C", ns: [0,0,1,1])
-    let beatCard2D = BeatCard(l: "2D", ns: [1,0,0,1])
-    let beatCard2E = BeatCard(l: "2E", ns: [1,0,1,0])
-    let beatCard2F = BeatCard(l: "2F", ns: [0,1,0,1])
-    let beatCard3A = BeatCard(l: "3A", ns: [1,1,1,0])
-    let beatCard3B = BeatCard(l: "3B", ns: [1,1,0,1])
-    let beatCard3C = BeatCard(l: "3C", ns: [1,0,1,1])
-    let beatCard3D = BeatCard(l: "3D", ns: [0,1,1,1])
-    let beatCard4 = BeatCard(l: "4", ns: [1,1,1,1])
+    let beatCard0 = BeatCard(label: "0", noteSequence: [0,0,0,0])
+    let beatCard1A = BeatCard(label: "1A", noteSequence: [1,0,0,0])
+    let beatCard1B = BeatCard(label: "1B", noteSequence: [0,1,0,0])
+    let beatCard1C = BeatCard(label: "1C", noteSequence: [0,0,1,0])
+    let beatCard1D = BeatCard(label: "1D", noteSequence: [0,0,0,1])
+    let beatCard2A = BeatCard(label: "2A", noteSequence: [1,1,0,0])
+    let beatCard2B = BeatCard(label: "2B", noteSequence: [0,1,1,0])
+    let beatCard2C = BeatCard(label: "2C", noteSequence: [0,0,1,1])
+    let beatCard2D = BeatCard(label: "2D", noteSequence: [1,0,0,1])
+    let beatCard2E = BeatCard(label: "2E", noteSequence: [1,0,1,0])
+    let beatCard2F = BeatCard(label: "2F", noteSequence: [0,1,0,1])
+    let beatCard3A = BeatCard(label: "3A", noteSequence: [1,1,1,0])
+    let beatCard3B = BeatCard(label: "3B", noteSequence: [1,1,0,1])
+    let beatCard3C = BeatCard(label: "3C", noteSequence: [1,0,1,1])
+    let beatCard3D = BeatCard(label: "3D", noteSequence: [0,1,1,1])
+    let beatCard4 = BeatCard(label: "4", noteSequence: [1,1,1,1])
     
     var beatCardArray: [BeatCard]
     

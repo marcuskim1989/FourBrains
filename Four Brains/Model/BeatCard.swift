@@ -13,9 +13,9 @@ class BeatCard {
     var beatCardLabel: String
     var beatCardNoteSequence: [Int]
     
-    init(l: String, ns: [Int]){
-        beatCardLabel = l
-        beatCardNoteSequence = ns
+    init(label: String, noteSequence: [Int]){
+        beatCardLabel = label
+        beatCardNoteSequence = noteSequence
     }
     
 }

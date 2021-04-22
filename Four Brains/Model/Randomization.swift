@@ -10,12 +10,36 @@ import Foundation
 
 class Randomization {
     
-    var ridePattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
-    var snarePattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
-    var bassPattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
-    var hiHatPattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
+    var ridePattern: [BeatCard] = [
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0])
+    ]
+    var snarePattern: [BeatCard] = [
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0])
+    ]
+    var bassPattern: [BeatCard] = [
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0])
+    ]
+    var hiHatPattern: [BeatCard] = [
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0]),
+        BeatCard(label: "0", noteSequence: [0,0,0,0])
+    ]
     
-    var wholeBeat = WholeBeat(ridePattern: [BeatCard(l: "0", ns: [0,0,0,0])], snarePattern: [BeatCard(l: "0", ns: [0,0,0,0])], bassPattern: [BeatCard(l: "0", ns: [0,0,0,0])], hiHatPattern: [BeatCard(l: "0", ns: [0,0,0,0])])
+    var wholeBeat = WholeBeat(
+        ridePattern: [BeatCard(label: "0", noteSequence: [0,0,0,0])],
+        snarePattern: [BeatCard(label: "0", noteSequence: [0,0,0,0])],
+        bassPattern: [BeatCard(label: "0", noteSequence: [0,0,0,0])],
+        hiHatPattern: [BeatCard(label: "0", noteSequence: [0,0,0,0])])
     
     
     func randomize(beatCardInstances: BeatCardInstances, drumSounds: DrumSounds) -> WholeBeat{

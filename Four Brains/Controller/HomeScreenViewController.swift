@@ -24,7 +24,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var wholeBeat: WholeBeat!
     var currentBPM: Int = 60
     var subdivision: Int = 4
-    let engine = AudioEngine() 
+    
     
     
     //beat card image array holds beat card image literals
@@ -103,11 +103,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
         
-        do {
-            try engine.start()
-        } catch {
-            print("AudioKit did not start.")
-        }
+        
         startRandomization()
     }
     

@@ -9,12 +9,15 @@
 import Foundation
 import AudioKit
 import AVFoundation
+import Combine
 
 class DrumSounds {
     
     let drums = MIDISampler(name: "drums")
     var mute: Mute!
-   
+    let sequencer = AppleSequencer(filename: "4tracks")
+    
+    
     var rideNoteSequence: [Int] = [0]
     var snareNoteSequence: [Int] = [0]
     var bassNoteSequence: [Int] = [0]
@@ -28,7 +31,7 @@ class DrumSounds {
     var currentBPM = 60
     //var drumSoundsToggleState = true
     
-    let sequencer = AppleSequencer(filename: "4tracks")
+    
     init(mute: Mute) {
         self.mute = mute
         let rideCymbalFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME, withExtension: "wav")!))
@@ -37,7 +40,7 @@ class DrumSounds {
         let bassDrumFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.BASS_FILE_NAME, withExtension: "wav")!))
         let hiHatFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME, withExtension: "wav")!))
         
-        //rideNoteArray[0] = sequencer.tracks[0].add(noteNumber: 1, velocity: 0, position: AKDuration(beats: 0), duration: AKDuration(beats: 0.0))
+       
         
         do{
         try drums.loadAudioFiles([rideCymbalFile,
@@ -49,7 +52,7 @@ class DrumSounds {
             print("error loading samples to drum object")
         }
         
-        sequencer.clearRange(start: Duration(beats: 0), duration: Duration(beats: 1000))
+        sequencer.clearRange(start: Duration(beats: 0), duration: Duration(beats: 100))
         sequencer.debug()
         sequencer.setGlobalMIDIOutput(drums.midiIn)
         sequencer.enableLooping(Duration(beats: 4))
@@ -127,7 +130,11 @@ class DrumSounds {
             for note in Range(0...15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if rideNoteSequence[note] == 1 {
-                    sequencer.tracks[0].add(noteNumber: 34, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
+                    sequencer.tracks[0].add(
+                        noteNumber: 34,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 1.0))
               
                     print("Ride: \(position)")
                 
@@ -192,16 +199,16 @@ class DrumSounds {
             print("error in settings.setSession")
         }
         
-            if sequencer.isPlaying {
-                sequencer.stop()
-                //sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
-                sequencer.rewind()
-            } else {
-                //assignDrumSounds()
-                sequencer.play()
-                
-            }
+        
+        sequencer.play()
+         
         }
+    
+    func stopDrumsSounds() {
+        sequencer.stop()
+        sequencer.rewind()
+    
+    }
     }
 
 
