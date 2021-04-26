@@ -15,7 +15,6 @@ class PlayBackEngine {
     var metronome: Metronome!
     var drumSounds: DrumSounds!
     var mute: Mute!
-    let engine = AudioEngine()
     let mixer = Mixer()
     
     init(metronome: Metronome, drumSounds: DrumSounds) {
@@ -31,10 +30,6 @@ class PlayBackEngine {
         
         self.metronome = metronome
         self.drumSounds = drumSounds
-        
-        engine.output = drumSounds.drums
-        
-        
         
     }
     
@@ -55,11 +50,11 @@ class PlayBackEngine {
         //print(metronome.metronomeToggleState)
         if isPlaying{
             print("isPlaying inside if inside play(): \(isPlaying)")
-            do {
-                try engine.start()
-            } catch {
-                print("AudioKit did not start.")
-            }
+//            do {
+//                try engine.start()
+//            } catch {
+//                print("AudioKit did not start.")
+//            }
             //metronome.playMetronome()
             drumSounds.playDrumSounds()
             
@@ -69,7 +64,7 @@ class PlayBackEngine {
             
             //metronome.stopMetronome()
             drumSounds.stopDrumsSounds()
-            engine.stop()
+//            engine.stop()
             
         }
         

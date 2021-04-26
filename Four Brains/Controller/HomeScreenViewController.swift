@@ -25,6 +25,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var currentBPM: Int = 60
     var subdivision: Int = 4
     
+    public static let engine = AudioEngine()
+    
     
     
     //beat card image array holds beat card image literals
@@ -102,6 +104,15 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         playBackEngine = PlayBackEngine(metronome: self.metronome, drumSounds: self.drumSounds)
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
+        
+        HomeScreenViewController.engine.output = drumSounds.drums
+        
+        do {
+            try HomeScreenViewController.engine.start()
+        } catch {
+            Log("AudioKit did not start! \(error)")
+        }
+
         
         
         startRandomization()

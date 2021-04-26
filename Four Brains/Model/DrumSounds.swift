@@ -12,9 +12,7 @@ import AVFoundation
 import Combine
 
 class DrumSounds {
-    
     let drums = MIDISampler(name: "drums")
-    var mute: Mute!
     let sequencer = AppleSequencer(filename: "4tracks")
     
     
@@ -31,9 +29,13 @@ class DrumSounds {
     var currentBPM = 60
     //var drumSoundsToggleState = true
     
+    var mute: Mute!
     
     init(mute: Mute) {
+        
+     
         self.mute = mute
+        
         let rideCymbalFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME, withExtension: "wav")!))
         print("\(rideCymbalFile) is not empty")
         let snareDrumFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME, withExtension: "wav")!))
@@ -134,7 +136,7 @@ class DrumSounds {
                         noteNumber: 34,
                         velocity: 200,
                         position: Duration(beats: position),
-                        duration: Duration(beats: 1.0))
+                        duration: Duration(beats: 0.25))
               
                     print("Ride: \(position)")
                 
@@ -149,7 +151,11 @@ class DrumSounds {
             for note in Range(0...15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if snareNoteSequence[note] == 1 {
-                    sequencer.tracks[1].add(noteNumber: 26, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
+                    sequencer.tracks[1].add(
+                        noteNumber: 26,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 0.25))
                
                 print("Snare: \(position)")
                 }
@@ -162,7 +168,11 @@ class DrumSounds {
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if bassNoteSequence[note] == 1 {
-                    sequencer.tracks[2].add(noteNumber: 24, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
+                    sequencer.tracks[2].add(
+                        noteNumber: 24,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 0.25))
               
                 print("Bass: \(position)")
                 }
@@ -174,7 +184,11 @@ class DrumSounds {
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if hiHatNoteSequence[note] == 1 {
-                    sequencer.tracks[3].add(noteNumber: 30, velocity: 200, position: Duration(beats: position), duration: Duration(beats: 1.0))
+                    sequencer.tracks[3].add(
+                        noteNumber: 30,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 0.25))
                 
                 print("Hi Hat: \(position)")
                 }
@@ -186,18 +200,18 @@ class DrumSounds {
     }
     func playDrumSounds() {
         
-        do {
-            try Settings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)
-                
-            let session = AVAudioSession.sharedInstance()
-            try session.setCategory(AVAudioSession.Category.playAndRecord)
-
-            if !Settings.headPhonesPlugged {
-                try session.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
-         }
-        }catch {
-            print("error in settings.setSession")
-        }
+//        do {
+//            try Settings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)
+//
+//            let session = AVAudioSession.sharedInstance()
+//            try session.setCategory(AVAudioSession.Category.playAndRecord)
+//
+//            if !Settings.headPhonesPlugged {
+//                try session.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+//         }
+//        }catch {
+//            print("error in settings.setSession")
+//        }
         
         
         sequencer.play()
