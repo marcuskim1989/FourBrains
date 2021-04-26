@@ -55,16 +55,15 @@ class PlayBackEngine {
 //            } catch {
 //                print("AudioKit did not start.")
 //            }
-            //metronome.playMetronome()
+            metronome.playMetronome()
             drumSounds.playDrumSounds()
             
             
         } else {
             print("isPlaying inside else inside play(): \(isPlaying)")
             
-            //metronome.stopMetronome()
+            metronome.stopMetronome()
             drumSounds.stopDrumsSounds()
-//            engine.stop()
             
         }
         

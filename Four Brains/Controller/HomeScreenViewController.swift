@@ -24,6 +24,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     var wholeBeat: WholeBeat!
     var currentBPM: Int = 60
     var subdivision: Int = 4
+    var mixer = Mixer()
     
     public static let engine = AudioEngine()
     
@@ -105,7 +106,11 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         randomization = Randomization()
         beatCardInstances = BeatCardInstances()
         
-        HomeScreenViewController.engine.output = drumSounds.drums
+        mixer.addInput(drumSounds.drums)
+        mixer.addInput(metronome.fader)
+        mixer.addInput(metronome.callbackInst)
+        
+        HomeScreenViewController.engine.output = mixer
         
         do {
             try HomeScreenViewController.engine.start()
@@ -191,7 +196,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     func updateBPM(BPM: Int) {
         self.currentBPM = BPM
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
-        metronome.sequencer.tempo = Double(BPM)
+        metronome.metronomeSequencer.tempo = Double(BPM)
         drumSounds.sequencer.setTempo(Double(BPM))
         resetPlaySettings()
         resetMuteAndSnooze()
@@ -516,7 +521,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     //MARK: reset
     func resetPlaySettings() {
         if playBackEngine.isPlaying == true {
-            metronome.sequencer.stop()
+            metronome.metronomeSequencer.stop()
             //metronome.metronome.reset()
             drumSounds.sequencer.stop()
             drumSounds.sequencer.rewind()
