@@ -15,8 +15,8 @@ class Metronome {
     var isPlaying = false
     var tempo: BPM = 60
     var timeSignatureTop: Int = 4
-    var downbeatNoteNumber = MIDINoteNumber(0)
-    var beatNoteNumber = MIDINoteNumber(2)
+    var downbeatNoteNumber = MIDINoteNumber(16)
+    var beatNoteNumber = MIDINoteNumber(7)
     var beatNoteVelocity = 100.0
     var currentBeat = 0
     var callbackInst = CallbackInstrument()
@@ -36,12 +36,17 @@ class Metronome {
         
         fader = Fader(shaker)
         
-        fader.gain = 5.0
-        
         let _ = metronomeSequencer.addTrack(for: shaker)
         
         callbackInst = CallbackInstrument(midiCallback: { (_, beat, _) in
             self.currentBeat = Int(beat)
+            print("currentBeat is \(self.currentBeat)")
+            print("beepCounter inside callbackInst is \(self.beepCounter)")
+            
+            if self.currentBeat % self.divisor == 0 {
+                self.highlightBeatCards()
+            }
+              
         })
         
         let _ = metronomeSequencer.addTrack(for: callbackInst)
@@ -52,28 +57,7 @@ class Metronome {
         metronomeSequencer.tempo = tempo
         print("initial tempo: \(metronomeSequencer.tempo)")
         
-        
-            
-//            if self.beepCounter >= self.subdivision {
-//                self.beepCounter = 0
-//            }
-//
-//
-////            print("currentBeat is \(self.sequencer.currentBeat)")
-//
-//            //when the divisor is 1, highlight bar will shine every 1 beat. when the divisor is 2, the highlight bar will shine every 2 beats. When the divisor is 4, the highlight bar will shine every 4 beats.
-//
-//            print("beepCounter is \(self.beepCounter), divisor is \(self.divisor), before main if inside metronome.callback")
-//
-//            if self.beepCounter % self.divisor == 0 {
-//
-//                //self.highlightBeatCards()
-//
-//                }
-//
-//            self.beepCounter += 1
-//
-//
+
           }
             
             
@@ -109,11 +93,11 @@ class Metronome {
     
     func highlightBeatCards() {
         
-        var cardCounterWhiteOut = self.beepCounter + 1
-        var cardCounterFadeClear = self.beepCounter + 1
+        var cardCounterWhiteOut = self.currentBeat + 1
+        var cardCounterFadeClear = self.currentBeat + 1
         
-        // let deadlineTime = DispatchTime.now() + (60/metronome.tempo) / 10.0
-        DispatchQueue.main.sync {
+        let deadlineTime = DispatchTime.now() + (60/metronomeSequencer.tempo) / 10.0
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
             for _ in 0...3 {
                 if self.divisor == 1{
                     let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut)
@@ -135,9 +119,9 @@ class Metronome {
                 cardCounterWhiteOut += 4
                 
                 
-                if cardCounterWhiteOut >= (self.beepCounter + 1)/self.divisor + 24{
-                cardCounterWhiteOut = 1
-                }
+//                if cardCounterWhiteOut >= (self.beepCounter + 1)/self.divisor + 24{
+//                cardCounterWhiteOut = 1
+//                }
             }
             
             UIView.animate(withDuration: (60/self.metronomeSequencer.tempo)){
@@ -159,9 +143,9 @@ class Metronome {
                     
                     cardCounterFadeClear += 4
                     
-                    if cardCounterFadeClear >= (self.beepCounter + 1)/self.divisor + 24{
-                    cardCounterFadeClear = 1
-                    }
+//                    if cardCounterFadeClear >= (self.beepCounter + 1)/self.divisor + 24{
+//                    cardCounterFadeClear = 1
+//                    }
                     
                 }
                 
@@ -174,6 +158,13 @@ class Metronome {
                 if self.sixteenthNoteSubtractionCounter >= 12 {
                     self.sixteenthNoteSubtractionCounter = 0
                 }
+                
+                self.beepCounter += 1
+                
+                if self.beepCounter >= self.timeSignatureTop {
+                    self.beepCounter = 0
+                }
+                
                 print("showHighlightBar executed")
             }
         }
@@ -198,6 +189,7 @@ class Metronome {
         if metronomeToggleState{
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             
+            updateSequences()
             metronomeSequencer.play()
 
        }
@@ -224,8 +216,10 @@ class Metronome {
             metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM)
         } else if divisor == 2 {
             metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM * 2)
+            timeSignatureTop = 8
         } else if divisor == 4 {
             metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM * 4)
+            timeSignatureTop = 16
         }
     }
     

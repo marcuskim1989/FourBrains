@@ -55,6 +55,8 @@ class PlayBackEngine {
 //            } catch {
 //                print("AudioKit did not start.")
 //            }
+            
+            
             metronome.playMetronome()
             drumSounds.playDrumSounds()
             

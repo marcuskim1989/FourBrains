@@ -112,6 +112,8 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
         HomeScreenViewController.engine.output = mixer
         
+        
+        
         do {
             try HomeScreenViewController.engine.start()
         } catch {
@@ -172,7 +174,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
         
         metronome.changeSubdivision(subdivision: self.subdivision)
-        metronome.resetHighlightBar()
+        metronome.stopMetronome()
         resetPlaySettings()
         
     }
