@@ -46,7 +46,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.soloAmbient)
            } catch {
                print("AVAudioSessionCategorySoloAmbient not work")
-           }    }
+           }
+        
+    }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.

@@ -40,11 +40,12 @@ class Metronome {
         
         callbackInst = CallbackInstrument(midiCallback: { (_, beat, _) in
             self.currentBeat = Int(beat)
-            print("currentBeat is \(self.currentBeat)")
-            print("beepCounter inside callbackInst is \(self.beepCounter)")
+            
+            //print("beepCounter inside callbackInst is \(self.beepCounter)")
             
             if self.currentBeat % self.divisor == 0 {
                 self.highlightBeatCards()
+                print("highlightBeatCards() called, currentBeat is \(self.currentBeat)")
             }
               
         })
@@ -93,80 +94,63 @@ class Metronome {
     
     func highlightBeatCards() {
         
-        var cardCounterWhiteOut = self.currentBeat + 1
-        var cardCounterFadeClear = self.currentBeat + 1
+        var cardWhiteOutCounter = self.currentBeat/self.divisor + 1
+        var cardFadeClearCounter = self.currentBeat/self.divisor + 1
         
         let deadlineTime = DispatchTime.now() + (60/metronomeSequencer.tempo) / 10.0
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
             for _ in 0...3 {
-                if self.divisor == 1{
-                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut)
-                    beatCardToBeHighlighted?.backgroundColor = .white
-                    print("beepCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut)")
-                }else if self.divisor == 2 {
-                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut - self.eighthNoteSubtractionCounter)
-                    
-                    beatCardToBeHighlighted?.backgroundColor = .white
-                    print("beepCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut), eightNoteSubtractionCounter is \(self.eighthNoteSubtractionCounter), cardCounterWhiteOut - eightNoteSubtractionCounter is \(cardCounterWhiteOut - self.eighthNoteSubtractionCounter)")
-                } else if self.divisor ==  4 {
-                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterWhiteOut - self.sixteenthNoteSubtractionCounter)
-                    
-                    beatCardToBeHighlighted?.backgroundColor = .white
-                    print("noteCounter is \(self.beepCounter), cardCounterWhiteOut is \(cardCounterWhiteOut), sixteenthNoteSubtractionCounter is \(self.sixteenthNoteSubtractionCounter), cardCounterWhiteOut - sixteenthNoteSubtractionCounter is \(cardCounterWhiteOut - self.sixteenthNoteSubtractionCounter)")
-                }
+//                if self.divisor == 1{
                 
-                
-                cardCounterWhiteOut += 4
-                
-                
-//                if cardCounterWhiteOut >= (self.beepCounter + 1)/self.divisor + 24{
-//                cardCounterWhiteOut = 1
+            
+                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardWhiteOutCounter)
+                        beatCardToBeHighlighted?.backgroundColor = .white
+//
+//
+//                }else if self.divisor == 2 {
+//                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(self.currentBeat/self.divisor + 1)
+//                        beatCardToBeHighlighted?.backgroundColor = .white
+//
+//
+//
+//                } else if self.divisor ==  4 {
+//                    let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(self.currentBeat/self.divisor + 1)
+//                        beatCardToBeHighlighted?.backgroundColor = .white
+//
+//
+//
 //                }
+                
+                cardWhiteOutCounter += 4
+                
+                
+                
+                
             }
             
             UIView.animate(withDuration: (60/self.metronomeSequencer.tempo)){
                 for _ in 0...3 {
-                    if self.divisor == 1{
-                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear)
-                        beatCardToBeHighlighted?.backgroundColor = .clear
-                    }else if self.divisor == 2 {
-                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear - self.eighthNoteSubtractionCounter)
-                        
-                        beatCardToBeHighlighted?.backgroundColor = .clear
-                        
-                    } else if self.divisor ==  4 {
-                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardCounterFadeClear - self.sixteenthNoteSubtractionCounter)
-                        
-                        beatCardToBeHighlighted?.backgroundColor = .clear
-                        
-                    }
-                    
-                    cardCounterFadeClear += 4
-                    
-//                    if cardCounterFadeClear >= (self.beepCounter + 1)/self.divisor + 24{
-//                    cardCounterFadeClear = 1
+//                    if self.divisor == 1{
+                        let beatCardToFadeClear = self.homeScreenViewController.view.viewWithTag(cardFadeClearCounter)
+                        beatCardToFadeClear?.backgroundColor = .clear
+//                    }else if self.divisor == 2 {
+//                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(self.currentBeat/self.divisor + 1)
+//
+//                        beatCardToBeHighlighted?.backgroundColor = .clear
+//
+//                    } else if self.divisor ==  4 {
+//                        let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(self.currentBeat/self.divisor + 1)
+//
+//                        beatCardToBeHighlighted?.backgroundColor = .clear
+//
 //                    }
                     
+                    cardFadeClearCounter += 4
+                
                 }
                 
-                self.eighthNoteSubtractionCounter += 1
-                if self.eighthNoteSubtractionCounter >= 4 {
-                    self.eighthNoteSubtractionCounter = 0
-                }
-                
-                self.sixteenthNoteSubtractionCounter += 3
-                if self.sixteenthNoteSubtractionCounter >= 12 {
-                    self.sixteenthNoteSubtractionCounter = 0
-                }
-                
-                self.beepCounter += 1
-                
-                if self.beepCounter >= self.timeSignatureTop {
-                    self.beepCounter = 0
-                }
-                
-                print("showHighlightBar executed")
             }
+            print("showHighlightBar executed")
         }
             
             
