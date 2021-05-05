@@ -30,7 +30,7 @@ class Mute {
                     } else {
                         rideMuteState = true
                 }
-           // return rideMuteState
+           print("rideMuteState is \(rideMuteState)")
             
         case K.MUTECONSTANTS.SNARE_MUTE_BUTTON:
                 if snareMuteState{
@@ -38,7 +38,7 @@ class Mute {
                 } else {
                     snareMuteState = true
             }
-            //return snareMuteState
+            print("snareMuteState is \(snareMuteState)")
             
         case K.MUTECONSTANTS.BASS_MUTE_BUTTON:
                 if bassMuteState{
@@ -46,7 +46,7 @@ class Mute {
                 } else {
                     bassMuteState = true
             }
-            //return bassMuteState
+            print("bassMuteState is \(bassMuteState)")
             
         case K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON:
                 if hiHatMuteState{
@@ -54,11 +54,10 @@ class Mute {
                 } else {
                     hiHatMuteState = true
             }
-           // return hiHatMuteState
+            print("hiHatMuteState is \(hiHatMuteState)")
             
             default:
-                print("Error: button title not matched in switch statement, returning `false`")
-           // return false
+                print("Error: button title not matched in switch statement")
         }
     }
     

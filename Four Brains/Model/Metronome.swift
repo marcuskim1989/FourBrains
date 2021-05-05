@@ -12,8 +12,6 @@ import AudioKit
 
 class Metronome {
     
-    //var isPlaying = false
-    var tempo: BPM = 60
     var timeSignatureTop: Int = 4
     var downbeatNoteNumber = MIDINoteNumber(16)
     var beatNoteNumber = MIDINoteNumber(7)
@@ -27,8 +25,6 @@ class Metronome {
     var metronomeToggleState = true
     var subdivision = 4
     var divisor = 1
-    var eighthNoteSubtractionCounter = 0
-    var sixteenthNoteSubtractionCounter = 0
     let fader: Fader
     
     init(homeScreenViewController: HomeScreenViewController) {
@@ -51,7 +47,7 @@ class Metronome {
         updateSequences()
         
         self.homeScreenViewController = homeScreenViewController
-        metronomeSequencer.tempo = tempo
+        metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM)
         print("initial tempo: \(metronomeSequencer.tempo)")
     }
             
@@ -146,32 +142,25 @@ class Metronome {
             print("metronomeToggleState inside if inside stopMetronome(): \(metronomeToggleState)")
             metronomeSequencer.stop()
             metronomeSequencer.rewind()
-            resetHighlightBar()
         }
-        
-        
     
-    
-    func changeSubdivision(subdivision: Int) {
+    func setTempo(subdivision: Int, currentBPM: Int) {
         
         divisor = subdivision/4
         
         if divisor == 1 {
-            metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM)
+            metronomeSequencer.tempo = Double(currentBPM)
             timeSignatureTop = 4
         } else if divisor == 2 {
-            metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM * 2)
+            metronomeSequencer.tempo = Double(currentBPM * 2)
             timeSignatureTop = 8
         } else if divisor == 4 {
-            metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM * 4)
+            metronomeSequencer.tempo = Double(currentBPM * 4)
             timeSignatureTop = 16
         }
     }
     
-    func resetHighlightBar() {
-        eighthNoteSubtractionCounter = 0
-        sixteenthNoteSubtractionCounter = 0
-    }
+    
     
 }
 

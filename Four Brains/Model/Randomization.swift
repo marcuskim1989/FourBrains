@@ -43,31 +43,21 @@ class Randomization {
     
     
     func randomize(beatCardInstances: BeatCardInstances, drumSounds: DrumSounds) -> WholeBeat{
-        
-        
             
         for rideBeatCard in Range(0...ridePattern.count - 1) {
-                
                     ridePattern[rideBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-            
             }
             
         for snareBeatCard in Range(0...snarePattern.count - 1) {
-                
                     snarePattern[snareBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-                
             }
             
         for bassBeatCard in Range(0...bassPattern.count - 1) {
-                
                     bassPattern[bassBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-                
             }
             
         for hiHatBeatCard in Range(0...hiHatPattern.count - 1) {
-                
                     hiHatPattern[hiHatBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-                
             }
             
     
@@ -75,8 +65,6 @@ class Randomization {
         
         
         drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
-        
-        
         
         return wholeBeat
         

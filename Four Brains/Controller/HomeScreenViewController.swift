@@ -173,7 +173,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             subdivisionOutlet.setImage(#imageLiteral(resourceName: "16 Beeps Image"), for: .normal)
         }
         
-        metronome.changeSubdivision(subdivision: self.subdivision)
+        metronome.setTempo(subdivision: self.subdivision, currentBPM: self.currentBPM)
         metronome.stopMetronome()
         resetPlaySettings()
         
@@ -198,7 +198,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     func updateBPM(BPM: Int) {
         self.currentBPM = BPM
         bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
-        metronome.metronomeSequencer.tempo = Double(BPM)
+        metronome.setTempo(subdivision: self.subdivision, currentBPM: self.currentBPM)
         drumSounds.sequencer.setTempo(Double(BPM))
         resetPlaySettings()
         resetMuteAndSnooze()
@@ -241,20 +241,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
         for hiHatBeatCard in Range(0...3) {
             print("Hi-Hat: \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel): \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardNoteSequence)")
-            
-//            if hiHatImageOutletArray[hiHatBeatCard] != nil {
-//
-//                print("hiHatImageOutletArray[hiHatBeatCard] is not nil")
-//
-//            }
-            
-           // print("Label is " + wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
-        
-//            if ((hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)) != nil) {
-//                print("hi hat beat card assigned successfully")
-//            } else {
-//                print("hi har beat card assignment unsuccessful")
-//            }
             
         }
         
@@ -524,15 +510,12 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     func resetPlaySettings() {
         if playBackEngine.isPlaying == true {
             metronome.metronomeSequencer.stop()
-            //metronome.metronome.reset()
+            metronome.metronomeSequencer.rewind()
             drumSounds.sequencer.stop()
             drumSounds.sequencer.rewind()
             _ = playBackEngine.changeIsPlaying()
             playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
-            
-            metronome.resetHighlightBar()
         }
-        
     }
     
     func resetMuteAndSnooze() {
@@ -540,6 +523,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         unmuteUI()
         snooze.unsnoozeAllStates()
         unsnoozeUI()
+        drumSounds.assignDrumSounds()
     }
  
 }
