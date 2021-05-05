@@ -12,7 +12,7 @@ import AudioKit
 
 class Metronome {
     
-    var isPlaying = false
+    //var isPlaying = false
     var tempo: BPM = 60
     var timeSignatureTop: Int = 4
     var downbeatNoteNumber = MIDINoteNumber(16)

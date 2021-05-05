@@ -27,7 +27,6 @@ class DrumSounds {
     var hiHatNoteArray: [()] = [()]
     
     var currentBPM = 60
-    //var drumSoundsToggleState = true
     
     var mute: Mute!
     
