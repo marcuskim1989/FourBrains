@@ -209,7 +209,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     @IBAction func randomizationButtonPressed(_ sender: Any) {
         
         startRandomization()
-        
         drumSounds.assignDrumSounds()
         
     }
@@ -243,7 +242,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             print("Hi-Hat: \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel): \(wholeBeat.hiHatPattern[hiHatBeatCard].beatCardNoteSequence)")
             
         }
-        
         
         resetPlaySettings()
         resetMuteAndSnooze()
@@ -335,10 +333,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         } else {
             print("Error: no sender title exists")
         }
-        
-    
-           
-        
     }
     
     //unmute UI
@@ -485,6 +479,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
         
     }
+    
     func unsnoozeUI () {
         
         for rideBeatCard in Range(0...3) {
@@ -503,8 +498,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.hiHatPattern[hiHatBeatCard].beatCardLabel)
         }
     }
-    
-    
     
     //MARK: reset
     func resetPlaySettings() {
