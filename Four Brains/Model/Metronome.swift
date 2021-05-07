@@ -12,24 +12,25 @@ import AudioKit
 
 class Metronome {
     
-    var timeSignatureTop: Int = 4
-    var downbeatNoteNumber = MIDINoteNumber(16)
-    var beatNoteNumber = MIDINoteNumber(7)
-    var beatNoteVelocity = 100.0
-    var currentBeat = 0
-    var callbackInst = CallbackInstrument()
+    private var timeSignatureTop: Int = 4
+    private let downbeatNoteNumber = MIDINoteNumber(16)
+    private let beatNoteNumber = MIDINoteNumber(7)
+    private let beatNoteVelocity = 100.0
+    private var currentBeat = 0
+    private var callbackInst = CallbackInstrument()
     
-    let shaker = Shaker()
-    var metronomeSequencer = Sequencer()
-    var homeScreenViewController: HomeScreenViewController!
-    var metronomeToggleState = true
-    var subdivision = 4
-    var divisor = 1
-    let fader: Fader
+    private let shaker = Shaker()
+    private var metronomeSequencer = Sequencer()
+    private let homeScreenViewController: HomeScreenViewController!
+    private var metronomeToggleState = true
+    private var subdivision = 4
+    private var divisor = 1
+    private let fader: Fader
     
     init(homeScreenViewController: HomeScreenViewController) {
         
         fader = Fader(shaker)
+        self.homeScreenViewController = homeScreenViewController
         
         let _ = metronomeSequencer.addTrack(for: shaker)
         
@@ -46,12 +47,22 @@ class Metronome {
         let _ = metronomeSequencer.addTrack(for: callbackInst)
         updateSequences()
         
-        self.homeScreenViewController = homeScreenViewController
-        metronomeSequencer.tempo = Double(homeScreenViewController.currentBPM)
+       
+        metronomeSequencer.tempo = Double(homeScreenViewController.getCurrentBPM())
         print("initial tempo: \(metronomeSequencer.tempo)")
     }
             
-            
+    public func getFader() -> Fader{
+        return fader
+    }
+    
+    public func getCallbackInstrument() -> CallbackInstrument {
+        return callbackInst
+    }
+    
+    public func getMetronomeSequencer() -> Sequencer {
+        return metronomeSequencer
+    }
 
     func updateSequences() {
         var track = metronomeSequencer.tracks.first! // what is this sequencer and what is its tracks property and what is tracks' first property

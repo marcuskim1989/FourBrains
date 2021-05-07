@@ -10,10 +10,10 @@ import Foundation
 
 class WholeBeat {
     
-    var ridePattern: [BeatCard]
-    var snarePattern: [BeatCard]
-    var bassPattern: [BeatCard]
-    var hiHatPattern: [BeatCard]
+    private var ridePattern: [BeatCard]
+    private var snarePattern: [BeatCard]
+    private var bassPattern: [BeatCard]
+    private var hiHatPattern: [BeatCard]
     
     init(ridePattern: [BeatCard], snarePattern: [BeatCard], bassPattern: [BeatCard], hiHatPattern: [BeatCard])
     {
@@ -21,6 +21,22 @@ class WholeBeat {
         self.snarePattern = snarePattern
         self.bassPattern = bassPattern
         self.hiHatPattern = hiHatPattern
+    }
+    
+    public func getRidePattern() -> [BeatCard] {
+        return ridePattern
+    }
+    
+    public func getSnarePattern() -> [BeatCard] {
+        return snarePattern
+    }
+    
+    public func getBassPattern() -> [BeatCard] {
+        return bassPattern
+    }
+    
+    public func getHiHatPattern() -> [BeatCard] {
+        return hiHatPattern
     }
     
 }

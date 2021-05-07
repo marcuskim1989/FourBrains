@@ -18,8 +18,8 @@ class BPMAdjustorViewController: UIViewController {
 
     @IBOutlet weak var bpmAdjustor: CircularSlider!
    
-    var currentBPM: Int?
-    weak var delegate: BPMAdjustorDelegate?
+    public var currentBPM: Int?
+    public weak var delegate: BPMAdjustorDelegate?
     @IBOutlet weak var bpmLabel: UILabel!
     
     override func viewDidLoad() {
@@ -43,6 +43,16 @@ class BPMAdjustorViewController: UIViewController {
         
         bpmAdjustor.addTarget(self, action: #selector(updateAdjustorBPM), for: .valueChanged)
     }
+    
+    public func setDelegate(_ homeScreenViewController: BPMAdjustorDelegate) {
+        delegate = homeScreenViewController
+    }
+    
+    public func setCurrentBPM(_ currentBPM: Int) {
+        self.currentBPM = currentBPM
+    }
+    
+    
     @objc func updateAdjustorBPM() {
         bpmLabel.text = String(Int(bpmAdjustor.endPointValue))
         
@@ -51,8 +61,6 @@ class BPMAdjustorViewController: UIViewController {
        
         
     }
-    
-    
     
     
     @IBAction func dismissButtonPressed(_ sender: UIButton) {

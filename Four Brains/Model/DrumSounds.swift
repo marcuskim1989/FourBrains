@@ -12,25 +12,22 @@ import AVFoundation
 import Combine
 
 class DrumSounds {
-    let drums = MIDISampler(name: "drums")
-    let sequencer = AppleSequencer(filename: "4tracks")
+    private let drums = MIDISampler(name: "drums")
+    private let sequencer = AppleSequencer(filename: "4tracks")
     
+    private var rideNoteSequence: [Int] = [0]
+    private var snareNoteSequence: [Int] = [0]
+    private var bassNoteSequence: [Int] = [0]
+    private var hiHatNoteSequence: [Int] = [0]
     
-    var rideNoteSequence: [Int] = [0]
-    var snareNoteSequence: [Int] = [0]
-    var bassNoteSequence: [Int] = [0]
-    var hiHatNoteSequence: [Int] = [0]
+    private var rideNoteArray: [()] = [()]
+    private var snareNoteArray: [()] = [()]
+    private var bassNoteArray: [()] = [()]
+    private var hiHatNoteArray: [()] = [()]
     
-    var rideNoteArray: [()] = [()]
-    var snareNoteArray: [()] = [()]
-    var bassNoteArray: [()] = [()]
-    var hiHatNoteArray: [()] = [()]
+    private var mute: Mute!
     
-    var currentBPM = 60
-    
-    var mute: Mute!
-    
-    init(mute: Mute) {
+    init(mute: Mute, currentBPM: Int) {
         
      
         self.mute = mute
@@ -61,6 +58,16 @@ class DrumSounds {
        
     }
     
+    public func getDrums() -> MIDISampler{
+        return drums 
+    }
+    
+    public func setSequencerTempo(_ tempo: Double) {
+        sequencer.setTempo(tempo)
+    }
+    
+    
+    
     //MARK: Parse from wholeBeat
     func parseNoteSequence(wholeBeat: WholeBeat) {
         
@@ -73,9 +80,9 @@ class DrumSounds {
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
                 if beatCardCounter == 0 && note == 0{
-                    rideNoteSequence[0] = wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note]
+                    rideNoteSequence[0] = wholeBeat.getRidePattern()[beatCardCounter].getBeatCardNoteSequence()[note]
                 } else {
-                    rideNoteSequence.append(wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note])
+                    rideNoteSequence.append(wholeBeat.getRidePattern()[beatCardCounter].getBeatCardNoteSequence()[note])
                 }
             }
         }
@@ -85,9 +92,9 @@ class DrumSounds {
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
                 if beatCardCounter == 0 && note == 0{
-                    snareNoteSequence[0] = wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note]
+                    snareNoteSequence[0] = wholeBeat.getSnarePattern()[beatCardCounter].getBeatCardNoteSequence()[note]
                 } else {
-                    snareNoteSequence.append(wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note])
+                    snareNoteSequence.append(wholeBeat.getSnarePattern()[beatCardCounter].getBeatCardNoteSequence()[note])
                 }
             }
         }
@@ -97,9 +104,9 @@ class DrumSounds {
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
                 if beatCardCounter == 0 && note == 0{
-                    bassNoteSequence[0] = wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note]
+                    bassNoteSequence[0] = wholeBeat.getBassPattern()[beatCardCounter].getBeatCardNoteSequence()[note]
                 } else {
-                    bassNoteSequence.append(wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note])
+                    bassNoteSequence.append(wholeBeat.getBassPattern()[beatCardCounter].getBeatCardNoteSequence()[note])
                 }
             }
         }
@@ -109,9 +116,9 @@ class DrumSounds {
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
                 if beatCardCounter == 0 && note == 0{
-                    hiHatNoteSequence[0] = wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note]
+                    hiHatNoteSequence[0] = wholeBeat.getHiHatPattern()[beatCardCounter].getBeatCardNoteSequence()[note]
                 } else {
-                    hiHatNoteSequence.append(wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note])
+                    hiHatNoteSequence.append(wholeBeat.getHiHatPattern()[beatCardCounter].getBeatCardNoteSequence()[note])
                 }
             }
         }
@@ -127,7 +134,7 @@ class DrumSounds {
         sequencer.clearRange(start: Duration(beats: 0), duration: Duration(beats: 100))
         
         //MARK: Ride cymbal note assignment
-        if !mute.rideMuteState{
+        if !mute.getRideMuteState(){
             for note in Range(0...15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if rideNoteSequence[note] == 1 {
@@ -146,7 +153,7 @@ class DrumSounds {
         
         //MARK: Snare drum note assignment
         
-        if !mute.snareMuteState {
+        if !mute.getSnareMuteState() {
             for note in Range(0...15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if snareNoteSequence[note] == 1 {
@@ -163,7 +170,7 @@ class DrumSounds {
         
         //MARK: Bass drum note assignment
         
-        if !mute.bassMuteState {
+        if !mute.getBassMuteState() {
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if bassNoteSequence[note] == 1 {
@@ -179,7 +186,7 @@ class DrumSounds {
         }
          
         //MARK: Hi-Hat note assignment
-        if !mute.hiHatMuteState{
+        if !mute.getHiHatMuteState(){
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
                 if hiHatNoteSequence[note] == 1 {

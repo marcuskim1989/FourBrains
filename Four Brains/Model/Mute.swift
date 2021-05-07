@@ -10,19 +10,30 @@ import Foundation
 
 class Mute {
     
-    var rideMuteState: Bool = false
-    var snareMuteState: Bool = false
-    var bassMuteState: Bool = false
-    var hiHatMuteState: Bool = false
+    private var rideMuteState: Bool = false
+    private var snareMuteState: Bool = false
+    private var bassMuteState: Bool = false
+    private var hiHatMuteState: Bool = false
     
+    public func getRideMuteState() -> Bool {
+        return rideMuteState
+    }
     
+    public func getSnareMuteState() -> Bool {
+        return snareMuteState
+    }
     
-    init() {
-        
+    public func getBassMuteState() -> Bool {
+        return bassMuteState
+    }
+    
+    public func getHiHatMuteState() -> Bool {
+        return hiHatMuteState
     }
     
     func changeMuteState(instrument: String) {
         
+        //Perfect place for toggleables
         switch instrument {
         case K.MUTECONSTANTS.RIDE_MUTE_BUTTON:
                 if rideMuteState{

@@ -10,16 +10,32 @@ import Foundation
 
 class Snooze {
     
-    var rideSnoozeState: Bool = false
-    var snareSnoozeState: Bool = false
-    var bassSnoozeState: Bool = false
-    var hiHatSnoozeState: Bool = false
-    var mute: Mute!
-    var drumSounds: DrumSounds!
+    private var rideSnoozeState: Bool = false
+    private var snareSnoozeState: Bool = false
+    private var bassSnoozeState: Bool = false
+    private var hiHatSnoozeState: Bool = false
+    private var mute: Mute!
+    private var drumSounds: DrumSounds!
     
     init (mute: Mute, drumSounds: DrumSounds) {
         self.mute = mute
         self.drumSounds = drumSounds
+    }
+    
+    public func getRideSnoozeState() -> Bool {
+        return rideSnoozeState
+    }
+    
+    public func getSnareSnoozeState() -> Bool {
+        return snareSnoozeState
+    }
+    
+    public func getBassSnoozeState() -> Bool {
+        return bassSnoozeState
+    }
+    
+    public func getHiHatSnoozeState() -> Bool {
+        return hiHatSnoozeState
     }
     
     func changeSnoozeState(instrument: String){

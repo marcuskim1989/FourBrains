@@ -11,11 +11,11 @@ import AudioKit
 
 class PlayBackEngine {
     
-    var isPlaying = false
-    var metronome: Metronome!
-    var drumSounds: DrumSounds!
-    var mute: Mute!
-    let mixer = Mixer()
+    private var isPlaying = false
+    private var metronome: Metronome!
+    private var drumSounds: DrumSounds!
+    private var mute: Mute!
+    private let mixer = Mixer()
     
     init(metronome: Metronome, drumSounds: DrumSounds) {
         
@@ -33,6 +33,11 @@ class PlayBackEngine {
         
     }
     
+    public func getIsPlaying() -> Bool {
+        return isPlaying
+    }
+    
+    //perfect place to use a toggleable
     @discardableResult
     func changeIsPlaying() -> Bool{
         if isPlaying {
@@ -44,6 +49,8 @@ class PlayBackEngine {
         print("isPlaying inside changeIsPlaying(): \(isPlaying)")
         return isPlaying
     }
+    
+    
     
     func play() {
         
