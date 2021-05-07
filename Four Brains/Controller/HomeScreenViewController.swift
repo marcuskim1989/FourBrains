@@ -25,7 +25,7 @@ import HGCircularSlider
 
 class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
 
-    //MARK: variables and outlets
+    //MARK:- variables and outlets
     
     private var metronome: Metronome!
     private var playBackEngine: PlayBackEngine!
@@ -93,7 +93,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     @IBOutlet weak var hiHatSnoozeOutlet: UIButton!
     
     
-    //MARK: initialization
+    //MARK:- initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,9 +129,10 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             Log("AudioKit did not start! \(error)")
         }
         
-        //instead of this, just call randomization.randomize() here. Then, call assignBeatCardImages() from here
-        startRandomization()
-        
+        wholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
+        drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
+        drumSounds.assignDrumSounds()
+        assignBeatCardImages(wholeBeat: wholeBeat)
         
     }
     
@@ -139,98 +140,17 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         return currentBPM
     }
     
-    //MARK: Calling play functionality
-    
-    @IBAction func playButtonPressed(_ sender: UIButton) {
-        
-        let playButtonShouldBe = playBackEngine.changeIsPlaying()
-        if playButtonShouldBe {
-             playButtonOutlet.setImage(#imageLiteral(resourceName: "Stop Button"), for: .normal)
-        } else {
-            playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
-            
-        }
-        print("playButtonShouldBe: \(playButtonShouldBe)")
-        playBackEngine.play()
-    }
-    
-    //MARK: calling metronome functionality
-    
-    @IBAction func metronomeTogglePressed(_ sender: UIButton) {
-        let metronomeButtonShouldBe = metronome.changeMetronomeToggleState()
-        
-        print("metronomeButtonShouldBe: \(metronomeButtonShouldBe)")
-       if metronomeButtonShouldBe {
-            metronomeOutlet.setImage(#imageLiteral(resourceName: "Metronome Button"), for: .normal)
-       } else {
-            metronomeOutlet.setImage(#imageLiteral(resourceName: "Metronome Off"), for: .normal)
-        }
-        
-        resetPlaySettings()
-        
-    }
-    
-    //MARK: Subdivisions
-    
-    @IBAction func subdivisionButtonPressed(_ sender: UIButton) {
-        
-        subdivision *= 2
-        if subdivision > 16{
-            subdivision = 4
-        }
-        
-        if subdivision == 4 {
-            subdivisionOutlet.setImage(#imageLiteral(resourceName: "4 Beeps Image"), for: .normal)
-        } else if subdivision == 8 {
-            subdivisionOutlet.setImage(#imageLiteral(resourceName: "8 Beeps Image.png"), for: .normal)
-        } else {
-            subdivisionOutlet.setImage(#imageLiteral(resourceName: "16 Beeps Image"), for: .normal)
-        }
-        
-        metronome.setTempo(subdivision: self.subdivision, currentBPM: self.currentBPM)
-        metronome.stopMetronome()
-        resetPlaySettings()
-        
-    }
-    
-    // MARK: bpmAdjustor
-    
-    @IBAction func bpmAdjustorAccessButtonPressed(_ sender: UIButton) {
-    
-        self.performSegue(withIdentifier: "presentBPMAdjustor", sender: self)
-    
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "presentBPMAdjustor" {
-            let bpmAdjustorVC = segue.destination as! BPMAdjustorViewController
-            bpmAdjustorVC.setDelegate(self)
-            bpmAdjustorVC.setCurrentBPM(self.currentBPM)
-        }
-    }
-    
-    func updateBPM(BPM: Int) {
-        self.currentBPM = BPM
-        bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
-        metronome.setTempo(subdivision: self.subdivision, currentBPM: self.currentBPM)
-        drumSounds.setSequencerTempo(Double(BPM))
-        resetPlaySettings()
-        resetMuteAndSnooze()
-    }
-    
-    //MARK: randomization
+    //MARK:- randomization
     
     @IBAction func randomizationButtonPressed(_ sender: Any) {
         
-        startRandomization()
-        drumSounds.assignDrumSounds()
-        
-    }
-    
-    func startRandomization() {
         wholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
-        
+        drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
+        drumSounds.assignDrumSounds()
         assignBeatCardImages(wholeBeat: wholeBeat)
+        resetPlaySettings()
+        resetMuteAndSnooze()
+        
     }
     
     func assignBeatCardImages(wholeBeat: WholeBeat) {
@@ -256,14 +176,93 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         for hiHatBeatCard in Range(0...3) {
             print("Hi-Hat: \(wholeBeat.getHiHatPattern()[hiHatBeatCard].getBeatCardLabel()): \(wholeBeat.getHiHatPattern()[hiHatBeatCard].getBeatCardNoteSequence())")
             
+            hiHatImageOutletArray[hiHatBeatCard]?.image = UIImage(named: wholeBeat.getHiHatPattern()[hiHatBeatCard].getBeatCardLabel())
         }
-        
-        resetPlaySettings()
-        resetMuteAndSnooze()
         
     }
     
-    //MARK: mute buttons
+    //MARK:- Calling play functionality
+    
+    @IBAction func playButtonPressed(_ sender: UIButton) {
+        
+        let playButtonShouldBe = playBackEngine.changeIsPlaying()
+        if playButtonShouldBe {
+             playButtonOutlet.setImage(#imageLiteral(resourceName: "Stop Button"), for: .normal)
+        } else {
+            playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button"), for: .normal)
+            
+        }
+        print("playButtonShouldBe: \(playButtonShouldBe)")
+        playBackEngine.play()
+    }
+    
+    //MARK:- calling metronome functionality
+    
+    @IBAction func metronomeTogglePressed(_ sender: UIButton) {
+        let metronomeButtonShouldBe = metronome.changeMetronomeToggleState()
+        
+        print("metronomeButtonShouldBe: \(metronomeButtonShouldBe)")
+       if metronomeButtonShouldBe {
+            metronomeOutlet.setImage(#imageLiteral(resourceName: "Metronome Button"), for: .normal)
+       } else {
+            metronomeOutlet.setImage(#imageLiteral(resourceName: "Metronome Off"), for: .normal)
+        }
+        
+        resetPlaySettings()
+        
+    }
+    
+    //MARK:- Subdivisions
+    
+    @IBAction func subdivisionButtonPressed(_ sender: UIButton) {
+        
+        subdivision *= 2
+        if subdivision > 16{
+            subdivision = 4
+        }
+        
+        if subdivision == 4 {
+            subdivisionOutlet.setImage(#imageLiteral(resourceName: "4 Beeps Image"), for: .normal)
+        } else if subdivision == 8 {
+            subdivisionOutlet.setImage(#imageLiteral(resourceName: "8 Beeps Image.png"), for: .normal)
+        } else {
+            subdivisionOutlet.setImage(#imageLiteral(resourceName: "16 Beeps Image"), for: .normal)
+        }
+        
+        metronome.setTempo(subdivision: self.subdivision, currentBPM: self.currentBPM)
+        metronome.stopMetronome()
+        resetPlaySettings()
+        
+    }
+    
+    // MARK:- bpmAdjustor
+    
+    @IBAction func bpmAdjustorAccessButtonPressed(_ sender: UIButton) {
+    
+        self.performSegue(withIdentifier: "presentBPMAdjustor", sender: self)
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "presentBPMAdjustor" {
+            let bpmAdjustorVC = segue.destination as! BPMAdjustorViewController
+            bpmAdjustorVC.setDelegate(self)
+            bpmAdjustorVC.setCurrentBPM(self.currentBPM)
+        }
+    }
+    
+    func updateBPM(BPM: Int) {
+        self.currentBPM = BPM
+        bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
+        metronome.setTempo(subdivision: self.subdivision, currentBPM: self.currentBPM)
+        drumSounds.setSequencerTempo(Double(BPM))
+        resetPlaySettings()
+        resetMuteAndSnooze()
+    }
+    
+    
+    
+    //MARK:- mute buttons
     @IBAction func mutePressed(_ sender: UIButton) {
         let buttonShouldBe: Bool = true
         
@@ -360,7 +359,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         print("unmuteUI() called")
     }
     
-    // MARK: snoozing
+    // MARK:- snoozing
     
     @IBAction func snoozeButtonPressed(_ sender: UIButton) {
         
@@ -514,7 +513,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         }
     }
     
-    //MARK: reset
+    //MARK:- reset
     func resetPlaySettings() {
         if playBackEngine.getIsPlaying(){
             metronome.stopMetronome()

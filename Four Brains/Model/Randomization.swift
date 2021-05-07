@@ -31,7 +31,7 @@ class Randomization {
     
         let wholeBeat = WholeBeat(ridePattern: self.ridePattern, snarePattern: self.snarePattern, bassPattern: self.bassPattern, hiHatPattern: self.hiHatPattern)
         
-        drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
+        //drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
         
         return wholeBeat
         

@@ -124,9 +124,7 @@ class DrumSounds {
         }
         print("Hi-Hat note sequence: \(hiHatNoteSequence)")
         
-        print("parsenNoteSequence() called")
-        
-        assignDrumSounds()
+        print("parseNoteSequence() called")
         
     }
     
