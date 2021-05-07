@@ -128,7 +128,11 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         } catch {
             Log("AudioKit did not start! \(error)")
         }
+        
+        //instead of this, just call randomization.randomize() here. Then, call assignBeatCardImages() from here
         startRandomization()
+        
+        
     }
     
     public func getCurrentBPM() -> Int {
