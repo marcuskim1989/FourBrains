@@ -129,10 +129,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
             Log("AudioKit did not start! \(error)")
         }
         
-        wholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
-        drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
-        drumSounds.assignDrumSounds()
-        assignBeatCardImages(wholeBeat: wholeBeat)
+        self.randomize()
         
     }
     
@@ -143,14 +140,15 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     //MARK:- randomization
     
     @IBAction func randomizationButtonPressed(_ sender: Any) {
-        
+        self.randomize()
+    }
+    
+    public func randomize() {
         wholeBeat = randomization.randomize(beatCardInstances: self.beatCardInstances, drumSounds: self.drumSounds)
-        drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
-        drumSounds.assignDrumSounds()
+        drumSounds.processDrumSounds(wholeBeat: wholeBeat)
         assignBeatCardImages(wholeBeat: wholeBeat)
         resetPlaySettings()
         resetMuteAndSnooze()
-        
     }
     
     func assignBeatCardImages(wholeBeat: WholeBeat) {

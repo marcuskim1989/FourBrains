@@ -42,37 +42,19 @@ class Snooze {
         
         switch instrument {
         case K.SNOOZECONSTANTS.RIDE_SNOOZE_BUTTON:
-                if rideSnoozeState{
-                    rideSnoozeState = false
-                    
-                } else {
-                    rideSnoozeState = true
-                    
-            }
+            rideSnoozeState.toggle()
             
             
         case K.SNOOZECONSTANTS.SNARE_SNOOZE_BUTTON:
-                if snareSnoozeState{
-                    snareSnoozeState = false
-                } else {
-                    snareSnoozeState = true
-            }
+            snareSnoozeState.toggle()
             
             
         case K.SNOOZECONSTANTS.BASS_SNOOZE_BUTTON:
-                if bassSnoozeState{
-                    bassSnoozeState = false
-                } else {
-                    bassSnoozeState = true
-            }
+            bassSnoozeState.toggle()
             
             
         case K.SNOOZECONSTANTS.HI_HAT_SNOOZE_BUTTON:
-                if hiHatSnoozeState{
-                    hiHatSnoozeState = false
-                } else {
-                    hiHatSnoozeState = true
-            }
+            hiHatSnoozeState.toggle()
             
             
             default:

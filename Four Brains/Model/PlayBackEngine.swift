@@ -14,19 +14,8 @@ class PlayBackEngine {
     private var isPlaying = false
     private var metronome: Metronome!
     private var drumSounds: DrumSounds!
-    private var mute: Mute!
-    private let mixer = Mixer()
     
     init(metronome: Metronome, drumSounds: DrumSounds) {
-        
-        //let metronomeBooster = Fader(metronome.sequencer)
-        //metronomeBooster.rightGain = 0
-        //let metronomeBoosterLeftPan = Panner(metronomeBooster, pan: -1)
-        
-        //let drumBooster = Fader(drumSounds.drums)
-        //drumBooster.gain = 20
-        //let drumBoosterRightPan = Panner(drumBooster, pan: 1)
-        //drumBoosterRightPan.bypass()
         
         self.metronome = metronome
         self.drumSounds = drumSounds
@@ -40,13 +29,10 @@ class PlayBackEngine {
     //perfect place to use a toggleable
     @discardableResult
     func changeIsPlaying() -> Bool{
-        if isPlaying {
-            isPlaying = false
-        } else {
-            isPlaying = true
-        }
         
-        print("isPlaying inside changeIsPlaying(): \(isPlaying)")
+        isPlaying.toggle()
+        
+        print("isPlaying inside changeIsPlaying(): \(!isPlaying)")
         return isPlaying
     }
     
@@ -57,12 +43,6 @@ class PlayBackEngine {
         //print(metronome.metronomeToggleState)
         if isPlaying{
             print("isPlaying inside if inside play(): \(isPlaying)")
-//            do {
-//                try engine.start()
-//            } catch {
-//                print("AudioKit did not start.")
-//            }
-            
             
             metronome.playMetronome()
             drumSounds.playDrumSounds()

@@ -48,10 +48,10 @@ class K {
         static let BEAT_CARD_3D = BeatCard(label: "3D", noteSequence: [0,1,1,1])
         static let BEAT_CARD_4 = BeatCard(label: "4", noteSequence: [1,1,1,1])
         
-        var beatCardArray: [BeatCard]
+        var BEAT_CARD_ARRAY: [BeatCard]
         
         init() {
-            beatCardArray = [K.BEATCARDINSTANCES.BEAT_CARD_0,
+            BEAT_CARD_ARRAY = [K.BEATCARDINSTANCES.BEAT_CARD_0,
                              K.BEATCARDINSTANCES.BEAT_CARD_1A,
                              K.BEATCARDINSTANCES.BEAT_CARD_1B,
                              K.BEATCARDINSTANCES.BEAT_CARD_1C,

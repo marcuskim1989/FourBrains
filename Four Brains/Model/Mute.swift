@@ -36,39 +36,26 @@ class Mute {
         //Perfect place for toggleables
         switch instrument {
         case K.MUTECONSTANTS.RIDE_MUTE_BUTTON:
-                if rideMuteState{
-                        rideMuteState = false
-                    } else {
-                        rideMuteState = true
-                }
-           print("rideMuteState is \(rideMuteState)")
+            rideMuteState.toggle()
+            
+            print("rideMuteState is \(rideMuteState)")
             
         case K.MUTECONSTANTS.SNARE_MUTE_BUTTON:
-                if snareMuteState{
-                    snareMuteState = false
-                } else {
-                    snareMuteState = true
-            }
+            snareMuteState.toggle()
+            
             print("snareMuteState is \(snareMuteState)")
             
         case K.MUTECONSTANTS.BASS_MUTE_BUTTON:
-                if bassMuteState{
-                    bassMuteState = false
-                } else {
-                    bassMuteState = true
-            }
+            bassMuteState.toggle()
+            
             print("bassMuteState is \(bassMuteState)")
             
         case K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON:
-                if hiHatMuteState{
-                    hiHatMuteState = false
-                } else {
-                    hiHatMuteState = true
-            }
+            hiHatMuteState.toggle()
             print("hiHatMuteState is \(hiHatMuteState)")
             
-            default:
-                print("Error: button title not matched in switch statement")
+        default:
+            print("Error: button title not matched in switch statement")
         }
     }
     

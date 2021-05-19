@@ -28,7 +28,6 @@ class DrumSounds {
     private var mute: Mute!
     
     init(mute: Mute, currentBPM: Int) {
-        
      
         self.mute = mute
         
@@ -37,8 +36,6 @@ class DrumSounds {
         let snareDrumFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME, withExtension: "wav")!))
         let bassDrumFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.BASS_FILE_NAME, withExtension: "wav")!))
         let hiHatFile = try! AVAudioFile(forReading: URL(resolvingAliasFileAt: Bundle.main.url(forResource: K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME, withExtension: "wav")!))
-        
-       
         
         do{
         try drums.loadAudioFiles([rideCymbalFile,
@@ -66,7 +63,10 @@ class DrumSounds {
         sequencer.setTempo(tempo)
     }
     
-    
+    public func processDrumSounds(wholeBeat: WholeBeat) {
+        parseNoteSequence(wholeBeat: wholeBeat)
+        assignDrumSounds()
+    }
     
     //MARK: Parse from wholeBeat
     func parseNoteSequence(wholeBeat: WholeBeat) {

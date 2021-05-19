@@ -23,15 +23,13 @@ class Randomization {
         hiHatPattern = []
         
         for _ in Range(0...3) {
-            ridePattern.append(beatCardInstances.beatCardArray[Int.random(in: 0...15)])
-            snarePattern.append(beatCardInstances.beatCardArray[Int.random(in: 0...15)])
-            bassPattern.append(beatCardInstances.beatCardArray[Int.random(in: 0...15)])
-            hiHatPattern.append(beatCardInstances.beatCardArray[Int.random(in: 0...15)])
+            ridePattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
+            snarePattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
+            bassPattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
+            hiHatPattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
             }
     
         let wholeBeat = WholeBeat(ridePattern: self.ridePattern, snarePattern: self.snarePattern, bassPattern: self.bassPattern, hiHatPattern: self.hiHatPattern)
-        
-        //drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
         
         return wholeBeat
         
