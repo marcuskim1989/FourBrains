@@ -15,7 +15,7 @@ class Randomization {
     private var bassPattern: [BeatCard] = []
     private var hiHatPattern: [BeatCard] = []
     
-    func randomize(beatCardInstances: K.BEATCARDINSTANCES, drumSounds: DrumSounds) -> WholeBeat{
+    func randomize(beatCardInstances: K.BeatCardInstances, drumSounds: DrumSounds) -> WholeBeat{
         
         ridePattern = []
         snarePattern = []
