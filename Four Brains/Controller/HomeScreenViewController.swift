@@ -110,8 +110,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         bassSnoozeOutlet.setTitle(K.SnoozeConstants.BASS_SNOOZE_BUTTON, for: .normal)
         hiHatSnoozeOutlet.setTitle(K.SnoozeConstants.HI_HAT_SNOOZE_BUTTON, for: .normal)
         
-      
-        
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute, currentBPM: self.currentBPM)
         snooze = Snooze(mute: self.mute, drumSounds: self.drumSounds)
@@ -155,35 +153,35 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     }
     
     @IBAction func beatCardPressed(_ sender: UIButton) {
+        let mcPicker = McPicker(data: K.BeatCardNoteStrings.BEAT_CARD_STRING_ARRAY)
         
-        McPicker.showAsPopover(data:[K.BeatCardNoteStrings.BEAT_CARD_STRING_ARRAY], fromViewController: self, sourceView: sender, doneHandler: { [weak self] (selections: [Int : String]) -> Void in
+        let customLabel = UILabel()
+        customLabel.textAlignment = .center
+        customLabel.textColor = .white
+        customLabel.font = UIFont(name:"American Typewriter", size: 30)!
+        mcPicker.label = customLabel
+        
+        let fixedSpace = McPickerBarButtonItem.fixedSpace(width: 20.0)
+        let flexibleSpace = McPickerBarButtonItem.flexibleSpace()
+        let fireButton = McPickerBarButtonItem.done(mcPicker: mcPicker, title: "Fire!!!") // Set custom Text
+        let cancelButton = McPickerBarButtonItem.cancel(mcPicker: mcPicker, barButtonSystemItem: .cancel) // or system items
+        mcPicker.setToolbarItems(items: [fixedSpace, cancelButton, flexibleSpace, fireButton, fixedSpace])
+
+        mcPicker.toolbarItemsFont = UIFont(name:"American Typewriter", size: 17)!
+
+        mcPicker.toolbarButtonsColor = .white
+        mcPicker.toolbarBarTintColor = .darkGray
+        mcPicker.pickerBackgroundColor = .gray
+        mcPicker.backgroundColor = .gray
+        mcPicker.backgroundColorAlpha = 0.50
+
+        
+        mcPicker.showAsPopover(fromViewController: self, sourceView: sender) { [weak self] (selections: [Int : String]) -> Void in
             if let beatCard = selections[0] {
-
-                switch beatCard {
-                case  K.BeatCardNoteStrings.BEAT_CARD_0_NOTE_STRING:
-                    sender.setImage(#imageLiteral(resourceName: "0"), for: .normal)
-                case K.BeatCardNoteStrings.BEAT_CARD_1A_NOTE_STRING:
-                    sender.setImage(#imageLiteral(resourceName: "1A"), for: .normal)
-                case K.BeatCardNoteStrings.BEAT_CARD_1B_NOTE_STRING:
-                    sender.setImage(#imageLiteral(resourceName: "1B"), for: .normal)
-                case K.BeatCardNoteStrings.BEAT_CARD_1C_NOTE_STRING:
-                    sender.setImage(#imageLiteral(resourceName: "1C"), for: .normal)
-                case K.BeatCardNoteStrings.BEAT_CARD_1D_NOTE_STRING:
-                    sender.setImage(#imageLiteral(resourceName: "1D"), for: .normal)
-
-                default:
-                    sender.setImage(#imageLiteral(resourceName: "Beat Card Box"), for: .normal)
-                }
-
+                sender.setImage(#imageLiteral(resourceName: "2D"), for: .normal)
             }
-        }, cancelHandler: { () -> Void in
-            print("Canceled Popover")
-        }, selectionChangedHandler: { (selections: [Int:String], componentThatChanged: Int) -> Void  in
-            let newSelection = selections[componentThatChanged] ?? "Failed to get new selection!"
-            print("Component \(componentThatChanged) changed value to \(newSelection)")
-        })
-
-        print("beat card pressed")
+        }
+        
     }
     
               

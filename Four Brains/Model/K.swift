@@ -53,21 +53,21 @@ class K {
         
         init() {
             BEAT_CARD_ARRAY = [K.BeatCardInstances.BEAT_CARD_0,
-                             K.BeatCardInstances.BEAT_CARD_1A,
-                             K.BeatCardInstances.BEAT_CARD_1B,
-                             K.BeatCardInstances.BEAT_CARD_1C,
-                             K.BeatCardInstances.BEAT_CARD_1D,
-                             K.BeatCardInstances.BEAT_CARD_2A,
-                             K.BeatCardInstances.BEAT_CARD_2B,
-                             K.BeatCardInstances.BEAT_CARD_2C,
-                             K.BeatCardInstances.BEAT_CARD_2D,
-                             K.BeatCardInstances.BEAT_CARD_2E,
-                             K.BeatCardInstances.BEAT_CARD_2F,
-                             K.BeatCardInstances.BEAT_CARD_3A,
-                             K.BeatCardInstances.BEAT_CARD_3B,
-                             K.BeatCardInstances.BEAT_CARD_3C,
-                             K.BeatCardInstances.BEAT_CARD_3D,
-                             K.BeatCardInstances.BEAT_CARD_4]
+                               K.BeatCardInstances.BEAT_CARD_1A,
+                               K.BeatCardInstances.BEAT_CARD_1B,
+                               K.BeatCardInstances.BEAT_CARD_1C,
+                               K.BeatCardInstances.BEAT_CARD_1D,
+                               K.BeatCardInstances.BEAT_CARD_2A,
+                               K.BeatCardInstances.BEAT_CARD_2B,
+                               K.BeatCardInstances.BEAT_CARD_2C,
+                               K.BeatCardInstances.BEAT_CARD_2D,
+                               K.BeatCardInstances.BEAT_CARD_2E,
+                               K.BeatCardInstances.BEAT_CARD_2F,
+                               K.BeatCardInstances.BEAT_CARD_3A,
+                               K.BeatCardInstances.BEAT_CARD_3B,
+                               K.BeatCardInstances.BEAT_CARD_3C,
+                               K.BeatCardInstances.BEAT_CARD_3D,
+                               K.BeatCardInstances.BEAT_CARD_4]
         }
         
     }
@@ -89,28 +89,30 @@ class K {
         static let BEAT_CARD_3C_NOTE_STRING = "X - X X"
         static let BEAT_CARD_3D_NOTE_STRING = "- X X X"
         static let BEAT_CARD_4_NOTE_STRING = "X X X X"
-    
+        
         static let BEAT_CARD_STRING_ARRAY = [
-            BEAT_CARD_0_NOTE_STRING,
-            BEAT_CARD_1A_NOTE_STRING,
-            BEAT_CARD_1B_NOTE_STRING,
-            BEAT_CARD_1C_NOTE_STRING,
-            BEAT_CARD_1D_NOTE_STRING,
-            BEAT_CARD_2A_NOTE_STRING,
-            BEAT_CARD_2B_NOTE_STRING,
-            BEAT_CARD_2C_NOTE_STRING,
-            BEAT_CARD_2D_NOTE_STRING,
-            BEAT_CARD_2E_NOTE_STRING,
-            BEAT_CARD_2F_NOTE_STRING,
-            BEAT_CARD_3A_NOTE_STRING,
-            BEAT_CARD_3B_NOTE_STRING,
-            BEAT_CARD_3C_NOTE_STRING,
-            BEAT_CARD_3D_NOTE_STRING,
-            BEAT_CARD_4_NOTE_STRING
+            [
+                BEAT_CARD_0_NOTE_STRING,
+                BEAT_CARD_1A_NOTE_STRING,
+                BEAT_CARD_1B_NOTE_STRING,
+                BEAT_CARD_1C_NOTE_STRING,
+                BEAT_CARD_1D_NOTE_STRING,
+                BEAT_CARD_2A_NOTE_STRING,
+                BEAT_CARD_2B_NOTE_STRING,
+                BEAT_CARD_2C_NOTE_STRING,
+                BEAT_CARD_2D_NOTE_STRING,
+                BEAT_CARD_2E_NOTE_STRING,
+                BEAT_CARD_2F_NOTE_STRING,
+                BEAT_CARD_3A_NOTE_STRING,
+                BEAT_CARD_3B_NOTE_STRING,
+                BEAT_CARD_3C_NOTE_STRING,
+                BEAT_CARD_3D_NOTE_STRING,
+                BEAT_CARD_4_NOTE_STRING
+            ]
         ]
         
     }
     
     
-
+    
 }
