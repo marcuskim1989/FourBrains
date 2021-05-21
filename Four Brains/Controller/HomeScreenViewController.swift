@@ -157,23 +157,22 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
         
         let customLabel = UILabel()
         customLabel.textAlignment = .center
-        customLabel.textColor = .white
-        customLabel.font = UIFont(name:"American Typewriter", size: 30)!
+        customLabel.textColor = .black
+        customLabel.font = UIFont(name: "Helvetica Light", size: 40)
         mcPicker.label = customLabel
         
-        let fixedSpace = McPickerBarButtonItem.fixedSpace(width: 20.0)
+        
+        let fixedSpace = McPickerBarButtonItem.fixedSpace(width: 10.0)
         let flexibleSpace = McPickerBarButtonItem.flexibleSpace()
-        let fireButton = McPickerBarButtonItem.done(mcPicker: mcPicker, title: "Fire!!!") // Set custom Text
+        let fireButton = McPickerBarButtonItem.done(mcPicker: mcPicker, title: "Done") // Set custom Text
         let cancelButton = McPickerBarButtonItem.cancel(mcPicker: mcPicker, barButtonSystemItem: .cancel) // or system items
         mcPicker.setToolbarItems(items: [fixedSpace, cancelButton, flexibleSpace, fireButton, fixedSpace])
 
-        mcPicker.toolbarItemsFont = UIFont(name:"American Typewriter", size: 17)!
-
-        mcPicker.toolbarButtonsColor = .white
-        mcPicker.toolbarBarTintColor = .darkGray
-        mcPicker.pickerBackgroundColor = .gray
-        mcPicker.backgroundColor = .gray
-        mcPicker.backgroundColorAlpha = 0.50
+        mcPicker.toolbarButtonsColor = .black
+        mcPicker.toolbarBarTintColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        mcPicker.pickerBackgroundColor = .clear
+        mcPicker.backgroundColor = .clear
+        mcPicker.backgroundColorAlpha = 0.25
 
         
         mcPicker.showAsPopover(fromViewController: self, sourceView: sender) { [weak self] (selections: [Int : String]) -> Void in
