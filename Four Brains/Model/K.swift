@@ -10,10 +10,23 @@ import Foundation
 
 class K {
     class MuteConstants {
-        static let RIDE_MUTE_BUTTON = "ride_mute_button"
-        static let SNARE_MUTE_BUTTON = "snare_mute_button"
-        static let BASS_MUTE_BUTTON = "bass_mute_button"
-        static let HI_HAT_MUTE_BUTTON = "hi_hat_mute_button"
+        class MuteButtonNames{
+            static let RIDE_MUTE_BUTTON = "ride_mute_button"
+            static let SNARE_MUTE_BUTTON = "snare_mute_button"
+            static let BASS_MUTE_BUTTON = "bass_mute_button"
+            static let HI_HAT_MUTE_BUTTON = "hi_hat_mute_button"
+        }
+        
+        class MuteImageNames{
+            static let RIDE_IMAGE_ACTIVE = "Ride Active"
+            static let RIDE_IMAGE_MUTED = "Ride Muted"
+            static let SNARE_IMAGE_ACTIVE = "Snare Active"
+            static let SNARE_IMAGE_MUTED = "Snare Muted"
+            static let KICK_IMAGE_ACTIVE = "Kick Active"
+            static let KICK_IMAGE_MUTED = "Kick Muted"
+            static let HAT_IMAGE_ACTIVE = "Hat Active"
+            static let HAT_IMAGE_MUTED = "Hat Muted"
+        }
     }
     
     class SnoozeConstants {

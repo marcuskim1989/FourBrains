@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,59 +26,53 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="71" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F o u r  B r a i n s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-nt-K6j">
-                                <rect key="frame" x="184" y="14.5" width="528.5" height="60"/>
-                                <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" tag="30" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mak-l2-MUb" userLabel="Beat Board Stack">
-                                <rect key="frame" x="88" y="84.5" width="720" height="245"/>
+                                <rect key="frame" x="48" y="84.5" width="800" height="245"/>
                                 <subviews>
                                     <stackView opaque="NO" tag="40" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-ER-MVn" userLabel="Instrument Mute Button Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="245"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="245"/>
                                         <subviews>
                                             <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-rx-I4c" userLabel="Ride">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="IhX-zf-NgW"/>
-                                                    <constraint firstAttribute="height" constant="50" id="xuw-1f-jTe"/>
+                                                    <constraint firstAttribute="width" constant="130" id="Q7y-Bd-KkB"/>
+                                                    <constraint firstAttribute="height" constant="50" id="yBB-41-JhP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                                <state key="normal" image="Ride Cymbal"/>
+                                                <state key="normal" image="Ride Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5TG-b5-8Q6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-62-PPE" userLabel="Snare">
-                                                <rect key="frame" x="0.0" y="65" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="65" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="40q-qc-tC8"/>
-                                                    <constraint firstAttribute="height" constant="50" id="Of1-HL-h5A"/>
+                                                    <constraint firstAttribute="width" constant="130" id="dtS-bo-jsb"/>
+                                                    <constraint firstAttribute="height" constant="50" id="hhI-cT-iGA"/>
                                                 </constraints>
-                                                <state key="normal" image="Snare Drum Clear"/>
+                                                <state key="normal" image="Snare Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jv-78-wIh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="43" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEQ-Iu-wLl" userLabel="Bass">
-                                                <rect key="frame" x="0.0" y="130" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="130" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="OXV-G4-dCS"/>
-                                                    <constraint firstAttribute="width" constant="50" id="gl4-TL-EJ8"/>
+                                                    <constraint firstAttribute="width" constant="130" id="3BI-87-Z6t"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bVr-Uk-PKd"/>
                                                 </constraints>
-                                                <state key="normal" image="Bass Drum"/>
+                                                <state key="normal" image="Kick Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyc-n0-VWM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJV-dC-uwF" userLabel="Hi Hat">
-                                                <rect key="frame" x="0.0" y="195" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="195" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="GpJ-1H-9kv"/>
-                                                    <constraint firstAttribute="height" constant="50" id="bpG-lL-Djh"/>
+                                                    <constraint firstAttribute="width" constant="130" id="8oy-I1-BKj"/>
+                                                    <constraint firstAttribute="height" constant="50" id="V7q-vk-xTl"/>
                                                 </constraints>
-                                                <state key="normal" image="Hi Hat "/>
+                                                <state key="normal" image="Hat Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KX-ss-O9K"/>
                                                 </connections>
@@ -86,7 +80,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-g2-Dtp" userLabel="Beat Card Matrix">
-                                        <rect key="frame" x="60" y="0.0" width="600" height="245"/>
+                                        <rect key="frame" x="140" y="0.0" width="600" height="245"/>
                                         <subviews>
                                             <stackView opaque="NO" tag="35" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-oa-sFH" userLabel="Ride Cymbal Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
@@ -226,7 +220,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" tag="60" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A3S-UP-V8e" userLabel="Snooze Button Stack">
-                                        <rect key="frame" x="670" y="0.0" width="50" height="245"/>
+                                        <rect key="frame" x="750" y="0.0" width="50" height="245"/>
                                         <subviews>
                                             <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h12-va-SNg" userLabel="Ride Snooze">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -339,6 +333,38 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pI5-hK-ldp" userLabel="Top Container">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="84.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-RQ-4ty">
+                                <rect key="frame" x="0.0" y="84.5" width="48" height="245"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-4y-NPh">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hRa-mf-bLs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="5Ej-cN-TOo">
+                                        <rect key="frame" x="0.0" y="65" width="48" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="pzi-Lz-tlK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Xlo-xP-Mb6">
+                                        <rect key="frame" x="0.0" y="130" width="48" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aMs-Qa-jke"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="LJN-If-igz">
+                                        <rect key="frame" x="0.0" y="195" width="48" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZnQ-qz-3Y1"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -346,12 +372,17 @@
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Q8-CT-jze"/>
                             <constraint firstAttribute="trailing" secondItem="G9q-oH-9tH" secondAttribute="trailing" id="3bu-HC-Hj6"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7f3-Lm-4CK"/>
-                            <constraint firstItem="jAp-nt-K6j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GPj-Mm-BRv"/>
+                            <constraint firstItem="mak-l2-MUb" firstAttribute="leading" secondItem="8oR-RQ-4ty" secondAttribute="trailing" id="99Q-Bi-DKg"/>
+                            <constraint firstItem="pI5-hK-ldp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9v9-bL-0Qc"/>
+                            <constraint firstAttribute="trailing" secondItem="pI5-hK-ldp" secondAttribute="trailing" id="HY0-3y-mDX"/>
                             <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="Oic-bM-92m"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="top" secondItem="jAp-nt-K6j" secondAttribute="bottom" constant="10" id="Vxa-qH-cLJ"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eL9-T7-70Q"/>
                             <constraint firstItem="y5Y-p6-97k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eM8-in-RlN"/>
+                            <constraint firstItem="mak-l2-MUb" firstAttribute="top" secondItem="pI5-hK-ldp" secondAttribute="bottom" id="jeg-Xq-uds"/>
+                            <constraint firstItem="8oR-RQ-4ty" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nIz-Fx-wmH"/>
                             <constraint firstItem="y5Y-p6-97k" firstAttribute="top" secondItem="mak-l2-MUb" secondAttribute="bottom" constant="10" id="nwT-2c-DPJ"/>
+                            <constraint firstItem="8oR-RQ-4ty" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nxl-Yk-pjj"/>
+                            <constraint firstItem="pI5-hK-ldp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o9H-na-OhX"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ujf-tf-dwg"/>
                         </constraints>
                     </view>
@@ -390,7 +421,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-21" y="-2504"/>
+            <point key="canvasLocation" x="-21.428571428571427" y="-2504.3478260869565"/>
         </scene>
         <!--Adjustor View Controller-->
         <scene sceneID="s4I-cV-P8t">
@@ -493,15 +524,16 @@
     </scenes>
     <resources>
         <image name="4 Beeps Image" width="360" height="360"/>
-        <image name="Bass Drum" width="240" height="240"/>
         <image name="Beat Card Box" width="341" height="180"/>
-        <image name="Hi Hat " width="240" height="240"/>
+        <image name="Hat Active" width="360" height="138.5"/>
         <image name="Home Screen Background" width="341" height="240"/>
+        <image name="Kick Active" width="360" height="138.5"/>
+        <image name="Leading Edge Mute Button Spacer" width="360" height="138.5"/>
         <image name="Metronome Button" width="240" height="240"/>
         <image name="Play Button" width="240" height="240"/>
         <image name="Random Button" width="240" height="240"/>
-        <image name="Ride Cymbal" width="240" height="240"/>
-        <image name="Snare Drum Clear" width="240" height="240"/>
+        <image name="Ride Active" width="360" height="138.5"/>
+        <image name="Snare Active" width="360" height="138.5"/>
         <image name="Snooze Button" width="240" height="240"/>
     </resources>
 </document>

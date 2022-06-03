@@ -35,22 +35,22 @@ class Mute {
         
         //Perfect place for toggleables
         switch instrument {
-        case K.MuteConstants.RIDE_MUTE_BUTTON:
+        case K.MuteConstants.MuteButtonNames.RIDE_MUTE_BUTTON:
             rideMuteState.toggle()
             
             print("rideMuteState is \(rideMuteState)")
             
-        case K.MuteConstants.SNARE_MUTE_BUTTON:
+        case K.MuteConstants.MuteButtonNames.SNARE_MUTE_BUTTON:
             snareMuteState.toggle()
             
             print("snareMuteState is \(snareMuteState)")
             
-        case K.MuteConstants.BASS_MUTE_BUTTON:
+        case K.MuteConstants.MuteButtonNames.BASS_MUTE_BUTTON:
             bassMuteState.toggle()
             
             print("bassMuteState is \(bassMuteState)")
             
-        case K.MuteConstants.HI_HAT_MUTE_BUTTON:
+        case K.MuteConstants.MuteButtonNames.HI_HAT_MUTE_BUTTON:
             hiHatMuteState.toggle()
             print("hiHatMuteState is \(hiHatMuteState)")
             
