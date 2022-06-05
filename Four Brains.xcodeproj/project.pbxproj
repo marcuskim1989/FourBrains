@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C026DD62849BEE800AB1C78 /* HGCircularSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */; };
+		2C026DDA2849C1FE00AB1C78 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C026DD92849C1FE00AB1C78 /* AudioKit */; };
+		2C026DDC2849C2D800AB1C78 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 2C14C1A123FBCEAE005D764A /* 4tracks.mid */; };
 		2C40F42125A7C24D000CB925 /* parley bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C40F42025A7C172000CB925 /* parley bold.ttf */; };
 		2C4BC4A423F4B05C00D75F3E /* BPMAdjustorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BC4A323F4B05C00D75F3E /* BPMAdjustorViewController.swift */; };
 		2C58E1D3241087AF0045929E /* Mute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D2241087AF0045929E /* Mute.swift */; };
 		2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D42410DDDF0045929E /* Snooze.swift */; };
 		2C6F6F15261BF2B1000CE29F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F6F14261BF2B1000CE29F /* K.swift */; };
-		2C6F6F1F261D5A58000CE29F /* HGCircularSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */; };
 		2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
-		2C6F6F22261D5A5A000CE29F /* Pods_Four_Brains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B385F23ED28AC00C120E7 /* Metronome.swift */; };
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
@@ -36,23 +37,8 @@
 		2CD14C1A23DA6E1100157D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1923DA6E1100157D75 /* Assets.xcassets */; };
 		2CD14C1D23DA6E1100157D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD14C1B23DA6E1100157D75 /* LaunchScreen.storyboard */; };
 		2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD8FD882627EA47006D7FF8 /* AudioKit */; };
-		2CD8FD8D26293819006D7FF8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */; };
 		2CDA10E623EAB76900014D55 /* BeatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA10E523EAB76900014D55 /* BeatCard.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		2C33384123DFE19C000E9940 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2C6F6F22261D5A5A000CE29F /* Pods_Four_Brains.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2C14C1A123FBCEAE005D764A /* 4tracks.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = 4tracks.mid; sourceTree = "<group>"; };
@@ -95,9 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CD8FD8D26293819006D7FF8 /* AVFoundation.framework in Frameworks */,
+				2C026DD62849BEE800AB1C78 /* HGCircularSlider.framework in Frameworks */,
+				2C026DDA2849C1FE00AB1C78 /* AudioKit in Frameworks */,
+				2C026DDC2849C2D800AB1C78 /* AVFoundation.framework in Frameworks */,
 				2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */,
-				2C6F6F1F261D5A58000CE29F /* HGCircularSlider.framework in Frameworks */,
 				2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,7 +214,6 @@
 				2CD14C0923DA6E0E00157D75 /* Sources */,
 				2CD14C0A23DA6E0E00157D75 /* Frameworks */,
 				2CD14C0B23DA6E0E00157D75 /* Resources */,
-				2C33384123DFE19C000E9940 /* Embed Frameworks */,
 				2DFE790E21396CC93D98AC8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -237,6 +223,7 @@
 			name = "Four Brains";
 			packageProductDependencies = (
 				2CD8FD882627EA47006D7FF8 /* AudioKit */,
+				2C026DD92849C1FE00AB1C78 /* AudioKit */,
 			);
 			productName = "Four Brains";
 			productReference = 2CD14C0D23DA6E0E00157D75 /* Four Brains.app */;
@@ -268,6 +255,7 @@
 			mainGroup = 2CD14C0423DA6E0E00157D75;
 			packageReferences = (
 				2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */,
 			);
 			productRefGroup = 2CD14C0E23DA6E0E00157D75 /* Products */;
 			projectDirPath = "";
@@ -437,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -492,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -512,7 +500,7 @@
 				DEVELOPMENT_TEAM = 79X64CRQXT;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Four Brains/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,7 +524,7 @@
 				DEVELOPMENT_TEAM = 79X64CRQXT;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Four Brains/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,6 +562,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
@@ -585,6 +581,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2C026DD92849C1FE00AB1C78 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
 		2CD8FD882627EA47006D7FF8 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */;

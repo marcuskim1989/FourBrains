@@ -21,7 +21,9 @@ class BPMAdjustorViewController: UIViewController {
     public var currentBPM: Int?
     public weak var delegate: BPMAdjustorDelegate?
     @IBOutlet weak var bpmLabel: UILabel!
-    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

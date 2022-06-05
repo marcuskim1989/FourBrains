@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,8 +34,8 @@
                                             <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-rx-I4c" userLabel="Ride">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="Q7y-Bd-KkB"/>
-                                                    <constraint firstAttribute="height" constant="50" id="yBB-41-JhP"/>
+                                                    <constraint firstAttribute="width" constant="130" id="5Jh-kc-WR2"/>
+                                                    <constraint firstAttribute="height" constant="50" id="s4h-hR-hQR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <state key="normal" image="Ride Active"/>
@@ -78,6 +77,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Ceu-rx-I4c" secondAttribute="trailing" id="PRY-XJ-bdo"/>
+                                            <constraint firstItem="Ceu-rx-I4c" firstAttribute="leading" secondItem="b3W-ER-MVn" secondAttribute="leading" id="e9I-YP-T1H"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-g2-Dtp" userLabel="Beat Card Matrix">
                                         <rect key="frame" x="140" y="0.0" width="600" height="245"/>
@@ -267,75 +270,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" tag="70" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="y5Y-p6-97k" userLabel="Play Panel  Stack">
-                                <rect key="frame" x="168" y="339.5" width="560" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-I7-kXg" userLabel="Play">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="0dc-Sn-UH7"/>
-                                            <constraint firstAttribute="width" constant="50" id="H1m-nP-U1g"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Play Button"/>
-                                        <connections>
-                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2q-Nb-oTj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="72" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
-                                        <rect key="frame" x="125" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="1P4-bU-zlG"/>
-                                            <constraint firstAttribute="width" constant="50" id="Xcj-JF-HEM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="29"/>
-                                        <state key="normal" title="120" image="Metronome Button">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="metronomeTogglePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYC-Aa-fDc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="73" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
-                                        <rect key="frame" x="250" y="0.0" width="60" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="9tJ-0a-coh"/>
-                                            <constraint firstAttribute="width" constant="60" id="aqg-dc-iWB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="29"/>
-                                        <state key="normal" title="60">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="bpmAdjustorAccessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPN-tY-yeq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="74" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Subdivision">
-                                        <rect key="frame" x="385" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="OVL-bE-JUd"/>
-                                            <constraint firstAttribute="height" constant="50" id="YXN-VZ-kSp"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="4 Beeps Image"/>
-                                        <connections>
-                                            <action selector="subdivisionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSw-yN-LHJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
-                                        <rect key="frame" x="510" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="If7-yh-s4N"/>
-                                            <constraint firstAttribute="width" constant="50" id="OKx-S8-k0C"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Random Button"/>
-                                        <connections>
-                                            <action selector="randomizationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45H-4P-6PW"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pI5-hK-ldp" userLabel="Top Container">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="84.5"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-RQ-4ty">
                                 <rect key="frame" x="0.0" y="84.5" width="48" height="245"/>
                                 <subviews>
@@ -365,24 +299,194 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-sZ-7lE" userLabel="Bottom Panel">
+                                <rect key="frame" x="0.0" y="364" width="896" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i0g-48-i4b"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-db-dE7" userLabel="Top Panel Background">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-zv-CdA">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Raw-Nd-adB"/>
+                                            <constraint firstAttribute="height" constant="50" id="hve-5X-SEi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-I7-kXg" userLabel="Profile">
+                                        <rect key="frame" x="25" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0dc-Sn-UH7"/>
+                                            <constraint firstAttribute="width" constant="50" id="H1m-nP-U1g"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Profile Cropped">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2q-Nb-oTj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
+                                        <rect key="frame" x="821" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="If7-yh-s4N"/>
+                                            <constraint firstAttribute="width" constant="50" id="OKx-S8-k0C"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Randomize Cropped"/>
+                                        <connections>
+                                            <action selector="randomizationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45H-4P-6PW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="72" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
+                                        <rect key="frame" x="358" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1P4-bU-zlG"/>
+                                            <constraint firstAttribute="width" constant="50" id="Xcj-JF-HEM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="29"/>
+                                        <state key="normal" title="120" image="Metronome Active Cropped">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="metronomeTogglePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYC-Aa-fDc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="73" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
+                                        <rect key="frame" x="423" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bEk-DD-TFv"/>
+                                            <constraint firstAttribute="width" constant="50" id="xcn-kT-AD8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                                        <state key="normal" title="60" backgroundImage="Blank Button Circle">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="bpmAdjustorAccessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPN-tY-yeq"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-ls-cgx">
+                                        <rect key="frame" x="75" y="0.0" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Fsp-bo-7bB"/>
+                                            <constraint firstAttribute="height" constant="50" id="QMh-fE-r9v"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQE-Xy-7Y7" userLabel="Play">
+                                        <rect key="frame" x="135" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1OW-bH-zTt"/>
+                                            <constraint firstAttribute="width" constant="50" id="pnM-5W-u3C"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Play Cropped">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hh7-3R-z2u"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-J8-TtH">
+                                        <rect key="frame" x="871" y="0.0" width="25" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="0ts-va-gk7"/>
+                                            <constraint firstAttribute="height" constant="50" id="U05-vO-cl8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-e3-I3s">
+                                        <rect key="frame" x="408" y="0.0" width="15" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="bZt-PG-On4"/>
+                                            <constraint firstAttribute="height" constant="50" id="jRc-z5-fWg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="PEB-0E-Nck">
+                                        <rect key="frame" x="473" y="0.0" width="15" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7sU-OE-OeF"/>
+                                            <constraint firstAttribute="width" constant="15" id="Vqd-wt-uGW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="74" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Subdivision">
+                                        <rect key="frame" x="488" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="OVL-bE-JUd"/>
+                                            <constraint firstAttribute="height" constant="50" id="YXN-VZ-kSp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="4th Cropped"/>
+                                        <connections>
+                                            <action selector="subdivisionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSw-yN-LHJ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-w8-JYg">
+                                        <rect key="frame" x="185" y="0.0" width="173" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GcD-Xp-qEn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-va-Kvk">
+                                        <rect key="frame" x="538" y="0.0" width="283" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WdS-5b-nzd"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="k9J-w8-UGF"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TXK-TF-oRe" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="0qX-WR-f35"/>
+                                    <constraint firstItem="hQE-Xy-7Y7" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="9iL-o9-YmK"/>
+                                    <constraint firstItem="e0t-ls-cgx" firstAttribute="leading" secondItem="peW-I7-kXg" secondAttribute="trailing" id="CYa-VD-CO1"/>
+                                    <constraint firstItem="0E7-J8-TtH" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="top" id="DnA-UG-I5r"/>
+                                    <constraint firstItem="PEB-0E-Nck" firstAttribute="leading" secondItem="Eh5-Oe-ymh" secondAttribute="trailing" id="Fzt-3n-jrr"/>
+                                    <constraint firstItem="YNP-yZ-Ukb" firstAttribute="leading" secondItem="PEB-0E-Nck" secondAttribute="trailing" id="HGA-Ja-459"/>
+                                    <constraint firstItem="Ow1-zv-CdA" firstAttribute="leading" secondItem="nwl-db-dE7" secondAttribute="leading" id="IEK-VB-bHX"/>
+                                    <constraint firstAttribute="height" constant="50" id="IxO-rr-dlV"/>
+                                    <constraint firstAttribute="trailing" secondItem="0E7-J8-TtH" secondAttribute="trailing" id="Mce-98-y2T"/>
+                                    <constraint firstItem="peW-I7-kXg" firstAttribute="leading" secondItem="Ow1-zv-CdA" secondAttribute="trailing" id="MmA-Wh-tuW"/>
+                                    <constraint firstItem="TXK-TF-oRe" firstAttribute="leading" secondItem="uR2-va-Kvk" secondAttribute="trailing" id="RMr-XV-SKo"/>
+                                    <constraint firstItem="Eh5-Oe-ymh" firstAttribute="centerX" secondItem="nwl-db-dE7" secondAttribute="centerX" id="RTr-b9-nrG"/>
+                                    <constraint firstItem="53s-FQ-TV5" firstAttribute="leading" secondItem="3ET-w8-JYg" secondAttribute="trailing" id="SKo-w2-QQN"/>
+                                    <constraint firstItem="VRb-e3-I3s" firstAttribute="leading" secondItem="53s-FQ-TV5" secondAttribute="trailing" id="Z6w-9C-B42"/>
+                                    <constraint firstItem="peW-I7-kXg" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="axC-Ie-sy9"/>
+                                    <constraint firstItem="Ow1-zv-CdA" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="dSr-2M-gYR"/>
+                                    <constraint firstItem="TXK-TF-oRe" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="top" id="evT-VA-SI3"/>
+                                    <constraint firstItem="3ET-w8-JYg" firstAttribute="leading" secondItem="hQE-Xy-7Y7" secondAttribute="trailing" id="hZN-57-XHp"/>
+                                    <constraint firstItem="YNP-yZ-Ukb" firstAttribute="leading" secondItem="PEB-0E-Nck" secondAttribute="trailing" id="lTr-NL-nrc"/>
+                                    <constraint firstItem="uR2-va-Kvk" firstAttribute="leading" secondItem="YNP-yZ-Ukb" secondAttribute="trailing" id="mYG-kj-FUa"/>
+                                    <constraint firstItem="0E7-J8-TtH" firstAttribute="leading" secondItem="TXK-TF-oRe" secondAttribute="trailing" id="oUz-Jl-ch6"/>
+                                    <constraint firstItem="hQE-Xy-7Y7" firstAttribute="leading" secondItem="e0t-ls-cgx" secondAttribute="trailing" id="yMp-Ez-66u"/>
+                                    <constraint firstItem="Eh5-Oe-ymh" firstAttribute="leading" secondItem="VRb-e3-I3s" secondAttribute="trailing" id="zZT-N1-0Vg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nwl-db-dE7" secondAttribute="trailing" id="2ri-Kk-Yii"/>
+                            <constraint firstAttribute="bottom" secondItem="YHI-sZ-7lE" secondAttribute="bottom" id="3Ml-vA-Hbc"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Q8-CT-jze"/>
                             <constraint firstAttribute="trailing" secondItem="G9q-oH-9tH" secondAttribute="trailing" id="3bu-HC-Hj6"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7f3-Lm-4CK"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="leading" secondItem="8oR-RQ-4ty" secondAttribute="trailing" id="99Q-Bi-DKg"/>
-                            <constraint firstItem="pI5-hK-ldp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9v9-bL-0Qc"/>
-                            <constraint firstAttribute="trailing" secondItem="pI5-hK-ldp" secondAttribute="trailing" id="HY0-3y-mDX"/>
+                            <constraint firstItem="nwl-db-dE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Hr-39-Hrk"/>
+                            <constraint firstItem="nwl-db-dE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EoT-1Z-lyR"/>
                             <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="Oic-bM-92m"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eL9-T7-70Q"/>
-                            <constraint firstItem="y5Y-p6-97k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eM8-in-RlN"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="top" secondItem="pI5-hK-ldp" secondAttribute="bottom" id="jeg-Xq-uds"/>
+                            <constraint firstAttribute="trailing" secondItem="YHI-sZ-7lE" secondAttribute="trailing" id="gfn-qB-12i"/>
+                            <constraint firstItem="YHI-sZ-7lE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mT2-qI-8OG"/>
                             <constraint firstItem="8oR-RQ-4ty" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nIz-Fx-wmH"/>
-                            <constraint firstItem="y5Y-p6-97k" firstAttribute="top" secondItem="mak-l2-MUb" secondAttribute="bottom" constant="10" id="nwT-2c-DPJ"/>
                             <constraint firstItem="8oR-RQ-4ty" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nxl-Yk-pjj"/>
-                            <constraint firstItem="pI5-hK-ldp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o9H-na-OhX"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ujf-tf-dwg"/>
                         </constraints>
                     </view>
@@ -421,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-21.428571428571427" y="-2504.3478260869565"/>
+            <point key="canvasLocation" x="-24.107142857142858" y="-2757.971014492754"/>
         </scene>
         <!--Adjustor View Controller-->
         <scene sceneID="s4I-cV-P8t">
@@ -523,15 +627,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4 Beeps Image" width="360" height="360"/>
+        <image name="4th Cropped" width="360" height="360"/>
         <image name="Beat Card Box" width="341" height="180"/>
+        <image name="Blank Button Circle" width="138.5" height="138.5"/>
         <image name="Hat Active" width="360" height="138.5"/>
         <image name="Home Screen Background" width="341" height="240"/>
         <image name="Kick Active" width="360" height="138.5"/>
         <image name="Leading Edge Mute Button Spacer" width="360" height="138.5"/>
-        <image name="Metronome Button" width="240" height="240"/>
-        <image name="Play Button" width="240" height="240"/>
-        <image name="Random Button" width="240" height="240"/>
+        <image name="Metronome Active Cropped" width="360" height="360"/>
+        <image name="Play Cropped" width="360" height="360"/>
+        <image name="Profile Cropped" width="360" height="360"/>
+        <image name="Randomize Cropped" width="360" height="360"/>
         <image name="Ride Active" width="360" height="138.5"/>
         <image name="Snare Active" width="360" height="138.5"/>
         <image name="Snooze Button" width="240" height="240"/>

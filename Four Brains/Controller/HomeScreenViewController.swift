@@ -39,6 +39,9 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     private var currentBPM: Int = 60
     private var subdivision: Int = 4
     private var mixer = Mixer()
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        true
+    }
     
     public static let engine = AudioEngine()
     
