@@ -36,6 +36,18 @@ class K {
         static let HI_HAT_SNOOZE_BUTTON = "hi_hat_snooze_button"
     }
     
+    class PlayPanelImageNames {
+        static let PROFILE = "Profile"
+        static let PLAY = "Play"
+        static let STOP = "Stop"
+        static let METRONOME_ACTIVE = "Metronome Active"
+        static let METRONOME_MUTED = "Metronome Muted"
+        static let SUBDIVISION_4TH = "4th"
+        static let SUBDIVISION_8TH = "8th"
+        static let SUBDIVISION_16TH = "16th"
+        static let RANDOM = "Random"
+    }
+    
     class DrumSoundFileNames {
         static let RIDE_FILE_NAME = "open_hi_hat_A#1"
         static let SNARE_FILE_NAME = "snare_D1"

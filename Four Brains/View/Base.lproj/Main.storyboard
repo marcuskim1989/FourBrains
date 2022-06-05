@@ -95,21 +95,21 @@
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sr0-HN-0JE"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xux-KJ-gy7" userLabel="Ride1">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xux-KJ-gy7" userLabel="Ride1">
                                                         <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJK-pt-UTw"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qez-24-yum" userLabel="Ride2">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qez-24-yum" userLabel="Ride2">
                                                         <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghb-eZ-BMQ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fno-I9-XRi" userLabel="Ride3">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fno-I9-XRi" userLabel="Ride3">
                                                         <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
@@ -121,28 +121,28 @@
                                             <stackView opaque="NO" tag="35" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WyL-ji-cYA" userLabel="Snare Drum Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="65" width="600" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDR-Y5-feF" userLabel="Snare0">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDR-Y5-feF" userLabel="Snare0">
                                                         <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1no-JJ-ymJ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttC-Sa-sep" userLabel="Snare1">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttC-Sa-sep" userLabel="Snare1">
                                                         <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIM-pP-IMl"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCL-th-QtP" userLabel="Snare2">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCL-th-QtP" userLabel="Snare2">
                                                         <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDJ-7E-Pt8"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-yS-BTQ" userLabel="Snare3">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-yS-BTQ" userLabel="Snare3">
                                                         <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
@@ -154,28 +154,28 @@
                                             <stackView opaque="NO" tag="36" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UWq-YA-gEi" userLabel="Bass Drum Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="130" width="600" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Rb-ng7" userLabel="Bass0">
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Rb-ng7" userLabel="Bass0">
                                                         <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CU-eq-uPS"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpa-xR-LGn" userLabel="Bass1">
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpa-xR-LGn" userLabel="Bass1">
                                                         <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hbC-GN-hyP"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZI-E7-0Z9" userLabel="Bass2">
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZI-E7-0Z9" userLabel="Bass2">
                                                         <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MoO-3G-HWO"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYn-of-HCh" userLabel="Bass3">
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYn-of-HCh" userLabel="Bass3">
                                                         <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
@@ -187,28 +187,28 @@
                                             <stackView opaque="NO" tag="37" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="thw-8y-3Vi" userLabel="Hi-Hat Beat Card Stack">
                                                 <rect key="frame" x="0.0" y="195" width="600" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZB-w1-ayv" userLabel="HiHat0">
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZB-w1-ayv" userLabel="HiHat0">
                                                         <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w17-X4-J04"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-8V-0d1" userLabel="HiHat1">
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-8V-0d1" userLabel="HiHat1">
                                                         <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LMe-we-rCB"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vic-nD-hcV" userLabel="HiHat2">
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vic-nD-hcV" userLabel="HiHat2">
                                                         <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
                                                             <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7A3-hu-bbX"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKW-OP-6oE" userLabel="HiHat3">
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKW-OP-6oE" userLabel="HiHat3">
                                                         <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
                                                         <state key="normal" image="Beat Card Box"/>
                                                         <connections>
@@ -323,13 +323,10 @@
                                             <constraint firstAttribute="height" constant="50" id="0dc-Sn-UH7"/>
                                             <constraint firstAttribute="width" constant="50" id="H1m-nP-U1g"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Profile Cropped">
+                                        <state key="normal" title="Button" image="Profile">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2q-Nb-oTj"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
                                         <rect key="frame" x="821" y="0.0" width="50" height="50"/>
@@ -338,7 +335,7 @@
                                             <constraint firstAttribute="height" constant="50" id="If7-yh-s4N"/>
                                             <constraint firstAttribute="width" constant="50" id="OKx-S8-k0C"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Randomize Cropped"/>
+                                        <state key="normal" title="Button" image="Random"/>
                                         <connections>
                                             <action selector="randomizationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45H-4P-6PW"/>
                                         </connections>
@@ -351,7 +348,7 @@
                                             <constraint firstAttribute="width" constant="50" id="Xcj-JF-HEM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="29"/>
-                                        <state key="normal" title="120" image="Metronome Active Cropped">
+                                        <state key="normal" title="120" image="Metronome Active">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -387,7 +384,7 @@
                                             <constraint firstAttribute="height" constant="50" id="1OW-bH-zTt"/>
                                             <constraint firstAttribute="width" constant="50" id="pnM-5W-u3C"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Play Cropped">
+                                        <state key="normal" title="Button" image="Play">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -423,7 +420,7 @@
                                             <constraint firstAttribute="width" constant="50" id="OVL-bE-JUd"/>
                                             <constraint firstAttribute="height" constant="50" id="YXN-VZ-kSp"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="4th Cropped"/>
+                                        <state key="normal" title="Button" image="4th"/>
                                         <connections>
                                             <action selector="subdivisionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSw-yN-LHJ"/>
                                         </connections>
@@ -506,7 +503,7 @@
                         <outlet property="hiHatMuteOutlet" destination="FJV-dC-uwF" id="LTm-NO-Dic"/>
                         <outlet property="hiHatSnoozeOutlet" destination="oQn-gg-Eoz" id="PcD-pa-3r6"/>
                         <outlet property="metronomeOutlet" destination="53s-FQ-TV5" id="KnO-n2-ig9"/>
-                        <outlet property="playButtonOutlet" destination="peW-I7-kXg" id="wsr-75-xse"/>
+                        <outlet property="playButtonOutlet" destination="hQE-Xy-7Y7" id="jth-Kt-mO3"/>
                         <outlet property="ride0" destination="dKh-XJ-iaW" id="cHa-8F-reo"/>
                         <outlet property="ride1" destination="xux-KJ-gy7" id="naB-Sc-PeX"/>
                         <outlet property="ride2" destination="Qez-24-yum" id="xa0-KO-4N5"/>
@@ -627,17 +624,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4th Cropped" width="360" height="360"/>
+        <image name="4th" width="360" height="360"/>
         <image name="Beat Card Box" width="341" height="180"/>
         <image name="Blank Button Circle" width="138.5" height="138.5"/>
         <image name="Hat Active" width="360" height="138.5"/>
         <image name="Home Screen Background" width="341" height="240"/>
         <image name="Kick Active" width="360" height="138.5"/>
         <image name="Leading Edge Mute Button Spacer" width="360" height="138.5"/>
-        <image name="Metronome Active Cropped" width="360" height="360"/>
-        <image name="Play Cropped" width="360" height="360"/>
-        <image name="Profile Cropped" width="360" height="360"/>
-        <image name="Randomize Cropped" width="360" height="360"/>
+        <image name="Metronome Active" width="360" height="360"/>
+        <image name="Play" width="360" height="360"/>
+        <image name="Profile" width="360" height="360"/>
+        <image name="Random" width="360" height="360"/>
         <image name="Ride Active" width="360" height="138.5"/>
         <image name="Snare Active" width="360" height="138.5"/>
         <image name="Snooze Button" width="240" height="240"/>
