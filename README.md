@@ -30,7 +30,7 @@
 <h3 align="center">project_title</h3>
 
   <p align="center">
-    Four Brains is a coordination tool for beginner drummers. Users can create their own beats by using combinations of 4 and 3-note "beat cards". The randomization function allows users to challenge themselves with new beats. Four Brains started as a school project, and is now being developed for commercial release.
+    Four Brains is a coordination tool for beginner drummers. Users can create their own beats by using combinations of 4 and 3-note "beat cards". The randomization function allows users to challenge themselves with unexpected combinations of beat cards. Four Brains started as a school project, and is now being developed for commercial release.
     <br />
     <a href="https://github.com/marcuskim1989/FourBrains"><strong>Explore the docs »</strong></a>
     <br />
