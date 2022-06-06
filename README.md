@@ -85,14 +85,7 @@ Users can create their own beats by using combinations of 4 and 3-note "beat car
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Swift](https://www.swift.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
