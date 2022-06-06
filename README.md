@@ -24,13 +24,11 @@
 <br />
 <div align="center">
   <a href="https://github.com/marcuskim1989/fourbrains">
-    <img src="https://user-images.githubusercontent.com/38197966/172091495-ea70dff6-f368-49d6-8266-d3314e0f6fb9.png" alt="Logo" width="300" height="300">
+    <img src="https://user-images.githubusercontent.com/38197966/172091495-ea70dff6-f368-49d6-8266-d3314e0f6fb9.png" alt="Logo" width="325" height="325">
   </a>
 
-<h3 align="center">project_title</h3>
-
   <p align="center">
-    Four Brains is a coordination tool for beginner drummers. Users can create their own beats by using combinations of 4 and 3-note "beat cards". The randomization function allows users to challenge themselves with unexpected combinations of beat cards. Four Brains started as a school project, and is now being developed for commercial release.
+    Four Brains is a coordination tool for beginner drummers. 
     <br />
     <a href="https://github.com/marcuskim1989/FourBrains"><strong>Explore the docs »</strong></a>
     <br />
@@ -76,9 +74,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Simulator Screen Recording - iPhone 13 - 2022-06-05 at 20 22 42](https://user-images.githubusercontent.com/38197966/172093395-d895b238-4042-4eb5-98f1-1bbf585dd7d6.gif)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+
+Users can create their own beats by using combinations of 4 and 3-note "beat cards". The randomization function allows users to challenge themselves with unexpected combinations of beat cards. Four Brains started as a school project, and is now being developed for commercial release.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
