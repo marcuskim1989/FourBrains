@@ -79,7 +79,7 @@
 
 Users can create their own beats by using combinations of 4 and 3-note "beat cards". The randomization function allows users to challenge themselves with unexpected combinations of beat cards. Four Brains started as a school project, and is now being developed for commercial release.
 
-The app relies on <a href="https://github.com/AudioKit/AudioKit>AudioKit</a>.
+The app relies on <a href="https://github.com/AudioKit/AudioKit">AudioKit</a>.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
