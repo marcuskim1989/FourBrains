@@ -125,9 +125,18 @@ Target iOS version is 15.0 or newer
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+![Four Brains Github Read Me Usage Section](https://user-images.githubusercontent.com/38197966/172277918-844278a1-8c27-4dc9-b2fd-a9a79f104302.png)
 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. Beat Card: 4-note phrases that are combined together to make beats. There is one beat card for every possible 4-note phrase, a total of 16
+2. Play: This begins playback of the beat on the screen
+3. Metronome: This is a steady tick that denotes the tempo. It can be toggled on or off
+4. Tempo: This brings up a separate view that allows for adjustment of the beats per minute
+5. Subdivision: This is a counter that increases the number of clicks of the metronome
+6. Randomize: Randomizes the beats cards
+7. Mute Button: Turns the audio off for the given instrument
+8. Snooze: Hides the beat cards in that row
+9. Profile: User options and account
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -136,12 +145,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Beat of the Day
+- [ ] Triplet Patterns
+- [ ] Change "snooze" to "hide"
+- [ ] Select your own beat cards
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/marcuskim1989/fourbrains/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
