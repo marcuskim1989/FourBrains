@@ -186,9 +186,9 @@ Distributed under the GNU GPLv3 License. See `COPYING.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Marcus Kim - marcuskim1989@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/marcuskim1989/fourbrains](https://github.com/marcuskim1989/fourbrains)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -197,9 +197,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [](David Demeter at the Drum Lab)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
