@@ -13,7 +13,7 @@ class BeatCard {
     private var beatCardLabel: String
     private var beatCardNoteSequence: [Int]
     
-    init(label: String, noteSequence: [Int]){
+    init(label: String, noteSequence: [Int]) {
         beatCardLabel = label
         beatCardNoteSequence = noteSequence
     }
@@ -25,5 +25,4 @@ class BeatCard {
     public func getBeatCardNoteSequence() -> [Int] {
         return beatCardNoteSequence
     }
-    
 }

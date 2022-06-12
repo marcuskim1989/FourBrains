@@ -33,7 +33,7 @@ class Mute {
     
     func changeMuteState(instrument: String) {
         
-        //Perfect place for toggleables
+        // Perfect place for toggleables
         switch instrument {
         case K.MuteConstants.MuteButtonNames.RIDE_MUTE_BUTTON:
             rideMuteState.toggle()

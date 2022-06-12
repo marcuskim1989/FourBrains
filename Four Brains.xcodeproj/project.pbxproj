@@ -211,6 +211,7 @@
 			buildConfigurationList = 2CD14C2123DA6E1100157D75 /* Build configuration list for PBXNativeTarget "Four Brains" */;
 			buildPhases = (
 				680D76F5DEB02EFD727DD69A /* [CP] Check Pods Manifest.lock */,
+				2CAAEA01285664C100462B2F /* Run SwiftLint */,
 				2CD14C0923DA6E0E00157D75 /* Sources */,
 				2CD14C0A23DA6E0E00157D75 /* Frameworks */,
 				2CD14C0B23DA6E0E00157D75 /* Resources */,
@@ -290,6 +291,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2CAAEA01285664C100462B2F /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		2DFE790E21396CC93D98AC8D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
