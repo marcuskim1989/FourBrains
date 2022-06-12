@@ -12,8 +12,8 @@ class Mute {
     
     private var rideMuteState: Bool = false
     private var snareMuteState: Bool = false
-    private var bassMuteState: Bool = false
-    private var hiHatMuteState: Bool = false
+    private var kickMuteState: Bool = false
+    private var hatMuteState: Bool = false
     
     public func getRideMuteState() -> Bool {
         return rideMuteState
@@ -23,12 +23,12 @@ class Mute {
         return snareMuteState
     }
     
-    public func getBassMuteState() -> Bool {
-        return bassMuteState
+    public func getKickMuteState() -> Bool {
+        return kickMuteState
     }
     
-    public func getHiHatMuteState() -> Bool {
-        return hiHatMuteState
+    public func getHatMuteState() -> Bool {
+        return hatMuteState
     }
     
     func changeMuteState(instrument: String) {
@@ -45,14 +45,14 @@ class Mute {
             
             print("snareMuteState is \(snareMuteState)")
             
-        case K.MuteConstants.MuteButtonNames.BASS_MUTE_BUTTON:
-            bassMuteState.toggle()
+        case K.MuteConstants.MuteButtonNames.KICK_MUTE_BUTTON:
+            kickMuteState.toggle()
             
-            print("bassMuteState is \(bassMuteState)")
+            print("bassMuteState is \(kickMuteState)")
             
-        case K.MuteConstants.MuteButtonNames.HI_HAT_MUTE_BUTTON:
-            hiHatMuteState.toggle()
-            print("hiHatMuteState is \(hiHatMuteState)")
+        case K.MuteConstants.MuteButtonNames.HAT_MUTE_BUTTON:
+            hatMuteState.toggle()
+            print("hiHatMuteState is \(hatMuteState)")
             
         default:
             print("Error: button title not matched in switch statement")
@@ -62,8 +62,8 @@ class Mute {
     func unmuteAllStates() {
         rideMuteState = false
         snareMuteState = false
-        bassMuteState = false
-        hiHatMuteState = false
+        kickMuteState = false
+        hatMuteState = false
         print("unmuteAllStates() called")
     }
     

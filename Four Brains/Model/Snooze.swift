@@ -30,11 +30,11 @@ class Snooze {
         return snareSnoozeState
     }
     
-    public func getBassSnoozeState() -> Bool {
+    public func getKickSnoozeState() -> Bool {
         return bassSnoozeState
     }
     
-    public func getHiHatSnoozeState() -> Bool {
+    public func getHatSnoozeState() -> Bool {
         return hiHatSnoozeState
     }
     

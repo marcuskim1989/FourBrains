@@ -13,8 +13,8 @@ class K {
         class MuteButtonNames{
             static let RIDE_MUTE_BUTTON = "ride_mute_button"
             static let SNARE_MUTE_BUTTON = "snare_mute_button"
-            static let BASS_MUTE_BUTTON = "bass_mute_button"
-            static let HI_HAT_MUTE_BUTTON = "hi_hat_mute_button"
+            static let KICK_MUTE_BUTTON = "kick_mute_button"
+            static let HAT_MUTE_BUTTON = "hat_mute_button"
         }
         
         class MuteImageNames{

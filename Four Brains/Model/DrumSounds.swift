@@ -15,10 +15,10 @@ class DrumSounds {
     private let drums = MIDISampler(name: "drums")
     private let sequencer = AppleSequencer(filename: "4tracks")
     
-    private var rideNoteSequence: [Int] = [0]
-    private var snareNoteSequence: [Int] = [0]
-    private var bassNoteSequence: [Int] = [0]
-    private var hiHatNoteSequence: [Int] = [0]
+    private var rideNoteSequence: [Int] = []
+    private var snareNoteSequence: [Int] = []
+    private var kickNoteSequence: [Int] = []
+    private var hatNoteSequence: [Int] = []
     
     private var rideNoteArray: [()] = [()]
     private var snareNoteArray: [()] = [()]
@@ -68,22 +68,19 @@ class DrumSounds {
         assignDrumSounds()
     }
     
-    //MARK: Parse from wholeBeat
+    //MARK: - Parse from wholeBeat
     func parseNoteSequence(wholeBeat: WholeBeat) {
         
-        rideNoteSequence = [0]
-        snareNoteSequence = [0]
-        bassNoteSequence = [0]
-        hiHatNoteSequence = [0]
+        rideNoteSequence = []
+        snareNoteSequence = []
+        kickNoteSequence = []
+        hatNoteSequence = []
         
         // MARK: Parse ride sequence
+    
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    rideNoteSequence[0] = wholeBeat.getRidePattern()[beatCardCounter].getBeatCardNoteSequence()[note]
-                } else {
                     rideNoteSequence.append(wholeBeat.getRidePattern()[beatCardCounter].getBeatCardNoteSequence()[note])
-                }
             }
         }
         print("Ride note sequence: \(rideNoteSequence)")
@@ -91,11 +88,7 @@ class DrumSounds {
         // MARK: Parse snare sequence
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    snareNoteSequence[0] = wholeBeat.getSnarePattern()[beatCardCounter].getBeatCardNoteSequence()[note]
-                } else {
                     snareNoteSequence.append(wholeBeat.getSnarePattern()[beatCardCounter].getBeatCardNoteSequence()[note])
-                }
             }
         }
         print("Snare note sequence: \(snareNoteSequence)")
@@ -103,26 +96,18 @@ class DrumSounds {
         // MARK: Parse bass sequence
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    bassNoteSequence[0] = wholeBeat.getBassPattern()[beatCardCounter].getBeatCardNoteSequence()[note]
-                } else {
-                    bassNoteSequence.append(wholeBeat.getBassPattern()[beatCardCounter].getBeatCardNoteSequence()[note])
-                }
+                    kickNoteSequence.append(wholeBeat.getBassPattern()[beatCardCounter].getBeatCardNoteSequence()[note])
             }
         }
-        print("Bass note sequence: \(bassNoteSequence)")
+        print("Bass note sequence: \(kickNoteSequence)")
         
         //MARK: Parse hi hat sequence
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    hiHatNoteSequence[0] = wholeBeat.getHiHatPattern()[beatCardCounter].getBeatCardNoteSequence()[note]
-                } else {
-                    hiHatNoteSequence.append(wholeBeat.getHiHatPattern()[beatCardCounter].getBeatCardNoteSequence()[note])
-                }
+                    hatNoteSequence.append(wholeBeat.getHiHatPattern()[beatCardCounter].getBeatCardNoteSequence()[note])
             }
         }
-        print("Hi-Hat note sequence: \(hiHatNoteSequence)")
+        print("Hi-Hat note sequence: \(hatNoteSequence)")
         
         print("parseNoteSequence() called")
         
@@ -168,10 +153,10 @@ class DrumSounds {
         
         //MARK: Bass drum note assignment
         
-        if !mute.getBassMuteState() {
+        if !mute.getKickMuteState() {
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
-                if bassNoteSequence[note] == 1 {
+                if kickNoteSequence[note] == 1 {
                     sequencer.tracks[2].add(
                         noteNumber: 24,
                         velocity: 200,
@@ -184,10 +169,10 @@ class DrumSounds {
         }
          
         //MARK: Hi-Hat note assignment
-        if !mute.getHiHatMuteState(){
+        if !mute.getHatMuteState(){
             for note in Range(0 ... 15) {
                 let position = ((Double(note) + 1.0)/4.0) - 0.25
-                if hiHatNoteSequence[note] == 1 {
+                if hatNoteSequence[note] == 1 {
                     sequencer.tracks[3].add(
                         noteNumber: 30,
                         velocity: 200,
@@ -203,6 +188,7 @@ class DrumSounds {
          
     }
     func playDrumSounds() {
+        //TODO: - Fix headphone playback 
         
 //        do {
 //            try Settings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,16 +16,16 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeScreenViewController" customModule="Four_Brains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Home Screen">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-oH-9tH">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" tag="30" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mak-l2-MUb" userLabel="Beat Board Stack">
-                                <rect key="frame" x="48" y="84.5" width="800" height="245"/>
+                                <rect key="frame" x="360" y="177.5" width="800" height="245"/>
                                 <subviews>
                                     <stackView opaque="NO" tag="40" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-ER-MVn" userLabel="Instrument Mute Button Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="245"/>
@@ -271,28 +270,28 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-RQ-4ty">
-                                <rect key="frame" x="0.0" y="84.5" width="48" height="245"/>
+                                <rect key="frame" x="0.0" y="177.5" width="360" height="245"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-4y-NPh">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="hRa-mf-bLs"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="5Ej-cN-TOo">
-                                        <rect key="frame" x="0.0" y="65" width="48" height="50"/>
+                                        <rect key="frame" x="0.0" y="65" width="360" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="pzi-Lz-tlK"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Xlo-xP-Mb6">
-                                        <rect key="frame" x="0.0" y="130" width="48" height="50"/>
+                                        <rect key="frame" x="0.0" y="130" width="360" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aMs-Qa-jke"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="LJN-If-igz">
-                                        <rect key="frame" x="0.0" y="195" width="48" height="50"/>
+                                        <rect key="frame" x="0.0" y="195" width="360" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ZnQ-qz-3Y1"/>
                                         </constraints>
@@ -300,7 +299,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-sZ-7lE" userLabel="Bottom Panel">
-                                <rect key="frame" x="0.0" y="364" width="896" height="50"/>
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="i0g-48-i4b"/>
@@ -329,7 +328,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
-                                        <rect key="frame" x="821" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="525" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="If7-yh-s4N"/>
@@ -341,7 +340,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="72" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
-                                        <rect key="frame" x="358" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="210" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1P4-bU-zlG"/>
@@ -356,7 +355,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="73" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
-                                        <rect key="frame" x="423" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="275" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bEk-DD-TFv"/>
@@ -393,28 +392,28 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-J8-TtH">
-                                        <rect key="frame" x="871" y="0.0" width="25" height="50"/>
+                                        <rect key="frame" x="575" y="0.0" width="25" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="0ts-va-gk7"/>
                                             <constraint firstAttribute="height" constant="50" id="U05-vO-cl8"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-e3-I3s">
-                                        <rect key="frame" x="408" y="0.0" width="15" height="50"/>
+                                        <rect key="frame" x="260" y="0.0" width="15" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="bZt-PG-On4"/>
                                             <constraint firstAttribute="height" constant="50" id="jRc-z5-fWg"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="PEB-0E-Nck">
-                                        <rect key="frame" x="473" y="0.0" width="15" height="50"/>
+                                        <rect key="frame" x="325" y="0.0" width="15" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="7sU-OE-OeF"/>
                                             <constraint firstAttribute="width" constant="15" id="Vqd-wt-uGW"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" tag="74" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Subdivision">
-                                        <rect key="frame" x="488" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="340" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="OVL-bE-JUd"/>
@@ -426,13 +425,13 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-w8-JYg">
-                                        <rect key="frame" x="185" y="0.0" width="173" height="50"/>
+                                        <rect key="frame" x="185" y="0.0" width="25" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GcD-Xp-qEn"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-va-Kvk">
-                                        <rect key="frame" x="538" y="0.0" width="283" height="50"/>
+                                        <rect key="frame" x="390" y="0.0" width="135" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WdS-5b-nzd"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="k9J-w8-UGF"/>
@@ -489,19 +488,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="A3j-Zy-C1N"/>
                     <connections>
-                        <outlet property="bass0" destination="KRg-Rb-ng7" id="bHC-M8-19V"/>
-                        <outlet property="bass1" destination="jpa-xR-LGn" id="wVz-uj-ooJ"/>
-                        <outlet property="bass2" destination="rZI-E7-0Z9" id="40s-Cb-oBD"/>
-                        <outlet property="bass3" destination="rYn-of-HCh" id="SfN-kj-OfJ"/>
-                        <outlet property="bassMuteOutlet" destination="JEQ-Iu-wLl" id="k4d-d0-e6M"/>
-                        <outlet property="bassSnoozeOutlet" destination="cUC-CC-b4j" id="3Ng-oy-saA"/>
                         <outlet property="bpmAdjustAccessButton" destination="Eh5-Oe-ymh" id="Bci-5d-4Za"/>
-                        <outlet property="hiHat0" destination="hZB-w1-ayv" id="Sf5-wW-YB8"/>
-                        <outlet property="hiHat1" destination="EYa-8V-0d1" id="H8a-aq-f6C"/>
-                        <outlet property="hiHat2" destination="vic-nD-hcV" id="ILA-st-2rO"/>
-                        <outlet property="hiHat3" destination="iKW-OP-6oE" id="2mP-7j-AOr"/>
-                        <outlet property="hiHatMuteOutlet" destination="FJV-dC-uwF" id="LTm-NO-Dic"/>
-                        <outlet property="hiHatSnoozeOutlet" destination="oQn-gg-Eoz" id="PcD-pa-3r6"/>
+                        <outlet property="hat0" destination="hZB-w1-ayv" id="Sf5-wW-YB8"/>
+                        <outlet property="hat1" destination="EYa-8V-0d1" id="H8a-aq-f6C"/>
+                        <outlet property="hat2" destination="vic-nD-hcV" id="ILA-st-2rO"/>
+                        <outlet property="hat3" destination="iKW-OP-6oE" id="2mP-7j-AOr"/>
+                        <outlet property="hatMuteOutlet" destination="FJV-dC-uwF" id="LTm-NO-Dic"/>
+                        <outlet property="hatSnoozeOutlet" destination="oQn-gg-Eoz" id="PcD-pa-3r6"/>
+                        <outlet property="kick0" destination="KRg-Rb-ng7" id="bHC-M8-19V"/>
+                        <outlet property="kick1" destination="jpa-xR-LGn" id="wVz-uj-ooJ"/>
+                        <outlet property="kick2" destination="rZI-E7-0Z9" id="40s-Cb-oBD"/>
+                        <outlet property="kick3" destination="rYn-of-HCh" id="SfN-kj-OfJ"/>
+                        <outlet property="kickMuteOutlet" destination="JEQ-Iu-wLl" id="k4d-d0-e6M"/>
+                        <outlet property="kickSnoozeOutlet" destination="cUC-CC-b4j" id="3Ng-oy-saA"/>
                         <outlet property="metronomeOutlet" destination="53s-FQ-TV5" id="KnO-n2-ig9"/>
                         <outlet property="playButtonOutlet" destination="hQE-Xy-7Y7" id="jth-Kt-mO3"/>
                         <outlet property="ride0" destination="dKh-XJ-iaW" id="cHa-8F-reo"/>
@@ -529,7 +528,7 @@
             <objects>
                 <viewController id="HOR-w6-HEJ" customClass="BPMAdjustorViewController" customModule="Four_Brains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIH-ty-Sq8">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="7q7-4u-79E">
@@ -586,13 +585,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm8-8K-em6">
-                                <rect key="frame" x="407" y="130" width="82" height="96"/>
+                                <rect key="frame" x="259" y="308" width="82" height="96"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcv-ze-wl0">
-                                <rect key="frame" x="390" y="331" width="116" height="62"/>
+                                <rect key="frame" x="212" y="509" width="176" height="71"/>
                                 <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="50"/>
                                 <state key="normal" title="Dismiss">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
