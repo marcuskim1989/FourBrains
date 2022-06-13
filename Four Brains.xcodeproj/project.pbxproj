@@ -21,6 +21,7 @@
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
 		2C7C0D582403B5BC006ACD98 /* WholeBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C0D572403B5BC006ACD98 /* WholeBeat.swift */; };
+		2CAAEA042856B10300462B2F /* SelectBeatCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAEA032856B10300462B2F /* SelectBeatCards.swift */; };
 		2CBCEA0B23FE62FB00B7FFC3 /* bass_drum_C1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0323FE62F900B7FFC3 /* bass_drum_C1.wav */; };
 		2CBCEA0C23FE62FB00B7FFC3 /* mid_tom_B1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0423FE62F900B7FFC3 /* mid_tom_B1.wav */; };
 		2CBCEA0D23FE62FB00B7FFC3 /* open_hi_hat_A#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0523FE62FA00B7FFC3 /* open_hi_hat_A#1.wav */; };
@@ -51,6 +52,7 @@
 		2C7B386123ED294600C120E7 /* DrumSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumSounds.swift; sourceTree = "<group>"; };
 		2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngine.swift; sourceTree = "<group>"; };
 		2C7C0D572403B5BC006ACD98 /* WholeBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeBeat.swift; sourceTree = "<group>"; };
+		2CAAEA032856B10300462B2F /* SelectBeatCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeatCards.swift; sourceTree = "<group>"; };
 		2CBCEA0323FE62F900B7FFC3 /* bass_drum_C1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass_drum_C1.wav; sourceTree = "<group>"; };
 		2CBCEA0423FE62F900B7FFC3 /* mid_tom_B1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mid_tom_B1.wav; sourceTree = "<group>"; };
 		2CBCEA0523FE62FA00B7FFC3 /* open_hi_hat_A#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "open_hi_hat_A#1.wav"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				2C58E1D2241087AF0045929E /* Mute.swift */,
 				2C58E1D42410DDDF0045929E /* Snooze.swift */,
 				2C6F6F14261BF2B1000CE29F /* K.swift */,
+				2CAAEA032856B10300462B2F /* SelectBeatCards.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				2CD14C1123DA6E0E00157D75 /* AppDelegate.swift in Sources */,
 				2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */,
 				2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */,
+				2CAAEA042856B10300462B2F /* SelectBeatCards.swift in Sources */,
 				2CD14C1323DA6E0E00157D75 /* SceneDelegate.swift in Sources */,
 				2C58E1D3241087AF0045929E /* Mute.swift in Sources */,
 				2CC459202403364000176304 /* Randomization.swift in Sources */,

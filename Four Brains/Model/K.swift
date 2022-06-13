@@ -55,7 +55,7 @@ enum K {
         static let HI_HAT_FILE_NAME: String = "closed_hi_hat_F#1"
     }
     
-    enum BeatCardInstances {
+    class BeatCardInstances {
         static let BEAT_CARD_0: BeatCard = BeatCard(label: "0", noteSequence: [0, 0, 0, 0])
         static let BEAT_CARD_1A: BeatCard = BeatCard(label: "1A", noteSequence: [1, 0, 0, 0])
         static let BEAT_CARD_1B: BeatCard = BeatCard(label: "1B", noteSequence: [0, 1, 0, 0])
