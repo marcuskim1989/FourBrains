@@ -17,14 +17,14 @@ import AudioKitUI
         view.beatFlasher.color = .white
 
         DispatchQueue.main.async {
-        view.beatFlasher.needsDisplay = true
-    }
+            view.beatFlasher.needsDisplay = true
+        }
 
-    let deadlineTime = DispatchTime.now() + (60 / metronome.tempo) / 10.0
+        let deadlineTime: Double = DispatchTime.now() + (60 / metronome.tempo) / 10.0
     
-    DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-        view.beatFlasher.color = .red
-    }
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            view.beatFlasher.color = .red
+        }
 }
 
 AudioKit.output = metronome
@@ -63,11 +63,21 @@ class LiveView: AKLiveViewController {
             metronome.tempo = sliderValue
         })
 
-        addView(AKSlider(property: "Frequency 1", value: 2_000, range: 200 ... 4_000, format: "%0.0f Hz") { sliderValue in
+        addView(AKSlider(
+            property: "Frequency 1",
+            value: 2_000,
+            range: 200 ... 4_000,
+            format: "%0.0f Hz"
+        ) { sliderValue in
             metronome.frequency1 = sliderValue
         })
 
-        addView(AKSlider(property: "Frequency 2", value: 1_000, range: 200 ... 4_000, format: "%0.0f Hz") { sliderValue in
+        addView(AKSlider(
+            property: "Frequency 2",
+            value: 1_000,
+            range: 200 ... 4_000,
+            format: "%0.0f Hz"
+        ) { sliderValue in
             metronome.frequency2 = sliderValue
         })
     }

@@ -13,18 +13,18 @@ import AudioKit
 class Metronome {
     
     private var timeSignatureTop: Int = 4
-    private let downbeatNoteNumber = MIDINoteNumber(16)
-    private let beatNoteNumber = MIDINoteNumber(7)
-    private let beatNoteVelocity = 100.0
-    private var currentBeat = 0
-    private var callbackInst = CallbackInstrument()
+    private let downbeatNoteNumber: MIDINoteNumber = MIDINoteNumber(16)
+    private let beatNoteNumber: MIDINoteNumber = MIDINoteNumber(7)
+    private let beatNoteVelocity: Double = 100.0
+    private var currentBeat: Int = 0
+    private var callbackInst: CallbackInstrument = CallbackInstrument()
     
-    private let shaker = Shaker()
-    private var metronomeSequencer = Sequencer()
+    private let shaker: Shaker = Shaker()
+    private var metronomeSequencer: Sequencer = Sequencer()
     private let homeScreenViewController: HomeScreenViewController!
-    private var metronomeToggleState = true
-    private var subdivision = 4
-    private var divisor = 1
+    private var metronomeToggleState: Bool = true
+    private var subdivision: Int = 4
+    private var divisor: Int = 1
     private let fader: Fader
     
     init(homeScreenViewController: HomeScreenViewController) {
@@ -52,7 +52,7 @@ class Metronome {
         print("initial tempo: \(metronomeSequencer.tempo)")
     }
     
-    public func getFader() -> Fader{
+    public func getFader() -> Fader {
         return fader
     }
     
@@ -65,7 +65,7 @@ class Metronome {
     }
     
     func updateSequences() {
-        var track = metronomeSequencer.tracks.first! // what is this sequencer and what is its tracks property and what is tracks' first property
+        var track: SequencerTrack = metronomeSequencer.tracks.first! // what is this sequencer and what is its tracks property and what is tracks' first property
         
         track.length = Double(timeSignatureTop)
         
@@ -74,7 +74,7 @@ class Metronome {
         // add the downbeat at position 0 (the very first position)
         track.sequence.add(noteNumber: downbeatNoteNumber, position: 0.0, duration: 0.4)
         
-        let vel = MIDIVelocity(Int(beatNoteVelocity))
+        let vel: MIDIVelocity = MIDIVelocity(Int(beatNoteVelocity))
         
         // for every subsequent beat, starting from position 1 (2nd beat), add a beat
         for beat in 1 ..< timeSignatureTop {
@@ -95,25 +95,29 @@ class Metronome {
     
     func highlightBeatCards() {
         
-        var cardWhiteOutCounter = self.currentBeat/self.divisor + 1
-        var cardFadeClearCounter = self.currentBeat/self.divisor + 1
+        var cardWhiteOutCounter: Int = (self.currentBeat / self.divisor) + 1
+        var cardFadeClearCounter: Int = (self.currentBeat / self.divisor) + 1
         
-        let deadlineTime = DispatchTime.now() + (60/metronomeSequencer.tempo) / 10.0
+        let deadlineTime: DispatchTime = DispatchTime.now() + (60 / metronomeSequencer.tempo) / 10.0
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
             for _ in 1...4 {
                 
-                let beatCardToBeHighlighted = self.homeScreenViewController.view.viewWithTag(cardWhiteOutCounter)
+                let beatCardToBeHighlighted: UIView? =
+                self.homeScreenViewController
+                    .view
+                    .viewWithTag(cardWhiteOutCounter)
+                
                 beatCardToBeHighlighted?.backgroundColor = .white
                 
                 cardWhiteOutCounter += 4
                 
             }
             
-            UIView.animate(withDuration: (60/self.metronomeSequencer.tempo)){
+            UIView.animate(withDuration: (60 / self.metronomeSequencer.tempo)) {
                 for _ in 1...4 {
                     
-                    let beatCardToFadeClear = self.homeScreenViewController.view.viewWithTag(cardFadeClearCounter)
-                    beatCardToFadeClear?.backgroundColor = .clear
+                    let cardToFadeClear: UIView? = self.homeScreenViewController.view.viewWithTag(cardFadeClearCounter)
+                    cardToFadeClear?.backgroundColor = .clear
                     
                     cardFadeClearCounter += 4
                     
@@ -124,7 +128,7 @@ class Metronome {
         }
     }
     
-    func changeMetronomeToggleState() -> Bool{
+    func changeMetronomeToggleState() -> Bool {
         
         metronomeToggleState.toggle()
         
@@ -132,11 +136,9 @@ class Metronome {
         return metronomeToggleState
     }
     
-    
-    
-    func playMetronome(){
+    func playMetronome() {
         
-        if metronomeToggleState{
+        if metronomeToggleState {
             print("metronomeToggleState inside if inside playMetronome(): \(metronomeToggleState)")
             
             updateSequences()
@@ -154,7 +156,7 @@ class Metronome {
     
     func setTempo(subdivision: Int, currentBPM: Int) {
         
-        divisor = subdivision/4
+        divisor = subdivision / 4
         
         if divisor == 1 {
             metronomeSequencer.tempo = Double(currentBPM)
@@ -168,8 +170,4 @@ class Metronome {
         }
     }
     
-    
-    
 }
-
-
