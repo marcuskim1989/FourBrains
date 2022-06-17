@@ -10,54 +10,36 @@ import Foundation
 
 class Randomization {
     
-    var ridePattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
-    var snarePattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
-    var bassPattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
-    var hiHatPattern: [BeatCard] = [BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0]), BeatCard(l: "0", ns: [0,0,0,0])]
+    // arrays of beat cards, each instrument pattern will hold at maximum 4 beat card objects
+    private var ridePattern: [BeatCard] = []
+    private var snarePattern: [BeatCard] = []
+    private var bassPattern: [BeatCard] = []
+    private var hiHatPattern: [BeatCard] = []
     
-    var wholeBeat = WholeBeat(ridePattern: [BeatCard(l: "0", ns: [0,0,0,0])], snarePattern: [BeatCard(l: "0", ns: [0,0,0,0])], bassPattern: [BeatCard(l: "0", ns: [0,0,0,0])], hiHatPattern: [BeatCard(l: "0", ns: [0,0,0,0])])
+    func randomize(beatCardInstances: K.BeatCardInstances, drumSounds: DrumSounds) -> WholeBeat {
+        
+        // reset patterns to blank arrays
+        ridePattern = []
+        snarePattern = []
+        bassPattern = []
+        hiHatPattern = []
+        
+        // with every loop, append a random beat card to the instrument pattern, until 4 beats cards are added
+        for _ in Range(0...3) {
+            ridePattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
+            snarePattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
+            bassPattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
+            hiHatPattern.append(beatCardInstances.BEAT_CARD_ARRAY[Int.random(in: 0...15)])
+            }
     
-    
-    func randomize(beatCardInstances: BeatCardInstances, drumSounds: DrumSounds) -> WholeBeat{
-        
-        
-            
-        for rideBeatCard in Range(0...ridePattern.count - 1) {
-                
-                    ridePattern[rideBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-            
-            }
-            
-        for snareBeatCard in Range(0...snarePattern.count - 1) {
-                
-                    snarePattern[snareBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-                
-            }
-            
-        for bassBeatCard in Range(0...bassPattern.count - 1) {
-                
-                    bassPattern[bassBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-                
-            }
-            
-        for hiHatBeatCard in Range(0...hiHatPattern.count - 1) {
-                
-                    hiHatPattern[hiHatBeatCard] = beatCardInstances.beatCardArray[Int.random(in: 0...15)]
-                
-            }
-            
-    
-        wholeBeat = WholeBeat(ridePattern: self.ridePattern, snarePattern: self.snarePattern, bassPattern: self.bassPattern, hiHatPattern: self.hiHatPattern)
-        
-        
-        drumSounds.parseNoteSequence(wholeBeat: wholeBeat)
-        
-        
+        // return a freshly instantiated Whole Beat object, which is initialized with 4 parameters, each of which is an array of 4 random beat cards
+        let wholeBeat: WholeBeat = WholeBeat(
+            ridePattern: self.ridePattern,
+            snarePattern: self.snarePattern,
+            bassPattern: self.bassPattern,
+            hiHatPattern: self.hiHatPattern)
         
         return wholeBeat
         
     }
-        
-    
-    
 }

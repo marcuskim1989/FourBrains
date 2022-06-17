@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,212 +16,213 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeScreenViewController" customModule="Four_Brains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Home Screen">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-oH-9tH">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="71" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F o u r  B r a i n s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAp-nt-K6j">
-                                <rect key="frame" x="184" y="14.5" width="528.5" height="60"/>
-                                <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" tag="30" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mak-l2-MUb" userLabel="Beat Board Stack">
-                                <rect key="frame" x="105.5" y="84.5" width="685" height="245"/>
+                                <rect key="frame" x="360" y="177.5" width="800" height="245"/>
                                 <subviews>
                                     <stackView opaque="NO" tag="40" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-ER-MVn" userLabel="Instrument Mute Button Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="245"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="245"/>
                                         <subviews>
                                             <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-rx-I4c" userLabel="Ride">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="IhX-zf-NgW"/>
-                                                    <constraint firstAttribute="height" constant="50" id="xuw-1f-jTe"/>
+                                                    <constraint firstAttribute="width" constant="130" id="5Jh-kc-WR2"/>
+                                                    <constraint firstAttribute="height" constant="50" id="s4h-hR-hQR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                                <state key="normal" image="Ride Cymbal"/>
+                                                <state key="normal" image="Ride Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5TG-b5-8Q6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-62-PPE" userLabel="Snare">
-                                                <rect key="frame" x="0.0" y="65" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="65" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="40q-qc-tC8"/>
-                                                    <constraint firstAttribute="height" constant="50" id="Of1-HL-h5A"/>
+                                                    <constraint firstAttribute="width" constant="130" id="dtS-bo-jsb"/>
+                                                    <constraint firstAttribute="height" constant="50" id="hhI-cT-iGA"/>
                                                 </constraints>
-                                                <state key="normal" image="Snare Drum Clear"/>
+                                                <state key="normal" image="Snare Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jv-78-wIh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="43" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEQ-Iu-wLl" userLabel="Bass">
-                                                <rect key="frame" x="0.0" y="130" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="130" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="OXV-G4-dCS"/>
-                                                    <constraint firstAttribute="width" constant="50" id="gl4-TL-EJ8"/>
+                                                    <constraint firstAttribute="width" constant="130" id="3BI-87-Z6t"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bVr-Uk-PKd"/>
                                                 </constraints>
-                                                <state key="normal" image="Bass Drum"/>
+                                                <state key="normal" image="Kick Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyc-n0-VWM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJV-dC-uwF" userLabel="Hi Hat">
-                                                <rect key="frame" x="0.0" y="195" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="195" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="GpJ-1H-9kv"/>
-                                                    <constraint firstAttribute="height" constant="50" id="bpG-lL-Djh"/>
+                                                    <constraint firstAttribute="width" constant="130" id="8oy-I1-BKj"/>
+                                                    <constraint firstAttribute="height" constant="50" id="V7q-vk-xTl"/>
                                                 </constraints>
-                                                <state key="normal" image="Hi Hat "/>
+                                                <state key="normal" image="Hat Active"/>
                                                 <connections>
                                                     <action selector="mutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KX-ss-O9K"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Ceu-rx-I4c" secondAttribute="trailing" id="PRY-XJ-bdo"/>
+                                            <constraint firstItem="Ceu-rx-I4c" firstAttribute="leading" secondItem="b3W-ER-MVn" secondAttribute="leading" id="e9I-YP-T1H"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-g2-Dtp" userLabel="Beat Card Matrix">
-                                        <rect key="frame" x="60" y="0.0" width="565" height="245"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-g2-Dtp" userLabel="Beat Card Matrix">
+                                        <rect key="frame" x="140" y="0.0" width="600" height="245"/>
                                         <subviews>
-                                            <stackView opaque="NO" tag="35" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-oa-sFH" userLabel="Ride Cymbal Beat Card Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="565" height="50"/>
+                                            <stackView opaque="NO" tag="35" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-oa-sFH" userLabel="Ride Cymbal Beat Card Stack">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="u2d-Kf-RqD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="qf1-kt-Vf9"/>
-                                                            <constraint firstAttribute="width" constant="130" id="ycH-nh-LSg"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="09B-fe-BzD">
-                                                        <rect key="frame" x="145" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="QTw-sQ-o2l"/>
-                                                            <constraint firstAttribute="height" constant="50" id="srB-EI-lcq"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-u3-FkM">
-                                                        <rect key="frame" x="290" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="Ivo-20-3mq"/>
-                                                            <constraint firstAttribute="height" constant="50" id="KFy-dJ-NCA"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="DbE-b1-6Hu">
-                                                        <rect key="frame" x="435" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="eDc-ib-1kh"/>
-                                                            <constraint firstAttribute="width" constant="130" id="yGZ-bg-vUU"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKh-XJ-iaW" userLabel="Ride0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sr0-HN-0JE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xux-KJ-gy7" userLabel="Ride1">
+                                                        <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJK-pt-UTw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qez-24-yum" userLabel="Ride2">
+                                                        <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghb-eZ-BMQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fno-I9-XRi" userLabel="Ride3">
+                                                        <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5It-Yb-pKe"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" tag="35" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WyL-ji-cYA" userLabel="Snare Drum Beat Card Stack">
-                                                <rect key="frame" x="0.0" y="65" width="565" height="50"/>
+                                            <stackView opaque="NO" tag="35" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WyL-ji-cYA" userLabel="Snare Drum Beat Card Stack">
+                                                <rect key="frame" x="0.0" y="65" width="600" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="mWt-as-TrZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="Yom-vb-c6s"/>
-                                                            <constraint firstAttribute="height" constant="50" id="c6w-ey-oLb"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="0hH-ys-a0L">
-                                                        <rect key="frame" x="145" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="Df1-9W-lpV"/>
-                                                            <constraint firstAttribute="height" constant="50" id="QkH-Fr-OGI"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-2p-fNq">
-                                                        <rect key="frame" x="290" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="0Xo-TW-PoX"/>
-                                                            <constraint firstAttribute="height" constant="50" id="L4t-2t-QTg"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="kqe-Ly-lnw">
-                                                        <rect key="frame" x="435" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="FOA-By-TYf"/>
-                                                            <constraint firstAttribute="width" constant="130" id="gzx-4e-hw0"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDR-Y5-feF" userLabel="Snare0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1no-JJ-ymJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttC-Sa-sep" userLabel="Snare1">
+                                                        <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIM-pP-IMl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCL-th-QtP" userLabel="Snare2">
+                                                        <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDJ-7E-Pt8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-yS-BTQ" userLabel="Snare3">
+                                                        <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hyl-RB-OFJ"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" tag="36" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UWq-YA-gEi" userLabel="Bass Drum Beat Card Stack">
-                                                <rect key="frame" x="0.0" y="130" width="565" height="50"/>
+                                            <stackView opaque="NO" tag="36" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UWq-YA-gEi" userLabel="Bass Drum Beat Card Stack">
+                                                <rect key="frame" x="0.0" y="130" width="600" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="FTC-b6-GD5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="3xh-YV-VXW"/>
-                                                            <constraint firstAttribute="width" constant="130" id="msL-CE-KCv"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="feI-6u-iqi">
-                                                        <rect key="frame" x="145" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="2ec-eb-iWC"/>
-                                                            <constraint firstAttribute="width" constant="130" id="N1u-iV-L21"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-1V-7ot">
-                                                        <rect key="frame" x="290" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="Iep-RI-zxy"/>
-                                                            <constraint firstAttribute="width" constant="130" id="aZs-Jj-5MN"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="4wL-DK-DUI">
-                                                        <rect key="frame" x="435" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="eNz-JE-eFy"/>
-                                                            <constraint firstAttribute="height" constant="50" id="vCL-lM-dLu"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Rb-ng7" userLabel="Bass0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CU-eq-uPS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpa-xR-LGn" userLabel="Bass1">
+                                                        <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hbC-GN-hyP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZI-E7-0Z9" userLabel="Bass2">
+                                                        <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MoO-3G-HWO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYn-of-HCh" userLabel="Bass3">
+                                                        <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tn3-0E-M4Z"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" tag="37" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="thw-8y-3Vi" userLabel="Hi-Hat Beat Card Stack">
-                                                <rect key="frame" x="0.0" y="195" width="565" height="50"/>
+                                            <stackView opaque="NO" tag="37" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="thw-8y-3Vi" userLabel="Hi-Hat Beat Card Stack">
+                                                <rect key="frame" x="0.0" y="195" width="600" height="50"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="ECc-vN-vln">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="Bcd-om-Jtb"/>
-                                                            <constraint firstAttribute="width" constant="130" id="DO9-g0-ay1"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="J2d-W0-vLG">
-                                                        <rect key="frame" x="145" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="130" id="MYd-78-WGz"/>
-                                                            <constraint firstAttribute="height" constant="50" id="ZzI-Hl-nQK"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="15" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-Yc-XSI">
-                                                        <rect key="frame" x="290" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="J7u-XN-SKL"/>
-                                                            <constraint firstAttribute="width" constant="130" id="Qgq-ig-z4m"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="16" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beat Card Box" translatesAutoresizingMaskIntoConstraints="NO" id="vYF-0R-tGK">
-                                                        <rect key="frame" x="435" y="0.0" width="130" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="2cx-fd-dPJ"/>
-                                                            <constraint firstAttribute="width" constant="130" id="hNW-BJ-oXW"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZB-w1-ayv" userLabel="HiHat0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w17-X4-J04"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-8V-0d1" userLabel="HiHat1">
+                                                        <rect key="frame" x="154" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LMe-we-rCB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vic-nD-hcV" userLabel="HiHat2">
+                                                        <rect key="frame" x="307.5" y="0.0" width="139" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7A3-hu-bbX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKW-OP-6oE" userLabel="HiHat3">
+                                                        <rect key="frame" x="461.5" y="0.0" width="138.5" height="50"/>
+                                                        <state key="normal" image="Beat Card Box"/>
+                                                        <connections>
+                                                            <action selector="beatCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXQ-xS-peM"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="600" id="Ijo-Fk-cpc"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" tag="60" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A3S-UP-V8e" userLabel="Snooze Button Stack">
-                                        <rect key="frame" x="635" y="0.0" width="50" height="245"/>
+                                        <rect key="frame" x="750" y="0.0" width="50" height="245"/>
                                         <subviews>
                                             <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h12-va-SNg" userLabel="Ride Snooze">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -270,115 +269,250 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" tag="70" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="y5Y-p6-97k" userLabel="Play Panel  Stack">
-                                <rect key="frame" x="168" y="339.5" width="560" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-RQ-4ty">
+                                <rect key="frame" x="0.0" y="177.5" width="360" height="245"/>
                                 <subviews>
-                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-I7-kXg" userLabel="Play">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-4y-NPh">
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hRa-mf-bLs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="5Ej-cN-TOo">
+                                        <rect key="frame" x="0.0" y="65" width="360" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="pzi-Lz-tlK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Xlo-xP-Mb6">
+                                        <rect key="frame" x="0.0" y="130" width="360" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aMs-Qa-jke"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="LJN-If-igz">
+                                        <rect key="frame" x="0.0" y="195" width="360" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZnQ-qz-3Y1"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-sZ-7lE" userLabel="Bottom Panel">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i0g-48-i4b"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-db-dE7" userLabel="Top Panel Background">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-zv-CdA">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Raw-Nd-adB"/>
+                                            <constraint firstAttribute="height" constant="50" id="hve-5X-SEi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-I7-kXg" userLabel="Profile">
+                                        <rect key="frame" x="25" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0dc-Sn-UH7"/>
                                             <constraint firstAttribute="width" constant="50" id="H1m-nP-U1g"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Play Button"/>
+                                        <state key="normal" title="Button" image="Profile">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
+                                        <rect key="frame" x="525" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="If7-yh-s4N"/>
+                                            <constraint firstAttribute="width" constant="50" id="OKx-S8-k0C"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Random"/>
                                         <connections>
-                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2q-Nb-oTj"/>
+                                            <action selector="randomizationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45H-4P-6PW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="72" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
-                                        <rect key="frame" x="125" y="0.0" width="50" height="50"/>
+                                    <button opaque="NO" tag="72" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
+                                        <rect key="frame" x="210" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1P4-bU-zlG"/>
                                             <constraint firstAttribute="width" constant="50" id="Xcj-JF-HEM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="29"/>
-                                        <state key="normal" title="120" image="Metronome Button">
+                                        <state key="normal" title="120" image="Metronome Active">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="metronomeTogglePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYC-Aa-fDc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="73" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
-                                        <rect key="frame" x="250" y="0.0" width="60" height="50"/>
+                                    <button opaque="NO" tag="73" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
+                                        <rect key="frame" x="275" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="9tJ-0a-coh"/>
-                                            <constraint firstAttribute="width" constant="60" id="aqg-dc-iWB"/>
+                                            <constraint firstAttribute="height" constant="50" id="bEk-DD-TFv"/>
+                                            <constraint firstAttribute="width" constant="50" id="xcn-kT-AD8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="29"/>
-                                        <state key="normal" title="60">
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                                        <state key="normal" title="60" backgroundImage="Blank Button Circle">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="bpmAdjustorAccessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPN-tY-yeq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="74" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Subdivision">
-                                        <rect key="frame" x="385" y="0.0" width="50" height="50"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-ls-cgx">
+                                        <rect key="frame" x="75" y="0.0" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Fsp-bo-7bB"/>
+                                            <constraint firstAttribute="height" constant="50" id="QMh-fE-r9v"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQE-Xy-7Y7" userLabel="Play">
+                                        <rect key="frame" x="135" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1OW-bH-zTt"/>
+                                            <constraint firstAttribute="width" constant="50" id="pnM-5W-u3C"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Play">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hh7-3R-z2u"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-J8-TtH">
+                                        <rect key="frame" x="575" y="0.0" width="25" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="0ts-va-gk7"/>
+                                            <constraint firstAttribute="height" constant="50" id="U05-vO-cl8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-e3-I3s">
+                                        <rect key="frame" x="260" y="0.0" width="15" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="bZt-PG-On4"/>
+                                            <constraint firstAttribute="height" constant="50" id="jRc-z5-fWg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="PEB-0E-Nck">
+                                        <rect key="frame" x="325" y="0.0" width="15" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7sU-OE-OeF"/>
+                                            <constraint firstAttribute="width" constant="15" id="Vqd-wt-uGW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="74" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Subdivision">
+                                        <rect key="frame" x="340" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="OVL-bE-JUd"/>
                                             <constraint firstAttribute="height" constant="50" id="YXN-VZ-kSp"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="4 Beeps Image"/>
+                                        <state key="normal" title="Button" image="4th"/>
                                         <connections>
                                             <action selector="subdivisionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSw-yN-LHJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-TF-oRe" userLabel="Random">
-                                        <rect key="frame" x="510" y="0.0" width="50" height="50"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-w8-JYg">
+                                        <rect key="frame" x="185" y="0.0" width="25" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="If7-yh-s4N"/>
-                                            <constraint firstAttribute="width" constant="50" id="OKx-S8-k0C"/>
+                                            <constraint firstAttribute="height" constant="50" id="GcD-Xp-qEn"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Random Button"/>
-                                        <connections>
-                                            <action selector="randomizationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45H-4P-6PW"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-va-Kvk">
+                                        <rect key="frame" x="390" y="0.0" width="135" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WdS-5b-nzd"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="k9J-w8-UGF"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TXK-TF-oRe" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="0qX-WR-f35"/>
+                                    <constraint firstItem="hQE-Xy-7Y7" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="9iL-o9-YmK"/>
+                                    <constraint firstItem="e0t-ls-cgx" firstAttribute="leading" secondItem="peW-I7-kXg" secondAttribute="trailing" id="CYa-VD-CO1"/>
+                                    <constraint firstItem="0E7-J8-TtH" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="top" id="DnA-UG-I5r"/>
+                                    <constraint firstItem="PEB-0E-Nck" firstAttribute="leading" secondItem="Eh5-Oe-ymh" secondAttribute="trailing" id="Fzt-3n-jrr"/>
+                                    <constraint firstItem="YNP-yZ-Ukb" firstAttribute="leading" secondItem="PEB-0E-Nck" secondAttribute="trailing" id="HGA-Ja-459"/>
+                                    <constraint firstItem="Ow1-zv-CdA" firstAttribute="leading" secondItem="nwl-db-dE7" secondAttribute="leading" id="IEK-VB-bHX"/>
+                                    <constraint firstAttribute="height" constant="50" id="IxO-rr-dlV"/>
+                                    <constraint firstAttribute="trailing" secondItem="0E7-J8-TtH" secondAttribute="trailing" id="Mce-98-y2T"/>
+                                    <constraint firstItem="peW-I7-kXg" firstAttribute="leading" secondItem="Ow1-zv-CdA" secondAttribute="trailing" id="MmA-Wh-tuW"/>
+                                    <constraint firstItem="TXK-TF-oRe" firstAttribute="leading" secondItem="uR2-va-Kvk" secondAttribute="trailing" id="RMr-XV-SKo"/>
+                                    <constraint firstItem="Eh5-Oe-ymh" firstAttribute="centerX" secondItem="nwl-db-dE7" secondAttribute="centerX" id="RTr-b9-nrG"/>
+                                    <constraint firstItem="53s-FQ-TV5" firstAttribute="leading" secondItem="3ET-w8-JYg" secondAttribute="trailing" id="SKo-w2-QQN"/>
+                                    <constraint firstItem="VRb-e3-I3s" firstAttribute="leading" secondItem="53s-FQ-TV5" secondAttribute="trailing" id="Z6w-9C-B42"/>
+                                    <constraint firstItem="peW-I7-kXg" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="axC-Ie-sy9"/>
+                                    <constraint firstItem="Ow1-zv-CdA" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="dSr-2M-gYR"/>
+                                    <constraint firstItem="TXK-TF-oRe" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="top" id="evT-VA-SI3"/>
+                                    <constraint firstItem="3ET-w8-JYg" firstAttribute="leading" secondItem="hQE-Xy-7Y7" secondAttribute="trailing" id="hZN-57-XHp"/>
+                                    <constraint firstItem="YNP-yZ-Ukb" firstAttribute="leading" secondItem="PEB-0E-Nck" secondAttribute="trailing" id="lTr-NL-nrc"/>
+                                    <constraint firstItem="uR2-va-Kvk" firstAttribute="leading" secondItem="YNP-yZ-Ukb" secondAttribute="trailing" id="mYG-kj-FUa"/>
+                                    <constraint firstItem="0E7-J8-TtH" firstAttribute="leading" secondItem="TXK-TF-oRe" secondAttribute="trailing" id="oUz-Jl-ch6"/>
+                                    <constraint firstItem="hQE-Xy-7Y7" firstAttribute="leading" secondItem="e0t-ls-cgx" secondAttribute="trailing" id="yMp-Ez-66u"/>
+                                    <constraint firstItem="Eh5-Oe-ymh" firstAttribute="leading" secondItem="VRb-e3-I3s" secondAttribute="trailing" id="zZT-N1-0Vg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nwl-db-dE7" secondAttribute="trailing" id="2ri-Kk-Yii"/>
+                            <constraint firstAttribute="bottom" secondItem="YHI-sZ-7lE" secondAttribute="bottom" id="3Ml-vA-Hbc"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Q8-CT-jze"/>
                             <constraint firstAttribute="trailing" secondItem="G9q-oH-9tH" secondAttribute="trailing" id="3bu-HC-Hj6"/>
-                            <constraint firstItem="jAp-nt-K6j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GPj-Mm-BRv"/>
+                            <constraint firstItem="mak-l2-MUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7f3-Lm-4CK"/>
+                            <constraint firstItem="mak-l2-MUb" firstAttribute="leading" secondItem="8oR-RQ-4ty" secondAttribute="trailing" id="99Q-Bi-DKg"/>
+                            <constraint firstItem="nwl-db-dE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Hr-39-Hrk"/>
+                            <constraint firstItem="nwl-db-dE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EoT-1Z-lyR"/>
                             <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="Oic-bM-92m"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tba-fb-BND"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="top" secondItem="jAp-nt-K6j" secondAttribute="bottom" constant="10" id="Vxa-qH-cLJ"/>
-                            <constraint firstItem="y5Y-p6-97k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eM8-in-RlN"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfp-rE-C3W"/>
-                            <constraint firstItem="y5Y-p6-97k" firstAttribute="top" secondItem="mak-l2-MUb" secondAttribute="bottom" constant="10" id="nwT-2c-DPJ"/>
+                            <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eL9-T7-70Q"/>
+                            <constraint firstAttribute="trailing" secondItem="YHI-sZ-7lE" secondAttribute="trailing" id="gfn-qB-12i"/>
+                            <constraint firstItem="YHI-sZ-7lE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mT2-qI-8OG"/>
+                            <constraint firstItem="8oR-RQ-4ty" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nIz-Fx-wmH"/>
+                            <constraint firstItem="8oR-RQ-4ty" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nxl-Yk-pjj"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ujf-tf-dwg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A3j-Zy-C1N"/>
                     <connections>
-                        <outlet property="bass0" destination="FTC-b6-GD5" id="xee-de-Zfh"/>
-                        <outlet property="bass1" destination="feI-6u-iqi" id="9D7-Fb-l7w"/>
-                        <outlet property="bass2" destination="Yoj-1V-7ot" id="Yj6-YQ-WGn"/>
-                        <outlet property="bass3" destination="4wL-DK-DUI" id="BVM-DN-JsG"/>
-                        <outlet property="bassMuteOutlet" destination="JEQ-Iu-wLl" id="k4d-d0-e6M"/>
-                        <outlet property="bassSnoozeOutlet" destination="cUC-CC-b4j" id="3Ng-oy-saA"/>
                         <outlet property="bpmAdjustAccessButton" destination="Eh5-Oe-ymh" id="Bci-5d-4Za"/>
-                        <outlet property="hiHat0" destination="ECc-vN-vln" id="KrL-NS-WA0"/>
-                        <outlet property="hiHat1" destination="J2d-W0-vLG" id="f4k-Tj-ZSa"/>
-                        <outlet property="hiHat2" destination="gK8-Yc-XSI" id="g1k-ky-Wdd"/>
-                        <outlet property="hiHat3" destination="vYF-0R-tGK" id="VbZ-C5-A0v"/>
-                        <outlet property="hiHatMuteOutlet" destination="FJV-dC-uwF" id="LTm-NO-Dic"/>
-                        <outlet property="hiHatSnoozeOutlet" destination="oQn-gg-Eoz" id="PcD-pa-3r6"/>
+                        <outlet property="hat0" destination="hZB-w1-ayv" id="Sf5-wW-YB8"/>
+                        <outlet property="hat1" destination="EYa-8V-0d1" id="H8a-aq-f6C"/>
+                        <outlet property="hat2" destination="vic-nD-hcV" id="ILA-st-2rO"/>
+                        <outlet property="hat3" destination="iKW-OP-6oE" id="2mP-7j-AOr"/>
+                        <outlet property="hatMuteOutlet" destination="FJV-dC-uwF" id="LTm-NO-Dic"/>
+                        <outlet property="hatSnoozeOutlet" destination="oQn-gg-Eoz" id="PcD-pa-3r6"/>
+                        <outlet property="kick0" destination="KRg-Rb-ng7" id="bHC-M8-19V"/>
+                        <outlet property="kick1" destination="jpa-xR-LGn" id="wVz-uj-ooJ"/>
+                        <outlet property="kick2" destination="rZI-E7-0Z9" id="40s-Cb-oBD"/>
+                        <outlet property="kick3" destination="rYn-of-HCh" id="SfN-kj-OfJ"/>
+                        <outlet property="kickMuteOutlet" destination="JEQ-Iu-wLl" id="k4d-d0-e6M"/>
+                        <outlet property="kickSnoozeOutlet" destination="cUC-CC-b4j" id="3Ng-oy-saA"/>
                         <outlet property="metronomeOutlet" destination="53s-FQ-TV5" id="KnO-n2-ig9"/>
-                        <outlet property="playButtonOutlet" destination="peW-I7-kXg" id="wsr-75-xse"/>
-                        <outlet property="ride0" destination="u2d-Kf-RqD" id="eyV-O5-cvz"/>
-                        <outlet property="ride1" destination="09B-fe-BzD" id="jr1-km-Csw"/>
-                        <outlet property="ride2" destination="8Og-u3-FkM" id="7Jx-11-RI4"/>
-                        <outlet property="ride3" destination="DbE-b1-6Hu" id="1VB-Zd-jWS"/>
+                        <outlet property="playButtonOutlet" destination="hQE-Xy-7Y7" id="jth-Kt-mO3"/>
+                        <outlet property="ride0" destination="dKh-XJ-iaW" id="cHa-8F-reo"/>
+                        <outlet property="ride1" destination="xux-KJ-gy7" id="naB-Sc-PeX"/>
+                        <outlet property="ride2" destination="Qez-24-yum" id="xa0-KO-4N5"/>
+                        <outlet property="ride3" destination="fno-I9-XRi" id="Snn-qE-y7E"/>
                         <outlet property="rideMuteOutlet" destination="Ceu-rx-I4c" id="2Xe-yQ-O3P"/>
                         <outlet property="rideSnoozeOutlet" destination="h12-va-SNg" id="ox7-5R-bis"/>
-                        <outlet property="snare0" destination="mWt-as-TrZ" id="PHR-mv-Hcj"/>
-                        <outlet property="snare1" destination="0hH-ys-a0L" id="gcG-ry-dd7"/>
-                        <outlet property="snare2" destination="NNu-2p-fNq" id="cx0-G5-4IN"/>
-                        <outlet property="snare3" destination="kqe-Ly-lnw" id="zcl-1q-1lh"/>
+                        <outlet property="snare0" destination="aDR-Y5-feF" id="o1t-VU-trp"/>
+                        <outlet property="snare1" destination="ttC-Sa-sep" id="PKn-FS-s1N"/>
+                        <outlet property="snare2" destination="pCL-th-QtP" id="Awm-tC-ruO"/>
+                        <outlet property="snare3" destination="YZW-yS-BTQ" id="HLZ-PL-G3O"/>
                         <outlet property="snareMuteOutlet" destination="Ahz-62-PPE" id="Jcq-gs-5ng"/>
                         <outlet property="snareSnoozeOutlet" destination="WTx-gV-YXv" id="MNt-W3-AN8"/>
                         <outlet property="subdivisionOutlet" destination="YNP-yZ-Ukb" id="gCN-d9-BwZ"/>
@@ -387,28 +521,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-176.78571428571428" y="-2504.3478260869565"/>
+            <point key="canvasLocation" x="-24.107142857142858" y="-2757.971014492754"/>
         </scene>
         <!--Adjustor View Controller-->
         <scene sceneID="s4I-cV-P8t">
             <objects>
                 <viewController id="HOR-w6-HEJ" customClass="BPMAdjustorViewController" customModule="Four_Brains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIH-ty-Sq8">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="2j5-Ih-sGg" userLabel="BPM Background">
-                                <rect key="frame" x="-52" y="0.0" width="1000" height="443"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="7q7-4u-79E">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-PU-rA7">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-PU-rA7">
                                 <rect key="frame" x="287.55527235924114" y="20" width="320" height="320.00000000000011"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sqb-CK-kTu" customClass="CircularSlider" customModule="HGCircularSlider">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sqb-CK-kTu" customClass="CircularSlider" customModule="HGCircularSlider">
                                         <rect key="frame" x="-0.96752827447267009" y="0.0" width="320" height="320"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -446,15 +579,19 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Sqb-CK-kTu" firstAttribute="top" secondItem="tjm-PU-rA7" secondAttribute="top" id="RZi-FL-hZI"/>
+                                    <constraint firstItem="Sqb-CK-kTu" firstAttribute="leading" secondItem="tjm-PU-rA7" secondAttribute="leading" id="Tnf-jz-NFI"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm8-8K-em6">
-                                <rect key="frame" x="407" y="130" width="82" height="96"/>
+                                <rect key="frame" x="259" y="308" width="82" height="96"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcv-ze-wl0">
-                                <rect key="frame" x="390" y="331" width="116" height="62"/>
+                                <rect key="frame" x="212" y="509" width="176" height="71"/>
                                 <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="50"/>
                                 <state key="normal" title="Dismiss">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,12 +606,10 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Gcv-ze-wl0" firstAttribute="centerX" secondItem="LIH-ty-Sq8" secondAttribute="centerX" id="9Lf-Qv-cmi"/>
-                            <constraint firstAttribute="bottom" secondItem="2j5-Ih-sGg" secondAttribute="bottomMargin" id="AJg-dV-l4d"/>
-                            <constraint firstItem="2j5-Ih-sGg" firstAttribute="top" secondItem="LIH-ty-Sq8" secondAttribute="top" id="GnC-um-wEA"/>
+                            <constraint firstItem="tjm-PU-rA7" firstAttribute="centerX" secondItem="LIH-ty-Sq8" secondAttribute="centerX" id="DPw-KQ-fhA"/>
                             <constraint firstItem="Gcv-ze-wl0" firstAttribute="bottom" secondItem="v2J-29-b0v" secondAttribute="bottom" id="UnZ-V9-6FT"/>
+                            <constraint firstItem="v2J-29-b0v" firstAttribute="bottom" secondItem="tjm-PU-rA7" secondAttribute="bottom" constant="53" id="WkE-Ke-Fn4"/>
                             <constraint firstItem="rm8-8K-em6" firstAttribute="centerX" secondItem="LIH-ty-Sq8" secondAttribute="centerX" id="ZSw-PA-CH4"/>
-                            <constraint firstItem="2j5-Ih-sGg" firstAttribute="leadingMargin" secondItem="LIH-ty-Sq8" secondAttribute="leading" id="bpq-xG-3bM"/>
-                            <constraint firstAttribute="trailing" secondItem="2j5-Ih-sGg" secondAttribute="trailingMargin" id="mkt-JH-BEg"/>
                             <constraint firstItem="Gcv-ze-wl0" firstAttribute="top" secondItem="rm8-8K-em6" secondAttribute="bottom" constant="105" id="q6m-zK-atk"/>
                         </constraints>
                     </view>
@@ -489,16 +624,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4 Beeps Image" width="360" height="360"/>
-        <image name="Bass Drum" width="240" height="240"/>
+        <image name="4th" width="360" height="360"/>
         <image name="Beat Card Box" width="341" height="180"/>
-        <image name="Hi Hat " width="240" height="240"/>
+        <image name="Blank Button Circle" width="138.5" height="138.5"/>
+        <image name="Hat Active" width="360" height="138.5"/>
         <image name="Home Screen Background" width="341" height="240"/>
-        <image name="Metronome Button" width="240" height="240"/>
-        <image name="Play Button" width="240" height="240"/>
-        <image name="Random Button" width="240" height="240"/>
-        <image name="Ride Cymbal" width="240" height="240"/>
-        <image name="Snare Drum Clear" width="240" height="240"/>
+        <image name="Kick Active" width="360" height="138.5"/>
+        <image name="Leading Edge Mute Button Spacer" width="360" height="138.5"/>
+        <image name="Metronome Active" width="360" height="360"/>
+        <image name="Play" width="360" height="360"/>
+        <image name="Profile" width="360" height="360"/>
+        <image name="Random" width="360" height="360"/>
+        <image name="Ride Active" width="360" height="138.5"/>
+        <image name="Snare Active" width="360" height="138.5"/>
         <image name="Snooze Button" width="240" height="240"/>
     </resources>
 </document>

@@ -1,11 +1,9 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## AudioKit
+## HGCircularSlider
 
-The MIT License (MIT)
-
-Copyright (c) 2016 Aurelius Prochazka
+Copyright (c) 2016 Hamza Ghazouani <hamza.ghazouani@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,9 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## HGCircularSlider
+## McPicker
 
-Copyright (c) 2016 Hamza Ghazouani <hamza.ghazouani@gmail.com>
+Copyright (c) 2017-2020 Kevin McGill <kevin@mcgilldevtech.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

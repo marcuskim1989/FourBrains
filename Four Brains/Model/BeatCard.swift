@@ -10,12 +10,19 @@ import Foundation
 import AudioKit
 
 class BeatCard {
-    var beatCardLabel: String
-    var beatCardNoteSequence: [Int]
+    private var beatCardLabel: String
+    private var beatCardNoteSequence: [Int]
     
-    init(l: String, ns: [Int]){
-        beatCardLabel = l
-        beatCardNoteSequence = ns
+    init(label: String, noteSequence: [Int]) {
+        beatCardLabel = label
+        beatCardNoteSequence = noteSequence
     }
     
+    public func getBeatCardLabel() -> String {
+        return beatCardLabel
+    }
+    
+    public func getBeatCardNoteSequence() -> [Int] {
+        return beatCardNoteSequence
+    }
 }

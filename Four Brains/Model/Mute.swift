@@ -10,63 +10,60 @@ import Foundation
 
 class Mute {
     
-    var rideMuteState: Bool = false
-    var snareMuteState: Bool = false
-    var bassMuteState: Bool = false
-    var hiHatMuteState: Bool = false
+    private var rideMuteState: Bool = false
+    private var snareMuteState: Bool = false
+    private var kickMuteState: Bool = false
+    private var hatMuteState: Bool = false
     
+    public func getRideMuteState() -> Bool {
+        return rideMuteState
+    }
     
+    public func getSnareMuteState() -> Bool {
+        return snareMuteState
+    }
     
-    init() {
-        
+    public func getKickMuteState() -> Bool {
+        return kickMuteState
+    }
+    
+    public func getHatMuteState() -> Bool {
+        return hatMuteState
     }
     
     func changeMuteState(instrument: String) {
         
+        // Perfect place for toggleables
         switch instrument {
-        case K.MUTECONSTANTS.RIDE_MUTE_BUTTON:
-                if rideMuteState{
-                        rideMuteState = false
-                    } else {
-                        rideMuteState = true
-                }
-           // return rideMuteState
+        case K.MuteConstants.MuteButtonNames.RIDE_MUTE_BUTTON:
+            rideMuteState.toggle()
             
-        case K.MUTECONSTANTS.SNARE_MUTE_BUTTON:
-                if snareMuteState{
-                    snareMuteState = false
-                } else {
-                    snareMuteState = true
-            }
-            //return snareMuteState
+            print("rideMuteState is \(rideMuteState)")
             
-        case K.MUTECONSTANTS.BASS_MUTE_BUTTON:
-                if bassMuteState{
-                    bassMuteState = false
-                } else {
-                    bassMuteState = true
-            }
-            //return bassMuteState
+        case K.MuteConstants.MuteButtonNames.SNARE_MUTE_BUTTON:
+            snareMuteState.toggle()
             
-        case K.MUTECONSTANTS.HI_HAT_MUTE_BUTTON:
-                if hiHatMuteState{
-                    hiHatMuteState = false
-                } else {
-                    hiHatMuteState = true
-            }
-           // return hiHatMuteState
+            print("snareMuteState is \(snareMuteState)")
             
-            default:
-                print("Error: button title not matched in switch statement, returning `false`")
-           // return false
+        case K.MuteConstants.MuteButtonNames.KICK_MUTE_BUTTON:
+            kickMuteState.toggle()
+            
+            print("bassMuteState is \(kickMuteState)")
+            
+        case K.MuteConstants.MuteButtonNames.HAT_MUTE_BUTTON:
+            hatMuteState.toggle()
+            print("hiHatMuteState is \(hatMuteState)")
+            
+        default:
+            print("Error: button title not matched in switch statement")
         }
     }
     
     func unmuteAllStates() {
         rideMuteState = false
         snareMuteState = false
-        bassMuteState = false
-        hiHatMuteState = false
+        kickMuteState = false
+        hatMuteState = false
         print("unmuteAllStates() called")
     }
     

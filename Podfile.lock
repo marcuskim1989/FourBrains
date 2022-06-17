@@ -1,25 +1,20 @@
 PODS:
-  - AudioKit (4.9.3):
-    - AudioKit/Core (= 4.9.3)
-    - AudioKit/UI (= 4.9.3)
-  - AudioKit/Core (4.9.3)
-  - AudioKit/UI (4.9.3):
-    - AudioKit/Core
   - HGCircularSlider (2.2.0)
+  - McPicker (3.0.0)
 
 DEPENDENCIES:
-  - AudioKit (~> 4.9.3)
   - HGCircularSlider (~> 2.2.0)
+  - McPicker (~> 3.0.0)
 
 SPEC REPOS:
   trunk:
-    - AudioKit
     - HGCircularSlider
+    - McPicker
 
 SPEC CHECKSUMS:
-  AudioKit: d025ecbb68f567bba15dab7ea80b8991155729f9
   HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
+  McPicker: ba38be56a8194faa5249eca4226c364eed628044
 
-PODFILE CHECKSUM: 7506aded7359c0911c6755f27cbe9f7c95cf538b
+PODFILE CHECKSUM: 5bd64e3c9508513d0455519a9e3c3079f9625cb3
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

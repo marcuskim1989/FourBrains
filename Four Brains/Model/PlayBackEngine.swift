@@ -11,66 +11,50 @@ import AudioKit
 
 class PlayBackEngine {
     
-    var isPlaying = false
-    var metronome: Metronome!
-    var drumSounds: DrumSounds!
-    var mute: Mute!
+    private var isPlaying: Bool = false
+    private var metronome: Metronome!
+    private var drumSounds: DrumSounds!
     
     init(metronome: Metronome, drumSounds: DrumSounds) {
-        
-        let metronomeBooster = AKBooster(metronome.metronome)
-        metronomeBooster.rightGain = 0
-        let metronomeBoosterLeftPan = AKPanner(metronomeBooster, pan: -1)
-        
-        let drumBooster = AKBooster(drumSounds.drums)
-        drumBooster.leftGain = 0
-        let drumBoosterRightPan = AKPanner(drumBooster, pan: 1)
-        drumBoosterRightPan.bypass()
-        
-        
-        let mixer = AKMixer(metronomeBoosterLeftPan, drumBoosterRightPan)
-        
         
         self.metronome = metronome
         self.drumSounds = drumSounds
         
-        AKManager.output = mixer
-        
-        
     }
     
+    public func getIsPlaying() -> Bool {
+        return isPlaying
+    }
+    
+    // perfect place to use a toggleable
     @discardableResult
-    func changeIsPlaying() -> Bool{
-        if isPlaying {
-            isPlaying = false
-        } else {
-            isPlaying = true
-        }
+    func changeIsPlaying() -> Bool {
         
-        print("isPlaying inside changeIsPlaying(): \(isPlaying)")
+        isPlaying.toggle()
+        
+        print("isPlaying inside changeIsPlaying(): \(!isPlaying)")
         return isPlaying
     }
     
     func play() {
         
-        //print(metronome.metronomeToggleState)
-        if isPlaying{
+        // print(metronome.metronomeToggleState)
+        if isPlaying {
             print("isPlaying inside if inside play(): \(isPlaying)")
+            
             metronome.playMetronome()
+            drumSounds.playDrumSounds()
             
         } else {
             print("isPlaying inside else inside play(): \(isPlaying)")
             
-            metronome.stopMetronome();
+            metronome.stopMetronome()
+            drumSounds.stopDrumsSounds()
             
         }
         
-        drumSounds.playDrumSounds()
         
     }
     
     
 }
-
-    
-

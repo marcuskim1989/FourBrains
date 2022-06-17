@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Quarter Note Symbol Cropped.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Quarter Note Symbol Cropped@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Quarter Note Symbol Cropped@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

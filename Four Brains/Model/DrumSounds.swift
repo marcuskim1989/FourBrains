@@ -8,69 +8,111 @@
 
 import Foundation
 import AudioKit
+import AVFoundation
+import Combine
 
 class DrumSounds {
+    private let drums: MIDISampler = MIDISampler(name: "drums")
+    private let sequencer: AppleSequencer = AppleSequencer(filename: "4tracks")
     
-    let drums = AKMIDISampler(midiOutputName: "drums")
-    var mute: Mute!
-   
-    var rideNoteSequence: [Int] = [0]
-    var snareNoteSequence: [Int] = [0]
-    var bassNoteSequence: [Int] = [0]
-    var hiHatNoteSequence: [Int] = [0]
+    private var rideNoteSequence: [Int] = []
+    private var snareNoteSequence: [Int] = []
+    private var kickNoteSequence: [Int] = []
+    private var hatNoteSequence: [Int] = []
     
-    var rideNoteArray: [()] = [()]
-    var snareNoteArray: [()] = [()]
-    var bassNoteArray: [()] = [()]
-    var hiHatNoteArray: [()] = [()]
+    private var rideNoteArray: [()] = [()]
+    private var snareNoteArray: [()] = [()]
+    private var bassNoteArray: [()] = [()]
+    private var hiHatNoteArray: [()] = [()]
     
-    var currentBPM = 60
-    //var drumSoundsToggleState = true
+    private var mute: Mute!
     
-    let sequencer = AKAppleSequencer(filename: "4tracks")
-    init(mute: Mute) {
+    init(mute: Mute, currentBPM: Int) {
+     
         self.mute = mute
-        let rideCymbalFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.RIDE_FILE_NAME)
-        let snareDrumFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.SNARE_FILE_NAME)
-        let bassDrumFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.BASS_FILE_NAME)
-        let hiHatFile = try! AKAudioFile(readFileName: K.DRUMSOUNDFILENAMES.HI_HAT_FILE_NAME)
         
-        //rideNoteArray[0] = sequencer.tracks[0].add(noteNumber: 1, velocity: 0, position: AKDuration(beats: 0), duration: AKDuration(beats: 0.0))
+        let rideCymbalFile: AVAudioFile = try! AVAudioFile(
+            forReading: URL(
+                resolvingAliasFileAt: Bundle.main.url(
+                    forResource: K.DrumSoundFileNames.RIDE_FILE_NAME,
+                    withExtension: "wav")!
+            )
+        )
+        print("\(rideCymbalFile) is not empty")
+        let snareDrumFile: AVAudioFile = try! AVAudioFile(
+            forReading: URL(
+                resolvingAliasFileAt: Bundle.main.url(
+                    forResource: K.DrumSoundFileNames.SNARE_FILE_NAME,
+                    withExtension: "wav")!
+            )
+        )
+        let bassDrumFile: AVAudioFile = try! AVAudioFile(
+            forReading: URL(
+                resolvingAliasFileAt: Bundle.main.url(
+                    forResource: K.DrumSoundFileNames.BASS_FILE_NAME,
+                    withExtension: "wav")!
+            )
+        )
+        let hiHatFile: AVAudioFile = try! AVAudioFile(
+            forReading: URL(
+                resolvingAliasFileAt: Bundle.main.url(
+                    forResource: K.DrumSoundFileNames.HI_HAT_FILE_NAME,
+                    withExtension: "wav")!
+            )
+        )
         
-        do{
-        try drums.loadAudioFiles([rideCymbalFile,
-                                   snareDrumFile,
-                                   bassDrumFile,
-                                   hiHatFile])
+        do {
+        try drums.loadAudioFiles(
+            [
+                rideCymbalFile,
+                snareDrumFile,
+                bassDrumFile,
+                hiHatFile
+            ]
+        )
         
         } catch {
             print("error loading samples to drum object")
         }
         
-        sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 1000))
+        sequencer.clearRange(start: Duration(beats: 0), duration: Duration(beats: 100))
         sequencer.debug()
         sequencer.setGlobalMIDIOutput(drums.midiIn)
-        sequencer.enableLooping(AKDuration(beats: 4))
+        sequencer.enableLooping(Duration(beats: 4))
         sequencer.setTempo(Double(currentBPM))
        
     }
     
-    //MARK: Parse from wholeBeat
+    public func getDrums() -> MIDISampler {
+        return drums
+    }
+    
+    public func setSequencerTempo(_ tempo: Double) {
+        sequencer.setTempo(tempo)
+    }
+    
+    public func processDrumSounds(wholeBeat: WholeBeat) {
+        parseNoteSequence(wholeBeat: wholeBeat)
+        assignDrumSounds()
+    }
+    
+    // MARK: - Parse from wholeBeat
     func parseNoteSequence(wholeBeat: WholeBeat) {
         
-        rideNoteSequence = [0]
-        snareNoteSequence = [0]
-        bassNoteSequence = [0]
-        hiHatNoteSequence = [0]
+        rideNoteSequence = []
+        snareNoteSequence = []
+        kickNoteSequence = []
+        hatNoteSequence = []
         
         // MARK: Parse ride sequence
+    
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    rideNoteSequence[0] = wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note]
-                } else {
-                    rideNoteSequence.append(wholeBeat.ridePattern[beatCardCounter].beatCardNoteSequence[note])
-                }
+                rideNoteSequence.append(
+                    wholeBeat
+                        .getRidePattern()[beatCardCounter]
+                        .getBeatCardNoteSequence()[note]
+                )
             }
         }
         print("Ride note sequence: \(rideNoteSequence)")
@@ -78,11 +120,11 @@ class DrumSounds {
         // MARK: Parse snare sequence
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    snareNoteSequence[0] = wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note]
-                } else {
-                    snareNoteSequence.append(wholeBeat.snarePattern[beatCardCounter].beatCardNoteSequence[note])
-                }
+                snareNoteSequence.append(
+                    wholeBeat
+                        .getSnarePattern()[beatCardCounter]
+                        .getBeatCardNoteSequence()[note]
+                )
             }
         }
         print("Snare note sequence: \(snareNoteSequence)")
@@ -90,42 +132,44 @@ class DrumSounds {
         // MARK: Parse bass sequence
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    bassNoteSequence[0] = wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note]
-                } else {
-                    bassNoteSequence.append(wholeBeat.bassPattern[beatCardCounter].beatCardNoteSequence[note])
-                }
+                kickNoteSequence.append(
+                    wholeBeat
+                        .getBassPattern()[beatCardCounter]
+                        .getBeatCardNoteSequence()[note]
+                )
             }
         }
-        print("Bass note sequence: \(bassNoteSequence)")
+        print("Bass note sequence: \(kickNoteSequence)")
         
-        //MARK: Parse hi hat sequence
+        // MARK: Parse hi hat sequence
         for beatCardCounter in Range(0...3) {
             for note in Range(0...3) {
-                if beatCardCounter == 0 && note == 0{
-                    hiHatNoteSequence[0] = wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note]
-                } else {
-                    hiHatNoteSequence.append(wholeBeat.hiHatPattern[beatCardCounter].beatCardNoteSequence[note])
-                }
+                hatNoteSequence.append(
+                    wholeBeat
+                        .getHiHatPattern()[beatCardCounter]
+                        .getBeatCardNoteSequence()[note]
+                )
             }
         }
-        print("Hi-Hat note sequence: \(hiHatNoteSequence)")
+        print("Hi-Hat note sequence: \(hatNoteSequence)")
         
-        print("parsenNoteSequence() called")
-        
-        assignDrumSounds()
+        print("parseNoteSequence() called")
         
     }
     
     func assignDrumSounds() {
-        sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
+        sequencer.clearRange(start: Duration(beats: 0), duration: Duration(beats: 100))
         
-        //MARK: Ride cymbal note assignment
-        if !mute.rideMuteState{
+        // MARK: Ride cymbal note assignment
+        if !mute.getRideMuteState() {
             for note in Range(0...15) {
-                let position = ((Double(note) + 1.0)/4.0) - 0.25
+                let position: Double = ((Double(note) + 1.0) / 4.0) - 0.25
                 if rideNoteSequence[note] == 1 {
-                    sequencer.tracks[0].add(noteNumber: 34, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                    sequencer.tracks[0].add(
+                        noteNumber: 34,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 0.25))
               
                     print("Ride: \(position)")
                 
@@ -134,38 +178,50 @@ class DrumSounds {
             
         }
         
-        //MARK: Snare drum note assignment
+        // MARK: Snare drum note assignment
         
-        if !mute.snareMuteState {
+        if !mute.getSnareMuteState() {
             for note in Range(0...15) {
-                let position = ((Double(note) + 1.0)/4.0) - 0.25
+                let position: Double = ((Double(note) + 1.0) / 4.0) - 0.25
                 if snareNoteSequence[note] == 1 {
-                    sequencer.tracks[1].add(noteNumber: 26, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                    sequencer.tracks[1].add(
+                        noteNumber: 26,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 0.25))
                
                 print("Snare: \(position)")
                 }
             }
         }
         
-        //MARK: Bass drum note assignment
+        // MARK: Bass drum note assignment
         
-        if !mute.bassMuteState {
+        if !mute.getKickMuteState() {
             for note in Range(0 ... 15) {
-                let position = ((Double(note) + 1.0)/4.0) - 0.25
-                if bassNoteSequence[note] == 1 {
-                    sequencer.tracks[2].add(noteNumber: 24, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                let position: Double = ((Double(note) + 1.0) / 4.0) - 0.25
+                if kickNoteSequence[note] == 1 {
+                    sequencer.tracks[2].add(
+                        noteNumber: 24,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 0.25))
               
                 print("Bass: \(position)")
                 }
             }
         }
          
-        //MARK: Hi-Hat note assignment
-        if !mute.hiHatMuteState{
+        // MARK: Hi-Hat note assignment
+        if !mute.getHatMuteState() {
             for note in Range(0 ... 15) {
-                let position = ((Double(note) + 1.0)/4.0) - 0.25
-                if hiHatNoteSequence[note] == 1 {
-                    sequencer.tracks[3].add(noteNumber: 30, velocity: 200, position: AKDuration(beats: position), duration: AKDuration(beats: 1.0))
+                let position: Double = ((Double(note) + 1.0) / 4.0) - 0.25
+                if hatNoteSequence[note] == 1 {
+                    sequencer.tracks[3].add(
+                        noteNumber: 30,
+                        velocity: 200,
+                        position: Duration(beats: position),
+                        duration: Duration(beats: 0.25))
                 
                 print("Hi Hat: \(position)")
                 }
@@ -176,30 +232,28 @@ class DrumSounds {
          
     }
     func playDrumSounds() {
+        // TODO: - Fix headphone playback 
         
-        do {
-            try AKSettings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)
-                
-            let session = AVAudioSession.sharedInstance()
-            try session.setCategory(AVAudioSession.Category.playAndRecord)
-
-            if !AKSettings.headPhonesPlugged {
-                try session.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
-         }
-        }catch {
-            print("error in settings.setSession")
-        }
+//        do {
+//            try Settings.setSession(category: .playAndRecord, with:  AVAudioSession.CategoryOptions.defaultToSpeaker)
+//
+//            let session = AVAudioSession.sharedInstance()
+//            try session.setCategory(AVAudioSession.Category.playAndRecord)
+//
+//            if !Settings.headPhonesPlugged {
+//                try session.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+//         }
+//        }catch {
+//            print("error in settings.setSession")
+//        }
         
-            if sequencer.isPlaying {
-                sequencer.stop()
-                //sequencer.clearRange(start: AKDuration(beats: 0), duration: AKDuration(beats: 100))
-                sequencer.rewind()
-            } else {
-                //assignDrumSounds()
-                sequencer.play()
-                
-            }
-        }
+    sequencer.play()
+         
     }
-
-
+    
+    func stopDrumsSounds() {
+        sequencer.stop()
+        sequencer.rewind()
+    
+    }
+}

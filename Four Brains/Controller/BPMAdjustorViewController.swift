@@ -18,10 +18,12 @@ class BPMAdjustorViewController: UIViewController {
 
     @IBOutlet weak var bpmAdjustor: CircularSlider!
    
-    var currentBPM: Int?
-    weak var delegate: BPMAdjustorDelegate?
+    public var currentBPM: Int?
+    public weak var delegate: BPMAdjustorDelegate?
     @IBOutlet weak var bpmLabel: UILabel!
-    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,16 +45,22 @@ class BPMAdjustorViewController: UIViewController {
         
         bpmAdjustor.addTarget(self, action: #selector(updateAdjustorBPM), for: .valueChanged)
     }
-    @objc func updateAdjustorBPM() {
-        bpmLabel.text = String(Int(bpmAdjustor.endPointValue))
-        
-        
-       currentBPM = Int(bpmAdjustor.endPointValue)
-       
-        
+    
+    public func setDelegate(_ homeScreenViewController: BPMAdjustorDelegate) {
+        delegate = homeScreenViewController
+    }
+    
+    public func setCurrentBPM(_ currentBPM: Int) {
+        self.currentBPM = currentBPM
     }
     
     
+    @objc func updateAdjustorBPM() {
+        
+        bpmLabel.text = String(Int(bpmAdjustor.endPointValue))
+        currentBPM = Int(bpmAdjustor.endPointValue)
+
+    }
     
     
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
@@ -62,14 +70,14 @@ class BPMAdjustorViewController: UIViewController {
             if self.currentBPM != nil {
                 print("chosen bpm is: \(self.currentBPM!)")
             }
-        } else if delegate == nil{
+        } else if delegate == nil {
             print("delegate is nil")
         } else if currentBPM == nil {
             print("currentBPM is nil")
         }
          
         self.dismiss(animated: true, completion: nil)
-        //print(currentBPM)
+        // print(currentBPM)
         
     }
 
