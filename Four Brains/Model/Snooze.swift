@@ -9,7 +9,6 @@
 import Foundation
 
 class Snooze {
-    
     private var rideSnoozeState: Bool = false
     private var snareSnoozeState: Bool = false
     private var bassSnoozeState: Bool = false
@@ -30,35 +29,33 @@ class Snooze {
         return snareSnoozeState
     }
     
-    public func getBassSnoozeState() -> Bool {
+    public func getKickSnoozeState() -> Bool {
         return bassSnoozeState
     }
     
-    public func getHiHatSnoozeState() -> Bool {
+    public func getHatSnoozeState() -> Bool {
         return hiHatSnoozeState
     }
     
-    func changeSnoozeState(instrument: String){
-        
+    func changeSnoozeState(instrument: String) {
         switch instrument {
-        case K.SNOOZECONSTANTS.RIDE_SNOOZE_BUTTON:
+        case K.SnoozeConstants.RIDE_SNOOZE_BUTTON:
             rideSnoozeState.toggle()
             
-            
-        case K.SNOOZECONSTANTS.SNARE_SNOOZE_BUTTON:
+        case K.SnoozeConstants.SNARE_SNOOZE_BUTTON:
             snareSnoozeState.toggle()
             
             
-        case K.SNOOZECONSTANTS.BASS_SNOOZE_BUTTON:
+        case K.SnoozeConstants.BASS_SNOOZE_BUTTON:
             bassSnoozeState.toggle()
             
             
-        case K.SNOOZECONSTANTS.HI_HAT_SNOOZE_BUTTON:
+        case K.SnoozeConstants.HI_HAT_SNOOZE_BUTTON:
             hiHatSnoozeState.toggle()
             
             
-            default:
-                print("Error in changeSnoozeState: button title not matched in switch statement")
+        default:
+            print("Error in changeSnoozeState: button title not matched in switch statement")
             
         }
         

@@ -1,0 +1,47 @@
+NoteHedz font, version 1.70.
+
+***** This information may be of interest to users of version 2 of the NoteWorthy Composer program:
+
+NoteHedz contains a number of characters that are scaled and positioned to coordinate with
+notation elements in NWC2, when this user font size is the same as the "staff size (in pixels)".
+
+There may be some scripts that automate the use of these symbols. Check the Scriptorium.
+
+These characters are located in the non-ASCII code range. They must be accessed from a character map.
+Since the characters are small, a magnifying character map program (such as the free "Typecase")
+is recommended for ease of use.
+
+When placing NotHedz symbols as replacements for blank noteheads, in most cases place the cursor
+just before the notehead, at the same level. Align left, at next note.
+
+Some NoteHedz symbols are used for other purposes. For these, try align "best fit" or "preserve width."
+
+There are also some musical symbols scaled to about 75% of their default sizes in NWC2.
+These may be used to illustrate lead-in notes that are not part of the music itself.
+For notes or rests with dots, choose the dot that best fits note placement (relative to staff lines).
+
+Codes decimal 249 - 254 contain small arcs that may be used to contruct dashed ties.
+
+Code decimal 45, the hyphen, is a thin-width space. It may be useful for positioning.
+
+Code decimal 239 is a measure bar.
+
+Code decimal 142 is a "small whiteout," when used as white color.
+Code decimal 128 is a "large whiteout," when used as white color. It is vertically offset.
+For whiteout to be effective, it must be used on a layered staff that follows the notation to be whited out.
+This has to do with the order of drawing in NWC2. If you simply place a whiteout on the same staff
+in front of the notation to be whited out, then it won't work.
+
+Codes decimal 158 and 159 may be used for circular note heads.
+
+Codes decimal 155 and 156 may be sued for circular note heads that will enclose a letter.
+These circles are vertically offset.
+Code decimal 158 may also be useful as a circular whiteout.
+
+
+-------------------------------------------
+
+Although many of the symbols have been scaled for compatibility with the NWC2 program,
+this font is not part of the NWC2 package. Use at your own risk.
+
+-------------------------------------------

@@ -43,10 +43,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.soloAmbient)
-           } catch {
-               print("AVAudioSessionCategorySoloAmbient not work")
-           }
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.soloAmbient)} catch {
+            print("AVAudioSessionCategorySoloAmbient not work")
+        }
         
     }
 
@@ -63,4 +62,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

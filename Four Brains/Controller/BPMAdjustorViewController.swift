@@ -21,7 +21,9 @@ class BPMAdjustorViewController: UIViewController {
     public var currentBPM: Int?
     public weak var delegate: BPMAdjustorDelegate?
     @IBOutlet weak var bpmLabel: UILabel!
-    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,12 +56,10 @@ class BPMAdjustorViewController: UIViewController {
     
     
     @objc func updateAdjustorBPM() {
+        
         bpmLabel.text = String(Int(bpmAdjustor.endPointValue))
-        
-        
-       currentBPM = Int(bpmAdjustor.endPointValue)
-       
-        
+        currentBPM = Int(bpmAdjustor.endPointValue)
+
     }
     
     
@@ -70,14 +70,14 @@ class BPMAdjustorViewController: UIViewController {
             if self.currentBPM != nil {
                 print("chosen bpm is: \(self.currentBPM!)")
             }
-        } else if delegate == nil{
+        } else if delegate == nil {
             print("delegate is nil")
         } else if currentBPM == nil {
             print("currentBPM is nil")
         }
          
         self.dismiss(animated: true, completion: nil)
-        //print(currentBPM)
+        // print(currentBPM)
         
     }
 

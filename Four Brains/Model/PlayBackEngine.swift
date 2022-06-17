@@ -11,7 +11,7 @@ import AudioKit
 
 class PlayBackEngine {
     
-    private var isPlaying = false
+    private var isPlaying: Bool = false
     private var metronome: Metronome!
     private var drumSounds: DrumSounds!
     
@@ -26,9 +26,9 @@ class PlayBackEngine {
         return isPlaying
     }
     
-    //perfect place to use a toggleable
+    // perfect place to use a toggleable
     @discardableResult
-    func changeIsPlaying() -> Bool{
+    func changeIsPlaying() -> Bool {
         
         isPlaying.toggle()
         
@@ -36,17 +36,14 @@ class PlayBackEngine {
         return isPlaying
     }
     
-    
-    
     func play() {
         
-        //print(metronome.metronomeToggleState)
-        if isPlaying{
+        // print(metronome.metronomeToggleState)
+        if isPlaying {
             print("isPlaying inside if inside play(): \(isPlaying)")
             
             metronome.playMetronome()
             drumSounds.playDrumSounds()
-            
             
         } else {
             print("isPlaying inside else inside play(): \(isPlaying)")
@@ -61,6 +58,3 @@ class PlayBackEngine {
     
     
 }
-
-    
-
