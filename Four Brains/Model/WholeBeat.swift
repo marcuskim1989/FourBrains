@@ -8,8 +8,8 @@
 
 import Foundation
 
-class WholeBeat {
-    private var ridePattern: [BeatCard]
+ class WholeBeat {
+    internal var ridePattern: [BeatCard]
     private var snarePattern: [BeatCard]
     private var bassPattern: [BeatCard]
     private var hiHatPattern: [BeatCard]

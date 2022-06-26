@@ -76,7 +76,6 @@ enum K {
         
         var BEAT_CARD_ARRAY: [BeatCard]
         
-        
         init() {
             BEAT_CARD_ARRAY = [
                 K.BeatCardInstances.BEAT_CARD_0,
