@@ -31,6 +31,9 @@
 		2CBCEA1123FE62FB00B7FFC3 /* clap_D#1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0923FE62FA00B7FFC3 /* clap_D#1.wav */; };
 		2CBCEA1223FE62FB00B7FFC3 /* hi_tom_D2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2CBCEA0A23FE62FA00B7FFC3 /* hi_tom_D2.wav */; };
 		2CC459202403364000176304 /* Randomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4591F2403364000176304 /* Randomization.swift */; };
+		2CC79AC32867E05D004BB34C /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC22867E05D004BB34C /* Collections */; };
+		2CC79AC52867E05D004BB34C /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC42867E05D004BB34C /* DequeModule */; };
+		2CC79AC72867E05D004BB34C /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC62867E05D004BB34C /* OrderedCollections */; };
 		2CD14C1123DA6E0E00157D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1023DA6E0E00157D75 /* AppDelegate.swift */; };
 		2CD14C1323DA6E0E00157D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1223DA6E0E00157D75 /* SceneDelegate.swift */; };
 		2CD14C1523DA6E0E00157D75 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1423DA6E0E00157D75 /* HomeScreenViewController.swift */; };
@@ -83,10 +86,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC79AC32867E05D004BB34C /* Collections in Frameworks */,
 				2C026DD62849BEE800AB1C78 /* HGCircularSlider.framework in Frameworks */,
 				2C026DDA2849C1FE00AB1C78 /* AudioKit in Frameworks */,
+				2CC79AC52867E05D004BB34C /* DequeModule in Frameworks */,
 				2C026DDC2849C2D800AB1C78 /* AVFoundation.framework in Frameworks */,
 				2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */,
+				2CC79AC72867E05D004BB34C /* OrderedCollections in Frameworks */,
 				2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +234,9 @@
 			packageProductDependencies = (
 				2CD8FD882627EA47006D7FF8 /* AudioKit */,
 				2C026DD92849C1FE00AB1C78 /* AudioKit */,
+				2CC79AC22867E05D004BB34C /* Collections */,
+				2CC79AC42867E05D004BB34C /* DequeModule */,
+				2CC79AC62867E05D004BB34C /* OrderedCollections */,
 			);
 			productName = "Four Brains";
 			productReference = 2CD14C0D23DA6E0E00157D75 /* Four Brains.app */;
@@ -260,6 +269,7 @@
 			packageReferences = (
 				2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = 2CD14C0E23DA6E0E00157D75 /* Products */;
 			projectDirPath = "";
@@ -593,6 +603,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
@@ -608,6 +626,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		2CC79AC22867E05D004BB34C /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		2CC79AC42867E05D004BB34C /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		2CC79AC62867E05D004BB34C /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 		2CD8FD882627EA47006D7FF8 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -444,7 +444,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                     kick0.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
                     kick1.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
                     kick2.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
-                    kick3.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
+                    kick3.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal) 
                                     
                 } else if !mute.getKickMuteState() && snooze.getKickSnoozeState() { // if it is not muted, and you want to snooze, mute and snooze.
                     mute.changeMuteState(instrument: K.MuteConstants.MuteButtonNames.KICK_MUTE_BUTTON)
