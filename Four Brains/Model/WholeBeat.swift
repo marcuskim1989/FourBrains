@@ -8,17 +8,17 @@
 
 import Foundation
 
-class WholeBeat {
-    private var ridePattern: [BeatCard]
-    private var snarePattern: [BeatCard]
-    private var bassPattern: [BeatCard]
-    private var hiHatPattern: [BeatCard]
+ class WholeBeat {
+    internal var ridePattern: [BeatCard]
+    internal var snarePattern: [BeatCard]
+    internal var kickPattern: [BeatCard]
+    internal var hatPattern: [BeatCard]
     
     init(ridePattern: [BeatCard], snarePattern: [BeatCard], bassPattern: [BeatCard], hiHatPattern: [BeatCard]) {
         self.ridePattern = ridePattern
         self.snarePattern = snarePattern
-        self.bassPattern = bassPattern
-        self.hiHatPattern = hiHatPattern
+        self.kickPattern = bassPattern
+        self.hatPattern = hiHatPattern
     }
     
     public func getRidePattern() -> [BeatCard] {
@@ -30,10 +30,10 @@ class WholeBeat {
     }
     
     public func getBassPattern() -> [BeatCard] {
-        return bassPattern
+        return kickPattern
     }
     
     public func getHiHatPattern() -> [BeatCard] {
-        return hiHatPattern
+        return hatPattern
     }
 }

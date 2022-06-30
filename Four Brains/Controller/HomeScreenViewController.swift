@@ -27,18 +27,26 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     // MARK: - Member variables
     
     private var metronome: Metronome!
-    private var playBackEngine: PlayBackEngine!
-    private var drumSounds: DrumSounds!
+    internal var playBackEngine: PlayBackEngine!
+    internal var drumSounds: DrumSounds!
     private var randomization: Randomization!
     private var beatCardInstances: K.BeatCardInstances!
     private var mute: Mute!
     private var snooze: Snooze!
-    private var wholeBeat: WholeBeat!
+    internal var wholeBeat: WholeBeat!
     private var currentBPM: Int = 60
     private var subdivision: Int = 4
     private var mixer: Mixer = Mixer()
     override var prefersHomeIndicatorAutoHidden: Bool {
         true
+    }
+    
+    public func getBeatCardInstances() -> K.BeatCardInstances {
+        return beatCardInstances
+    }
+    
+    public func getWholeBeat() -> WholeBeat {
+        return wholeBeat
     }
     
     public static let engine: AudioEngine = AudioEngine()
@@ -444,7 +452,7 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
                     kick0.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
                     kick1.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
                     kick2.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
-                    kick3.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal)
+                    kick3.setImage(#imageLiteral(resourceName: "Snoozed Beat Card"), for: .normal) 
                                     
                 } else if !mute.getKickMuteState() && snooze.getKickSnoozeState() { // if it is not muted, and you want to snooze, mute and snooze.
                     mute.changeMuteState(instrument: K.MuteConstants.MuteButtonNames.KICK_MUTE_BUTTON)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Collections
 
 enum K {
     enum MuteConstants {
@@ -75,7 +76,6 @@ enum K {
         
         var BEAT_CARD_ARRAY: [BeatCard]
         
-        
         init() {
             BEAT_CARD_ARRAY = [
                 K.BeatCardInstances.BEAT_CARD_0,
@@ -136,6 +136,27 @@ enum K {
                 BEAT_CARD_3D_NOTE_STRING,
                 BEAT_CARD_4_NOTE_STRING
             ]
+        ]
+        
+        static let BEAT_CARD_STRING_INDEXES: OrderedDictionary = [
+        
+            BEAT_CARD_0_NOTE_STRING: 0,
+            BEAT_CARD_1A_NOTE_STRING: 1,
+            BEAT_CARD_1B_NOTE_STRING: 2,
+            BEAT_CARD_1C_NOTE_STRING: 3,
+            BEAT_CARD_1D_NOTE_STRING: 4,
+            BEAT_CARD_2A_NOTE_STRING: 5,
+            BEAT_CARD_2B_NOTE_STRING: 6,
+            BEAT_CARD_2C_NOTE_STRING: 7,
+            BEAT_CARD_2D_NOTE_STRING: 8,
+            BEAT_CARD_2E_NOTE_STRING: 9,
+            BEAT_CARD_2F_NOTE_STRING: 10,
+            BEAT_CARD_3A_NOTE_STRING: 11,
+            BEAT_CARD_3B_NOTE_STRING: 12,
+            BEAT_CARD_3C_NOTE_STRING: 13,
+            BEAT_CARD_3D_NOTE_STRING: 14,
+            BEAT_CARD_4_NOTE_STRING: 15,
+        
         ]
         
     }
