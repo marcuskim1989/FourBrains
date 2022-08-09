@@ -17,7 +17,7 @@ protocol BPMAdjustorDelegate: AnyObject {
 class BPMAdjustorViewController: UIViewController {
 
     @IBOutlet weak var bpmAdjustor: CircularSlider!
-   
+    
     public var currentBPM: Int?
     public weak var delegate: BPMAdjustorDelegate?
     @IBOutlet weak var bpmLabel: UILabel!
@@ -26,6 +26,9 @@ class BPMAdjustorViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        bpmAdjustor.addTarget(self, action: #selector(updateAdjustorBPM), for: .valueChanged)
         
         if self.currentBPM != nil {
             print("currentBPM is \(self.currentBPM!)")
@@ -43,7 +46,6 @@ class BPMAdjustorViewController: UIViewController {
         
         updateAdjustorBPM()
         
-        bpmAdjustor.addTarget(self, action: #selector(updateAdjustorBPM), for: .valueChanged)
     }
     
     public func setDelegate(_ homeScreenViewController: BPMAdjustorDelegate) {

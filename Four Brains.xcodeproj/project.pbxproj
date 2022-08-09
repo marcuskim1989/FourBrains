@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C026DD62849BEE800AB1C78 /* HGCircularSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */; };
 		2C026DDA2849C1FE00AB1C78 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C026DD92849C1FE00AB1C78 /* AudioKit */; };
 		2C026DDC2849C2D800AB1C78 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 2C14C1A123FBCEAE005D764A /* 4tracks.mid */; };
@@ -17,6 +16,7 @@
 		2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D42410DDDF0045929E /* Snooze.swift */; };
 		2C6F6F15261BF2B1000CE29F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F6F14261BF2B1000CE29F /* K.swift */; };
 		2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
+		2C7626E328A1FFA2004BDA85 /* HGCircularSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 2C7626E228A1FFA2004BDA85 /* HGCircularSlider */; };
 		2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B385F23ED28AC00C120E7 /* Metronome.swift */; };
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
@@ -75,7 +75,6 @@
 		2CD14C1E23DA6E1100157D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2CDA10E523EAB76900014D55 /* BeatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatCard.swift; sourceTree = "<group>"; };
-		2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HGCircularSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Four_Brains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C84D486AF7D670341AE9C6 /* Pods-Four Brains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Four Brains.release.xcconfig"; path = "Target Support Files/Pods-Four Brains/Pods-Four Brains.release.xcconfig"; sourceTree = "<group>"; };
 		DA235EE71FAA0FEAE432373D /* Pods-Four Brains.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Four Brains.debug.xcconfig"; path = "Target Support Files/Pods-Four Brains/Pods-Four Brains.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,13 +86,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CC79AC32867E05D004BB34C /* Collections in Frameworks */,
-				2C026DD62849BEE800AB1C78 /* HGCircularSlider.framework in Frameworks */,
 				2C026DDA2849C1FE00AB1C78 /* AudioKit in Frameworks */,
 				2CC79AC52867E05D004BB34C /* DequeModule in Frameworks */,
 				2C026DDC2849C2D800AB1C78 /* AVFoundation.framework in Frameworks */,
 				2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */,
 				2CC79AC72867E05D004BB34C /* OrderedCollections in Frameworks */,
 				2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */,
+				2C7626E328A1FFA2004BDA85 /* HGCircularSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */,
-				2CE7138823F67CDE0060A750 /* HGCircularSlider.framework */,
 				8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */,
 			);
 			name = Frameworks;
@@ -237,6 +235,7 @@
 				2CC79AC22867E05D004BB34C /* Collections */,
 				2CC79AC42867E05D004BB34C /* DequeModule */,
 				2CC79AC62867E05D004BB34C /* OrderedCollections */,
+				2C7626E228A1FFA2004BDA85 /* HGCircularSlider */,
 			);
 			productName = "Four Brains";
 			productReference = 2CD14C0D23DA6E0E00157D75 /* Four Brains.app */;
@@ -270,6 +269,7 @@
 				2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */,
+				2C7626E128A1FFA2004BDA85 /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
 			);
 			productRefGroup = 2CD14C0E23DA6E0E00157D75 /* Products */;
 			projectDirPath = "";
@@ -603,6 +603,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		2C7626E128A1FFA2004BDA85 /* XCRemoteSwiftPackageReference "HGCircularSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HamzaGhazouani/HGCircularSlider";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 		2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
@@ -626,6 +634,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		2C7626E228A1FFA2004BDA85 /* HGCircularSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C7626E128A1FFA2004BDA85 /* XCRemoteSwiftPackageReference "HGCircularSlider" */;
+			productName = HGCircularSlider;
 		};
 		2CC79AC22867E05D004BB34C /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
