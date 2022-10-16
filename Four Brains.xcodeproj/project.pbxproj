@@ -16,7 +16,6 @@
 		2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D42410DDDF0045929E /* Snooze.swift */; };
 		2C6F6F15261BF2B1000CE29F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F6F14261BF2B1000CE29F /* K.swift */; };
 		2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
-		2C7626E328A1FFA2004BDA85 /* HGCircularSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 2C7626E228A1FFA2004BDA85 /* HGCircularSlider */; };
 		2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B385F23ED28AC00C120E7 /* Metronome.swift */; };
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
@@ -34,6 +33,7 @@
 		2CC79AC32867E05D004BB34C /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC22867E05D004BB34C /* Collections */; };
 		2CC79AC52867E05D004BB34C /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC42867E05D004BB34C /* DequeModule */; };
 		2CC79AC72867E05D004BB34C /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC62867E05D004BB34C /* OrderedCollections */; };
+		2CD0AAC128EFCDE80048305B /* HGCircularSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD0AAC028EFCDE80048305B /* HGCircularSlider */; };
 		2CD14C1123DA6E0E00157D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1023DA6E0E00157D75 /* AppDelegate.swift */; };
 		2CD14C1323DA6E0E00157D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1223DA6E0E00157D75 /* SceneDelegate.swift */; };
 		2CD14C1523DA6E0E00157D75 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1423DA6E0E00157D75 /* HomeScreenViewController.swift */; };
@@ -56,6 +56,7 @@
 		2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngine.swift; sourceTree = "<group>"; };
 		2C7C0D572403B5BC006ACD98 /* WholeBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeBeat.swift; sourceTree = "<group>"; };
 		2CAAEA032856B10300462B2F /* SelectBeatCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeatCards.swift; sourceTree = "<group>"; };
+		2CB6E0A128EA7AD800556CA6 /* CircularSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircularSlider.swift; path = "../../../Library/Developer/Xcode/DerivedData/Four_Brains-cqfkakdevfgqzfhbttwebrgtnjlk/SourcePackages/checkouts/HGCircularSlider/HGCircularSlider/Classes/CircularSlider.swift"; sourceTree = "<group>"; };
 		2CBCEA0323FE62F900B7FFC3 /* bass_drum_C1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass_drum_C1.wav; sourceTree = "<group>"; };
 		2CBCEA0423FE62F900B7FFC3 /* mid_tom_B1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mid_tom_B1.wav; sourceTree = "<group>"; };
 		2CBCEA0523FE62FA00B7FFC3 /* open_hi_hat_A#1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "open_hi_hat_A#1.wav"; sourceTree = "<group>"; };
@@ -92,7 +93,7 @@
 				2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */,
 				2CC79AC72867E05D004BB34C /* OrderedCollections in Frameworks */,
 				2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */,
-				2C7626E328A1FFA2004BDA85 /* HGCircularSlider in Frameworks */,
+				2CD0AAC128EFCDE80048305B /* HGCircularSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +111,7 @@
 		2CD14C0423DA6E0E00157D75 = {
 			isa = PBXGroup;
 			children = (
+				2CB6E0A128EA7AD800556CA6 /* CircularSlider.swift */,
 				2CD14C0F23DA6E0E00157D75 /* Four Brains */,
 				2CDC809F23FB9E3E00EAA6F3 /* Samples */,
 				2C14C1A023FBCE6E005D764A /* MIDI */,
@@ -227,6 +229,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				2CF3FBC428F3C3F40038A1E1 /* PBXTargetDependency */,
+				2CF3FBC228F3C3E90038A1E1 /* PBXTargetDependency */,
 			);
 			name = "Four Brains";
 			packageProductDependencies = (
@@ -235,7 +239,7 @@
 				2CC79AC22867E05D004BB34C /* Collections */,
 				2CC79AC42867E05D004BB34C /* DequeModule */,
 				2CC79AC62867E05D004BB34C /* OrderedCollections */,
-				2C7626E228A1FFA2004BDA85 /* HGCircularSlider */,
+				2CD0AAC028EFCDE80048305B /* HGCircularSlider */,
 			);
 			productName = "Four Brains";
 			productReference = 2CD14C0D23DA6E0E00157D75 /* Four Brains.app */;
@@ -269,7 +273,7 @@
 				2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */,
-				2C7626E128A1FFA2004BDA85 /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
+				2CD0AABF28EFCDE80048305B /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
 			);
 			productRefGroup = 2CD14C0E23DA6E0E00157D75 /* Products */;
 			projectDirPath = "";
@@ -386,6 +390,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CF3FBC228F3C3E90038A1E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2CF3FBC128F3C3E90038A1E1 /* HGCircularSlider */;
+		};
+		2CF3FBC428F3C3F40038A1E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2CF3FBC328F3C3F40038A1E1 /* AudioKit */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2CD14C1623DA6E0E00157D75 /* Main.storyboard */ = {
@@ -603,20 +618,20 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		2C7626E128A1FFA2004BDA85 /* XCRemoteSwiftPackageReference "HGCircularSlider" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HamzaGhazouani/HGCircularSlider";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
 		2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		2CD0AABF28EFCDE80048305B /* XCRemoteSwiftPackageReference "HGCircularSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HamzaGhazouani/HGCircularSlider";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
@@ -635,11 +650,6 @@
 			package = 2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
 		};
-		2C7626E228A1FFA2004BDA85 /* HGCircularSlider */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2C7626E128A1FFA2004BDA85 /* XCRemoteSwiftPackageReference "HGCircularSlider" */;
-			productName = HGCircularSlider;
-		};
 		2CC79AC22867E05D004BB34C /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */;
@@ -655,7 +665,22 @@
 			package = 2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
 		};
+		2CD0AAC028EFCDE80048305B /* HGCircularSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CD0AABF28EFCDE80048305B /* XCRemoteSwiftPackageReference "HGCircularSlider" */;
+			productName = HGCircularSlider;
+		};
 		2CD8FD882627EA47006D7FF8 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		2CF3FBC128F3C3E90038A1E1 /* HGCircularSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CD0AABF28EFCDE80048305B /* XCRemoteSwiftPackageReference "HGCircularSlider" */;
+			productName = HGCircularSlider;
+		};
+		2CF3FBC328F3C3F40038A1E1 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;

@@ -30,6 +30,9 @@ class BPMAdjustorViewController: UIViewController {
         
         bpmAdjustor.addTarget(self, action: #selector(updateAdjustorBPM), for: .valueChanged)
         
+        bpmAdjustor.trackColor = .white
+        bpmAdjustor.maximumValue = 240.0
+        
         if self.currentBPM != nil {
             print("currentBPM is \(self.currentBPM!)")
             bpmAdjustor.endPointValue = CGFloat(self.currentBPM!)
@@ -54,6 +57,7 @@ class BPMAdjustorViewController: UIViewController {
     
     public func setCurrentBPM(_ currentBPM: Int) {
         self.currentBPM = currentBPM
+        print("inside setCurrentBPM: currentBPM is \(currentBPM)")
     }
     
     

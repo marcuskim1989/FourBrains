@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/HamzaGhazouani/HGCircularSlider",
       "state" : {
-        "revision" : "2b98462d32bf7211851aa73537dbaba5dd80229e",
-        "version" : "2.2.1"
+        "branch" : "master",
+        "revision" : "2906c33e3101468a892f274c689ea0679f792037"
       }
     },
     {

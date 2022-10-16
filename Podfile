@@ -7,7 +7,6 @@ target 'Four Brains' do
 
   # Pods for Four Brains
 
-  # pod 'HGCircularSlider', '~> 2.2.1'
   pod 'McPicker', '~> 3.0.0'
   
 end
