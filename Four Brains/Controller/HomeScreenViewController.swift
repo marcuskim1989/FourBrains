@@ -22,7 +22,7 @@ import AudioKit
 import HGCircularSlider
 import McPicker
 
-class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
+class HomeScreenViewController: UIViewController {
 
     // MARK: - Member variables
     
@@ -90,7 +90,6 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     // play panel outlets
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var metronomeOutlet: UIButton!
-    @IBOutlet weak var bpmAdjustAccessButton: UIButton!
     @IBOutlet weak var subdivisionOutlet: UIButton!
     
     // mute button outlets
@@ -259,23 +258,12 @@ class HomeScreenViewController: UIViewController, BPMAdjustorDelegate {
     
     // MARK: - BPM button pressed
     
-    @IBAction func bpmAdjustorAccessButtonPressed(_ sender: UIButton) {
+   
     
-        self.performSegue(withIdentifier: "presentBPMAdjustor", sender: self)
-    
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "presentBPMAdjustor" {
-            let bpmAdjustorVC: BPMAdjustorViewController = segue.destination as! BPMAdjustorViewController
-            bpmAdjustorVC.setDelegate(self)
-            bpmAdjustorVC.setCurrentBPM(self.currentBPM)
-        }
-    }
+
     
     func updateBPM(BPM: Int) {
         self.currentBPM = BPM
-        bpmAdjustAccessButton.setTitle(String(currentBPM), for: .normal)
         metronome.setTempo(subdivision: self.subdivision, currentBPM: self.currentBPM)
         drumSounds.setSequencerTempo(Double(BPM))
         resetPlaySettings()

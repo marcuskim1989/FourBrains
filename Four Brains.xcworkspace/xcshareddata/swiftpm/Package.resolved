@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "hgcircularslider",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/HamzaGhazouani/HGCircularSlider",
-      "state" : {
-        "branch" : "master",
-        "revision" : "2906c33e3101468a892f274c689ea0679f792037"
-      }
-    },
-    {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections.git",

@@ -11,7 +11,6 @@
 		2C026DDC2849C2D800AB1C78 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 2C14C1A123FBCEAE005D764A /* 4tracks.mid */; };
 		2C40F42125A7C24D000CB925 /* parley bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C40F42025A7C172000CB925 /* parley bold.ttf */; };
-		2C4BC4A423F4B05C00D75F3E /* BPMAdjustorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BC4A323F4B05C00D75F3E /* BPMAdjustorViewController.swift */; };
 		2C58E1D3241087AF0045929E /* Mute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D2241087AF0045929E /* Mute.swift */; };
 		2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D42410DDDF0045929E /* Snooze.swift */; };
 		2C6F6F15261BF2B1000CE29F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F6F14261BF2B1000CE29F /* K.swift */; };
@@ -33,7 +32,6 @@
 		2CC79AC32867E05D004BB34C /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC22867E05D004BB34C /* Collections */; };
 		2CC79AC52867E05D004BB34C /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC42867E05D004BB34C /* DequeModule */; };
 		2CC79AC72867E05D004BB34C /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC79AC62867E05D004BB34C /* OrderedCollections */; };
-		2CD0AAC128EFCDE80048305B /* HGCircularSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD0AAC028EFCDE80048305B /* HGCircularSlider */; };
 		2CD14C1123DA6E0E00157D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1023DA6E0E00157D75 /* AppDelegate.swift */; };
 		2CD14C1323DA6E0E00157D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1223DA6E0E00157D75 /* SceneDelegate.swift */; };
 		2CD14C1523DA6E0E00157D75 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14C1423DA6E0E00157D75 /* HomeScreenViewController.swift */; };
@@ -47,7 +45,6 @@
 /* Begin PBXFileReference section */
 		2C14C1A123FBCEAE005D764A /* 4tracks.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = 4tracks.mid; sourceTree = "<group>"; };
 		2C40F42025A7C172000CB925 /* parley bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "parley bold.ttf"; sourceTree = "<group>"; };
-		2C4BC4A323F4B05C00D75F3E /* BPMAdjustorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMAdjustorViewController.swift; sourceTree = "<group>"; };
 		2C58E1D2241087AF0045929E /* Mute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mute.swift; sourceTree = "<group>"; };
 		2C58E1D42410DDDF0045929E /* Snooze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snooze.swift; sourceTree = "<group>"; };
 		2C6F6F14261BF2B1000CE29F /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
@@ -93,7 +90,6 @@
 				2CD8FD892627EA47006D7FF8 /* AudioKit in Frameworks */,
 				2CC79AC72867E05D004BB34C /* OrderedCollections in Frameworks */,
 				2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */,
-				2CD0AAC128EFCDE80048305B /* HGCircularSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				2CD14C1423DA6E0E00157D75 /* HomeScreenViewController.swift */,
-				2C4BC4A323F4B05C00D75F3E /* BPMAdjustorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,7 +234,6 @@
 				2CC79AC22867E05D004BB34C /* Collections */,
 				2CC79AC42867E05D004BB34C /* DequeModule */,
 				2CC79AC62867E05D004BB34C /* OrderedCollections */,
-				2CD0AAC028EFCDE80048305B /* HGCircularSlider */,
 			);
 			productName = "Four Brains";
 			productReference = 2CD14C0D23DA6E0E00157D75 /* Four Brains.app */;
@@ -273,7 +267,6 @@
 				2CD8FD872627EA47006D7FF8 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2C026DD82849C1FE00AB1C78 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */,
-				2CD0AABF28EFCDE80048305B /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
 			);
 			productRefGroup = 2CD14C0E23DA6E0E00157D75 /* Products */;
 			projectDirPath = "";
@@ -374,7 +367,6 @@
 			files = (
 				2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */,
 				2C6F6F15261BF2B1000CE29F /* K.swift in Sources */,
-				2C4BC4A423F4B05C00D75F3E /* BPMAdjustorViewController.swift in Sources */,
 				2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */,
 				2CD14C1523DA6E0E00157D75 /* HomeScreenViewController.swift in Sources */,
 				2C7C0D582403B5BC006ACD98 /* WholeBeat.swift in Sources */,
@@ -664,11 +656,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2CC79AC12867E05D004BB34C /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
-		};
-		2CD0AAC028EFCDE80048305B /* HGCircularSlider */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2CD0AABF28EFCDE80048305B /* XCRemoteSwiftPackageReference "HGCircularSlider" */;
-			productName = HGCircularSlider;
 		};
 		2CD8FD882627EA47006D7FF8 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -367,9 +367,6 @@
                                         <state key="normal" title="60" backgroundImage="Blank Button Circle">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="bpmAdjustorAccessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPN-tY-yeq"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-ls-cgx">
                                         <rect key="frame" x="75" y="0.0" width="60" height="50"/>
@@ -490,7 +487,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="A3j-Zy-C1N"/>
                     <connections>
-                        <outlet property="bpmAdjustAccessButton" destination="Eh5-Oe-ymh" id="Bci-5d-4Za"/>
                         <outlet property="hat0" destination="hZB-w1-ayv" id="Sf5-wW-YB8"/>
                         <outlet property="hat1" destination="EYa-8V-0d1" id="H8a-aq-f6C"/>
                         <outlet property="hat2" destination="vic-nD-hcV" id="ILA-st-2rO"/>
@@ -518,107 +514,11 @@
                         <outlet property="snareMuteOutlet" destination="Ahz-62-PPE" id="Jcq-gs-5ng"/>
                         <outlet property="snareSnoozeOutlet" destination="WTx-gV-YXv" id="MNt-W3-AN8"/>
                         <outlet property="subdivisionOutlet" destination="YNP-yZ-Ukb" id="gCN-d9-BwZ"/>
-                        <segue destination="HOR-w6-HEJ" kind="presentation" identifier="presentBPMAdjustor" id="agy-DN-7Z4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-24.107142857142858" y="-2757.971014492754"/>
-        </scene>
-        <!--Adjustor View Controller-->
-        <scene sceneID="s4I-cV-P8t">
-            <objects>
-                <viewController id="HOR-w6-HEJ" customClass="BPMAdjustorViewController" customModule="Four_Brains" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LIH-ty-Sq8">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Home Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="7q7-4u-79E">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcv-ze-wl0">
-                                <rect key="frame" x="390" y="318" width="116" height="62"/>
-                                <fontDescription key="fontDescription" name="Parleybold" family="Parley bold" pointSize="50"/>
-                                <state key="normal" title="Dismiss">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissButtonPressed:" destination="HOR-w6-HEJ" eventType="touchUpInside" id="RE1-H1-sOf"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi8-cV-9CB" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="300.5" y="18" width="295" height="295"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm8-8K-em6">
-                                        <rect key="frame" x="106.5" y="99.5" width="82" height="96"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="60"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="295" id="38i-9t-rb5"/>
-                                    <constraint firstAttribute="height" constant="295" id="wJH-0D-HMS"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="diskFillColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="diskColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="trackShadowColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endThumbTintColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeHighlightedColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="stopThumbAtMinMax" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="backtrackLineWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="v2J-29-b0v"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Gcv-ze-wl0" firstAttribute="top" secondItem="Mi8-cV-9CB" secondAttribute="bottom" constant="5" id="8s0-Jo-scY"/>
-                            <constraint firstItem="Mi8-cV-9CB" firstAttribute="centerX" secondItem="LIH-ty-Sq8" secondAttribute="centerX" id="FvL-WP-4CC"/>
-                            <constraint firstItem="Gcv-ze-wl0" firstAttribute="centerX" secondItem="LIH-ty-Sq8" secondAttribute="centerX" id="jft-ax-9HD"/>
-                            <constraint firstItem="Gcv-ze-wl0" firstAttribute="bottom" secondItem="v2J-29-b0v" secondAttribute="bottom" id="z8b-b9-qmg"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="bpmAdjustor" destination="Mi8-cV-9CB" id="2jH-5U-fnG"/>
-                        <outlet property="bpmLabel" destination="rm8-8K-em6" id="sH3-wb-nGh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oRH-Us-cn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-24" y="-1823"/>
         </scene>
     </scenes>
     <resources>
