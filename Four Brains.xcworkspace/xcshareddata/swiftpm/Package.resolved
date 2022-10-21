@@ -10,6 +10,33 @@
       }
     },
     {
+      "identity" : "availablehapticfeedback",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yonat/AvailableHapticFeedback",
+      "state" : {
+        "revision" : "f9ae6d54af1fb06fff0ddb16246091c6de22f989",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "multislider",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yonat/MultiSlider",
+      "state" : {
+        "revision" : "af0946d6afd136561fbf7d6c4ed9ad11080d1712",
+        "version" : "1.13.1"
+      }
+    },
+    {
+      "identity" : "sweeterswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yonat/SweeterSwift",
+      "state" : {
+        "revision" : "74b3d19dc80158b2a87240d05894154a1ba7f2ef",
+        "version" : "1.2.1"
+      }
+    },
+    {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections.git",
