@@ -307,8 +307,8 @@
                                     <constraint firstAttribute="height" constant="50" id="i0g-48-i4b"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-db-dE7" userLabel="Top Panel Background">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-db-dE7" userLabel="Top Panel Background">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-zv-CdA">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="50"/>
@@ -437,7 +437,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="TXK-TF-oRe" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="0qX-WR-f35"/>
                                     <constraint firstItem="hQE-Xy-7Y7" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="9iL-o9-YmK"/>
@@ -464,19 +464,28 @@
                                     <constraint firstItem="Eh5-Oe-ymh" firstAttribute="leading" secondItem="VRb-e3-I3s" secondAttribute="trailing" id="zZT-N1-0Vg"/>
                                 </constraints>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nW7-gd-Bhy">
+                                <rect key="frame" x="371" y="100" width="154" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TfK-ch-tYk"/>
+                                    <constraint firstAttribute="width" constant="150" id="YrM-Ud-GWg"/>
+                                </constraints>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nwl-db-dE7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1Is-Sg-LpY"/>
                             <constraint firstAttribute="trailing" secondItem="nwl-db-dE7" secondAttribute="trailing" id="2ri-Kk-Yii"/>
                             <constraint firstAttribute="bottom" secondItem="YHI-sZ-7lE" secondAttribute="bottom" id="3Ml-vA-Hbc"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Q8-CT-jze"/>
                             <constraint firstAttribute="trailing" secondItem="G9q-oH-9tH" secondAttribute="trailing" id="3bu-HC-Hj6"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7f3-Lm-4CK"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="leading" secondItem="8oR-RQ-4ty" secondAttribute="trailing" id="99Q-Bi-DKg"/>
-                            <constraint firstItem="nwl-db-dE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Hr-39-Hrk"/>
                             <constraint firstItem="nwl-db-dE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EoT-1Z-lyR"/>
                             <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="Oic-bM-92m"/>
+                            <constraint firstItem="nW7-gd-Bhy" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="bottom" constant="50" id="Yew-oF-xGq"/>
+                            <constraint firstItem="nW7-gd-Bhy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bT2-Um-SxU"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eL9-T7-70Q"/>
                             <constraint firstAttribute="trailing" secondItem="YHI-sZ-7lE" secondAttribute="trailing" id="gfn-qB-12i"/>
                             <constraint firstItem="YHI-sZ-7lE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mT2-qI-8OG"/>
@@ -487,6 +496,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="A3j-Zy-C1N"/>
                     <connections>
+                        <outlet property="bpmPresenterOutlet" destination="Eh5-Oe-ymh" id="7zf-GT-vcu"/>
+                        <outlet property="bpmSliderOutlet" destination="nW7-gd-Bhy" id="wdo-I3-0o2"/>
                         <outlet property="hat0" destination="hZB-w1-ayv" id="Sf5-wW-YB8"/>
                         <outlet property="hat1" destination="EYa-8V-0d1" id="H8a-aq-f6C"/>
                         <outlet property="hat2" destination="vic-nD-hcV" id="ILA-st-2rO"/>
@@ -518,7 +529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-24.107142857142858" y="-2757.971014492754"/>
+            <point key="canvasLocation" x="-142" y="-2761"/>
         </scene>
     </scenes>
     <resources>

@@ -22,6 +22,12 @@ import AudioKit
 import HGCircularSlider
 import McPicker
 
+extension UIView {
+   func makeVertical() {
+        transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+   }
+}
+
 class HomeScreenViewController: UIViewController {
 
     // MARK: - Member variables
@@ -91,6 +97,9 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var metronomeOutlet: UIButton!
     @IBOutlet weak var subdivisionOutlet: UIButton!
+    @IBOutlet weak var bpmPresenterOutlet: UIButton!
+    @IBOutlet weak var bpmSliderOutlet: UISlider!
+    
     
     // mute button outlets
     @IBOutlet weak var rideMuteOutlet: UIButton!
@@ -118,6 +127,8 @@ class HomeScreenViewController: UIViewController {
         snareSnoozeOutlet.setTitle(K.SnoozeConstants.SNARE_SNOOZE_BUTTON, for: .normal)
         kickSnoozeOutlet.setTitle(K.SnoozeConstants.BASS_SNOOZE_BUTTON, for: .normal)
         hatSnoozeOutlet.setTitle(K.SnoozeConstants.HI_HAT_SNOOZE_BUTTON, for: .normal)
+        
+        bpmSliderOutlet.makeVertical()
         
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute, currentBPM: self.currentBPM)
@@ -256,10 +267,9 @@ class HomeScreenViewController: UIViewController {
         
     }
     
-    // MARK: - BPM button pressed
+    // MARK: - BPM button
     
    
-    
 
     
     func updateBPM(BPM: Int) {
@@ -540,4 +550,6 @@ class HomeScreenViewController: UIViewController {
         unsnoozeUI()
         drumSounds.assignDrumSounds()
     }
+    
+    
 }
