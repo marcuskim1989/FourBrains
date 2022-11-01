@@ -8,7 +8,6 @@
 
 import UIKit
 import AudioKit
-import HGCircularSlider
 import McPicker
 
 extension HomeScreenViewController {

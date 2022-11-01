@@ -19,7 +19,6 @@
 
 import UIKit
 import AudioKit
-import HGCircularSlider
 import McPicker
 
 extension UIView {
@@ -43,6 +42,7 @@ class HomeScreenViewController: UIViewController {
     private var currentBPM: Int = 60
     private var subdivision: Int = 4
     private var mixer: Mixer = Mixer()
+    
     override var prefersHomeIndicatorAutoHidden: Bool {
         true
     }
@@ -98,7 +98,8 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var metronomeOutlet: UIButton!
     @IBOutlet weak var subdivisionOutlet: UIButton!
     @IBOutlet weak var bpmPresenterOutlet: UIButton!
-    @IBOutlet weak var bpmSliderOutlet: UISlider!
+    
+    @IBOutlet weak var bpmSliderOutlet: TransparentThumbSlider!
     
     
     // mute button outlets
@@ -129,7 +130,7 @@ class HomeScreenViewController: UIViewController {
         hatSnoozeOutlet.setTitle(K.SnoozeConstants.HI_HAT_SNOOZE_BUTTON, for: .normal)
         
         bpmSliderOutlet.makeVertical()
-        
+        bpmSliderOutlet.configure()
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute, currentBPM: self.currentBPM)
         snooze = Snooze(mute: self.mute, drumSounds: self.drumSounds)
@@ -267,9 +268,9 @@ class HomeScreenViewController: UIViewController {
         
     }
     
-    // MARK: - BPM button
+    // MARK: - BPM
     
-   
+    
 
     
     func updateBPM(BPM: Int) {
@@ -553,3 +554,7 @@ class HomeScreenViewController: UIViewController {
     
     
 }
+
+//MARK: - TransparentThumbSlider
+
+
