@@ -12,6 +12,7 @@ import UIKit
 class TransparentThumbSlider: UISlider {
 
     let thumbWidth: CGFloat = 25
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)

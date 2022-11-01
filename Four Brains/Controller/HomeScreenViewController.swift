@@ -98,7 +98,6 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var metronomeOutlet: UIButton!
     @IBOutlet weak var subdivisionOutlet: UIButton!
     @IBOutlet weak var bpmPresenterOutlet: UIButton!
-    
     @IBOutlet weak var bpmSliderOutlet: TransparentThumbSlider!
     
     
@@ -130,6 +129,8 @@ class HomeScreenViewController: UIViewController {
         hatSnoozeOutlet.setTitle(K.SnoozeConstants.HI_HAT_SNOOZE_BUTTON, for: .normal)
         
         bpmSliderOutlet.makeVertical()
+        bpmSliderOutlet.semanticContentAttribute = .forceRightToLeft
+        bpmSliderOutlet.isHidden = true
         bpmSliderOutlet.configure()
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute, currentBPM: self.currentBPM)
@@ -270,8 +271,33 @@ class HomeScreenViewController: UIViewController {
     
     // MARK: - BPM
     
+//    @IBAction func bpmPresenterPressed(_ sender: UIButton) {
+//
+//        bpmSliderOutlet.isHidden = false
+//
+//    }
+    
+    @IBAction func bpmSlid(_ sender: TransparentThumbSlider) {
+        bpmPresenterOutlet.setTitle(String(Int(sender.value)), for: .normal)
+        
+    }
     
 
+    @IBAction func bpmPresenterPressed(_ sender: UIButton) {
+        
+        bpmSliderOutlet.isHidden = false
+        
+    }
+    
+    @IBAction func bpmRelease(_ sender: TransparentThumbSlider) {
+        
+        bpmSliderOutlet.isHidden = true
+        
+        currentBPM = Int(sender.value)
+        
+        updateBPM(BPM: currentBPM)
+        
+    }
     
     func updateBPM(BPM: Int) {
         self.currentBPM = BPM
