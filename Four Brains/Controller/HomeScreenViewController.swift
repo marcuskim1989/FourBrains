@@ -63,6 +63,8 @@ class HomeScreenViewController: UIViewController {
     
     // MARK: - Outlets and buttons
     // Ride cymbal beat card buttons. beat cards have tags 1 through 16 starting from the top left, moving across then down like a book
+   
+    
     
     @IBOutlet weak var ride0: UIButton!
     @IBOutlet weak var ride1: UIButton!
@@ -127,6 +129,8 @@ class HomeScreenViewController: UIViewController {
         snareSnoozeOutlet.setTitle(K.SnoozeConstants.SNARE_SNOOZE_BUTTON, for: .normal)
         kickSnoozeOutlet.setTitle(K.SnoozeConstants.BASS_SNOOZE_BUTTON, for: .normal)
         hatSnoozeOutlet.setTitle(K.SnoozeConstants.HI_HAT_SNOOZE_BUTTON, for: .normal)
+        
+        
         
         bpmSliderOutlet.makeVertical()
         bpmSliderOutlet.semanticContentAttribute = .forceRightToLeft
