@@ -360,7 +360,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQE-Xy-7Y7" userLabel="Play">
-                                        <rect key="frame" x="135" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="127.5" y="2.5" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1OW-bH-zTt"/>
@@ -406,14 +406,14 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-ls-cgx" userLabel="Profile-to-Play Spacer">
-                                        <rect key="frame" x="75" y="3" width="60" height="50"/>
+                                        <rect key="frame" x="75" y="3" width="52.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6FY-0K-dSe"/>
-                                            <constraint firstAttribute="width" constant="60" id="Fsp-bo-7bB"/>
+                                            <constraint firstAttribute="width" constant="52.5" id="Fsp-bo-7bB"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-w8-JYg" userLabel="Play-to-Metro Spacer">
-                                        <rect key="frame" x="185" y="3" width="173.5" height="50"/>
+                                        <rect key="frame" x="177.5" y="3" width="181" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GcD-Xp-qEn"/>
                                         </constraints>
@@ -484,7 +484,7 @@
                                 <rect key="frame" x="0.0" y="359" width="896" height="55"/>
                                 <subviews>
                                     <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQG-6B-5WF" userLabel="Load">
-                                        <rect key="frame" x="100" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="127.5" y="2.5" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="71n-UH-0h6"/>
@@ -496,7 +496,7 @@
                                         </state>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="My beat is called . . ." textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xzs-VT-Y77">
-                                        <rect key="frame" x="200" y="2.5" width="496" height="50"/>
+                                        <rect key="frame" x="187.5" y="2.5" width="511" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -507,7 +507,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puS-xu-j5A" userLabel="Save">
-                                        <rect key="frame" x="746" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="708.5" y="2.5" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="4De-ZS-RfX"/>
@@ -519,36 +519,36 @@
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQo-P5-fXM" userLabel="Post-Save Spacer">
-                                        <rect key="frame" x="796" y="2.5" width="100" height="50"/>
+                                        <rect key="frame" x="758.5" y="2.5" width="137.5" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Yf6-8m-H6T"/>
+                                            <constraint firstAttribute="width" constant="137.5" id="Yf6-8m-H6T"/>
                                             <constraint firstAttribute="height" constant="50" id="rNm-ae-4Lt"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oF-vA-fdT" userLabel="Textfield-To-Save Spacer">
-                                        <rect key="frame" x="696" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="698.5" y="2.5" width="10" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="MWL-LO-JXe"/>
-                                            <constraint firstAttribute="width" constant="50" id="plJ-Yj-Y3e" userLabel="width = 100"/>
+                                            <constraint firstAttribute="width" constant="10" id="plJ-Yj-Y3e" userLabel="width = 100"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHp-cR-LSw" userLabel="Pre-Load Spacer">
-                                        <rect key="frame" x="0.0" y="2.5" width="100" height="50"/>
+                                        <rect key="frame" x="0.0" y="2.5" width="127.5" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="AOY-nh-88b"/>
                                             <constraint firstAttribute="leading" secondItem="yHp-cR-LSw" secondAttribute="leading" id="GKF-1K-5cU"/>
-                                            <constraint firstAttribute="width" constant="100" id="Qzh-Ub-yl8"/>
+                                            <constraint firstAttribute="width" constant="127.5" id="Qzh-Ub-yl8"/>
                                             <constraint firstAttribute="centerY" secondItem="yHp-cR-LSw" secondAttribute="centerY" id="T4U-Zw-VHD"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cl8-u0-KW7" userLabel="Load-To-Textfield Spacer">
-                                        <rect key="frame" x="150" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="177.5" y="2.5" width="10" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="MNM-Yl-PzR" userLabel="width = 100"/>
+                                            <constraint firstAttribute="width" constant="10" id="MNM-Yl-PzR" userLabel="width = 100"/>
                                             <constraint firstAttribute="height" constant="50" id="Van-yT-e0i"/>
                                         </constraints>
                                     </view>
