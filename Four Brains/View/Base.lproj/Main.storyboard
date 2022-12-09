@@ -303,11 +303,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-db-dE7" userLabel="Top Panel Background">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="55"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6YN-bm-seL" userLabel="Thin Bottom Spacer">
-                                        <rect key="frame" x="0.0" y="52" width="896" height="3"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn9-DN-wLA" userLabel="Thin Bottom Spacer">
+                                        <rect key="frame" x="0.0" y="50" width="896" height="5"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="3" id="j9y-R8-Cvi" userLabel="height = 2.5"/>
+                                            <constraint firstAttribute="height" constant="5" id="khx-pv-Ez4" userLabel="height = 2.5"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgo-g7-20d" userLabel="Thin Top Spacer">
@@ -330,7 +330,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="72" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53s-FQ-TV5" userLabel="Metronome">
-                                        <rect key="frame" x="358" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="358.5" y="2.5" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1P4-bU-zlG"/>
@@ -345,11 +345,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="73" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-Oe-ymh" userLabel="BPM Adjustor">
-                                        <rect key="frame" x="423" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="423.5" y="3" width="49" height="49"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="bEk-DD-TFv"/>
-                                            <constraint firstAttribute="width" constant="50" id="xcn-kT-AD8"/>
+                                            <constraint firstAttribute="height" constant="49" id="bEk-DD-TFv"/>
+                                            <constraint firstAttribute="width" constant="49" id="xcn-kT-AD8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <state key="normal" title="60" backgroundImage="Blank Button Circle">
@@ -375,7 +375,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="74" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-yZ-Ukb" userLabel="Subdivision">
-                                        <rect key="frame" x="488" y="2.5" width="50" height="50"/>
+                                        <rect key="frame" x="487.5" y="2.5" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="OVL-bE-JUd"/>
@@ -399,88 +399,83 @@
                                         </state>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-zv-CdA" userLabel="Pre-Profile Spacer">
-                                        <rect key="frame" x="0.0" y="3" width="25" height="49"/>
+                                        <rect key="frame" x="0.0" y="2.5" width="25" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="Raw-Nd-adB"/>
+                                            <constraint firstAttribute="height" constant="50" id="eum-Fr-Oku"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-ls-cgx" userLabel="Profile-to-Play Spacer">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-ls-cgx" userLabel="Profile-to-Play Spacer">
                                         <rect key="frame" x="75" y="3" width="60" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6FY-0K-dSe"/>
                                             <constraint firstAttribute="width" constant="60" id="Fsp-bo-7bB"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-w8-JYg" userLabel="Play-to-Metro Spacer">
-                                        <rect key="frame" x="185" y="3" width="173" height="50"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-w8-JYg" userLabel="Play-to-Metro Spacer">
+                                        <rect key="frame" x="185" y="3" width="173.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GcD-Xp-qEn"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-e3-I3s" userLabel="Metro-to-BPM Spacer">
-                                        <rect key="frame" x="408" y="3" width="15" height="49"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-e3-I3s" userLabel="Metro-to-BPM Spacer">
+                                        <rect key="frame" x="408.5" y="3" width="15" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="bZt-PG-On4"/>
+                                            <constraint firstAttribute="height" constant="50" id="n37-4z-RIM"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="PEB-0E-Nck" userLabel="BPM-to-Sub Spacer">
-                                        <rect key="frame" x="473" y="3" width="15" height="50"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="PEB-0E-Nck" userLabel="BPM-to-Sub Spacer">
+                                        <rect key="frame" x="472.5" y="3" width="15" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="7sU-OE-OeF"/>
                                             <constraint firstAttribute="width" constant="15" id="Vqd-wt-uGW"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-va-Kvk">
-                                        <rect key="frame" x="538" y="3" width="283" height="50"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-va-Kvk">
+                                        <rect key="frame" x="537.5" y="3" width="283.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WdS-5b-nzd"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="k9J-w8-UGF"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-J8-TtH" userLabel="Post-Random Spacer">
-                                        <rect key="frame" x="871" y="3" width="25" height="49"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="0E7-J8-TtH" userLabel="Post-Random Spacer">
+                                        <rect key="frame" x="871" y="0.0" width="25" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="0ts-va-gk7"/>
+                                            <constraint firstAttribute="height" constant="50" id="uc1-2W-XuI"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="78D-bB-crP"/>
+                                    <constraint firstAttribute="trailing" secondItem="zn9-DN-wLA" secondAttribute="trailing" id="9W5-du-Tih"/>
                                     <constraint firstItem="e0t-ls-cgx" firstAttribute="leading" secondItem="peW-I7-kXg" secondAttribute="trailing" id="CYa-VD-CO1"/>
                                     <constraint firstAttribute="trailing" secondItem="Hgo-g7-20d" secondAttribute="trailing" id="CfD-TR-Pb5"/>
-                                    <constraint firstItem="uR2-va-Kvk" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="Er0-Zh-YkB"/>
                                     <constraint firstItem="PEB-0E-Nck" firstAttribute="leading" secondItem="Eh5-Oe-ymh" secondAttribute="trailing" id="Fzt-3n-jrr"/>
                                     <constraint firstItem="YNP-yZ-Ukb" firstAttribute="leading" secondItem="PEB-0E-Nck" secondAttribute="trailing" id="HGA-Ja-459"/>
                                     <constraint firstItem="Ow1-zv-CdA" firstAttribute="leading" secondItem="nwl-db-dE7" secondAttribute="leading" id="IEK-VB-bHX"/>
                                     <constraint firstItem="peW-I7-kXg" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="JWU-QG-MST"/>
-                                    <constraint firstItem="3ET-w8-JYg" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="Kw6-sU-HeL"/>
-                                    <constraint firstItem="0E7-J8-TtH" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="Loq-0G-Jet"/>
                                     <constraint firstAttribute="trailing" secondItem="0E7-J8-TtH" secondAttribute="trailing" id="Mce-98-y2T"/>
                                     <constraint firstItem="peW-I7-kXg" firstAttribute="leading" secondItem="Ow1-zv-CdA" secondAttribute="trailing" id="MmA-Wh-tuW"/>
                                     <constraint firstItem="TXK-TF-oRe" firstAttribute="leading" secondItem="uR2-va-Kvk" secondAttribute="trailing" id="RMr-XV-SKo"/>
                                     <constraint firstItem="Eh5-Oe-ymh" firstAttribute="centerX" secondItem="nwl-db-dE7" secondAttribute="centerX" id="RTr-b9-nrG"/>
-                                    <constraint firstItem="Ow1-zv-CdA" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="RcO-Mf-bY6"/>
                                     <constraint firstItem="53s-FQ-TV5" firstAttribute="leading" secondItem="3ET-w8-JYg" secondAttribute="trailing" id="SKo-w2-QQN"/>
                                     <constraint firstItem="Hgo-g7-20d" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="top" id="Se7-xw-SJ4"/>
                                     <constraint firstItem="hQE-Xy-7Y7" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="USx-ou-Pwc"/>
+                                    <constraint firstItem="zn9-DN-wLA" firstAttribute="leading" secondItem="nwl-db-dE7" secondAttribute="leading" id="VUt-Ax-2Tf"/>
                                     <constraint firstItem="53s-FQ-TV5" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="YfA-wy-apg"/>
                                     <constraint firstItem="VRb-e3-I3s" firstAttribute="leading" secondItem="53s-FQ-TV5" secondAttribute="trailing" id="Z6w-9C-B42"/>
-                                    <constraint firstItem="6YN-bm-seL" firstAttribute="top" secondItem="0E7-J8-TtH" secondAttribute="bottom" id="ZOO-2C-ihN"/>
                                     <constraint firstItem="Ow1-zv-CdA" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="dSr-2M-gYR"/>
                                     <constraint firstItem="Eh5-Oe-ymh" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="eGN-Zw-Nfn"/>
-                                    <constraint firstItem="6YN-bm-seL" firstAttribute="top" secondItem="VRb-e3-I3s" secondAttribute="bottom" id="feo-D0-gGb"/>
-                                    <constraint firstItem="VRb-e3-I3s" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="gUF-yV-tQ2"/>
                                     <constraint firstItem="3ET-w8-JYg" firstAttribute="leading" secondItem="hQE-Xy-7Y7" secondAttribute="trailing" id="hZN-57-XHp"/>
                                     <constraint firstItem="Hgo-g7-20d" firstAttribute="leading" secondItem="nwl-db-dE7" secondAttribute="leading" id="hvx-Tc-2dB"/>
-                                    <constraint firstItem="e0t-ls-cgx" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="kWx-Dy-VoZ"/>
                                     <constraint firstItem="uR2-va-Kvk" firstAttribute="leading" secondItem="YNP-yZ-Ukb" secondAttribute="trailing" id="mYG-kj-FUa"/>
-                                    <constraint firstItem="0E7-J8-TtH" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="oT7-cp-Y3P"/>
+                                    <constraint firstAttribute="bottom" secondItem="zn9-DN-wLA" secondAttribute="bottom" id="nc3-vr-0fA"/>
                                     <constraint firstItem="0E7-J8-TtH" firstAttribute="leading" secondItem="TXK-TF-oRe" secondAttribute="trailing" id="oUz-Jl-ch6"/>
                                     <constraint firstItem="YNP-yZ-Ukb" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="pI9-ZT-oqu"/>
-                                    <constraint firstAttribute="bottom" secondItem="6YN-bm-seL" secondAttribute="bottom" id="wvS-uv-rd3"/>
                                     <constraint firstItem="hQE-Xy-7Y7" firstAttribute="leading" secondItem="e0t-ls-cgx" secondAttribute="trailing" id="yMp-Ez-66u"/>
-                                    <constraint firstItem="PEB-0E-Nck" firstAttribute="top" secondItem="Hgo-g7-20d" secondAttribute="bottom" id="zJK-4w-NeC"/>
                                     <constraint firstItem="Eh5-Oe-ymh" firstAttribute="leading" secondItem="VRb-e3-I3s" secondAttribute="trailing" id="zZT-N1-0Vg"/>
                                     <constraint firstItem="TXK-TF-oRe" firstAttribute="centerY" secondItem="nwl-db-dE7" secondAttribute="centerY" id="zcm-WW-hQK"/>
                                 </constraints>
