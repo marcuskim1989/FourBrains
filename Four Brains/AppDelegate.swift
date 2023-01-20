@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseAppCheck
+import FirebaseAnalyticsSwift
+import FirebaseDatabase
 
 
 @UIApplicationMain
@@ -43,4 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+class YourAppCheckProviderFactory: NSObject, AppCheckProviderFactory {
+  func createProvider(with app: FirebaseApp) -> AppCheckProvider? {
+    if #available(iOS 14.0, *) {
+      return AppAttestProvider(app: app)
+    } else {
+      return DeviceCheckProvider(app: app)
+    }
+  }
 }

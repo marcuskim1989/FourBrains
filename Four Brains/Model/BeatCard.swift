@@ -9,7 +9,7 @@
 import Foundation
 import AudioKit
 
-class BeatCard {
+class BeatCard: Codable {
     private var beatCardLabel: String
     private var beatCardNoteSequence: [Int]
     

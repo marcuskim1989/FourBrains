@@ -18,6 +18,7 @@
 		2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58E1D42410DDDF0045929E /* Snooze.swift */; };
 		2C6F6F15261BF2B1000CE29F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F6F14261BF2B1000CE29F /* K.swift */; };
 		2C6F6F21261D5A5A000CE29F /* Pods_Four_Brains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E15CB79A7D359F076EB77EB /* Pods_Four_Brains.framework */; };
+		2C7A9F0B2951738D00F547AC /* FirestoreReferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A9F0A2951738D00F547AC /* FirestoreReferenceManager.swift */; };
 		2C7B386023ED28AC00C120E7 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B385F23ED28AC00C120E7 /* Metronome.swift */; };
 		2C7B386223ED294600C120E7 /* DrumSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386123ED294600C120E7 /* DrumSounds.swift */; };
 		2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */; };
@@ -77,6 +78,7 @@
 		2C58E1D2241087AF0045929E /* Mute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mute.swift; sourceTree = "<group>"; };
 		2C58E1D42410DDDF0045929E /* Snooze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snooze.swift; sourceTree = "<group>"; };
 		2C6F6F14261BF2B1000CE29F /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		2C7A9F0A2951738D00F547AC /* FirestoreReferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreReferenceManager.swift; sourceTree = "<group>"; };
 		2C7B385F23ED28AC00C120E7 /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
 		2C7B386123ED294600C120E7 /* DrumSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumSounds.swift; sourceTree = "<group>"; };
 		2C7B386323ED299A00C120E7 /* PlayBackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngine.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				2C6F6F14261BF2B1000CE29F /* K.swift */,
 				2CAAEA032856B10300462B2F /* SelectBeatCards.swift */,
 				2C25E6F42905F897006B2D59 /* TransparentThumbSlider.swift */,
+				2C7A9F0A2951738D00F547AC /* FirestoreReferenceManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				2CD14C1523DA6E0E00157D75 /* HomeScreenViewController.swift in Sources */,
 				2C7C0D582403B5BC006ACD98 /* WholeBeat.swift in Sources */,
 				2CD14C1123DA6E0E00157D75 /* AppDelegate.swift in Sources */,
+				2C7A9F0B2951738D00F547AC /* FirestoreReferenceManager.swift in Sources */,
 				2C25E6F52905F897006B2D59 /* TransparentThumbSlider.swift in Sources */,
 				2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */,
 				2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */,

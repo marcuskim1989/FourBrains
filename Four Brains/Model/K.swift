@@ -155,7 +155,7 @@ enum K {
             BEAT_CARD_3B_NOTE_STRING: 12,
             BEAT_CARD_3C_NOTE_STRING: 13,
             BEAT_CARD_3D_NOTE_STRING: 14,
-            BEAT_CARD_4_NOTE_STRING: 15,
+            BEAT_CARD_4_NOTE_STRING: 15
         
         ]
         

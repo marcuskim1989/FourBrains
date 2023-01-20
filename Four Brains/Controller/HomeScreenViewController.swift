@@ -20,6 +20,8 @@
 import UIKit
 import AudioKit
 import McPicker
+import FirebaseAnalyticsSwift
+import FirebaseFirestoreSwift
 
 extension UIView {
    func makeVertical() {
@@ -39,6 +41,7 @@ class HomeScreenViewController: UIViewController {
     private var mute: Mute!
     private var snooze: Snooze!
     internal var wholeBeat: WholeBeat!
+    private var firestoreReferenceManager: FirestoreReferenceManager!
     private var currentBPM: Int = 60
     private var subdivision: Int = 4
     private var mixer: Mixer = Mixer()
@@ -120,6 +123,10 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+       
+        
         rideMuteOutlet.setTitle(K.MuteConstants.MuteButtonNames.RIDE_MUTE_BUTTON, for: .normal)
         snareMuteOutlet.setTitle(K.MuteConstants.MuteButtonNames.SNARE_MUTE_BUTTON, for: .normal)
         kickMuteOutlet.setTitle(K.MuteConstants.MuteButtonNames.KICK_MUTE_BUTTON, for: .normal)
@@ -143,6 +150,7 @@ class HomeScreenViewController: UIViewController {
         playBackEngine = PlayBackEngine(metronome: self.metronome, drumSounds: self.drumSounds)
         randomization = Randomization()
         beatCardInstances = K.BeatCardInstances()
+        firestoreReferenceManager = FirestoreReferenceManager()
         
         mixer.addInput(drumSounds.getDrums())
         mixer.addInput(metronome.getFader())
@@ -164,7 +172,7 @@ class HomeScreenViewController: UIViewController {
         return currentBPM
     }
     
-    // MARK: - Randomization
+    // MARK: - Randomization
     
     @IBAction func randomizationButtonPressed(_ sender: Any) {
         self.randomize()
@@ -564,6 +572,41 @@ class HomeScreenViewController: UIViewController {
         }
     }
     
+    // MARK: - Save
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        do {
+            try FirestoreReferenceManager.publicDataDocument.setData(from: getWholeBeat())
+        } catch let error {
+            print("Error writing city to Firestore: \(error)")
+        }
+        
+    }
+    
+    // MARK: - Load
+    
+    @IBAction func loadButtonPressed(_ sender: UIButton) {
+        
+        let docRef = FirestoreReferenceManager.publicDataDocument
+        
+        docRef.getDocument(as: WholeBeat.self) { result in
+            
+            switch result {
+            case .success(var wholeBeat):
+                wholeBeat = wholeBeat
+                self.assignBeatCardImages(wholeBeat: wholeBeat)
+                self.drumSounds.processDrumSounds(wholeBeat: wholeBeat)
+                
+            case .failure(let error):
+                print("failure loading beat: ", error)
+                
+            }
+            
+        }
+        
+    }
+    
     // MARK: - reset
     func resetPlaySettings() {
         if playBackEngine.getIsPlaying() {
@@ -584,7 +627,4 @@ class HomeScreenViewController: UIViewController {
     
     
 }
-
-//MARK: - TransparentThumbSlider
-
 
