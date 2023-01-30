@@ -20,7 +20,7 @@ class WholeBeat: Codable {
     let timestamp: Double
     let myTimeInterval: TimeInterval
     let time: Date
-    var beatName: String = "Funk Beat"
+    var beatName: String = "BEAT"
     
     enum CodingKeys: String, CodingKey {
         case ridePattern
@@ -37,7 +37,19 @@ class WholeBeat: Codable {
         case beatName
     }
     
+    func setBeatName(beatName: String){
+        self.beatName = beatName
+    }
     
+    func setTimestampOfLastMod() {
+        timestampOfLastMod = Date(timeIntervalSince1970: (TimeInterval(myTimeInterval)))
+        
+        print("timestampOfLastMod: ", timestampOfLastMod)
+    }
+    
+    func getTime() -> Date {
+        return time
+    }
     
     init(ridePattern: [BeatCard], snarePattern: [BeatCard], bassPattern: [BeatCard], hiHatPattern: [BeatCard]) {
         self.ridePattern = ridePattern

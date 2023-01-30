@@ -24,12 +24,12 @@ import FirebaseAnalyticsSwift
 import FirebaseFirestoreSwift
 
 extension UIView {
-   func makeVertical() {
-        transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+    func makeVertical() {
+    transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
    }
 }
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Member variables
     
@@ -118,13 +118,19 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var kickSnoozeOutlet: UIButton!
     @IBOutlet weak var hatSnoozeOutlet: UIButton!
     
+    @IBOutlet weak var beatNameOutlet: UITextField! {
+        didSet {
+            let blackPlaceholderText = NSAttributedString(string: "MY BEAT IS CALLED . . .", attributes:  [NSAttributedString.Key.foregroundColor: UIColor.black])
+            
+            beatNameOutlet.attributedPlaceholder = blackPlaceholderText
+        }
+    }
+    
+    
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
        
         
         rideMuteOutlet.setTitle(K.MuteConstants.MuteButtonNames.RIDE_MUTE_BUTTON, for: .normal)
@@ -143,6 +149,7 @@ class HomeScreenViewController: UIViewController {
         bpmSliderOutlet.semanticContentAttribute = .forceRightToLeft
         bpmSliderOutlet.isHidden = true
         bpmSliderOutlet.configure()
+        
         mute = Mute()
         drumSounds = DrumSounds(mute: self.mute, currentBPM: self.currentBPM)
         snooze = Snooze(mute: self.mute, drumSounds: self.drumSounds)
@@ -151,6 +158,7 @@ class HomeScreenViewController: UIViewController {
         randomization = Randomization()
         beatCardInstances = K.BeatCardInstances()
         firestoreReferenceManager = FirestoreReferenceManager()
+        beatNameOutlet.delegate = self
         
         mixer.addInput(drumSounds.getDrums())
         mixer.addInput(metronome.getFader())
@@ -574,10 +582,24 @@ class HomeScreenViewController: UIViewController {
     
     // MARK: - Save
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        wholeBeat.beatName = textField.text ?? "BEAT"
+        beatNameOutlet.endEditing(true)
+        
+        if textField.text?.isEmpty != nil {
+            wholeBeat.setBeatName(beatName: textField.text ?? "BEAT")
+        }
+        
+        return true
+    }
+    
+    
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
         do {
-            try FirestoreReferenceManager.publicDataDocument.setData(from: getWholeBeat())
+            
+            try FirestoreReferenceManager.publicDataCollection.document(wholeBeat.beatName).setData(from: wholeBeat, merge: true)
         } catch let error {
             print("Error writing city to Firestore: \(error)")
         }
