@@ -34,11 +34,14 @@ class Randomization {
     
         // return a freshly instantiated Whole Beat object, which is initialized with 4 parameters, each of which is an array of 4 random beat cards
         let wholeBeat: WholeBeat = WholeBeat(
+            
+            
+            
             ridePattern: self.ridePattern,
             snarePattern: self.snarePattern,
             bassPattern: self.bassPattern,
             hiHatPattern: self.hiHatPattern)
-        
+  
         return wholeBeat
         
     }

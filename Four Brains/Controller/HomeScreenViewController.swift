@@ -22,12 +22,15 @@ import AudioKit
 import McPicker
 import FirebaseAnalyticsSwift
 import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 extension UIView {
     func makeVertical() {
     transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
    }
 }
+
+// swiftlint: disable type_body_length
 
 class HomeScreenViewController: UIViewController, UITextFieldDelegate {
 
@@ -156,8 +159,10 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
         metronome = Metronome(homeScreenViewController: self)
         playBackEngine = PlayBackEngine(metronome: self.metronome, drumSounds: self.drumSounds)
         randomization = Randomization()
+        
         beatCardInstances = K.BeatCardInstances()
         firestoreReferenceManager = FirestoreReferenceManager()
+        
         beatNameOutlet.delegate = self
         
         mixer.addInput(drumSounds.getDrums())
@@ -582,27 +587,76 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Save
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        outsideAreaOutlet.isHidden = false
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         wholeBeat.beatName = textField.text ?? "BEAT"
+        beatNameOutlet.text = textField.text
         beatNameOutlet.endEditing(true)
         
         if textField.text?.isEmpty != nil {
             wholeBeat.setBeatName(beatName: textField.text ?? "BEAT")
+            
+            print("beatNameOutlet.text is ", beatNameOutlet.text)
         }
         
         return true
     }
+    @IBOutlet weak var outsideAreaOutlet: UIButton!
+    
+    @IBAction func outsideAreaPressed(_ sender: UIButton) {
+        
+        textFieldShouldReturn(self.beatNameOutlet)
+        
+        outsideAreaOutlet.isHidden = true
+        
+    }
     
     
+    func checkIfBeatExists() {
+        let docRef = FirestoreReferenceManager.publicDataCollection.document(wholeBeat.beatName)
+
+        docRef.getDocument {(document, error) in
+            if let document = document {
+
+                if document.exists {
+                    print("******************************** document.exists == true")
+                    self.wholeBeat.firstTimeCreated = false
+                    print("************************************* firstTimeCreated: ", self.wholeBeat.firstTimeCreated)
+
+                    
+                    let timestamp = document.get("timestampOfCreation") as! Timestamp
+                    
+                    self.wholeBeat.timestampOfCreation = timestamp.dateValue()
+                    
+                    print("************************************* timestampOfCreation: ", self.wholeBeat.timestampOfCreation)
+                    
+                } else {
+                    self.wholeBeat.firstTimeCreated = true
+                    
+                }
+
+            }
+
+        }
+    }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
         do {
             
-            try FirestoreReferenceManager.publicDataCollection.document(wholeBeat.beatName).setData(from: wholeBeat, merge: true)
-        } catch let error {
-            print("Error writing city to Firestore: \(error)")
+            try checkIfBeatExists()
+//            print("************************************* firstTimeCreated: ", wholeBeat.firstTimeCreated)
+//            print("************************************* timestampOfCreation: ", wholeBeat.timestampOfCreation)
+            try FirestoreReferenceManager.publicDataCollection.document(wholeBeat.beatName).setData(from: wholeBeat)
+            
         }
+        catch {
+            print("error adding document")
+        }
+        
         
     }
     

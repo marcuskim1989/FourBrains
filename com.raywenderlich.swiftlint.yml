@@ -7,8 +7,8 @@ disabled_rules:
   - discarded_notification_center_observer
   - notification_center_detachment
   - orphaned_doc_comment
-  - todo
   - unused_capture_list
+  - type_body_length
 
 opt_in_rules:
   - array_init
@@ -25,6 +25,7 @@ opt_in_rules:
   - enum_case_associated_values_count
   - fatal_error_message
   - first_where
+  - function_body_length
   - force_unwrapping
   - implicitly_unwrapped_optional
   - indentation_width
@@ -101,6 +102,8 @@ private_over_fileprivate:
 trailing_whitespace:
   ignores_empty_lines: false
   ignores_comments: true
+  
+
 
 vertical_whitespace:
   max_empty_lines: 2

@@ -614,6 +614,14 @@
                                     <action selector="bpmSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="WZU-JW-qnX"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72i-Pr-ySe">
+                                <rect key="frame" x="0.0" y="0.0" width="932" height="430"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="outsideAreaPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fhJ-ek-yiI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -626,13 +634,17 @@
                             <constraint firstItem="mak-l2-MUb" firstAttribute="leading" secondItem="8oR-RQ-4ty" secondAttribute="trailing" id="99Q-Bi-DKg"/>
                             <constraint firstItem="nwl-db-dE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EoT-1Z-lyR"/>
                             <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="Oic-bM-92m"/>
+                            <constraint firstAttribute="trailing" secondItem="72i-Pr-ySe" secondAttribute="trailing" id="aYn-bR-Gxy"/>
                             <constraint firstItem="nW7-gd-Bhy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bT2-Um-SxU"/>
+                            <constraint firstItem="72i-Pr-ySe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cil-G0-N3R"/>
                             <constraint firstAttribute="trailing" secondItem="x90-5m-OGS" secondAttribute="trailing" id="dCT-Xi-PGI"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eL9-T7-70Q"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h19-e8-ei9"/>
+                            <constraint firstAttribute="bottom" secondItem="72i-Pr-ySe" secondAttribute="bottom" id="k6m-8T-NfB"/>
                             <constraint firstAttribute="bottom" secondItem="x90-5m-OGS" secondAttribute="bottom" id="mx4-Hw-iGG"/>
                             <constraint firstItem="8oR-RQ-4ty" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nIz-Fx-wmH"/>
                             <constraint firstItem="8oR-RQ-4ty" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nxl-Yk-pjj"/>
+                            <constraint firstItem="72i-Pr-ySe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pp1-iy-hU3"/>
                             <constraint firstItem="x90-5m-OGS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tmc-Ob-S5j"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ujf-tf-dwg"/>
                         </constraints>
@@ -655,6 +667,7 @@
                         <outlet property="kickMuteOutlet" destination="JEQ-Iu-wLl" id="k4d-d0-e6M"/>
                         <outlet property="kickSnoozeOutlet" destination="cUC-CC-b4j" id="3Ng-oy-saA"/>
                         <outlet property="metronomeOutlet" destination="53s-FQ-TV5" id="KnO-n2-ig9"/>
+                        <outlet property="outsideAreaOutlet" destination="72i-Pr-ySe" id="Du5-SM-SOF"/>
                         <outlet property="playButtonOutlet" destination="hQE-Xy-7Y7" id="jth-Kt-mO3"/>
                         <outlet property="ride0" destination="dKh-XJ-iaW" id="cHa-8F-reo"/>
                         <outlet property="ride1" destination="xux-KJ-gy7" id="naB-Sc-PeX"/>
@@ -673,7 +686,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="238" y="-3591"/>
+            <point key="canvasLocation" x="237.55364806866953" y="-3591.6279069767443"/>
         </scene>
     </scenes>
     <resources>

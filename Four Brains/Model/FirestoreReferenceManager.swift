@@ -15,6 +15,9 @@ struct FirestoreReferenceManager {
     static let publicDataConstant = "publicData"
     
     static let db = Firestore.firestore()
+    
+    
+    
     static let devRoot = db
         .collection(devEnvironment)
         .document(devEnvironment)

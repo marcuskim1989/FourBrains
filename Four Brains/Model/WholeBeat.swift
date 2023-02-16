@@ -41,14 +41,14 @@ class WholeBeat: Codable {
         self.beatName = beatName
     }
     
-    func setTimestampOfLastMod() {
-        timestampOfLastMod = Date(timeIntervalSince1970: (TimeInterval(myTimeInterval)))
-        
-        print("timestampOfLastMod: ", timestampOfLastMod)
-    }
+    
     
     func getTime() -> Date {
         return time
+    }
+    
+    func doNotChangeTimestampOfCreation(timestamp: Date) {
+        timestampOfCreation = timestamp
     }
     
     init(ridePattern: [BeatCard], snarePattern: [BeatCard], bassPattern: [BeatCard], hiHatPattern: [BeatCard]) {
