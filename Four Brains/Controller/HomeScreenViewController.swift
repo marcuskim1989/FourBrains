@@ -44,6 +44,7 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
     private var mute: Mute!
     private var snooze: Snooze!
     internal var wholeBeat: WholeBeat!
+    private var beatDoc: BeatDoc!
     private var firestoreReferenceManager: FirestoreReferenceManager!
     private var currentBPM: Int = 60
     private var subdivision: Int = 4
@@ -178,6 +179,8 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
         }
         
         self.randomize()
+        
+        beatDoc = BeatDoc(wholeBeat: wholeBeat)
         
     }
     
@@ -592,15 +595,16 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        wholeBeat.beatName = textField.text ?? "BEAT"
+        beatDoc.setBeatName(beatName: textField.text ?? "BEAT")
+        print("beatName is: ", beatDoc.beatName)
         beatNameOutlet.text = textField.text
         beatNameOutlet.endEditing(true)
         
-        if textField.text?.isEmpty != nil {
-            wholeBeat.setBeatName(beatName: textField.text ?? "BEAT")
-            
-            print("beatNameOutlet.text is ", beatNameOutlet.text)
-        }
+//        if ((textField.text?.isEmpty) != nil) {
+//
+//
+//            print("beatNameOutlet.text is ", beatNameOutlet.text)
+//        }
         
         return true
     }
@@ -616,25 +620,25 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     
     func checkIfBeatExists() {
-        let docRef = FirestoreReferenceManager.publicDataCollection.document(wholeBeat.beatName)
+        let docRef = FirestoreReferenceManager.publicDataCollection.document(beatDoc.beatName)
 
         docRef.getDocument {(document, error) in
             if let document = document {
 
                 if document.exists {
-                    print("******************************** document.exists == true")
-                    self.wholeBeat.firstTimeCreated = false
-                    print("************************************* firstTimeCreated: ", self.wholeBeat.firstTimeCreated)
+                    print("******************************** inside checkIfBeatExists() document.exists == true")
+                    self.beatDoc.firstTimeCreated = false
+                    print("************************************* inside checkIfBeatExists() firstTimeCreated: ", self.beatDoc.firstTimeCreated)
 
                     
                     let timestamp = document.get("timestampOfCreation") as! Timestamp
                     
-                    self.wholeBeat.timestampOfCreation = timestamp.dateValue()
+                    self.beatDoc.timestampOfCreation = timestamp.dateValue()
                     
-                    print("************************************* timestampOfCreation: ", self.wholeBeat.timestampOfCreation)
+                    print("************************************* inside checkIfBeatExists() timestampOfCreation: ", self.beatDoc.timestampOfCreation)
                     
                 } else {
-                    self.wholeBeat.firstTimeCreated = true
+                    self.beatDoc.firstTimeCreated = true
                     
                 }
 
@@ -648,16 +652,19 @@ class HomeScreenViewController: UIViewController, UITextFieldDelegate {
         do {
             
             try checkIfBeatExists()
-//            print("************************************* firstTimeCreated: ", wholeBeat.firstTimeCreated)
-//            print("************************************* timestampOfCreation: ", wholeBeat.timestampOfCreation)
-            try FirestoreReferenceManager.publicDataCollection.document(wholeBeat.beatName).setData(from: wholeBeat)
+            print("************************************* inside saveButtonPressed() firstTimeCreated: ", beatDoc.firstTimeCreated)
+            print("************************************* inside saveButtonPressed() timestampOfCreation: ", beatDoc.timestampOfCreation)
+            try FirestoreReferenceManager.publicDataCollection.document(beatDoc.beatName).setData(from: beatDoc)
+            
+            //TODO: perform an update timestampOfLastMod
+            //TODO: 
             
         }
         catch {
             print("error adding document")
         }
         
-        
+        print("**************************** saveButtonPressed(), after do block firstTimeCreated is: ", beatDoc.firstTimeCreated)
     }
     
     // MARK: - Load

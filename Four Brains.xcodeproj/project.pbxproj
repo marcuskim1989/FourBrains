@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2C026DDC2849C2D800AB1C78 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD8FD8C26293819006D7FF8 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2C14C1A223FBCEAE005D764A /* 4tracks.mid in Resources */ = {isa = PBXBuildFile; fileRef = 2C14C1A123FBCEAE005D764A /* 4tracks.mid */; };
+		2C226F16299DECEC0097E20A /* BeatDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C226F15299DECEC0097E20A /* BeatDoc.swift */; };
 		2C25E6F52905F897006B2D59 /* TransparentThumbSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25E6F42905F897006B2D59 /* TransparentThumbSlider.swift */; };
 		2C3909932910A72D0008308F /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3909922910A72D0008308F /* Collections */; };
 		2C3909952910A72D0008308F /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3909942910A72D0008308F /* DequeModule */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		2C14C1A123FBCEAE005D764A /* 4tracks.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = 4tracks.mid; sourceTree = "<group>"; };
+		2C226F15299DECEC0097E20A /* BeatDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatDoc.swift; sourceTree = "<group>"; };
 		2C25E6F42905F897006B2D59 /* TransparentThumbSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentThumbSlider.swift; sourceTree = "<group>"; };
 		2C40F42025A7C172000CB925 /* parley bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "parley bold.ttf"; sourceTree = "<group>"; };
 		2C58E1D2241087AF0045929E /* Mute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mute.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				2CAAEA032856B10300462B2F /* SelectBeatCards.swift */,
 				2C25E6F42905F897006B2D59 /* TransparentThumbSlider.swift */,
 				2C7A9F0A2951738D00F547AC /* FirestoreReferenceManager.swift */,
+				2C226F15299DECEC0097E20A /* BeatDoc.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,8 +333,9 @@
 		2CD14C0523DA6E0E00157D75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Marcus Kim";
 				TargetAttributes = {
 					2CD14C0C23DA6E0E00157D75 = {
@@ -461,6 +465,7 @@
 				2C25E6F52905F897006B2D59 /* TransparentThumbSlider.swift in Sources */,
 				2C58E1D52410DDDF0045929E /* Snooze.swift in Sources */,
 				2C7B386423ED299A00C120E7 /* PlayBackEngine.swift in Sources */,
+				2C226F16299DECEC0097E20A /* BeatDoc.swift in Sources */,
 				2CAAEA042856B10300462B2F /* SelectBeatCards.swift in Sources */,
 				2CD14C1323DA6E0E00157D75 /* SceneDelegate.swift in Sources */,
 				2C58E1D3241087AF0045929E /* Mute.swift in Sources */,

@@ -14,13 +14,7 @@ class WholeBeat: Codable {
     internal var kickPattern: [BeatCard]
     internal var hatPattern: [BeatCard]
     
-    var timestampOfCreation: Date
-    var timestampOfLastMod: Date
-    var firstTimeCreated: Bool = true
-    let timestamp: Double
-    let myTimeInterval: TimeInterval
-    let time: Date
-    var beatName: String = "BEAT"
+    
     
     enum CodingKeys: String, CodingKey {
         case ridePattern
@@ -28,28 +22,8 @@ class WholeBeat: Codable {
         case kickPattern
         case hatPattern
         
-        case timestampOfCreation
-        case timestampOfLastMod
-        case firstTimeCreated
-        case timestamp
-        case myTimeInterval
-        case time
-        case beatName
     }
     
-    func setBeatName(beatName: String){
-        self.beatName = beatName
-    }
-    
-    
-    
-    func getTime() -> Date {
-        return time
-    }
-    
-    func doNotChangeTimestampOfCreation(timestamp: Date) {
-        timestampOfCreation = timestamp
-    }
     
     init(ridePattern: [BeatCard], snarePattern: [BeatCard], bassPattern: [BeatCard], hiHatPattern: [BeatCard]) {
         self.ridePattern = ridePattern
@@ -57,15 +31,7 @@ class WholeBeat: Codable {
         self.kickPattern = bassPattern
         self.hatPattern = hiHatPattern
         
-        self.timestamp = Date().timeIntervalSince1970
-        self.myTimeInterval = TimeInterval(timestamp)
-        self.time = Date(timeIntervalSince1970: TimeInterval(myTimeInterval))
-        self.timestampOfCreation = time
-        self.timestampOfLastMod = time
         
-        print("timestamp", time)
-        print("timestampOfCreation", timestampOfCreation)
-        print("timestampOfLastMod", timestampOfLastMod)
     }
     
     public func getRidePattern() -> [BeatCard] {

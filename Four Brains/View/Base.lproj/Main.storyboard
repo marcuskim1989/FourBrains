@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_72" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -269,35 +269,6 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-RQ-4ty" userLabel="Notch Leading Edge Mute Button Stack">
-                                <rect key="frame" x="0.0" y="77.666666666666686" width="51" height="275"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-4y-NPh">
-                                        <rect key="frame" x="0.0" y="0.0" width="51" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="hRa-mf-bLs"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="5Ej-cN-TOo">
-                                        <rect key="frame" x="0.0" y="74.999999999999986" width="51" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="pzi-Lz-tlK"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="Xlo-xP-Mb6">
-                                        <rect key="frame" x="0.0" y="150" width="51" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="aMs-Qa-jke"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="LJN-If-igz">
-                                        <rect key="frame" x="0.0" y="225" width="51" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ZnQ-qz-3Y1"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-db-dE7" userLabel="Top Panel Background">
@@ -614,14 +585,9 @@
                                     <action selector="bpmSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="WZU-JW-qnX"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72i-Pr-ySe">
-                                <rect key="frame" x="0.0" y="0.0" width="932" height="430"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <action selector="outsideAreaPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fhJ-ek-yiI"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leading Edge Mute Button Spacer" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-4y-NPh" userLabel="Notch Cover">
+                                <rect key="frame" x="0.0" y="55" width="51" height="320"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -629,22 +595,20 @@
                             <constraint firstItem="nwl-db-dE7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1Is-Sg-LpY"/>
                             <constraint firstAttribute="trailing" secondItem="nwl-db-dE7" secondAttribute="trailing" id="2ri-Kk-Yii"/>
                             <constraint firstAttribute="trailing" secondItem="G9q-oH-9tH" secondAttribute="trailing" id="3bu-HC-Hj6"/>
+                            <constraint firstItem="x90-5m-OGS" firstAttribute="top" secondItem="ajs-4y-NPh" secondAttribute="bottom" id="4hn-fG-Qzb"/>
                             <constraint firstItem="nW7-gd-Bhy" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="bottom" constant="46" id="5Ni-wq-jGJ"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7f3-Lm-4CK"/>
-                            <constraint firstItem="mak-l2-MUb" firstAttribute="leading" secondItem="8oR-RQ-4ty" secondAttribute="trailing" id="99Q-Bi-DKg"/>
                             <constraint firstItem="nwl-db-dE7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EoT-1Z-lyR"/>
                             <constraint firstAttribute="bottom" secondItem="G9q-oH-9tH" secondAttribute="bottom" id="Oic-bM-92m"/>
-                            <constraint firstAttribute="trailing" secondItem="72i-Pr-ySe" secondAttribute="trailing" id="aYn-bR-Gxy"/>
+                            <constraint firstItem="ajs-4y-NPh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QpB-dy-6aw"/>
+                            <constraint firstItem="ajs-4y-NPh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ScH-6O-VSs"/>
+                            <constraint firstItem="mak-l2-MUb" firstAttribute="leading" secondItem="ajs-4y-NPh" secondAttribute="trailing" id="YKc-V4-iF2"/>
                             <constraint firstItem="nW7-gd-Bhy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bT2-Um-SxU"/>
-                            <constraint firstItem="72i-Pr-ySe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cil-G0-N3R"/>
                             <constraint firstAttribute="trailing" secondItem="x90-5m-OGS" secondAttribute="trailing" id="dCT-Xi-PGI"/>
                             <constraint firstItem="mak-l2-MUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eL9-T7-70Q"/>
+                            <constraint firstItem="ajs-4y-NPh" firstAttribute="top" secondItem="nwl-db-dE7" secondAttribute="bottom" id="fU3-wn-Gww"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h19-e8-ei9"/>
-                            <constraint firstAttribute="bottom" secondItem="72i-Pr-ySe" secondAttribute="bottom" id="k6m-8T-NfB"/>
                             <constraint firstAttribute="bottom" secondItem="x90-5m-OGS" secondAttribute="bottom" id="mx4-Hw-iGG"/>
-                            <constraint firstItem="8oR-RQ-4ty" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nIz-Fx-wmH"/>
-                            <constraint firstItem="8oR-RQ-4ty" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nxl-Yk-pjj"/>
-                            <constraint firstItem="72i-Pr-ySe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pp1-iy-hU3"/>
                             <constraint firstItem="x90-5m-OGS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tmc-Ob-S5j"/>
                             <constraint firstItem="G9q-oH-9tH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ujf-tf-dwg"/>
                         </constraints>
@@ -667,7 +631,6 @@
                         <outlet property="kickMuteOutlet" destination="JEQ-Iu-wLl" id="k4d-d0-e6M"/>
                         <outlet property="kickSnoozeOutlet" destination="cUC-CC-b4j" id="3Ng-oy-saA"/>
                         <outlet property="metronomeOutlet" destination="53s-FQ-TV5" id="KnO-n2-ig9"/>
-                        <outlet property="outsideAreaOutlet" destination="72i-Pr-ySe" id="Du5-SM-SOF"/>
                         <outlet property="playButtonOutlet" destination="hQE-Xy-7Y7" id="jth-Kt-mO3"/>
                         <outlet property="ride0" destination="dKh-XJ-iaW" id="cHa-8F-reo"/>
                         <outlet property="ride1" destination="xux-KJ-gy7" id="naB-Sc-PeX"/>
